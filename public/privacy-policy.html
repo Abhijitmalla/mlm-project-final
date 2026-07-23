@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — VK Services Enterprise</title>
+<link rel="stylesheet" href="./dist/output.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#111319;
+    --paper-raised:#1B1E29;
+    --ink:#F6F7FA;
+    --ink-soft:#B9BDC9;
+    --line:rgba(255,255,255,0.14);
+    --orange:#FF7A45;
+    --gold:#E0B15C;
+    --gold-soft:rgba(224,177,92,0.16);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:'IBM Plex Sans',sans-serif; -webkit-font-smoothing:antialiased;
+  }
+  .serif{font-family:'Fraunces',serif;}
+  .mono{font-family:'IBM Plex Mono',monospace; letter-spacing:0.04em;}
+  a{color:var(--orange);}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--orange); outline-offset:3px;}
+
+  /* header */
+  .topbar{
+    background:var(--paper-raised); color:var(--ink); border-bottom:1px solid var(--line);
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 32px;
+  }
+  .ribbon{
+    background:linear-gradient(180deg, var(--gold) 0%, #8f662a 100%);
+    color:#fff; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.08em;
+    padding:5px 12px; border-radius:3px;
+  }
+  #mobile-progress-track{
+    height:2px; background:var(--line); position:sticky; top:0; z-index:20;
+  }
+  #mobile-progress{ height:2px; background:var(--orange); width:0%; }
+
+  /* hero */
+  .hero{
+    background:
+      radial-gradient(600px 220px at 12% 0%, rgba(224,177,92,0.10), transparent 60%),
+      var(--paper);
+    border-bottom:1px solid var(--line);
+  }
+
+  /* the spine: signature element */
+  .spine-wrap{position:relative;}
+  .spine-line{
+    position:absolute; left:13px; top:8px; bottom:8px; width:1px;
+    background:repeating-linear-gradient(to bottom, var(--line) 0 4px, transparent 4px 8px);
+  }
+  .node{
+    display:flex; align-items:center; gap:14px; padding:11px 0; cursor:pointer;
+    color:var(--ink-soft); text-decoration:none; position:relative;
+  }
+  .node-dot{
+    width:26px; height:26px; border-radius:9999px; flex:none;
+    background:var(--paper-raised); border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--ink-soft);
+    position:relative; z-index:1; transition:all .25s ease;
+  }
+  .node-label{font-size:17px; transition:color .2s ease;}
+  .node.active .node-dot{background:var(--orange); border-color:var(--orange); color:#fff; box-shadow:0 0 0 4px rgba(255,122,69,0.16);}
+  .node.active .node-label{color:var(--ink); font-weight:600;}
+  .node.passed .node-dot{background:var(--gold-soft); border-color:var(--gold); color:var(--gold);}
+  .node:hover .node-label{color:var(--ink);}
+
+  /* section numbering echoes the spine */
+  .sec-num{
+    font-family:'IBM Plex Mono',monospace; font-size:14px; color:var(--orange);
+    border:1px solid var(--orange); border-radius:9999px; width:38px; height:38px;
+    display:flex; align-items:center; justify-content:center; flex:none;
+  }
+  .hair{border-top:1px solid var(--line);}
+  .section-anchor{scroll-margin-top:24px;}
+
+  /* split panes: left stays put, right scrolls on its own */
+  @media (min-width: 1024px){
+    .split{
+      height:calc(100vh - 64px);
+      align-items:start;
+    }
+    .split-nav{
+      height:100%;
+      overflow:hidden;
+    }
+    .split-scroll{
+      height:100%;
+      overflow-y:auto;
+      padding-right:12px;
+      scrollbar-width:thin;
+      scrollbar-color:var(--line) transparent;
+    }
+    .split-scroll::-webkit-scrollbar{width:8px;}
+    .split-scroll::-webkit-scrollbar-thumb{background:var(--line); border-radius:9999px;}
+    .split-scroll::-webkit-scrollbar-track{background:transparent;}
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    .reveal{animation:rise .5s ease both;}
+    @keyframes rise{from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);}}
+  }
+</style>
+</head>
+<body>
+
+<!-- Progress -->
+<div id="mobile-progress-track"><div id="mobile-progress"></div></div>
+
+<!-- Hero -->
+<section class="hero w-full px-8 lg:px-16 pt-12 lg:pt-16 pb-12 reveal">
+  <p class="mono text-[10px] text-[var(--gold)] mb-4">DATA &amp; PRIVACY — SECTIONS 01–10</p>
+  <h2 class="serif font-semibold text-[var(--ink)] text-[3.4rem] sm:text-8xl leading-[1.05] max-w-2xl">Privacy Policy</h2>
+  <p class="text-[var(--ink-soft)] mt-5 max-w-lg leading-relaxed text-xl">How we collect, use, and protect information for visitors of our MLM software and services website.</p>
+  <div class="inline-flex items-center gap-2 mt-6 border border-[var(--gold)] bg-[var(--gold-soft)] text-[var(--gold)] rounded-full px-4 py-1.5 mono text-[12px]">
+    effective · September 10, 2025
+  </div>
+</section>
+
+<!-- Body -->
+<main class="split w-full px-8 lg:px-16 pb-8 pt-8 grid lg:grid-cols-[220px_1fr] gap-14">
+
+  <!-- Spine navigator -->
+  <nav aria-label="Table of contents" class="split-nav hidden lg:block spine-wrap self-start h-fit">
+    <div class="spine-line"></div>
+    <a href="#who" class="node" data-target="who"><span class="node-dot">01</span><span class="node-label">Who We Are</span></a>
+    <a href="#comments" class="node" data-target="comments"><span class="node-dot">02</span><span class="node-label">Comments</span></a>
+    <a href="#media" class="node" data-target="media"><span class="node-dot">03</span><span class="node-label">Media</span></a>
+    <a href="#cookies" class="node" data-target="cookies"><span class="node-dot">04</span><span class="node-label">Cookies</span></a>
+    <a href="#embedded" class="node" data-target="embedded"><span class="node-dot">05</span><span class="node-label">Embedded content</span></a>
+    <a href="#sharing" class="node" data-target="sharing"><span class="node-dot">06</span><span class="node-label">Data sharing</span></a>
+    <a href="#retention" class="node" data-target="retention"><span class="node-dot">07</span><span class="node-label">Data retention</span></a>
+    <a href="#rights" class="node" data-target="rights"><span class="node-dot">08</span><span class="node-label">Your rights</span></a>
+    <a href="#sent" class="node" data-target="sent"><span class="node-dot">09</span><span class="node-label">Where data goes</span></a>
+    <a href="#contact" class="node" data-target="contact"><span class="node-dot">10</span><span class="node-label">Contact us</span></a>
+  </nav>
+
+  <!-- Content -->
+  <div class="split-scroll">
+  <article class="max-w-none w-full reveal">
+
+    <div id="who" class="section-anchor flex gap-5 pb-9">
+      <span class="sec-num">01</span>
+      <div>
+        <h2 class="serif font-semibold text-3xl text-[var(--ink)] mb-3">Who We Are</h2>
+        <p class="text-[18px] leading-relaxed text-[var(--ink-soft)]">
+          Our website address is <a href="https://mlmservices.vkservicesenterprise.com" class="hover:underline">mlmservices.vkservicesenterprise.com</a>. We provide professional services related to MLM software solutions and MLM plan promotions.
+        </p>
+      </div>
+    </div>
+    <div class="hair"></div>
+
+    <div id="comments" class="section-anchor flex gap-5 py-9">
+      <span class="sec-num">02</span>
+      <div>
+        <h2 class="serif font-semibold text-3xl text-[var(--ink)] mb-3">Comments</h2>
+        <p class="text-[18px] leading-relaxed text-[var(--ink-soft)]">
+          When visitors leave comments on our site, we collect the data shown in the comments form, along with the visitor's IP address and browser user agent to help detect spam.
+        </p>
+        <p class="text-[18px] leading-relaxed text-[var(--ink-soft)] mt-3">
+          An anonymized string (hash) from your email address may be sent to the <a href="https://automattic.com/privacy/" class="hover:underline">Gravatar service</a> to verify if you use it. Once approved, your profile picture may be publicly visible next to your comment.
+        </p>
+      </div>
+    </div>
+    <div class="hair"></div>
+
+    <div id="media" class="section-anchor flex gap-5 py-9">
+      <span class="sec-num">03</span>
+      <div>
+        <h2 class="serif font-semibold text-3xl text-[var(--ink)] mb-3">Media</h2>
+        <p class="text-[18px] leading-relaxed text-[var(--ink-soft)]">
+          If you upload images, please ensure they do not contain EXIF GPS location data. Visitors may be able to download and extract location data from such images.
+        </p>
+      </div>
+    </div>
+    <div class="hair"></div>
+
+    <div id="cookies" class="section-anchor flex gap-5 py-9">
+      <span class="sec-num">04</span>
+      <div>
+        <h2 class="serif font-semibold text-3xl text-[var(--ink)] mb-4">Cookies</h2>
+        <ul class="space-y-3">
+          <li class="flex gap-3 text-[15px] text-[var(--ink-soft)] leading-relaxed"><span class="text-[var(--orange)] mt-0.5">–</span>If you leave a comment, you can opt-in to save your name, email, and website in cookies for convenience. These cookies last 1 year.</li>
+          <li class="flex gap-3 text-[15px] text-[var(--ink-soft)] leading-relaxed"><span class="text-[var(--orange)] mt-0.5">–</span>Visiting the login page sets a temporary cookie to check browser compatibility. It's deleted when the browser is closed.</li>
+          <li class="flex gap-3 text-[15px] text-[var(--ink-soft)] leading-relaxed"><span class="text-[var(--orange)] mt-0.5">–</span>Logging in sets cookies to save your login info and display preferences. Login cookies last 2 days, and display cookies last 1 year. "Remember Me" extends login to 2 weeks.</li>
+          <li class="flex gap-3 text-[15px] text-[var(--ink-soft)] leading-relaxed"><span class="text-[var(--orange)] mt-0.5">–</span>Editing or publishing a post saves a cookie that expires after 1 day.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="hair"></div>
+
+    <div id="embedded" class="section-anchor flex gap-5 py-9">
+      <span class="sec-num">05</span>
+      <div>
+        <h2 class="serif font-semibold text-3xl text-[var(--ink)] mb-3">Embedded Content</h2>
+        <p class="text-[18px] leading-relaxed text-[var(--ink-soft)]">
+          Articles on our site may include embedded content (like videos, images, articles). Embedded content from other websites behaves exactly as if you visited those websites directly.
+        </p>
+        <p class="text-[18px] leading-relaxed text-[var(--ink-soft)] mt-3">
+          These websites may collect data, use cookies, and monitor your interaction with their content, especially if you're logged in to their platform.
+        </p>
+      </div>
+    </div>
+    <div class="hair"></div>
+
+    <div id="sharing" class="section-anchor flex gap-5 py-9">
+      <span class="sec-num">06</span>
+      <div>
+        <h2 class="serif font-semibold text-3xl text-[var(--ink)] mb-3">Who We Share Your Data With</h2>
+        <p class="text-[18px] leading-relaxed text-[var(--ink-soft)]">
+          If you request a password reset, your IP address is included in the reset email for security verification.
+        </p>
+      </div>
+    </div>
+    <div class="hair"></div>
+
+    <div id="retention" class="section-anchor flex gap-5 py-9">
+      <span class="sec-num">07</span>
+      <div>
+        <h2 class="serif font-semibold text-3xl text-[var(--ink)] mb-4">How Long We Retain Your Data</h2>
+        <ul class="space-y-3">
+          <li class="flex gap-3 text-[15px] text-[var(--ink-soft)] leading-relaxed"><span class="text-[var(--orange)] mt-0.5">–</span>Comments and metadata are stored indefinitely to recognize and auto-approve future comments.</li>
+          <li class="flex gap-3 text-[15px] text-[var(--ink-soft)] leading-relaxed"><span class="text-[var(--orange)] mt-0.5">–</span>For registered users (if applicable), we store personal information in user profiles. Users can edit or delete their data (except usernames). Admins can also view/edit it.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="hair"></div>
+
+    <div id="rights" class="section-anchor flex gap-5 py-9">
+      <span class="sec-num">08</span>
+      <div class="bg-[var(--paper-raised)] border border-[var(--line)] rounded-lg p-5 -mt-1">
+        <h2 class="serif font-semibold text-3xl text-[var(--ink)] mb-3">Your Data Rights</h2>
+        <p class="text-[18px] leading-relaxed text-[var(--ink-soft)]">
+          If you have an account or have left comments, you can request an export of your personal data, or request its deletion. This does not include data we're required to keep for legal or security reasons.
+        </p>
+        <p class="text-[18px] leading-relaxed text-[var(--ink)] mt-3 font-medium">
+          To make a request, contact us using the details in section 10.
+        </p>
+      </div>
+    </div>
+    <div class="hair"></div>
+
+    <div id="sent" class="section-anchor flex gap-5 py-9">
+      <span class="sec-num">09</span>
+      <div>
+        <h2 class="serif font-semibold text-3xl text-[var(--ink)] mb-3">Where Your Data Is Sent</h2>
+        <p class="text-[18px] leading-relaxed text-[var(--ink-soft)]">
+          Visitor comments may be scanned through an automated spam detection service.
+        </p>
+      </div>
+    </div>
+    <div class="hair"></div>
+
+    <div id="contact" class="section-anchor flex gap-5 pt-9">
+      <span class="sec-num">10</span>
+      <div>
+        <h2 class="serif font-semibold text-3xl text-[var(--ink)] mb-4">Contact Us</h2>
+        <p class="text-[18px] text-[var(--ink-soft)] mb-4">If you have questions or concerns about this Privacy Policy or how we handle your data, feel free to reach out:</p>
+        <div class="text-[18px] text-[var(--ink)] space-y-1.5">
+          <p class="font-semibold">VK Services Enterprise</p>
+          <p class="text-[var(--ink-soft)]">4th Floor, New Annex Building, Arch Bishop's House,<br>Satya Nagar, Bhubaneswar, Odisha 751007</p>
+          <p><a href="https://mlmservices.vkservicesenterprise.com" class="hover:underline">mlmservices.vkservicesenterprise.com</a></p>
+        </div>
+      </div>
+    </div>
+
+  </article>
+  </div>
+</main>
+
+<footer class="border-t border-[var(--line)]">
+  <div class="w-full px-8 lg:px-16 py-8 flex flex-col sm:flex-row justify-between items-center gap-3 mono text-[11px] text-[var(--ink-soft)]">
+    <p>© 2025 VK Services Enterprise — VKS Tech Services India Pvt Ltd.</p>
+    <p>effective 2025-09-10</p>
+  </div>
+</footer>
+
+<script>
+  const nodes = Array.from(document.querySelectorAll('.node'));
+  const sections = nodes.map(n => document.getElementById(n.dataset.target));
+  const progressBar = document.getElementById('mobile-progress');
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      const idx = sections.indexOf(e.target);
+      if (idx === -1) return;
+      if (e.isIntersecting) {
+        nodes.forEach((n, i) => {
+          n.classList.toggle('active', i === idx);
+          n.classList.toggle('passed', i < idx);
+        });
+        progressBar.style.width = (((idx + 1) / sections.length) * 100) + '%';
+      }
+    });
+  }, { rootMargin: '-35% 0px -55% 0px' });
+
+  sections.forEach(s => s && obs.observe(s));
+</script>
+</body>
+</html>

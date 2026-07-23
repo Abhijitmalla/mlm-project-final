@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@source "**/*.html";
+
+@theme {
+  --color-primary: #111827;
+  --color-accent: #F1521E;
+  --color-accentLight: #FF7A45;
+  --color-dark: #111827;
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: Inter, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-sans: Inter, sans-serif;
+
+  --shadow-card: 0 10px 30px -8px rgba(17,24,39,0.12);
+  --shadow-accent-glow: 0 10px 28px -6px rgba(245,158,11,0.45);
+}

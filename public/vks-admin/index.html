@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enquiries — Admin Panel | VK Services Enterprise</title>
+  <link rel="icon" type="image/png" href="./assets/image/VK-Enterprise-Logo.webp">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./../dist/output.css">
+  <script src="../api-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <style>
+    body {
+      background: #0B0D12;
+      color: #E5E7EB;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::-webkit-scrollbar {
+      height: 8px;
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #374151;
+      border-radius: 99px;
+    }
+
+    .copied-flash {
+      animation: flashBg .9s ease;
+    }
+
+    @keyframes flashBg {
+      0% {
+        background-color: #111827;
+        color: #fff;
+      }
+
+      100% {}
+    }
+
+    .row-fade {
+      animation: fadeIn .35s ease both;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(4px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .toast {
+      transition: transform .35s ease, opacity .35s ease;
+    }
+
+    .stat-card {
+      cursor: pointer;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px -8px rgba(0, 0, 0, .5);
+    }
+
+    .stat-card.active {
+      outline: 2px solid currentColor;
+      outline-offset: 2px;
+    }
+
+    select option {
+      background-color: #1f2937;
+      color: #f3f4f6;
+    }
+
+    select option:checked,
+    select option:hover,
+    select option:focus {
+      background-color: #374151;
+      color: #ffffff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Login Overlay -->
+  <div id="loginOverlay"
+    class="fixed inset-0 z-[100] bg-black/50 backdrop-blur-md flex items-center justify-center px-4 py-10 transition-opacity duration-500">
+    <div class="relative z-10 w-full max-w-md">
+      <!-- Brand -->
+      <div class="text-center mb-7">
+        <div class="flex items-center justify-center gap-1.5 mb-3">
+          <span class="w-2 h-2 rounded-full" style="background:#4F46E5;"></span>
+          <span class="w-2 h-2 rounded-full" style="background:#F97316;"></span>
+          <span class="w-2 h-2 rounded-full" style="background:#8B5CF6;"></span>
+          <span class="w-2 h-2 rounded-full" style="background:#14B8A6;"></span>
+        </div>
+        <div
+          class="inline-flex items-center gap-2.5 font-mono text-xs font-semibold tracking-[0.1em] uppercase text-[#8B5CF6] mb-3">
+          <span class="w-5 h-px" style="background:linear-gradient(90deg,#4F46E5,#14B8A6);"></span> Admin Panel <span
+            class="w-5 h-px" style="background:linear-gradient(90deg,#14B8A6,#4F46E5);"></span>
+        </div>
+        <h1 class="font-display font-extrabold text-2xl sm:text-3xl text-white tracking-tight">VK SERVICES ENTERPRISE
+        </h1>
+        <p class="text-sm text-gray-300 mt-2">Sign in to manage enquiries, orders &amp; content</p>
+      </div>
+
+      <!-- Login card -->
+      <div class="bg-white rounded-2xl overflow-hidden p-8 relative pt-9"
+        style="box-shadow:0 25px 60px -15px rgba(0,0,0,0.5), 0 0 0 1px rgba(139,92,246,0.06);">
+        <div class="h-[4px] w-full absolute top-0 left-0"
+          style="background-image:linear-gradient(90deg,#4F46E5,#F97316,#8B5CF6,#14B8A6,#4F46E5);background-size:300% 100%;animation:shimmerBarLogin 5s linear infinite;">
+        </div>
+        <style>
+          @keyframes shimmerBarLogin {
+            0% {
+              background-position: 0% 0
+            }
+
+            100% {
+              background-position: 200% 0
+            }
+          }
+        </style>
+
+        <div class="text-xs font-bold tracking-widest text-[#4F46E5] uppercase mb-2 font-mono">Restricted Access</div>
+        <h2 class="text-2xl font-bold text-[#111827] mb-1 font-display">Admin Login</h2>
+        <p class="text-sm text-gray-500 mb-6">Enter your credentials to access the dashboard.</p>
+
+        <form id="adminLoginForm" class="space-y-4" novalidate>
+          <div class="field" id="usernameField">
+            <label class="block text-xs font-semibold text-gray-600 mb-1" for="username">Username or Email</label>
+            <div class="relative">
+              <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400">
+                <svg class="w-4.5 h-4.5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+              </span>
+              <input type="text" id="username" autocomplete="username"
+                class="w-full bg-gray-50 border border-gray-200 rounded-lg pl-10 pr-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#4F46E5] focus:border-transparent transition-all"
+                placeholder="admin@vkservices.com">
+            </div>
+            <div class="err hidden text-red-500 text-xs mt-1">Please enter your username or email.</div>
+          </div>
+
+          <div class="field" id="passwordField">
+            <div class="flex items-center justify-between mb-1">
+              <label class="block text-xs font-semibold text-gray-600" for="password">Password</label>
+              <a href="#" class="text-xs font-semibold text-[#4F46E5] hover:text-[#8B5CF6] transition-colors">Forgot
+                password?</a>
+            </div>
+            <div class="relative">
+              <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400">
+                <svg class="w-4.5 h-4.5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2">
+                  <rect x="3" y="11" width="18" height="10" rx="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+              </span>
+              <input type="password" id="password" autocomplete="current-password"
+                class="w-full bg-gray-50 border border-gray-200 rounded-lg pl-10 pr-11 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#4F46E5] focus:border-transparent transition-all"
+                placeholder="Enter your password">
+              <button type="button" id="togglePassword" aria-label="Show password"
+                class="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-[#4F46E5] transition-colors">
+                <svg id="eyeIcon" class="w-4.5 h-4.5" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2">
+                  <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+              </button>
+            </div>
+            <div class="err hidden text-red-500 text-xs mt-1">Please enter your password.</div>
+          </div>
+
+          <div class="flex items-center justify-between pt-1">
+            <label class="flex items-center gap-2 text-sm text-gray-600 cursor-pointer select-none">
+              <input type="checkbox" id="rememberMe"
+                class="w-4 h-4 rounded border-gray-300 text-[#4F46E5] focus:ring-[#4F46E5]">
+              Remember me
+            </label>
+          </div>
+
+          <div id="loginError"
+            class="hidden text-red-500 text-xs bg-red-50 border border-red-100 rounded-lg px-3.5 py-2.5">
+            Invalid username or password. Please try again.
+          </div>
+
+          <button type="submit" id="loginSubmitBtn"
+            class="w-full text-white font-semibold py-3.5 rounded-lg transition-colors mt-2 shadow-md"
+            style="background-image:linear-gradient(135deg,#4F46E5,#8B5CF6);box-shadow:0 8px 24px -6px rgba(79,70,229,0.5);">
+            Sign In
+          </button>
+        </form>
+
+        <div id="loginSuccessView" class="hidden text-center mt-2">
+          <div class="w-16 h-16 mx-auto bg-green-50 rounded-full flex items-center justify-center mb-4 text-green-500">
+            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+          <h2 class="text-xl font-bold text-[#111827] mb-1 font-display">Signed in successfully</h2>
+          <p class="text-sm text-gray-500">Redirecting to your dashboard&hellip;</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="min-h-screen">
+
+    <!-- ============ MAIN ============ -->
+    <div class=" mx-auto">
+
+      <!-- Topbar -->
+      <header
+        class="sticky top-0 z-20 bg-gray-900/90 backdrop-blur border-b border-gray-800 px-4 sm:px-7 py-4 flex justify-between gap-4">
+        <div class="flex flex-col gap-4 pt-1">
+          <div>
+            <h1 class="font-body font-bold text-lg sm:text-xl text-white">Admin Panel</h1>
+            <p class="text-xs text-gray-500 mt-0.5">VK Services Enterprise</p>
+          </div>
+
+          <!-- Tab switcher -->
+          <div class="flex items-center bg-gray-800 border border-gray-700 rounded-full p-1 gap-1 w-fit shadow-sm">
+            <a href="enquiries.html"
+              class="flex items-center gap-2 px-5 py-2 rounded-full text-sm font-bold bg-purple-600 text-white shadow-md transition-all">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16v4H4zM4 12h16M4 16h16M4 20h10" />
+              </svg>
+              Enquiries
+            </a>
+            <a href="leads.html"
+              class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-gray-400 hover:text-gray-100 hover:bg-gray-700 transition-all">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+              Leads
+            </a>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-end gap-3 pt-1">
+          <div class="flex items-center gap-2.5">
+            <span
+              class="hidden sm:inline-flex items-center gap-1.5 bg-green-900/30 text-green-400 text-xs font-semibold px-3 py-1.5 rounded-full border border-green-800">
+              <span class="w-2 h-2 rounded-full bg-green-500"></span> Live
+            </span>
+            <div class="relative">
+              <button id="userMenuBtn"
+                class="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-full pl-1 pr-3 py-1 transition-all focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-sm">
+                <div
+                  class="w-7 h-7 rounded-full bg-indigo-600 text-white flex items-center justify-center font-body font-bold text-[10px]">
+                  VK</div>
+                <span class="text-sm font-semibold text-gray-200">Admin</span>
+                <svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+
+              <!-- Dropdown Menu -->
+              <div id="userDropdown"
+                class="hidden absolute right-0 mt-2 w-48 bg-gray-800 border border-gray-700 rounded-xl shadow-lg py-1.5 z-50">
+                <button id="openChangePasswordBtn"
+                  class="w-full text-left px-4 py-2 text-sm text-gray-200 hover:bg-gray-700 hover:text-white transition-colors flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z">
+                    </path>
+                  </svg>
+                  Change Password
+                </button>
+                <div class="h-px bg-gray-700 my-1"></div>
+                <button id="logoutBtn"
+                  class="w-full text-left px-4 py-2 text-sm text-gray-200 hover:bg-gray-700 hover:text-white transition-colors flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1">
+                    </path>
+                  </svg>
+                  Sign Out
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="p-4 sm:p-7">
+
+        <!-- Stat cards -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3.5 mb-6" id="statCards"></div>
+
+        <!-- Active filter pill -->
+        <div id="activeFilterPill" class="hidden mb-4 flex items-center gap-2">
+          <span
+            class="inline-flex items-center gap-2 bg-blue-900/30 text-blue-300 text-xs font-semibold px-3 py-1.5 rounded-full border border-blue-800">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z" />
+            </svg>
+            <span id="activeFilterLabel">Filtered</span>
+          </span>
+          <button id="clearFilterBtn"
+            class="text-xs text-gray-500 hover:text-gray-300 underline transition-colors">Clear filter</button>
+        </div>
+
+        <!-- Toolbar -->
+        <div
+          class="bg-gradient-to-r from-indigo-950/60 via-purple-950/50 to-fuchsia-950/40 border border-purple-800/40 rounded-2xl shadow-card p-4 mb-5 flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
+          <div class="relative w-full md:max-w-sm">
+            <svg class="w-4 h-4 text-fuchsia-400 absolute left-4 top-1/2 -translate-y-1/2" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="7" />
+              <path d="M21 21l-3.5-3.5" />
+            </svg>
+            <input id="searchInput" type="text" placeholder="Search name, mobile or email..."
+              class="w-full bg-gray-900/80 border-2 border-purple-600/50 rounded-full pl-10 pr-4 py-2.5 text-sm text-gray-100 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 focus:border-fuchsia-500 transition-all">
+          </div>
+          <div class="flex items-center gap-2.5 flex-wrap">
+            <select id="serviceFilter"
+              class="bg-gray-900/80 border border-indigo-600/50 rounded-full px-4 py-2.5 text-sm text-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+              <option value="" style="background:#1f2937;color:#f3f4f6;">All Services</option>
+            </select>
+            <select id="statusFilter"
+              class="bg-gray-900/80 border border-teal-600/50 rounded-full px-4 py-2.5 text-sm text-teal-200 focus:outline-none focus:ring-2 focus:ring-teal-500">
+              <option value="" style="background:#1f2937;color:#f3f4f6;">All Status</option>
+              <option value="New" style="background:#1f2937;color:#f3f4f6;">New</option>
+              <option value="Contacted" style="background:#1f2937;color:#f3f4f6;">Contacted</option>
+              <option value="Not Interested" style="background:#1f2937;color:#f3f4f6;">Not Interested</option>
+            </select>
+
+          </div>
+        </div>
+
+        <!-- ===== Desktop table ===== -->
+        <div class="hidden md:block bg-gray-800 border border-gray-700 rounded-2xl shadow-card overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="bg-gradient-to-r from-indigo-700 via-purple-700 to-fuchsia-700 text-left">
+                  <th class="px-5 py-4 font-bold text-[12px] uppercase tracking-wider text-white w-14">Sl No.
+                  </th>
+                  <th class="px-5 py-4 font-bold text-[12px] uppercase tracking-wider text-white">Name</th>
+                  <th class="px-5 py-4 font-bold text-[12px] uppercase tracking-wider text-white">Mobile No.</th>
+                  <th class="px-5 py-4 font-bold text-[12px] uppercase tracking-wider text-white">Email</th>
+                  <th class="px-5 py-4 font-bold text-[12px] uppercase tracking-wider text-white">Service Name
+                  </th>
+                  <th class="px-5 py-4 font-bold text-[12px] uppercase tracking-wider text-white">Status</th>
+                  <th class="px-5 py-4 font-bold text-[12px] uppercase tracking-wider text-white text-center">
+                    Action</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody" class="divide-y divide-gray-700"></tbody>
+            </table>
+          </div>
+          <div id="emptyStateDesktop" class="hidden py-16 text-center text-gray-400 text-sm">No enquiries match your
+            search.</div>
+        </div>
+
+        <!-- ===== Mobile cards ===== -->
+        <div id="cardList" class="md:hidden flex flex-col gap-3.5"></div>
+        <div id="emptyStateMobile" class="hidden md:hidden py-16 text-center text-gray-400 text-sm">No enquiries match
+          your search.</div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Change Password Modal -->
+  <div id="changePasswordModal"
+    class="fixed inset-0 z-[100] hidden bg-black/50 backdrop-blur-sm flex items-center justify-center px-4 py-10 transition-opacity duration-300">
+    <div class="relative z-10 w-full max-w-sm bg-gray-800 rounded-2xl p-6 shadow-2xl border border-gray-700">
+      <h3 class="text-xl font-bold mb-5 text-white font-display">Change Password</h3>
+      <form id="changePasswordForm" class="space-y-4">
+        <div>
+          <label class="block text-sm font-semibold text-gray-400 mb-1">Old Password</label>
+          <div class="relative">
+            <input type="password" id="oldPassword" autocomplete="current-password"
+              class="w-full bg-gray-900 border border-gray-600 rounded-lg pl-3 pr-10 py-2.5 text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              required>
+            <button type="button" id="toggleOldPassword" aria-label="Show password"
+              class="absolute top-1/2 -translate-y-1/2 text-gray-400 hover:text-indigo-400 transition-colors"
+              style="right: 12px;">
+              <svg id="eyeIconOld" class="w-4.5 h-4.5" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-gray-400 mb-1">New Password</label>
+          <div class="relative">
+            <input type="password" id="newPassword" autocomplete="new-password"
+              class="w-full bg-gray-900 border border-gray-600 rounded-lg pl-3 pr-10 py-2.5 text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              required>
+            <button type="button" id="toggleNewPassword" aria-label="Show password"
+              class="absolute top-1/2 -translate-y-1/2 text-gray-400 hover:text-indigo-400 transition-colors"
+              style="right: 12px;">
+              <svg id="eyeIconNew" class="w-4.5 h-4.5" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-gray-400 mb-1">Confirm Password</label>
+          <div class="relative">
+            <input type="password" id="confirmPassword" autocomplete="new-password"
+              class="w-full bg-gray-900 border border-gray-600 rounded-lg pl-3 pr-10 py-2.5 text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              required>
+            <button type="button" id="toggleConfirmPassword" aria-label="Show password"
+              class="absolute top-1/2 -translate-y-1/2 text-gray-400 hover:text-indigo-400 transition-colors"
+              style="right: 12px;">
+              <svg id="eyeIconConfirm" class="w-4.5 h-4.5" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div id="changePasswordError"
+          class="hidden text-red-400 text-sm bg-red-900/30 border border-red-800 rounded px-3 py-2"></div>
+        <div class="flex justify-end gap-3 mt-6 pt-2">
+          <button type="button" id="closeChangePasswordModal"
+            class="px-4 py-2.5 text-sm font-semibold text-gray-300 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">Cancel</button>
+          <button type="submit" id="submitChangePasswordBtn"
+            class="px-4 py-2.5 text-sm font-semibold text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 transition-colors shadow-md">Change
+            Password</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast"
+    class="toast fixed bottom-6 left-1/2 -translate-x-1/2 translate-y-20 opacity-0 bg-gray-800 text-white text-sm font-semibold px-5 py-3 rounded-full shadow-2xl z-50 flex items-center gap-2 border border-gray-700">
+    <svg class="w-4 h-4 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M5 13l4 4L19 7" />
+    </svg>
+    <span id="toastText">Copied to clipboard</span>
+  </div>
+
+  <script>
+    /* ============ DATA STATE ============ */
+    let enquiries = [];
+
+    async function fetchEnquiries() {
+      const token = sessionStorage.getItem('adminToken');
+      if (!token) return;
+
+      try {
+        const res = await fetch(`https://vkservicesenterprise.in/api/enquiry/all`, {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
+        const data = await res.json();
+        if (data.success) {
+          enquiries = data.data.map(e => ({
+            id: e.id,
+            name: e.name,
+            mobile: e.mobile,
+            email: e.email,
+            source: e.source || '',
+            service: e.service_name || e.service,
+            status: e.status || "New",
+            createdAt: e.created_at
+          }));
+
+          document.getElementById('serviceFilter').innerHTML = '<option value="" style="background:#1f2937;color:#f3f4f6;">All Services</option>';
+          populateServiceFilter();
+          fetchArchive(false);
+          fetchStats();
+          fetchLeadsCount();
+          renderAll();
+        } else {
+          console.error("Failed to fetch enquiries:", data.message);
+        }
+      } catch (err) {
+        console.error("Error fetching enquiries:", err);
+      }
+    }
+
+    const serviceIcons = {
+      "MLM Plan Video Making": `<rect x="2" y="5" width="20" height="14" rx="2"/><path d="M10 9.5v5l4-2.5z"/>`,
+      "Customized MLM Software Development": `<rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 22h8M12 18v4"/>`,
+      "MLM Plan PDF Making": `<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15h6M9 11h2"/>`,
+      "Latest MLM Database": `<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3"/>`,
+      "Result Based Promotion": `<path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/>`,
+      "MLM Leader Website": `<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/>`,
+    };
+
+    const palette = [
+      { bg: 'bg-blue-500', chip: 'bg-blue-50 text-blue-600', border: 'border-blue-500', text: 'text-blue-400' },
+      { bg: 'bg-orange-500', chip: 'bg-orange-50 text-orange-600', border: 'border-orange-500', text: 'text-orange-400' },
+      { bg: 'bg-purple-500', chip: 'bg-purple-50 text-purple-600', border: 'border-purple-500', text: 'text-purple-400' },
+      { bg: 'bg-teal-500', chip: 'bg-teal-50 text-teal-600', border: 'border-teal-500', text: 'text-teal-400' },
+    ];
+    function avatarColor(i) { return palette[i % palette.length].bg; }
+    function avatarBorder(i) { return palette[i % palette.length].border; }
+    function avatarText(i) { return palette[i % palette.length].text; }
+
+    let activeSearch = "";
+    let activeService = "";
+    let activeStatus = "";
+    let archivedEnquiries = [];
+    let viewMode = 'active'; // 'active' | 'archive'
+
+    /* ============ ICONS ============ */
+    const waSvg = `<svg viewBox="0 0 448 512" class="w-6 h-6 fill-current"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>`;
+    const tgSvg = `<svg viewBox="0 0 24 24" class="w-6 h-6 fill-current"><path d="M22 4.3 18.8 20c-.2 1-.9 1.2-1.8.8l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.3-5 9.3-8.4c.4-.4-.1-.6-.6-.2L7 13.2 2.1 11.6c-1-.3-1-1 .2-1.5L20.6 2.9c.9-.3 1.7.2 1.4 1.4z"/></svg>`;
+    const callSvg = `<svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`;
+    const copySvg = `<svg viewBox="0 0 24 24" class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`;
+    const xSvg = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>`;
+
+    function toast(msg) {
+      const t = document.getElementById('toast');
+      document.getElementById('toastText').textContent = msg;
+      t.style.transform = 'translate(-50%,0)';
+      t.style.opacity = '1';
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(() => { t.style.transform = 'translate(-50%,5rem)'; t.style.opacity = '0'; }, 1600);
+    }
+
+    async function copyText(text, label) {
+      try { await navigator.clipboard.writeText(text); } catch (e) { }
+      toast(label + ' copied');
+    }
+
+    function sanitizeMobile(raw) {
+      // Remove ALL non-digit characters: spaces, dashes, +, brackets, etc.
+      let digits = String(raw).replace(/\D/g, '');
+      // Remove leading 0 (e.g. 0XXXXXXXXXX → XXXXXXXXXX)
+      if (digits.startsWith('0')) digits = digits.slice(1);
+      // Remove leading 91 country code if present (e.g. 91XXXXXXXXXX → XXXXXXXXXX)
+      if (digits.length === 12 && digits.startsWith('91')) digits = digits.slice(2);
+      // Final result should be 10 digits
+      return digits;
+    }
+    function whatsappUrl(mobile) {
+      const mob = sanitizeMobile(mobile);
+      return `https://wa.me/91${mob}`;
+    }
+
+    function actionIcons(e, size) {
+      const dim = size || 'w-12 h-12';
+      const mob = sanitizeMobile(e.mobile);
+      return `
+   <a href="https://web.whatsapp.com/send?phone=91${sanitizeMobile(e.mobile)}"
+   target="_blank"
+   rel="noopener noreferrer"
+   title="WhatsApp"
+   class="${dim} rounded-full bg-green-900/30 text-green-400 flex items-center justify-center hover:bg-green-500 hover:text-white transition-colors">
+   ${waSvg}
+</a>
+    <a href="https://t.me/${mob}" target="_blank" rel="noopener" title="Telegram"
+       class="${dim} rounded-full bg-sky-900/30 text-sky-400 flex items-center justify-center hover:bg-sky-500 hover:text-white transition-colors">${tgSvg}</a>
+    <a href="tel:+91${mob}" title="Call"
+       class="${dim} rounded-full bg-orange-900/30 text-accentLight flex items-center justify-center hover:bg-accent hover:text-white transition-colors">${callSvg}</a>
+  `;
+    }
+
+    /* "Not interested" cross-mark button: deletes the enquiry (server moves it into the archive table) */
+    function notInterestedBtn(idx, size) {
+      const dim = size || 'w-8 h-8';
+      const iconSize = size === 'w-10 h-10' ? 'w-4 h-4' : 'w-3.5 h-3.5';
+      return `
+    <button data-notinterested="${idx}" title="Mark as not interested (archive)"
+      class="ni-btn ${dim} rounded-full bg-gray-700 text-gray-400 hover:bg-red-500 hover:text-white flex items-center justify-center transition-colors">
+      <span class="${iconSize}">${xSvg}</span>
+    </button>
+  `;
+    }
+
+    /* ============ RENDER STAT CARDS ============ */
+    async function fetchStats() {
+
+      const token = sessionStorage.getItem('adminToken');
+
+      const res = await fetch(`https://vkservicesenterprise.in/api/enquiry/stats`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        renderStats(data.data);
+      }
+
+    }
+
+    let totalLeadsCount = 0;
+    async function fetchLeadsCount() {
+      const token = sessionStorage.getItem('adminToken');
+      if (!token) return;
+      try {
+        const res = await fetch(`https://vkservicesenterprise.in/api/leads/all`, {
+          headers: { 'Authorization': `Bearer ${token}` }
+        });
+        const data = await res.json();
+        if (data.success) {
+          totalLeadsCount = data.data.length;
+          renderStats();
+        }
+      } catch (err) {
+        console.error('Error fetching leads:', err);
+      }
+    }
+
+    /* ============ ARCHIVE (NOT INTERESTED) ============ */
+    async function fetchArchive(renderAfter = true) {
+      const token = sessionStorage.getItem('adminToken');
+      if (!token) return;
+
+      try {
+        const res = await fetch(`https://vkservicesenterprise.in/api/enquiry/archive`, {
+          headers: { 'Authorization': `Bearer ${token}` }
+        });
+        const data = await res.json();
+        if (data.success) {
+          archivedEnquiries = data.data.map(e => ({
+            id: e.id,
+            name: e.name,
+            mobile: e.mobile,
+            email: e.email,
+            source: e.source || '',
+            service: e.service_name || e.service,
+            status: 'Not Interested',
+            createdAt: e.archived_at || e.created_at
+          }));
+          if (renderAfter) {
+            renderStats();
+            renderAll();
+          }
+        } else {
+          console.error('Failed to fetch archive:', data.message);
+        }
+      } catch (err) {
+        console.error('Error fetching archive:', err);
+      }
+    }
+
+
+    let currentStats = null;
+    function renderStats(stats) {
+      if (stats) currentStats = stats;
+      if (!currentStats) return;
+
+      const notInterestedCount = archivedEnquiries.length;
+      const totalEnquiriesEver = (currentStats.total || 0) + notInterestedCount + totalLeadsCount;
+      let conversionRate = 0;
+      if (totalEnquiriesEver > 0) {
+        conversionRate = ((totalLeadsCount / totalEnquiriesEver) * 100).toFixed(1);
+      }
+
+      const cards = [
+        {
+          key: 'total',
+          label: "TOTAL ENQUIRIES",
+          value: currentStats.total || 0,
+          icon: `<path d="M4 4h16v4H4zM4 12h16M4 16h16M4 20h10"/>`,
+          gradient: 'from-blue-600 via-indigo-600 to-indigo-800'
+        },
+        {
+          key: 'New',
+          label: "NEW / PENDING",
+          value: currentStats.pending || 0,
+          icon: `<path d="M7 14l3-3 3 3 5-6"/>`,
+          gradient: 'from-orange-500 via-amber-600 to-orange-700'
+        },
+        {
+          key: 'Contacted',
+          label: "CONTACTED",
+          value: currentStats.contacted || 0,
+          icon: `<path d="M5 13l4 4L19 7"/>`,
+          gradient: 'from-emerald-500 via-teal-600 to-teal-800'
+        },
+        {
+          key: 'Not Interested',
+          label: "NOT INTERESTED",
+          value: notInterestedCount || 0,
+          icon: `<path d="M18 6L6 18M6 6l12 12"/>`,
+          gradient: 'from-rose-600 via-red-600 to-red-800'
+        },
+        {
+          key: 'conversion',
+          label: "CONVERSION RATE",
+          value: `${conversionRate}%`,
+          icon: `<path d="M23 6l-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/>`,
+          gradient: 'from-cyan-600 via-teal-500 to-emerald-600'
+        },
+        {
+          key: 'today',
+          label: "TODAY'S ENQUIRIES",
+          value: currentStats.today || 0,
+          icon: `<circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 3"/>`,
+          gradient: 'from-purple-600 via-fuchsia-600 to-purple-800'
+        }
+      ];
+
+      document.getElementById("statCards").innerHTML = cards.map(s => {
+        const isActive = activeCardFilter === s.key;
+
+        const activeCls = isActive
+          ? `ring-2 ring-white/80 shadow-lg scale-[1.02]`
+          : "ring-1 ring-white/10";
+
+        const clickHint = isActive
+          ? "opacity-100"
+          : "opacity-0 group-hover:opacity-70";
+        return `
+       <div data-card-key="${s.key}" class="stat-card group bg-gradient-to-br ${s.gradient} rounded-2xl shadow-card p-5 ${activeCls} relative select-none overflow-hidden">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-sm font-extrabold tracking-wide text-white/90 uppercase">${s.label}</span>
+            <div class="w-9 h-9 rounded-lg bg-white/20 text-white flex items-center justify-center shrink-0 backdrop-blur-sm">
+              <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">${s.icon}</svg>
+            </div>
+          </div>
+         <div class="font-body font-extrabold text-3xl text-white">${s.value}</div>
+          <div class="mt-2 text-[10px] font-semibold text-white/80 ${clickHint} transition-opacity flex items-center gap-1">
+            <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/></svg>
+            ${isActive ? 'Click to clear' : 'Click to filter'}
+          </div>
+        </div>
+        `;
+      }).join("");
+    }
+
+    /* ============ POPULATE SERVICE FILTER ============ */
+    function populateServiceFilter() {
+      const services = [...new Set(enquiries.map(e => e.service))];
+      const sel = document.getElementById('serviceFilter');
+      services.forEach(s => {
+        const opt = document.createElement('option');
+        opt.value = s; opt.textContent = s;
+        opt.style.background = '#1f2937';
+        opt.style.color = '#f3f4f6';
+        sel.appendChild(opt);
+      });
+    }
+
+    /* ============ STAT CARD CLICK FILTER ============ */
+    let activeCardFilter = '';
+
+    document.getElementById('statCards').addEventListener('click', (e) => {
+      const card = e.target.closest('[data-card-key]');
+      if (!card) return;
+      const key = card.dataset.cardKey;
+
+      if (key === 'total') {
+        activeCardFilter = 'total';
+        activeStatus = '';
+        viewMode = 'active';
+        document.getElementById('statusFilter').value = '';
+        hidePill();
+        renderStats();
+        renderAll();
+        return;
+      }
+
+      if (activeCardFilter === key) return; // Do nothing if already selected
+      activeCardFilter = key;
+
+      if (key === 'Not Interested') {
+        viewMode = 'archive';
+        activeStatus = '';
+        document.getElementById('statusFilter').value = 'Not Interested';
+        showPill('Not Interested Enquiries');
+        renderStats();
+        fetchArchive(true);
+        return;
+      }
+
+      viewMode = 'active';
+      if (key === 'New' || key === 'Contacted') {
+        activeStatus = key;
+        document.getElementById('statusFilter').value = key;
+      } else {
+        activeStatus = '';
+        document.getElementById('statusFilter').value = '';
+      }
+      showPill(key === 'today' ? "Today's Enquiries" : key + ' Enquiries');
+
+      renderStats();
+      renderAll();
+    });
+
+    function showPill(label) {
+      const pill = document.getElementById('activeFilterPill');
+      document.getElementById('activeFilterLabel').textContent = 'Showing: ' + label;
+      pill.classList.remove('hidden');
+    }
+    function hidePill() {
+      document.getElementById('activeFilterPill').classList.add('hidden');
+    }
+    document.getElementById('clearFilterBtn').addEventListener('click', () => {
+      activeCardFilter = '';
+      activeStatus = '';
+      viewMode = 'active';
+      document.getElementById('statusFilter').value = '';
+      hidePill();
+      renderStats();
+      renderAll();
+    });
+
+    /* ============ FILTER LOGIC ============ */
+    function getFiltered() {
+      const source = viewMode === 'archive' ? archivedEnquiries : enquiries;
+      return source
+        .map((e, i) => ({ ...e, sl: i + 1 }))
+        .filter(e => {
+          const q = activeSearch.toLowerCase();
+          const matchesSearch = !q || e.name.toLowerCase().includes(q) || e.mobile.includes(q) || e.email.toLowerCase().includes(q);
+          const matchesService = !activeService || e.service === activeService;
+          const matchesStatus = viewMode === 'archive' || !activeStatus || e.status === activeStatus;
+          const matchesToday = activeCardFilter !== 'today' || (e.createdAt && new Date(e.createdAt).toDateString() === new Date().toDateString());
+          return matchesSearch && matchesService && matchesStatus && matchesToday;
+        });
+    }
+
+    function statusBadge(status) {
+      if (status === 'Contacted') {
+        return `<span class="inline-flex items-center bg-blue-900/30 text-blue-300 text-[12px] font-semibold px-3 py-1 rounded-md">Contacted</span>`;
+      }
+      if (status === 'Not Interested') {
+        return `<span class="inline-flex items-center bg-red-900/30 text-red-300 text-[12px] font-semibold px-3 py-1 rounded-md">Not Interested</span>`;
+      }
+      return `<span class="inline-flex items-center bg-orange-900/30 text-accentLight text-[12px] font-semibold px-3 py-1 rounded-md">New</span>`;
+    }
+
+    /* Editable status dropdown shown in the desktop table row */
+    function statusSelectHTML(e) {
+      const cls = e.status === 'Contacted'
+        ? 'bg-emerald-900/40 border-emerald-600 text-emerald-300'
+        : e.status === 'Not Interested'
+          ? 'bg-red-900/40 border-red-600 text-red-300'
+          : 'bg-orange-900/40 border-orange-600 text-orange-300';
+      return `
+    <select
+        class="status-select ${cls} border rounded-md px-2 py-1 text-sm font-semibold"
+        data-id="${e.id}">
+        <option value="New" ${e.status === "New" ? "selected" : ""} style="background:#1f2937;color:#f3f4f6;">New</option>
+        <option value="Contacted" ${e.status === "Contacted" ? "selected" : ""} style="background:#1f2937;color:#f3f4f6;">Contacted</option>
+       
+    </select>
+  `;
+    }
+
+    /* ============ RENDER TABLE (desktop) ============ */
+    function renderTable() {
+      const rows = getFiltered();
+      const body = document.getElementById('tableBody');
+      document.getElementById('emptyStateDesktop').classList.toggle('hidden', rows.length !== 0);
+
+      body.innerHTML = rows.map(e => {
+        const statusCell = viewMode === 'archive'
+          ? `<span class="inline-flex items-center bg-red-900/40 border border-red-600 text-red-300 rounded-md px-2 py-1 text-sm font-semibold">Not Interested</span>`
+          : statusSelectHTML(e);
+
+        const actionCell = viewMode === 'archive'
+          ? `<div class="flex items-center justify-center gap-1.5 action-icons-container">${actionIcons(e, 'w-8 h-8')}</div>`
+          : `<div class="flex items-center justify-center gap-1.5 action-icons-container">
+              ${actionIcons(e, 'w-8 h-8')}
+              ${notInterestedBtn(e.sl - 1, 'w-8 h-8')}
+              <button data-connect="${e.sl - 1}" title="Convert to lead"
+                class="connect-btn w-8 h-8 rounded-full ${e.status === 'Contacted' ? 'bg-green-500 text-white' : 'bg-gray-700 text-gray-400 hover:bg-green-900/40 hover:text-green-400'} flex items-center justify-center transition-colors">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
+              </button>
+            </div>`;
+
+        return `
+    <tr class="row-fade border-l-4 ${avatarBorder(e.sl - 1)} odd:bg-gray-800 even:bg-gray-800/40 hover:bg-purple-900/20 transition-colors" data-idx="${e.sl - 1}">
+      <td class="px-5 py-4 font-mono text-sm font-bold align-middle ${avatarText(e.sl - 1)}">${String(e.sl).padStart(2, '0')}</td>
+      <td class="px-5 py-4 align-middle">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-full ${avatarColor(e.sl - 1)} text-white flex items-center justify-center font-display font-bold text-xs shrink-0">${e.name.split(' ').map(w => w[0]).slice(0, 2).join('')}</div>
+          <span class="font-semibold text-gray-100 text-base">${e.name}</span>
+        </div>
+      </td>
+      <td class="px-5 py-4 align-middle">
+        <div class="flex items-center gap-2">
+          <span class="font-mono text-sm font-semibold text-cyan-300">${e.mobile}</span>
+          <button data-copy="${e.mobile}" data-label="Mobile number" class="copy-btn w-6 h-6 rounded-md bg-gray-700 text-gray-300 hover:bg-accent hover:text-white flex items-center justify-center transition-colors" title="Copy mobile number">${copySvg}</button>
+        </div>
+      </td>
+      <td class="px-5 py-4 align-middle">
+        <div class="flex items-center gap-2">
+          <span class="text-sm text-sky-300 truncate max-w-[160px]" title="${e.email}">${e.email}</span>
+          <button data-copy="${e.email}" data-label="Email" class="copy-btn w-6 h-6 rounded-md bg-gray-700 text-gray-300 hover:bg-accent hover:text-white flex items-center justify-center transition-colors shrink-0" title="Copy email">${copySvg}</button>
+        </div>
+      </td>
+      <td class="px-5 py-4 align-middle">
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-amber-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">${serviceIcons[e.service] || ''}</svg>
+          <span class="text-sm text-amber-200 font-medium">${e.service}</span>
+        </div>
+      </td>
+      <td class="px-5 py-4 align-middle">${statusCell}</td>
+      <td class="px-5 py-4 align-middle">${actionCell}</td>
+    </tr>
+  `;
+      }).join('');
+    }
+
+    /* ============ RENDER CARDS (mobile) ============ */
+    function renderCards() {
+      const rows = getFiltered();
+      const list = document.getElementById('cardList');
+      document.getElementById('emptyStateMobile').classList.toggle('hidden', rows.length !== 0);
+
+      list.innerHTML = rows.map(e => {
+        const actionRow = viewMode === 'archive'
+          ? `<div class="flex items-center gap-2 action-icons-container">${actionIcons(e, 'w-12 h-12')}</div>`
+          : `<div class="flex items-center gap-2 action-icons-container">
+              ${actionIcons(e, 'w-12 h-12')}
+              ${notInterestedBtn(e.sl - 1, 'w-10 h-10')}
+              <button data-connect="${e.sl - 1}" title="Convert to lead"
+                class="connect-btn w-10 h-10 rounded-full ${e.status === 'Contacted' ? 'bg-green-500 text-white' : 'bg-gray-700 text-gray-400 hover:bg-green-900/40 hover:text-green-400'} flex items-center justify-center transition-colors">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
+              </button>
+            </div>`;
+
+        return `
+    <div class="row-fade bg-gray-800 border-l-4 ${avatarBorder(e.sl - 1)} border-t border-r border-b border-gray-700 rounded-2xl shadow-card p-4">
+      <div class="flex items-start justify-between gap-3 mb-3">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-full ${avatarColor(e.sl - 1)} text-white flex items-center justify-center font-display font-bold text-xs shrink-0">${e.name.split(' ').map(w => w[0]).slice(0, 2).join('')}</div>
+          <div>
+            <div class="font-semibold text-gray-100 text-sm leading-tight">${e.name}</div>
+            <div class="text-[11px] ${avatarText(e.sl - 1)} font-mono mt-0.5">Sl. ${String(e.sl).padStart(2, '0')}</div>
+          </div>
+        </div>
+        ${statusBadge(e.status)}
+      </div>
+
+      <div class="space-y-2 mb-3.5">
+        <div class="flex items-center justify-between bg-gray-900 rounded-lg px-3 py-2">
+          <span class="font-mono text-[13px] text-cyan-300">${e.mobile}</span>
+          <button data-copy="${e.mobile}" data-label="Mobile number" class="copy-btn w-6 h-6 rounded-md bg-gray-800 border border-gray-700 text-gray-300 hover:bg-accent hover:text-white flex items-center justify-center transition-colors">${copySvg}</button>
+        </div>
+        <div class="flex items-center justify-between bg-gray-900 rounded-lg px-3 py-2">
+          <span class="text-[13px] text-sky-300 truncate max-w-[190px]">${e.email}</span>
+          <button data-copy="${e.email}" data-label="Email" class="copy-btn w-6 h-6 rounded-md bg-gray-800 border border-gray-700 text-gray-300 hover:bg-accent hover:text-white flex items-center justify-center transition-colors shrink-0">${copySvg}</button>
+        </div>
+        <div class="flex items-center gap-2 px-1">
+          <svg class="w-4 h-4 text-amber-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">${serviceIcons[e.service] || ''}</svg>
+          <span class="text-[13px] text-amber-200">${e.service}</span>
+        </div>
+      </div>
+
+      ${actionRow}
+    </div>
+  `;
+      }).join('');
+    }
+
+    function renderAll() { renderTable(); renderCards(); }
+
+    /* ============ EVENTS ============ */
+    document.addEventListener('click', (e) => {
+      const copyBtn = e.target.closest('.copy-btn');
+      if (copyBtn) {
+        copyText(copyBtn.dataset.copy, copyBtn.dataset.label);
+        return;
+      }
+
+      const niBtn = e.target.closest('.ni-btn');
+      if (niBtn) {
+        const idx = Number(niBtn.dataset.notinterested);
+        const enq = enquiries[idx];
+        const token = sessionStorage.getItem('adminToken');
+        if (!token || !enq) return;
+
+        niBtn.disabled = true;
+
+        fetch(`https://vkservicesenterprise.in/api/enquiry/delete/${enq.id}`, {
+          method: 'DELETE',
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+          }
+        })
+          .then(res => res.json())
+          .then(data => {
+            niBtn.disabled = false;
+            if (data.success) {
+              toast(`${enq.name.split(' ')[0]} marked as not interested & archived`);
+              fetchEnquiries();
+              fetchArchive(false);
+            } else {
+              toast(data.message || 'Failed to archive enquiry');
+            }
+          })
+          .catch(err => {
+            niBtn.disabled = false;
+            console.error(err);
+            toast('Error occurred');
+          });
+        return;
+      }
+
+      const connectBtn = e.target.closest('.connect-btn');
+      if (connectBtn) {
+        const idx = Number(connectBtn.dataset.connect);
+        const enq = enquiries[idx];
+        const token = sessionStorage.getItem('adminToken');
+        if (!token) return;
+
+        if (enq.status !== 'Contacted') {
+            Swal.fire({
+                icon: 'info',
+                title: 'Action Required',
+                text: 'If status is contacted then only it will go to lead',
+                confirmButtonColor: '#3b82f6'
+            });
+            return;
+        }
+
+        connectBtn.disabled = true;
+
+        fetch(`https://vkservicesenterprise.in/api/leads/convert/${enq.id}`, {
+            method: "POST",
+            headers: {
+                "Authorization": `Bearer ${token}`,
+                "Content-Type": "application/json"
+            }
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.success) {
+                toast('Enquiry converted to lead!');
+                fetchEnquiries();
+            } else {
+                toast(data.message || 'Failed to convert');
+                connectBtn.disabled = false;
+            }
+        })
+        .catch(err => {
+            connectBtn.disabled = false;
+            console.error(err);
+            toast("Error occurred");
+        });
+      }
+    });
+
+
+    document.addEventListener("change", async (e) => {
+
+      if (!e.target.classList.contains("status-select")) return;
+
+      const id = e.target.dataset.id;
+      const status = e.target.value;
+      const token = sessionStorage.getItem("adminToken");
+
+      try {
+
+        const res = await fetch(`https://vkservicesenterprise.in/api/enquiry/status/${id}`, {
+          method: "PUT",
+          headers: {
+            "Authorization": `Bearer ${token}`,
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ status })
+        });
+
+        const data = await res.json();
+
+        if (data.success) {
+          toast("Status updated successfully");
+          fetchEnquiries();
+        } else {
+          toast(data.message || "Failed to update status");
+        }
+
+      } catch (err) {
+        console.error(err);
+        toast("Server error");
+      }
+
+    });
+
+
+    document.getElementById('searchInput').addEventListener('input', (e) => { activeSearch = e.target.value; renderAll(); });
+    document.getElementById('serviceFilter').addEventListener('change', (e) => { activeService = e.target.value; renderAll(); });
+    document.getElementById('statusFilter').addEventListener('change', (e) => {
+      activeStatus = e.target.value;
+      activeCardFilter = activeStatus || '';
+
+      if (activeStatus === 'Not Interested') {
+        viewMode = 'archive';
+        showPill('Not Interested Enquiries');
+        renderStats();
+        fetchArchive(true);
+        return;
+      }
+
+      viewMode = 'active';
+      if (!activeStatus) hidePill();
+      else showPill(activeStatus + ' Enquiries');
+      renderStats();
+      renderAll();
+    });
+
+    /* ============ INIT ============ */
+    populateServiceFilter();
+    renderAll();
+
+    /* ============ LOGIN OVERLAY LOGIC ============ */
+    const loginOverlay = document.getElementById('loginOverlay');
+    if (sessionStorage.getItem('adminLoggedIn') !== 'true') {
+      document.body.style.overflow = 'hidden';
+
+      const togglePassword = document.getElementById('togglePassword');
+      const passwordInput = document.getElementById('password');
+      const eyeIcon = document.getElementById('eyeIcon');
+      if (togglePassword) {
+        togglePassword.addEventListener('click', () => {
+          const isHidden = passwordInput.type === 'password';
+          passwordInput.type = isHidden ? 'text' : 'password';
+          eyeIcon.innerHTML = isHidden
+            ? '<path d="M17.94 17.94A10.94 10.94 0 0 1 12 19c-7 0-11-7-11-7a20.6 20.6 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 7 11 7a20.6 20.6 0 0 1-3.44 4.24M1 1l22 22"/><path d="M14.12 14.12A3 3 0 1 1 9.88 9.88"/>'
+            : '<path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/>';
+        });
+      }
+
+      function validateField(id, testFn) {
+        const field = document.getElementById(id + 'Field');
+        if (!field) return true;
+        const input = document.getElementById(id);
+        const err = field.querySelector('.err');
+        const ok = testFn(input.value.trim());
+        if (!ok) {
+          input.classList.add('border-red-500', 'focus:ring-red-500');
+          input.classList.remove('border-gray-200', 'focus:ring-[#4F46E5]');
+          if (err) err.classList.remove('hidden');
+        } else {
+          input.classList.remove('border-red-500', 'focus:ring-red-500');
+          input.classList.add('border-gray-200', 'focus:ring-[#4F46E5]');
+          if (err) err.classList.add('hidden');
+        }
+        return ok;
+      }
+
+      const loginForm = document.getElementById('adminLoginForm');
+      const loginError = document.getElementById('loginError');
+      const loginSuccessView = document.getElementById('loginSuccessView');
+      const loginSubmitBtn = document.getElementById('loginSubmitBtn');
+
+      if (loginForm) {
+        loginForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          loginError.classList.add('hidden');
+          const okUser = validateField('username', v => v.length > 1);
+          const okPass = validateField('password', v => v.length > 0);
+          if (!okUser || !okPass) return;
+
+          const email = document.getElementById('username').value.trim();
+          const password = document.getElementById('password').value.trim();
+
+          loginSubmitBtn.innerText = 'Signing in...';
+          loginSubmitBtn.disabled = true;
+
+          fetch(`https://vkservicesenterprise.in/api/admin/login`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password })
+          })
+            .then(res => res.json())
+            .then(data => {
+              if (data.success || data.token) {
+                loginForm.classList.add('hidden');
+                loginSuccessView.classList.remove('hidden');
+
+                setTimeout(() => {
+                  sessionStorage.setItem('adminLoggedIn', 'true');
+                  if (data.token) {
+                    sessionStorage.setItem('adminToken', data.token);
+                  }
+                  loginOverlay.style.opacity = '0';
+                  setTimeout(() => {
+                    loginOverlay.remove();
+                    document.body.style.overflow = '';
+                    fetchEnquiries();
+                  }, 500);
+                }, 1500);
+              } else {
+                loginError.innerText = data.message || 'Invalid username or password. Please try again.';
+                loginError.classList.remove('hidden');
+                loginSubmitBtn.innerText = 'Sign In';
+                loginSubmitBtn.disabled = false;
+              }
+            })
+            .catch(err => {
+              console.error(err);
+              loginError.innerText = 'An error occurred during login. Please try again.';
+              loginError.classList.remove('hidden');
+              loginSubmitBtn.innerText = 'Sign In';
+              loginSubmitBtn.disabled = false;
+            });
+        });
+
+        ['username', 'password'].forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.addEventListener('input', () => validateField(id, () => true));
+        });
+      }
+    } else {
+      if (loginOverlay) loginOverlay.remove();
+      fetchEnquiries();
+    }
+
+    /* ============ LOGOUT LOGIC ============ */
+    const userMenuBtn = document.getElementById('userMenuBtn');
+    const userDropdown = document.getElementById('userDropdown');
+    const logoutBtn = document.getElementById('logoutBtn');
+
+    if (userMenuBtn && userDropdown) {
+      userMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        userDropdown.classList.toggle('hidden');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!userMenuBtn.contains(e.target) && !userDropdown.contains(e.target)) {
+          userDropdown.classList.add('hidden');
+        }
+      });
+    }
+
+    if (logoutBtn) {
+      logoutBtn.addEventListener('click', () => {
+        sessionStorage.removeItem('adminLoggedIn');
+        sessionStorage.removeItem('adminToken');
+        window.location.href = 'admin-login.html';
+      });
+    }
+
+    /* ============ CHANGE PASSWORD LOGIC ============ */
+    const openChangePasswordBtn = document.getElementById('openChangePasswordBtn');
+    const changePasswordModal = document.getElementById('changePasswordModal');
+    const closeChangePasswordModal = document.getElementById('closeChangePasswordModal');
+    const changePasswordForm = document.getElementById('changePasswordForm');
+    const changePasswordError = document.getElementById('changePasswordError');
+    const submitChangePasswordBtn = document.getElementById('submitChangePasswordBtn');
+
+    // Toggle password visibility
+    const setupPasswordToggle = (btnId, inputId, iconId) => {
+      const btn = document.getElementById(btnId);
+      const input = document.getElementById(inputId);
+      const icon = document.getElementById(iconId);
+      if (btn && input && icon) {
+        btn.addEventListener('click', () => {
+          const isHidden = input.type === 'password';
+          input.type = isHidden ? 'text' : 'password';
+          icon.innerHTML = isHidden
+            ? '<path d="M17.94 17.94A10.94 10.94 0 0 1 12 19c-7 0-11-7-11-7a20.6 20.6 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 7 11 7a20.6 20.6 0 0 1-3.44 4.24M1 1l22 22"/><path d="M14.12 14.12A3 3 0 1 1 9.88 9.88"/>'
+            : '<path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/>';
+        });
+      }
+    };
+
+    setupPasswordToggle('toggleOldPassword', 'oldPassword', 'eyeIconOld');
+    setupPasswordToggle('toggleNewPassword', 'newPassword', 'eyeIconNew');
+    setupPasswordToggle('toggleConfirmPassword', 'confirmPassword', 'eyeIconConfirm');
+
+    if (openChangePasswordBtn && changePasswordModal) {
+      openChangePasswordBtn.addEventListener('click', () => {
+        userDropdown.classList.add('hidden');
+        changePasswordModal.classList.remove('hidden');
+      });
+    }
+
+    if (closeChangePasswordModal) {
+      closeChangePasswordModal.addEventListener('click', () => {
+        changePasswordModal.classList.add('hidden');
+        changePasswordForm.reset();
+        changePasswordError.classList.add('hidden');
+      });
+    }
+
+    if (changePasswordForm) {
+      changePasswordForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        changePasswordError.classList.add('hidden');
+
+        const oldPassword = document.getElementById('oldPassword').value;
+        const newPassword = document.getElementById('newPassword').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+        const token = sessionStorage.getItem('adminToken');
+
+        if (newPassword !== confirmPassword) {
+          changePasswordError.textContent = "New password and confirm password do not match";
+          changePasswordError.classList.remove('hidden');
+          return;
+        }
+
+        submitChangePasswordBtn.disabled = true;
+        submitChangePasswordBtn.textContent = 'Updating...';
+
+        try {
+          const res = await fetch(`https://vkservicesenterprise.in/api/admin/change-password`, {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${token}`,
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ oldPassword, newPassword, confirmPassword })
+          });
+          const data = await res.json();
+
+          if (data.success) {
+            Swal.fire({
+              title: 'Success!',
+              text: 'Password changed successfully.',
+              icon: 'success',
+              confirmButtonColor: '#4F46E5'
+            }).then(() => {
+              sessionStorage.removeItem('adminLoggedIn');
+              sessionStorage.removeItem('adminToken');
+              window.location.href = 'admin-login.html';
+            });
+          } else {
+            changePasswordError.textContent = data.message || 'Failed to change password';
+            changePasswordError.classList.remove('hidden');
+          }
+        } catch (err) {
+          changePasswordError.textContent = 'An error occurred';
+          changePasswordError.classList.remove('hidden');
+        } finally {
+          submitChangePasswordBtn.disabled = false;
+          submitChangePasswordBtn.textContent = 'Change Password';
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>

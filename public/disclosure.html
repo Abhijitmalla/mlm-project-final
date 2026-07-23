@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Disclaimer &amp; Earnings Disclosure — VK Services Enterprise</title>
+<meta name="description" content="Read VK Services Enterprise's full disclaimer and earnings disclosure.">
+<link rel="stylesheet" href="/dist/output.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* ── Reset & tokens ─────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --paper:       #111319;
+    --paper-card:  #1B1E2A;
+    --ink:         #F6F7FA;
+    --ink-soft:    #B9BDC9;
+    --ink-muted:   #6E7280;
+    --line:        rgba(255,255,255,0.09);
+    --line-mid:    rgba(255,255,255,0.14);
+    --orange:      #FF7A45;
+    --orange-dim:  rgba(255,122,69,0.12);
+    --gold:        #E0B15C;
+    --gold-dim:    rgba(224,177,92,0.13);
+    --topbar-h:    54px;
+    --sidebar-w:   290px;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--orange); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+
+  /* ── Topbar ─────────────────────────────────────────── */
+  .topbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: var(--topbar-h);
+    z-index: 100;
+    background: rgba(17,19,25,0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--line-mid);
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    justify-content: space-between;
+  }
+  .breadcrumb {
+    display: flex; align-items: center; gap: 7px;
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px;
+    letter-spacing: 0.06em; color: var(--ink-muted);
+  }
+  .breadcrumb a { color: var(--ink-muted); transition: color .15s; }
+  .breadcrumb a:hover { color: var(--ink); text-decoration: none; }
+  .breadcrumb .sep { opacity: .3; }
+  .breadcrumb .cur { color: var(--ink-soft); }
+  .topbar-badge {
+    font-family: 'IBM Plex Mono', monospace; font-size: 10px;
+    letter-spacing: 0.08em; padding: 3px 12px; border-radius: 99px;
+    background: var(--gold-dim); border: 1px solid rgba(224,177,92,0.28); color: var(--gold);
+  }
+
+  /* ── Progress bar ─────────────────────────────────── */
+  #prog-wrap {
+    position: fixed;
+    top: var(--topbar-h); left: 0; right: 0;
+    height: 2px; z-index: 99;
+    background: var(--line);
+  }
+  #prog {
+    height: 100%;
+    background: linear-gradient(90deg, var(--orange), var(--gold));
+    width: 0%;
+    transition: width .22s ease;
+  }
+
+  /* ── Offset body for fixed topbar ─────────────────── */
+  body > :not(.topbar):not(#prog-wrap) {
+    /* handled per-element below */
+  }
+
+  /* ── Hero ─────────────────────────────────────────── */
+  .hero {
+    margin-top: calc(var(--topbar-h) + 2px);
+    background:
+      radial-gradient(880px 320px at 4% 0%,  rgba(224,177,92,0.10), transparent 60%),
+      radial-gradient(650px 260px at 97% 15%, rgba(255,122,69,0.07), transparent 60%),
+      var(--paper);
+    border-bottom: 1px solid var(--line-mid);
+    padding: 4rem 2rem 3.5rem;
+  }
+  .hero-inner { max-width: 780px; }
+  .hero-kicker {
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px;
+    letter-spacing: 0.12em; color: var(--gold);
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 1.1rem;
+  }
+  .hero-kicker::before {
+    content: ''; display: inline-block;
+    width: 24px; height: 1px; background: var(--gold); opacity: .5;
+  }
+  .hero-title {
+    font-family: 'Fraunces', serif; font-weight: 600;
+    font-size: clamp(2rem, 5vw, 3.75rem);
+    line-height: 1.1; color: var(--ink);
+    margin-bottom: 1.1rem;
+  }
+  .hero-sub {
+    font-size: 1.1rem; line-height: 1.72;
+    color: var(--ink-soft); max-width: 500px; margin-bottom: 1.75rem;
+  }
+  .hero-chip {
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 1px solid rgba(224,177,92,0.38); background: var(--gold-dim);
+    color: var(--gold); border-radius: 99px; padding: 5px 15px;
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.06em;
+  }
+  .hero-chip svg { width: 12px; height: 12px; flex: none; }
+
+  /* ══════════════════════════════════════════════════════
+     TWO-COLUMN LAYOUT
+     Left  : position:fixed sidebar (never scrolls)
+     Right : normal flow content, has left margin = sidebar width
+  ══════════════════════════════════════════════════════ */
+
+  /* --- Sidebar (fixed) -------------------------------- */
+  .sidebar {
+    display: none; /* hidden on mobile */
+  }
+  @media (min-width: 1024px) {
+    .sidebar {
+      display: block;
+      position: fixed;
+      top: calc(var(--topbar-h) + 2px);
+      left: 0;
+      width: var(--sidebar-w);
+      height: calc(100vh - var(--topbar-h) - 2px);
+      overflow-y: auto;
+      background: var(--paper);
+      border-right: 1px solid var(--line-mid);
+      padding: 2.5rem 1.75rem 3rem 2rem;
+      z-index: 50;
+    }
+    /* push ALL content (hero + main + footer) to the right */
+    .hero,
+    .main-content,
+    footer {
+      margin-left: var(--sidebar-w);
+    }
+  }
+
+  /* ── Nav inside sidebar ─────────────────────────────── */
+  .nav-label {
+    display: block;
+    font-family: 'IBM Plex Mono', monospace; font-size: 10px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-muted); margin-bottom: 20px;
+  }
+  .spine-wrap { position: relative; }
+  .spine-line {
+    position: absolute;
+    left: 14px; top: 0; bottom: 0; width: 1px;
+    background: repeating-linear-gradient(
+      to bottom, var(--line-mid) 0 4px, transparent 4px 8px
+    );
+    pointer-events: none;
+  }
+  .node {
+    display: flex; align-items: center; gap: 14px;
+    padding: 10px 8px; border-radius: 9px;
+    color: var(--ink-muted); text-decoration: none;
+    transition: background .15s, color .15s;
+    position: relative;
+  }
+  .node:hover { background: rgba(255,255,255,0.04); color: var(--ink); text-decoration: none; }
+  .node:hover .node-dot { border-color: var(--orange); color: var(--orange); }
+  .node-dot {
+    width: 30px; height: 30px; border-radius: 50%; flex: none;
+    background: var(--paper-card); border: 1px solid var(--line-mid);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--ink-muted);
+    position: relative; z-index: 1;
+    transition: background .2s, border-color .2s, color .2s, box-shadow .2s;
+  }
+  .node-label {
+    font-size: 15px; line-height: 1.35;
+    transition: color .15s, font-weight .15s;
+  }
+  .node.active .node-dot {
+    background: var(--orange); border-color: var(--orange);
+    color: #fff; box-shadow: 0 0 14px rgba(255,122,69,0.4);
+  }
+  .node.active .node-label { color: var(--ink); font-weight: 600; }
+  .node.passed .node-dot { background: var(--gold-dim); border-color: var(--gold); color: var(--gold); }
+  .node.passed .node-label { color: var(--ink-soft); }
+
+  /* ── Main content area ──────────────────────────────── */
+  .main-content {
+    padding: 3rem 2.5rem 6rem;
+    max-width: 860px;
+  }
+
+  /* ── Section cards ──────────────────────────────────── */
+  .sec-card {
+    background: var(--paper-card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 2rem 2rem 2.25rem;
+    margin-bottom: 1.25rem;
+    transition: border-color .2s;
+  }
+  .sec-card:hover { border-color: var(--line-mid); }
+  .sec-card-header { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 1.1rem; }
+  .sec-num {
+    width: 36px; height: 36px; border-radius: 50%; flex: none;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--orange);
+    background: var(--orange-dim); border: 1px solid rgba(255,122,69,0.35);
+  }
+  .sec-title {
+    font-family: 'Fraunces', serif; font-weight: 600;
+    font-size: 1.7rem; line-height: 1.2; color: var(--ink);
+    padding-top: 2px;
+  }
+  .sec-body p { font-size: 17px; line-height: 1.8; color: var(--ink-soft); }
+  .sec-body p + p { margin-top: 1rem; }
+
+  /* Warning card (section 03) */
+  .sec-card.warn {
+    border-color: rgba(224,177,92,0.22);
+    background: linear-gradient(135deg, var(--paper-card) 0%, rgba(224,177,92,0.04) 100%);
+  }
+  .sec-card.warn:hover { border-color: rgba(224,177,92,0.4); }
+  .warn-icon {
+    width: 36px; height: 36px; border-radius: 50%; flex: none;
+    background: var(--gold-dim); border: 1px solid rgba(224,177,92,0.3);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .warn-icon svg { width: 18px; height: 18px; }
+
+  /* Pull-quote */
+  .pull-quote {
+    position: relative;
+    border-left: 2px solid var(--orange);
+    background: linear-gradient(90deg, rgba(255,122,69,0.07), transparent 85%);
+    border-radius: 0 8px 8px 0;
+    padding: 8px 0 8px 30px; margin: 1.5rem 0;
+    font-family: 'Fraunces', serif; font-style: italic; font-weight: 500;
+    font-size: 1.2rem; line-height: 1.55; color: var(--ink);
+  }
+  .pull-quote::before {
+    content: '"'; position: absolute; left: 7px; top: -8px;
+    font-family: 'Fraunces', serif; font-size: 42px;
+    font-style: normal; color: var(--orange); opacity: .38; line-height: 1;
+  }
+
+  /* Contact card */
+  .contact-card {
+    background: var(--paper-card); border: 1px solid var(--line-mid);
+    border-radius: 16px; overflow: hidden; margin-top: 1rem;
+  }
+  .contact-row { display: flex; align-items: flex-start; gap: 14px; padding: 1.25rem 1.5rem; }
+  .contact-row + .contact-row { border-top: 1px solid var(--line); }
+  .contact-icon {
+    width: 34px; height: 34px; border-radius: 50%; flex: none; margin-top: 1px;
+    background: var(--orange-dim); border: 1px solid rgba(255,122,69,0.28);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .contact-icon svg { width: 16px; height: 16px; stroke: var(--orange); }
+  .contact-detail strong {
+    display: block; font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-muted); font-weight: 600; margin-bottom: 4px;
+  }
+  .contact-detail span, .contact-detail a { font-size: 15px; color: var(--ink-soft); line-height: 1.65; }
+
+  /* Section anchor scroll offset */
+  .section-anchor { scroll-margin-top: calc(var(--topbar-h) + 2px + 28px); }
+
+  /* Back to top */
+  .btt {
+    display: inline-flex; align-items: center; gap: 7px;
+    margin-top: 2.5rem; border: none; background: none; cursor: pointer;
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px;
+    letter-spacing: 0.06em; color: var(--ink-muted); transition: color .2s;
+  }
+  .btt:hover { color: var(--orange); }
+  .btt svg { width: 15px; height: 15px; transition: transform .2s; }
+  .btt:hover svg { transform: translateY(-2px); }
+
+  /* ── Footer ─────────────────────────────────────────── */
+  footer {
+    border-top: 1px solid var(--line-mid);
+    padding: 1.75rem 2.5rem;
+    display: flex; flex-direction: column; gap: 6px;
+    align-items: center; text-align: center;
+  }
+  @media (min-width: 640px) {
+    footer { flex-direction: row; justify-content: space-between; text-align: left; }
+  }
+  footer p {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px; color: var(--ink-muted); letter-spacing: 0.03em;
+  }
+
+  /* ── Animations ─────────────────────────────────────── */
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal   { animation: rise .5s ease both; }
+    .reveal-d1 { animation-delay: .08s; }
+    .reveal-d2 { animation-delay: .16s; }
+    @keyframes rise { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── Fixed Topbar ──────────────────────────────────── -->
+<header class="topbar">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">VK Services</a>
+    <span class="sep">/</span>
+    <span class="cur">Disclosure</span>
+  </nav>
+  <span class="topbar-badge">Sections 01–05</span>
+</header>
+
+<!-- Reading progress bar -->
+<div id="prog-wrap"><div id="prog"></div></div>
+
+<!-- ── Fixed Left Sidebar (desktop only) ─────────────── -->
+<aside class="sidebar" aria-label="Table of contents">
+  <span class="nav-label">On this page</span>
+  <div class="spine-wrap">
+    <div class="spine-line"></div>
+    <a href="#general"     class="node" data-target="general">    <span class="node-dot">01</span><span class="node-label">General disclaimer</span></a>
+    <a href="#earnings"    class="node" data-target="earnings">   <span class="node-dot">02</span><span class="node-label">Earnings disclaimer</span></a>
+    <a href="#advice"      class="node" data-target="advice">     <span class="node-dot">03</span><span class="node-label">No legal / financial advice</span></a>
+    <a href="#third-party" class="node" data-target="third-party"><span class="node-dot">04</span><span class="node-label">Third-party mentions</span></a>
+    <a href="#contact"     class="node" data-target="contact">    <span class="node-dot">05</span><span class="node-label">Contact us</span></a>
+  </div>
+</aside>
+
+<!-- ── Hero (pushed right on desktop by CSS) ─────────── -->
+<section class="hero reveal">
+  <div class="hero-inner">
+    <p class="hero-kicker">DISCLOSURE &amp; TERMS</p>
+    <h1 class="hero-title">Disclaimer &amp; Earnings&nbsp;Disclosure</h1>
+    <p class="hero-sub">What we do and don't promise about outcomes, income, and results from our MLM software and services.</p>
+    <div class="hero-chip">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="3" y="4" width="18" height="18" rx="2"/>
+        <path d="M16 2v4M8 2v4M3 10h18"/>
+      </svg>
+      Effective · September 10, 2025
+    </div>
+  </div>
+</section>
+
+<!-- ── Scrollable right content ──────────────────────── -->
+<main class="main-content">
+
+  <!-- 01 General -->
+  <div id="general" class="section-anchor sec-card reveal">
+    <div class="sec-card-header">
+      <span class="sec-num">01</span>
+      <h2 class="sec-title">General Disclaimer</h2>
+    </div>
+    <div class="sec-body">
+      <p>All content, tools, and services provided on this website are intended for educational and informational purposes only. While we strive to share strategies that have worked for us and our clients, we do not guarantee any specific outcome or result from using our services, software, or guidance.</p>
+      <p>Success in any MLM or network marketing business is dependent on many factors such as your dedication, skills, business ethics, industry knowledge, and personal efforts.</p>
+    </div>
+  </div>
+
+  <!-- 02 Earnings -->
+  <div id="earnings" class="section-anchor sec-card reveal reveal-d1">
+    <div class="sec-card-header">
+      <span class="sec-num">02</span>
+      <h2 class="sec-title">Earnings Disclaimer</h2>
+    </div>
+    <div class="sec-body">
+      <p>We make no guarantee of income or results. Any income examples or testimonials on this site should not be interpreted as typical or promised outcomes. Your earning potential is 100% based on your own work ethic, consistency, and ability to implement strategies effectively.</p>
+      <blockquote class="pull-quote">There is no assurance that examples of past earnings can be duplicated in the future.</blockquote>
+      <p>By using this site, you acknowledge that we are not responsible for your success or failure in applying any information or services we provide.</p>
+    </div>
+  </div>
+
+  <!-- 03 Legal / Financial -->
+  <div id="advice" class="section-anchor sec-card warn reveal reveal-d2">
+    <div class="sec-card-header">
+      <span class="warn-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#E0B15C" stroke-width="1.7" stroke-linejoin="round">
+          <path d="M12 3 2 20h20L12 3Z"/>
+          <path d="M12 9.5v5" stroke-linecap="round"/>
+          <circle cx="12" cy="17.2" r="0.9" fill="#E0B15C" stroke="none"/>
+        </svg>
+      </span>
+      <h2 class="sec-title" style="color:var(--gold)">No Legal or Financial Advice</h2>
+    </div>
+    <div class="sec-body">
+      <p>The content provided does not constitute legal, investment, or financial advice. You should always consult with a licensed professional advisor before making decisions related to MLM participation or investment.</p>
+    </div>
+  </div>
+
+  <!-- 04 Third-party -->
+  <div id="third-party" class="section-anchor sec-card reveal">
+    <div class="sec-card-header">
+      <span class="sec-num">04</span>
+      <h2 class="sec-title">Third-Party Mentions</h2>
+    </div>
+    <div class="sec-body">
+      <p>Our website may reference or link to external MLM companies, software, or tools. Unless explicitly stated, we are not affiliated with or endorsed by any third-party company mentioned. References are for informational purposes only.</p>
+    </div>
+  </div>
+
+  <!-- 05 Contact -->
+  <div id="contact" class="section-anchor reveal reveal-d1">
+    <div class="sec-card-header">
+      <span class="sec-num">05</span>
+      <h2 class="sec-title">Contact Us</h2>
+    </div>
+    <p style="font-size:15px; color:var(--ink-muted); margin-bottom:1rem; padding-left:50px;">
+      Questions about this disclosure? We're here to help.
+    </p>
+    <div class="contact-card">
+      <div class="contact-row">
+        <span class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+              d="M3.75 21l1.5-4.5A8.25 8.25 0 1 1 7.5 18l-3.75 3z"/>
+          </svg>
+        </span>
+        <div class="contact-detail">
+          <strong>Company</strong>
+          <span>VK Services Enterprise</span>
+        </div>
+      </div>
+      <div class="contact-row">
+        <span class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+              d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+              d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 0 1 15 0z"/>
+          </svg>
+        </span>
+        <div class="contact-detail">
+          <strong>Address</strong>
+          <span>4th Floor, New Annex Building, Arch Bishop's House,<br>Satya Nagar, Bhubaneswar, Odisha 751007</span>
+        </div>
+      </div>
+      <div class="contact-row">
+        <span class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-linecap="round"/>
+            <path d="M12 8v4l2.5 2.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <div class="contact-detail">
+          <strong>Website</strong>
+          <a href="https://mlmservices.vkservicesenterprise.com">mlmservices.vkservicesenterprise.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to top -->
+  <div style="display:flex; justify-content:flex-end;">
+    <button class="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+      </svg>
+      Back to top
+    </button>
+  </div>
+
+</main>
+
+<!-- ── Footer ─────────────────────────────────────────── -->
+<footer>
+  <p>© 2025 VK Services Enterprise — VKS Tech Services India Pvt Ltd.</p>
+  <p>Disclaimer effective <span style="color:var(--ink-soft)">2025-09-10</span></p>
+</footer>
+
+<script>
+  const nodes   = Array.from(document.querySelectorAll('.sidebar .node'));
+  const targets = nodes.map(n => document.getElementById(n.dataset.target));
+  const prog    = document.getElementById('prog');
+
+  // Highlight active section in sidebar
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      const idx = targets.indexOf(e.target);
+      if (idx === -1) return;
+      if (e.isIntersecting) {
+        nodes.forEach((n, i) => {
+          n.classList.toggle('active', i === idx);
+          n.classList.toggle('passed', i < idx);
+        });
+        if (prog) prog.style.width = (((idx + 1) / targets.length) * 100) + '%';
+      }
+    });
+  }, { rootMargin: '-25% 0px -60% 0px' });
+
+  targets.forEach(t => t && obs.observe(t));
+
+  // Smooth scroll on sidebar click
+  nodes.forEach(node => {
+    node.addEventListener('click', e => {
+      e.preventDefault();
+      const el = document.getElementById(node.dataset.target);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+</body>
+</html>

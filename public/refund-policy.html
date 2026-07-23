@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Refund &amp; Return Policy — VK Services Enterprise</title>
+<link rel="stylesheet" href="./dist/output.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#111319;
+    --paper-raised:#1B1E29;
+    --ink:#F6F7FA;
+    --ink-soft:#B9BDC9;
+    --line:rgba(255,255,255,0.14);
+    --orange:#FF7A45;
+    --gold:#E0B15C;
+    --gold-soft:rgba(224,177,92,0.16);
+    --green:#5FBF8A;
+    --green-soft:rgba(95,191,138,0.14);
+    --red:#E2685F;
+    --red-soft:rgba(226,104,95,0.12);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:'IBM Plex Sans',sans-serif; -webkit-font-smoothing:antialiased;
+  }
+  .serif{font-family:'Fraunces',serif;}
+  .mono{font-family:'IBM Plex Mono',monospace; letter-spacing:0.04em;}
+  a{color:var(--orange);}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--orange); outline-offset:3px;}
+
+  .hero{
+    background:
+      radial-gradient(900px 320px at 8% 0%, rgba(224,177,92,0.10), transparent 60%),
+      radial-gradient(700px 300px at 95% 10%, rgba(255,122,69,0.06), transparent 60%),
+      var(--paper);
+    border-bottom:1px solid var(--line);
+  }
+  .stat{border-left:1px solid var(--line); padding-left:18px;}
+
+  /* === Timeline track: the signature element === */
+  .track-wrap{position:relative; padding:88px 0 108px;}
+  .track-rail{
+    position:relative; height:6px; border-radius:9999px; width:100%;
+    background:linear-gradient(to right,
+      var(--green) 0%, var(--green) 62%,
+      var(--red) 62%, var(--red) 100%);
+    box-shadow:0 0 0 1px var(--line);
+  }
+  .track-marker{position:absolute; top:50%; transform:translate(-50%,-50%); z-index:2;}
+  .track-dot{
+    width:18px; height:18px; border-radius:9999px; background:var(--paper);
+    border:3px solid var(--ink); display:block;
+  }
+  .marker-green .track-dot{border-color:var(--green);}
+  .marker-red .track-dot{border-color:var(--red);}
+  .track-label{
+    position:absolute; left:50%; transform:translateX(-50%); width:230px;
+    text-align:center;
+  }
+  .track-label.above{bottom:calc(100% + 18px);}
+  .track-label.below{top:calc(100% + 18px);}
+  .track-label .cxn{
+    position:absolute; left:50%; width:1px; background:var(--line);
+  }
+  .above .cxn{bottom:-18px; height:18px;}
+  .below .cxn{top:-18px; height:18px;}
+  .track-note{
+    font-family:'IBM Plex Mono',monospace; font-size:14px; letter-spacing:0.02em;
+    color:var(--ink-soft); line-height:1.5;
+  }
+  .track-note b{color:var(--ink); font-weight:600; font-size:15px;}
+  .track-endcap{
+    position:absolute; top:50%; transform:translateY(-50%);
+    font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--ink-soft); letter-spacing:0.06em;
+  }
+
+  /* condition cards */
+  .cond-card{
+    background:var(--paper-raised); border:1px solid var(--line); border-radius:14px;
+    padding:28px; height:100%; display:flex; flex-direction:column;
+  }
+  .cond-eligible{border-color:rgba(95,191,138,0.35);}
+  .cond-ineligible{border-color:rgba(226,104,95,0.3);}
+  .cond-icon{
+    width:44px; height:44px; border-radius:9999px; display:flex; align-items:center; justify-content:center;
+    margin-bottom:18px;
+  }
+  .cond-icon svg{width:20px; height:20px;}
+  .cond-eligible .cond-icon{background:var(--green-soft); color:var(--green);}
+  .cond-ineligible .cond-icon{background:var(--red-soft); color:var(--red);}
+  .tag{
+    display:inline-flex; align-items:center; gap:6px; font-family:'IBM Plex Mono',monospace;
+    font-size:11px; letter-spacing:0.06em; padding:4px 10px; border-radius:9999px; align-self:flex-start;
+    margin-top:auto;
+  }
+  .tag-eligible{background:var(--green-soft); color:var(--green); border:1px solid rgba(95,191,138,0.4);}
+  .tag-ineligible{background:var(--red-soft); color:var(--red); border:1px solid rgba(226,104,95,0.35);}
+
+  .callout{
+    background:var(--gold-soft); border:1px solid rgba(224,177,92,0.4); border-radius:14px;
+    padding:22px 26px; display:flex; gap:18px; align-items:center;
+  }
+  .callout svg{flex:none; width:24px; height:24px; color:var(--gold);}
+
+  @media (prefers-reduced-motion: no-preference){
+    .reveal{animation:rise .5s ease both;}
+    @keyframes rise{from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);}}
+  }
+
+  @media (max-width: 1023px){
+    .track-wrap{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero w-full px-8 lg:px-20 pt-14 lg:pt-20 pb-14 reveal">
+  <div class="grid lg:grid-cols-[1.3fr_1fr] gap-12 items-end">
+    <div>
+      <p class="mono text-[10px] text-[var(--gold)] mb-4">BILLING — REFUNDS &amp; RETURNS</p>
+      <h2 class="serif font-semibold text-[var(--ink)] text-[3.2rem] sm:text-8xl leading-[1.03]">Refund Policy</h2>
+      <p class="text-[var(--ink-soft)] mt-5 max-w-xl leading-relaxed text-xl">
+        We deliver services, not physical products — so eligibility comes down to one thing: <span class="text-[var(--ink)] font-medium">has work started yet.</span>
+      </p>
+    </div>
+    <div class="flex gap-8 lg:justify-end pb-1">
+      <div class="stat">
+        <p class="mono text-[10px] text-[var(--ink-soft)] mb-1">MISTAKEN PAYMENT</p>
+        <p class="serif text-3xl text-[var(--gold)]">1 hour</p>
+      </div>
+      <div class="stat">
+        <p class="mono text-[10px] text-[var(--ink-soft)] mb-1">BEFORE WORK STARTS</p>
+        <p class="serif text-3xl text-[var(--green)]">100%</p>
+      </div>
+      <div class="stat">
+        <p class="mono text-[10px] text-[var(--ink-soft)] mb-1">AFTER WORK STARTS</p>
+        <p class="serif text-3xl text-[var(--red)]">0%</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Body -->
+<main class="w-full px-8 lg:px-20 py-16 reveal">
+
+  <!-- Desktop timeline track -->
+  <div class="track-wrap">
+    <p class="mono text-[13px] text-[var(--ink-soft)] mb-3">THE REFUND WINDOW</p>
+    <div class="track-rail">
+      <span class="track-endcap" style="right:calc(100% + 14px);">START</span>
+
+      <div class="track-marker marker-green" style="left:4%;">
+        <span class="track-dot"></span>
+        <div class="track-label above">
+          <span class="cxn"></span>
+          <p class="track-note"><b>Paid by mistake</b><br>call within 1 hr → refunded</p>
+        </div>
+      </div>
+
+      <div class="track-marker marker-green" style="left:34%;">
+        <span class="track-dot"></span>
+        <div class="track-label below">
+          <span class="cxn"></span>
+          <p class="track-note"><b>Advance paid</b><br>work not started → refunded</p>
+        </div>
+      </div>
+
+      <div class="track-marker marker-red" style="left:62%;">
+        <span class="track-dot" style="width:22px;height:22px;border-width:4px;"></span>
+        <div class="track-label above">
+          <span class="cxn"></span>
+          <p class="track-note"><b>Work begins</b><br>refund window closes</p>
+        </div>
+      </div>
+
+      <div class="track-marker marker-red" style="left:90%;">
+        <span class="track-dot"></span>
+        <div class="track-label below">
+          <span class="cxn"></span>
+          <p class="track-note"><b>Delivered</b><br>no refund / return</p>
+        </div>
+      </div>
+
+      <span class="track-endcap" style="left:calc(100% + 14px);">DELIVERED</span>
+    </div>
+  </div>
+
+  <!-- Condition cards -->
+  <div class="grid lg:grid-cols-3 gap-6 mb-16">
+
+    <div class="cond-card cond-eligible reveal">
+      <div class="cond-icon">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      </div>
+      <h4 class="serif font-semibold text-2xl text-[var(--ink)] mb-3">Paid by mistake</h4>
+      <p class="text-[15px] leading-relaxed text-[var(--ink-soft)] mb-5">
+        Call the phone number listed on our website within one hour of the transaction. Report it in time and it's refunded in full.
+      </p>
+      <span class="tag tag-eligible">100% refund</span>
+    </div>
+
+    <div class="cond-card cond-eligible reveal">
+      <div class="cond-icon">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 8.25v10.5a1.5 1.5 0 001.5 1.5h16.5a1.5 1.5 0 001.5-1.5V8.25M2.25 8.25l1.72-3.44a1.5 1.5 0 011.34-.81h13.38a1.5 1.5 0 011.34.81l1.72 3.44"/></svg>
+      </div>
+      <h4 class="serif font-semibold text-2xl text-[var(--ink)] mb-3">Advance paid, work not started</h4>
+      <p class="text-[15px] leading-relaxed text-[var(--ink-soft)] mb-5">
+        Want to step back before we've begun? As long as work hasn't started on your project, you get a full refund — no questions asked.
+      </p>
+      <span class="tag tag-eligible">100% refund</span>
+    </div>
+
+    <div class="cond-card cond-ineligible reveal">
+      <div class="cond-icon">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </div>
+      <h4 class="serif font-semibold text-2xl text-[var(--ink)] mb-3">Work started or delivered</h4>
+      <p class="text-[15px] leading-relaxed text-[var(--ink-soft)] mb-5">
+        Once we've started work on your project, or delivered it to you, the payment is final. We don't offer refunds or returns past this point.
+      </p>
+      <span class="tag tag-ineligible">No refund</span>
+    </div>
+
+  </div>
+
+  <!-- Callout -->
+  <div class="callout">
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 0 002.25-2.25v-1.372a1.5 1.5 0 00-1.125-1.452l-4.09-1.09a1.5 1.5 0 00-1.514.399l-.9.9a12.06 12.06 0 01-5.53-5.53l.9-.9a1.5 1.5 0 00.399-1.514l-1.09-4.09A1.5 1.5 0 007.622 3H6.25a2.25 2.25 0 00-2.25 2.25v1.5z"/></svg>
+    <p class="text-[15px] leading-relaxed text-[var(--ink)]">
+      <span class="font-semibold">Paid by mistake?</span>
+      <span class="text-[var(--ink-soft)]">Call us within one hour, using the phone number listed on our website, to be eligible for a refund. After that window closes, the standard policy above applies.</span>
+    </p>
+  </div>
+
+</main>
+
+<footer class="border-t border-[var(--line)]">
+  <div class="w-full px-8 lg:px-20 py-8 flex flex-col sm:flex-row justify-between items-center gap-3 mono text-[11px] text-[var(--ink-soft)]">
+    <p>© 2025 VK Services Enterprise — VKS Tech Services India Pvt Ltd.</p>
+    <p>refund &amp; return policy</p>
+  </div>
+</footer>
+
+</body>
+</html>

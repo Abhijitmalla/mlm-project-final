@@ -1,0 +1,27 @@
+/* Shared index.html visual treatment for all service landing pages. */
+.index-hero-layout{max-width:80rem!important;padding:1rem 1.5rem 2rem!important;display:block!important}
+.index-hero-heading{max-width:64rem;margin:0 auto 1.5rem;text-align:center;color:#fff}
+.index-hero-heading>:first-child{justify-content:center;margin-bottom:.75rem}
+.index-hero-heading h1{font-size:clamp(1.5rem,3vw,2.25rem);margin-bottom:.5rem}
+.index-hero-heading p{font-size:clamp(.9rem,1.4vw,1rem);margin-bottom:0;color:#d1d5db}
+.index-hero-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2.5rem;align-items:stretch}
+.index-demo-card{overflow:hidden;border:2px solid #F1521E;border-radius:1rem;background:#111827;box-shadow:0 25px 50px -12px rgba(0,0,0,.55);display:flex;flex-direction:column}
+.index-demo-shimmer{height:3px;background:linear-gradient(90deg,#F1521E,#FF7A45,#F1521E);background-size:200% 100%;animation:indexHeroShimmer 3.5s linear infinite}
+@keyframes indexHeroShimmer{to{background-position:200% 0}}
+.index-demo-frame{position:relative;background:rgba(0,0,0,.9);aspect-ratio:16/10;flex:1}
+.index-demo-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.index-demo-label{position:absolute;left:.875rem;bottom:.875rem;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;letter-spacing:.04em;color:rgba(255,255,255,.85);pointer-events:none}
+.index-demo-footer{display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.75rem 1rem;background:rgba(0,0,0,.8);color:#fff;font-size:.875rem;font-weight:700}
+.index-demo-note{padding:1rem 1.25rem;margin:0;background:#111827;border-top:1px solid rgba(255,255,255,.1);color:#e5e7eb;font-size:1rem;line-height:1.6}
+.index-demo-note strong{color:#FF7A45;font-style:italic}
+.index-hero-form{border-top-color:#F1521E!important}
+.index-hero-form button[type="submit"]{background:linear-gradient(135deg,#FF7A45,#F1521E)!important}
+.bg-accent{background-color:#F1521E!important}.text-accent{color:#F1521E!important}.border-accent{border-color:#F1521E!important}
+[stroke="#F59E0B"]{stroke:#F1521E!important}[fill="#F59E0B"]{fill:#F1521E!important}[style*="#F59E0B"]{background-image:linear-gradient(90deg,#F1521E,#FF7A45,#F1521E)!important}
+.site-footer{position:relative;z-index:10;background:#111827;color:#d1d5db;border-top:3px solid #F1521E}
+.site-footer-inner{max-width:80rem;margin:0 auto;padding:2.5rem 1.5rem 1.25rem}
+.site-footer-top{display:flex;align-items:flex-start;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.site-footer-brand{max-width:34rem}.site-footer-brand h2{margin:0 0 .5rem;color:#fff;font-family:'Space Grotesk',sans-serif;font-size:1.25rem}.site-footer-brand p{margin:0;line-height:1.65}
+.site-footer-links{display:flex;gap:.75rem;flex-wrap:wrap}.site-footer-links a{display:inline-flex;align-items:center;padding:.6rem .9rem;border:1px solid rgba(255,255,255,.2);border-radius:.5rem;color:#fff;text-decoration:none;font-weight:600}.site-footer-links a:hover{border-color:#F1521E;background:#F1521E}
+.site-footer-bottom{margin-top:2rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.12);font-size:.875rem;color:#9ca3af}
+@media(max-width:767px){.index-hero-layout{padding:1rem 1rem 2rem!important}.index-hero-grid{grid-template-columns:1fr;gap:1.5rem}.index-hero-heading{margin-bottom:1.5rem}.index-hero-heading>:first-child{margin-bottom:.5rem}.index-hero-heading h1{line-height:1.25}.index-demo-card{order:1}.index-hero-form{order:2}.site-footer-inner{padding:2rem 1rem 1rem}}
