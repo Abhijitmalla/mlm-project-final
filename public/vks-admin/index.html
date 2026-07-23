@@ -236,13 +236,13 @@
 
           <!-- Tab switcher -->
           <div class="flex items-center bg-gray-800 border border-gray-700 rounded-full p-1 gap-1 w-fit shadow-sm">
-            <a href="enquiries.html"
-              class="flex items-center gap-2 px-5 py-2 rounded-full text-sm font-bold bg-purple-600 text-white shadow-md transition-all">
+            <button type="button" data-admin-tab="enquiries"
+              class="admin-tab flex items-center gap-2 px-5 py-2 rounded-full text-sm font-bold bg-purple-600 text-white shadow-md transition-all">
               <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M4 4h16v4H4zM4 12h16M4 16h16M4 20h10" />
               </svg>
               Enquiries
-            </a>
+            </button>
             <a href="leads.html"
               class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-gray-400 hover:text-gray-100 hover:bg-gray-700 transition-all">
               <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -251,6 +251,10 @@
                 <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
               </svg>
               Leads
+            </a>
+            <a href="live-sessions.html"
+              class="admin-tab flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-gray-400 hover:text-gray-100 hover:bg-gray-700 transition-all">
+              Live Sessions
             </a>
           </div>
         </div>
@@ -303,6 +307,7 @@
 
       <main class="p-4 sm:p-7">
 
+        <div id="enquiriesPanel">
         <!-- Stat cards -->
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3.5 mb-6" id="statCards"></div>
 
@@ -376,9 +381,34 @@
         <div id="cardList" class="md:hidden flex flex-col gap-3.5"></div>
         <div id="emptyStateMobile" class="hidden md:hidden py-16 text-center text-gray-400 text-sm">No enquiries match
           your search.</div>
+        </div>
+
+        <section id="liveSessionsPanel" class="hidden">
+          <div class="mb-5 flex flex-wrap items-end justify-between gap-3">
+            <div><h2 class="text-xl font-bold text-white">Live Session Registrations</h2><p class="mt-1 text-sm text-gray-400">Set the session time to create and email a Google Meet invitation.</p></div>
+            <button id="refreshLiveSessions" class="rounded-lg border border-violet-500 px-4 py-2 text-sm font-semibold text-violet-200 hover:bg-violet-900/40">Refresh</button>
+          </div>
+          <p id="liveSessionAdminMessage" class="mb-4 hidden rounded-lg border px-4 py-3 text-sm"></p>
+          <div class="overflow-x-auto rounded-2xl border border-gray-700 bg-gray-800 shadow-card">
+            <table class="w-full min-w-[800px] text-sm"><thead><tr class="bg-gradient-to-r from-indigo-700 via-purple-700 to-fuchsia-700 text-left"><th class="px-5 py-4">Name</th><th class="px-5 py-4">Contact</th><th class="px-5 py-4">Request</th><th class="px-5 py-4">Status</th><th class="px-5 py-4">Meeting Time</th><th class="px-5 py-4 text-center">Action</th></tr></thead><tbody id="liveSessionsTableBody" class="divide-y divide-gray-700"><tr><td colspan="6" class="px-5 py-10 text-center text-gray-400">Open this tab to load registrations.</td></tr></tbody></table>
+          </div>
+        </section>
 
       </main>
     </div>
+  </div>
+
+  <!-- Live Session Schedule Modal -->
+  <div id="liveSessionScheduleModal" class="fixed inset-0 hidden items-center justify-center bg-black/70 p-4" style="z-index:9999;">
+    <form id="liveSessionScheduleForm" class="w-full max-w-md rounded-2xl border border-gray-700 bg-gray-800 p-6 text-gray-100 shadow-2xl">
+      <div class="mb-5 flex items-start justify-between"><div><h3 class="text-xl font-bold">Schedule live session</h3><p id="liveSessionScheduleFor" class="mt-1 text-sm text-gray-400"></p></div><button id="closeLiveSessionSchedule" type="button" class="text-2xl text-gray-400 hover:text-white">&times;</button></div>
+      <label class="mb-1 block text-sm font-semibold text-gray-300" for="liveSessionScheduledAt">Start time (India)</label>
+      <input id="liveSessionScheduledAt" required type="datetime-local" class="mb-4 w-full rounded-lg border border-gray-600 bg-gray-900 px-3 py-2.5 text-white">
+      <label class="mb-1 block text-sm font-semibold text-gray-300" for="liveSessionDuration">Duration in minutes</label>
+      <input id="liveSessionDuration" required type="number" min="15" max="480" value="60" class="mb-4 w-full rounded-lg border border-gray-600 bg-gray-900 px-3 py-2.5 text-white">
+      <p id="liveSessionScheduleError" class="mb-3 hidden text-sm text-red-300"></p>
+      <button id="liveSessionScheduleSubmit" class="w-full rounded-lg bg-violet-600 py-3 font-semibold text-white hover:bg-violet-700">Create Meet invite &amp; email user</button>
+    </form>
   </div>
 
   <!-- Change Password Modal -->
@@ -524,7 +554,87 @@
     let activeService = "";
     let activeStatus = "";
     let archivedEnquiries = [];
+    let archivedLeads = [];
     let viewMode = 'active'; // 'active' | 'archive'
+    let liveSessionScheduleId = null;
+
+    function setAdminTab(tab) {
+      const enquiriesPanel = document.getElementById('enquiriesPanel');
+      const livePanel = document.getElementById('liveSessionsPanel');
+      const tabClasses = ['bg-purple-600', 'text-white', 'shadow-md', 'font-bold'];
+      document.querySelectorAll('.admin-tab').forEach(button => {
+        const active = button.dataset.adminTab === tab;
+        button.classList.toggle('bg-purple-600', active);
+        button.classList.toggle('text-white', active);
+        button.classList.toggle('shadow-md', active);
+        button.classList.toggle('font-bold', active);
+        button.classList.toggle('text-gray-400', !active);
+        button.classList.toggle('font-semibold', !active);
+      });
+      const isLive = tab === 'live';
+      enquiriesPanel.classList.toggle('hidden', isLive);
+      livePanel.classList.toggle('hidden', !isLive);
+      if (isLive) loadLiveSessions();
+      if (tab === 'archive') {
+        viewMode = 'leadArchive'; activeStatus = ''; activeCardFilter = '';
+        document.getElementById('statusFilter').value = '';
+        showPill('Archived Leads'); renderStats(); fetchArchivedLeads();
+      } else if (tab === 'enquiries') {
+        viewMode = 'active'; activeStatus = ''; activeCardFilter = '';
+        document.getElementById('statusFilter').value = '';
+        hidePill(); renderStats(); renderAll();
+      }
+    }
+
+    function escapeLiveSessionHtml(value = '') {
+      return String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
+    }
+    function showLiveSessionMessage(message, isError = false) {
+      const el = document.getElementById('liveSessionAdminMessage');
+      el.textContent = message;
+      el.className = `mb-4 rounded-lg border px-4 py-3 text-sm ${isError ? 'border-red-800 bg-red-950 text-red-200' : 'border-green-800 bg-green-950 text-green-200'}`;
+    }
+    function liveSessionDate(value) {
+      return value ? new Date(value).toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short' }) : '—';
+    }
+    async function loadLiveSessions() {
+      const body = document.getElementById('liveSessionsTableBody');
+      const token = sessionStorage.getItem('adminToken');
+      body.innerHTML = '<tr><td colspan="6" class="px-5 py-10 text-center text-gray-400">Loading registrations…</td></tr>';
+      try {
+        const response = await fetch(`${CONFIG.API_BASE_URL}/live-sessions/registrations`, { headers: { Authorization: `Bearer ${token}` } });
+        const result = await response.json();
+        if (!response.ok || !result.success) throw new Error(result.message || 'Could not load registrations.');
+        if (!result.data.length) { body.innerHTML = '<tr><td colspan="6" class="px-5 py-10 text-center text-gray-400">No live-session registrations yet.</td></tr>'; return; }
+        body.innerHTML = result.data.map(row => `<tr class="hover:bg-purple-900/20"><td class="px-5 py-4 font-semibold text-white">${escapeLiveSessionHtml(row.name)}</td><td class="px-5 py-4 text-gray-300">${escapeLiveSessionHtml(row.email)}<br><span class="text-cyan-300">${escapeLiveSessionHtml(row.mobile)}</span></td><td class="max-w-xs px-5 py-4 text-gray-400">${escapeLiveSessionHtml(row.message || '—')}</td><td class="px-5 py-4"><span class="rounded-full px-2.5 py-1 text-xs font-semibold ${row.status === 'Scheduled' ? 'bg-green-900/50 text-green-300' : 'bg-amber-900/50 text-amber-200'}">${row.status}</span></td><td class="px-5 py-4 text-gray-300">${liveSessionDate(row.scheduled_at)}</td><td class="px-5 py-4 text-center">${row.status === 'Scheduled' ? `<a href="${escapeLiveSessionHtml(row.meeting_link)}" target="_blank" rel="noopener" class="text-violet-300 underline">Open Meet</a>` : `<button type="button" class="schedule-live-session rounded-lg bg-violet-600 px-3 py-2 text-xs font-semibold text-white hover:bg-violet-700" data-id="${row.id}" data-name="${escapeLiveSessionHtml(row.name)}">Schedule</button>`}</td></tr>`).join('');
+      } catch (error) {
+        body.innerHTML = `<tr><td colspan="6" class="px-5 py-10 text-center text-red-300">${escapeLiveSessionHtml(error.message)}</td></tr>`;
+      }
+    }
+
+    document.querySelectorAll('.admin-tab').forEach(button => button.addEventListener('click', () => setAdminTab(button.dataset.adminTab)));
+    document.getElementById('refreshLiveSessions').addEventListener('click', loadLiveSessions);
+    document.getElementById('liveSessionsTableBody').addEventListener('click', event => {
+      const button = event.target.closest('.schedule-live-session');
+      if (!button) return;
+      liveSessionScheduleId = button.dataset.id;
+      document.getElementById('liveSessionScheduleFor').textContent = `Create an invitation for ${button.dataset.name}.`;
+      document.getElementById('liveSessionScheduleModal').classList.replace('hidden', 'flex');
+    });
+    function closeLiveSessionSchedule() { document.getElementById('liveSessionScheduleModal').classList.replace('flex', 'hidden'); document.getElementById('liveSessionScheduleError').classList.add('hidden'); }
+    document.getElementById('closeLiveSessionSchedule').addEventListener('click', closeLiveSessionSchedule);
+    document.getElementById('liveSessionScheduleForm').addEventListener('submit', async event => {
+      event.preventDefault(); const submit = document.getElementById('liveSessionScheduleSubmit'); const errorEl = document.getElementById('liveSessionScheduleError');
+      submit.disabled = true; submit.textContent = 'Creating invitation…'; errorEl.classList.add('hidden');
+      try {
+        const scheduledAt = new Date(document.getElementById('liveSessionScheduledAt').value).toISOString();
+        const response = await fetch(`${CONFIG.API_BASE_URL}/live-sessions/registrations/${liveSessionScheduleId}/schedule`, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${sessionStorage.getItem('adminToken')}` }, body: JSON.stringify({ scheduledAt, durationMinutes: document.getElementById('liveSessionDuration').value }) });
+        const result = await response.json(); if (!response.ok || !result.success) throw new Error(result.message || 'Could not schedule this session.');
+        closeLiveSessionSchedule(); showLiveSessionMessage(result.message); loadLiveSessions();
+      } catch (error) { errorEl.textContent = error.message; errorEl.classList.remove('hidden'); }
+      finally { submit.disabled = false; submit.textContent = 'Create Meet invite & email user'; }
+    });
+    if (new URLSearchParams(window.location.search).get('tab') === 'live') setTimeout(() => setAdminTab('live'), 0);
 
     /* ============ ICONS ============ */
     const waSvg = `<svg viewBox="0 0 448 512" class="w-6 h-6 fill-current"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>`;
@@ -659,6 +769,24 @@
         }
       } catch (err) {
         console.error('Error fetching archive:', err);
+      }
+    }
+
+    async function fetchArchivedLeads() {
+      const token = sessionStorage.getItem('adminToken');
+      if (!token) return;
+      try {
+        const response = await fetch(`${CONFIG.API_BASE_URL}/leads/archive`, { headers: { Authorization: `Bearer ${token}` } });
+        const result = await response.json();
+        if (!response.ok || !result.success) throw new Error(result.message || 'Could not load archived leads.');
+        archivedLeads = result.data.map(lead => ({
+          id: lead.id, name: lead.name, mobile: lead.mobile, email: lead.email,
+          source: lead.source || '', service: lead.service_name || '', status: lead.status || 'Archived',
+          createdAt: lead.deleted_at || lead.created_at
+        }));
+        renderAll();
+      } catch (error) {
+        toast(error.message || 'Could not load archived leads');
       }
     }
 
@@ -827,14 +955,14 @@
 
     /* ============ FILTER LOGIC ============ */
     function getFiltered() {
-      const source = viewMode === 'archive' ? archivedEnquiries : enquiries;
+      const source = viewMode === 'archive' ? archivedEnquiries : viewMode === 'leadArchive' ? archivedLeads : enquiries;
       return source
         .map((e, i) => ({ ...e, sl: i + 1 }))
         .filter(e => {
           const q = activeSearch.toLowerCase();
           const matchesSearch = !q || e.name.toLowerCase().includes(q) || e.mobile.includes(q) || e.email.toLowerCase().includes(q);
           const matchesService = !activeService || e.service === activeService;
-          const matchesStatus = viewMode === 'archive' || !activeStatus || e.status === activeStatus;
+          const matchesStatus = viewMode === 'archive' || viewMode === 'leadArchive' || !activeStatus || e.status === activeStatus;
           const matchesToday = activeCardFilter !== 'today' || (e.createdAt && new Date(e.createdAt).toDateString() === new Date().toDateString());
           return matchesSearch && matchesService && matchesStatus && matchesToday;
         });
@@ -877,9 +1005,11 @@
       body.innerHTML = rows.map(e => {
         const statusCell = viewMode === 'archive'
           ? `<span class="inline-flex items-center bg-red-900/40 border border-red-600 text-red-300 rounded-md px-2 py-1 text-sm font-semibold">Not Interested</span>`
+          : viewMode === 'leadArchive'
+            ? `<span class="inline-flex items-center bg-purple-900/40 border border-purple-600 text-purple-200 rounded-md px-2 py-1 text-sm font-semibold">Archived</span>`
           : statusSelectHTML(e);
 
-        const actionCell = viewMode === 'archive'
+        const actionCell = viewMode === 'archive' || viewMode === 'leadArchive'
           ? `<div class="flex items-center justify-center gap-1.5 action-icons-container">${actionIcons(e, 'w-8 h-8')}</div>`
           : `<div class="flex items-center justify-center gap-1.5 action-icons-container">
               ${actionIcons(e, 'w-8 h-8')}
@@ -931,7 +1061,7 @@
       document.getElementById('emptyStateMobile').classList.toggle('hidden', rows.length !== 0);
 
       list.innerHTML = rows.map(e => {
-        const actionRow = viewMode === 'archive'
+        const actionRow = viewMode === 'archive' || viewMode === 'leadArchive'
           ? `<div class="flex items-center gap-2 action-icons-container">${actionIcons(e, 'w-12 h-12')}</div>`
           : `<div class="flex items-center gap-2 action-icons-container">
               ${actionIcons(e, 'w-12 h-12')}
@@ -952,7 +1082,7 @@
             <div class="text-[11px] ${avatarText(e.sl - 1)} font-mono mt-0.5">Sl. ${String(e.sl).padStart(2, '0')}</div>
           </div>
         </div>
-        ${statusBadge(e.status)}
+        ${viewMode === 'leadArchive' ? `<span class="inline-flex items-center bg-purple-900/40 text-purple-200 text-[12px] font-semibold px-3 py-1 rounded-md">Archived</span>` : statusBadge(e.status)}
       </div>
 
       <div class="space-y-2 mb-3.5">

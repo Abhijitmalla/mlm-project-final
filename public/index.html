@@ -7,6 +7,15 @@
 
     <title>MLM Software & Network Growth Solutions</title>
 
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="MLM Software & Network Growth Solutions">
+    <meta property="og:description" content="India's Leading MLM Software Development Company.">
+    <meta property="og:url" content="https://vkservicesenterprise.in/">
+    <meta property="og:image" content="https://vkservicesenterprise.in/assets/image/partner7.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="./assets/image/VK-Enterprise-Logo.webp">
 
@@ -18,6 +27,7 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="./dist/output.css">
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
     <style>
         .hero-bg {
@@ -35,6 +45,29 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
+
+        .live-session-launch {
+            position: fixed;
+            overflow: hidden;
+            isolation: isolate;
+            background: linear-gradient(135deg, #F1521E 0%, #FF7A45 55%, #F1521E 100%);
+            background-size: 180% 100%;
+            border: 1px solid rgba(255, 255, 255, .38);
+            box-shadow: 0 12px 28px rgba(241, 82, 30, .36), 0 0 0 7px rgba(241, 82, 30, .10);
+            animation: liveSessionGlow 2.5s ease-in-out infinite, liveSessionGradient 4s linear infinite;
+        }
+        .live-session-launch::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transform: translateX(-100%);
+            animation: liveSessionShine 3s infinite;
+        }
+        @keyframes liveSessionGlow { 0%, 100% { box-shadow: 0 12px 28px rgba(241, 82, 30, .36), 0 0 0 7px rgba(241, 82, 30, .10); } 50% { box-shadow: 0 12px 28px rgba(241, 82, 30, .5), 0 0 0 10px rgba(241, 82, 30, .15); } }
+        @keyframes liveSessionGradient { 0% { background-position: 0% 50%; } 100% { background-position: 180% 50%; } }
+        @keyframes liveSessionShine { 0%, 58% { transform: translateX(-130%); } 82%, 100% { transform: translateX(130%); } }
+        @media (prefers-reduced-motion: reduce) { .live-session-launch, .live-session-launch::before { animation: none; } }
     </style>
 </head>
 
@@ -215,6 +248,12 @@
         style="writing-mode: vertical-rl;background-image:linear-gradient(135deg,#FF7A45,#F1521E);" id="sideTab">Get In
         Touch</button>
 
+    <button id="liveSessionBtn"
+        class="live-session-launch left-4 bottom-6 z-40 rounded-full px-5 py-3 text-sm font-bold text-white shadow-xl flex items-center gap-2 hover:scale-105 transition-transform">
+        <svg class="w-5 h-5 animate-pulse text-yellow-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+        Request Live Session
+    </button>
+
     <!-- MODAL -->
     <div class="fixed inset-0 z-50 bg-primary/80 flex items-center justify-center opacity-0 invisible transition-all duration-300 p-4"
         id="modalOverlay">
@@ -288,6 +327,49 @@
                 <button
                     class="px-8 py-2 rounded-lg border border-gray-200 text-sm font-semibold hover:border-accent hover:text-accent transition-colors"
                     id="modalDone">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- LIVE SESSION MODAL -->
+    <div class="fixed inset-0 z-50 bg-primary/80 hidden items-center justify-center p-4 transition-opacity" id="liveSessionOverlay">
+        <div class="relative w-full max-w-md bg-white rounded-2xl p-8 shadow-2xl border-t-4 border-accent">
+            <button class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-500 hover:bg-accent hover:text-white transition-colors" id="liveSessionClose">&#10005;</button>
+            <div id="liveSessionFormView">
+                <div class="text-xs font-bold text-accent uppercase mb-2">Exclusive Access</div>
+                <h2 class="text-2xl font-bold text-primary mb-2">Request Live Session</h2>
+                <p class="text-sm text-gray-500 mb-6">Experience a live demonstration of our MLM software. <strong>Fee: ₹9</strong>.</p>
+                
+                <form id="liveSessionForm" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-600 mb-1" for="liveSessionName">Full Name</label>
+                        <input type="text" id="liveSessionName" required class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-accent" placeholder="Your name">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-600 mb-1" for="liveSessionMobile">Mobile Number</label>
+                        <input type="tel" id="liveSessionMobile" required class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-accent" placeholder="10-digit number">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-600 mb-1" for="liveSessionEmail">Email Address</label>
+                        <input type="email" id="liveSessionEmail" required class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-accent" placeholder="you@example.com">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-600 mb-1" for="liveSessionMessage">Special Request (Optional)</label>
+                        <textarea id="liveSessionMessage" rows="2" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-accent" placeholder="Any specific feature you want to see?"></textarea>
+                    </div>
+                    <div id="liveSessionError" class="hidden text-sm text-red-500"></div>
+                    <button type="submit" class="w-full text-white font-bold py-3.5 rounded-lg shadow-md hover:opacity-90 mt-2 flex items-center justify-center gap-2" style="background-image:linear-gradient(135deg,#F1521E,#FF7A45);">
+                        Pay ₹9 & Request Session
+                    </button>
+                </form>
+            </div>
+            
+            <div id="liveSessionSuccessView" class="hidden text-center">
+                <div class="w-16 h-16 mx-auto bg-green-50 rounded-full flex items-center justify-center mb-4 text-green-500">
+                    <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <h2 class="text-xl font-bold text-primary mb-2">Payment Successful!</h2>
+                <p class="text-gray-500 text-sm">We have received your ₹9 and your live session request. Our team will contact you shortly with the time and joining link.</p>
             </div>
         </div>
     </div>
@@ -1632,6 +1714,100 @@
         if (enquiryForm) {
             enquiryForm.addEventListener('submit', (e) => submitEnquiryForm(e, 'enquiryForm', 'Main Service Page', 'name', 'mobile', 'email', 'successView'));
         }
+
+        /* ---------- Live-session registration ---------- */
+        const liveSessionOverlay = document.getElementById('liveSessionOverlay');
+        const liveSessionForm = document.getElementById('liveSessionForm');
+        const liveSessionError = document.getElementById('liveSessionError');
+        const openLiveSession = () => {
+            liveSessionOverlay.classList.remove('hidden');
+            liveSessionOverlay.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        };
+        const closeLiveSession = () => {
+            liveSessionOverlay.classList.add('hidden');
+            liveSessionOverlay.classList.remove('flex');
+            document.body.style.overflow = '';
+        };
+        document.getElementById('liveSessionBtn')?.addEventListener('click', openLiveSession);
+        document.getElementById('liveSessionClose')?.addEventListener('click', closeLiveSession);
+        liveSessionOverlay?.addEventListener('click', (event) => { if (event.target === liveSessionOverlay) closeLiveSession(); });
+        
+        liveSessionForm?.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const name = document.getElementById('liveSessionName').value.trim();
+            const mobile = document.getElementById('liveSessionMobile').value.trim();
+            const email = document.getElementById('liveSessionEmail').value.trim();
+            const message = document.getElementById('liveSessionMessage').value.trim();
+            if (name.length < 2 || !/^\d{10}$/.test(mobile) || !/^\S+@\S+\.\S+$/.test(email)) {
+                liveSessionError.textContent = 'Please enter your name, a 10-digit mobile number and a valid email.';
+                liveSessionError.classList.remove('hidden');
+                return;
+            }
+            const button = liveSessionForm.querySelector('button[type="submit"]');
+            button.disabled = true; button.textContent = 'Initializing Payment...';
+            liveSessionError.classList.add('hidden');
+            try {
+                const orderRes = await fetch(`${CONFIG.API_BASE_URL}/live-sessions/create-order`, {
+                    method: 'POST', headers: { 'Content-Type': 'application/json' }
+                });
+                const orderResult = await orderRes.json();
+                if (!orderRes.ok) throw new Error(orderResult.message || 'Could not initialize payment.');
+                
+                const options = {
+                    key: orderResult.key,
+                    amount: orderResult.amount,
+                    currency: "INR",
+                    name: "VK Services Enterprise",
+                    description: "Live Session Request Fee",
+                    order_id: orderResult.orderId,
+                    handler: async function (response) {
+                        button.textContent = 'Finalizing Registration...';
+                        try {
+                            const regRes = await fetch(`${CONFIG.API_BASE_URL}/live-sessions/register`, {
+                                method: 'POST', headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ 
+                                    name, mobile, email, message,
+                                    razorpay_payment_id: response.razorpay_payment_id,
+                                    razorpay_order_id: response.razorpay_order_id,
+                                    razorpay_signature: response.razorpay_signature
+                                })
+                            });
+                            const regResult = await regRes.json();
+                            if (!regRes.ok) throw new Error(regResult.message || 'Payment received but registration failed.');
+                            document.getElementById('liveSessionFormView').classList.add('hidden');
+                            document.getElementById('liveSessionSuccessView').classList.remove('hidden');
+                        } catch (err) {
+                            liveSessionError.textContent = err.message;
+                            liveSessionError.classList.remove('hidden');
+                            button.disabled = false; button.textContent = 'Pay ₹9 & Request Session';
+                        }
+                    },
+                    prefill: { name, email, contact: mobile },
+                    theme: { color: "#F1521E" },
+                    modal: {
+                        ondismiss: function() {
+                            liveSessionError.textContent = "Payment was cancelled.";
+                            liveSessionError.classList.remove('hidden');
+                            button.disabled = false; button.textContent = 'Pay ₹9 & Request Session';
+                        }
+                    }
+                };
+                
+                const rzp = new window.Razorpay(options);
+                rzp.on('payment.failed', function (response){
+                    liveSessionError.textContent = response.error.description || "Payment failed.";
+                    liveSessionError.classList.remove('hidden');
+                    button.disabled = false; button.textContent = 'Pay ₹9 & Request Session';
+                });
+                rzp.open();
+                
+            } catch (error) {
+                liveSessionError.textContent = error.message;
+                liveSessionError.classList.remove('hidden');
+                button.disabled = false; button.textContent = 'Pay ₹9 & Request Session';
+            }
+        });
     </script>
 </body>
 
