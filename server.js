@@ -17,6 +17,8 @@ import enquiryRoutes from "./routes/enquiryRoutes.js";
 import leadRoutes from "./routes/leadRoutes.js";
 import adminRoutes from "./routes/adminRoutes.js";
 import liveSessionRoutes from "./routes/liveSessionRoutes.js";
+import googleAuthRoutes from "./routes/googleAuthRoutes.js";
+
 import { initialiseLiveSessionTable } from "./controllers/liveSessionController.js";
 
 const app = express();
@@ -49,6 +51,7 @@ app.use("/api/enquiry", enquiryRoutes);
 app.use("/api/leads", leadRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/live-sessions", liveSessionRoutes);
+app.use("/api", googleAuthRoutes);
 
 // Homepage
 app.get("/", (req, res) => {
