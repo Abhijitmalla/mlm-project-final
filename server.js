@@ -31,7 +31,7 @@ app.use(
     origin: [
       "http://127.0.0.1:5501",
       "http://localhost:5501",
-      "http://localhost:5000",
+      "https://vkservicesenterprise.in",
       "http://127.0.0.1:5000",
       "http://127.0.0.1:5500",  
       "https://vkservicesenterprise.in",

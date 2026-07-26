@@ -1,5 +1,5 @@
 import db from "../config/db.js";
-import { createGoogleMeetEvent } from "../services/googleCalendarService.js";
+import { createGoogleMeetEvent, deleteGoogleCalendarEvent } from "../services/googleCalendarService.js";
 import Razorpay from "razorpay";
 import crypto from "crypto";
 
@@ -122,6 +122,78 @@ export const scheduleLiveSession = async (req, res) => {
         res.status(500).json({ success: false, message: error.message || "Could not create the Google Meet invitation." });
     }
 };
+
+// ── Reschedule: cancel old Google Calendar event, create a new one ──
+export const rescheduleLiveSession = async (req, res) => {
+    const { id } = req.params;
+    const { scheduledAt, durationMinutes = 60 } = req.body;
+
+    const start = new Date(scheduledAt);
+    const duration = Number(durationMinutes);
+
+    if (Number.isNaN(start.getTime()) || start <= new Date(Date.now() - 5 * 60000) || !Number.isFinite(duration) || duration < 15 || duration > 480) {
+        return res.status(400).json({ success: false, message: "Choose a valid future time and a duration between 15 and 480 minutes." });
+    }
+
+    try {
+        const registrations = await query("SELECT * FROM live_session_registrations WHERE id = ?", [id]);
+        if (!registrations.length) return res.status(404).json({ success: false, message: "Registration not found." });
+
+        const registration = registrations[0];
+
+        // Delete old Google Calendar event if one exists
+        if (registration.google_event_id) {
+            await deleteGoogleCalendarEvent(registration.google_event_id);
+        }
+
+        const end = new Date(start.getTime() + duration * 60 * 1000);
+        const meeting = await createGoogleMeetEvent({
+            name: registration.name,
+            email: registration.email,
+            startTime: start.toISOString(),
+            endTime: end.toISOString()
+        });
+
+        await query(
+            "UPDATE live_session_registrations SET status = 'Scheduled', scheduled_at = ?, meeting_link = ?, google_event_id = ? WHERE id = ?",
+            [start, meeting.meetLink, meeting.eventId, id]
+        );
+
+        res.json({
+            success: true,
+            message: "Session rescheduled. A new Google Meet invite has been emailed to the registrant.",
+            meetingLink: meeting.meetLink
+        });
+    } catch (error) {
+        console.error("Reschedule error:", error.message);
+        res.status(500).json({ success: false, message: error.message || "Could not reschedule the session." });
+    }
+};
+
+// ── Delete registration: cancel Google Calendar event + remove DB record ──
+export const deleteRegistration = async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const registrations = await query("SELECT * FROM live_session_registrations WHERE id = ?", [id]);
+        if (!registrations.length) return res.status(404).json({ success: false, message: "Registration not found." });
+
+        const registration = registrations[0];
+
+        // Cancel the Google Calendar event if one exists
+        if (registration.google_event_id) {
+            await deleteGoogleCalendarEvent(registration.google_event_id);
+        }
+
+        await query("DELETE FROM live_session_registrations WHERE id = ?", [id]);
+
+        res.json({ success: true, message: `Registration for ${registration.name} has been deleted.` });
+    } catch (error) {
+        console.error("Delete registration error:", error.message);
+        res.status(500).json({ success: false, message: error.message || "Could not delete this registration." });
+    }
+};
+
 
 
 export const createGoogleMeetLink = async (req, res) => {

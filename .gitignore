@@ -33,3 +33,5 @@ coverage/
 
 # Package manager
 package-lock.json
+
+*.zip

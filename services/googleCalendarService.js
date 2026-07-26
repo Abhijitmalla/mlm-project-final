@@ -76,3 +76,18 @@ export async function createGoogleMeetEvent({
     };
 
 }
+
+export async function deleteGoogleCalendarEvent(eventId) {
+    try {
+        await calendar.events.delete({
+            calendarId: process.env.GOOGLE_CALENDAR_ID,
+            eventId,
+            sendUpdates: "all" // notify attendees of cancellation
+        });
+    } catch (err) {
+        // If the event is already deleted or not found, don't throw
+        if (err?.code !== 410 && err?.code !== 404) {
+            console.warn("Could not delete Google Calendar event:", err.message);
+        }
+    }
+}
