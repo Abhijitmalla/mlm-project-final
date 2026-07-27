@@ -18,6 +18,7 @@ import leadRoutes from "./routes/leadRoutes.js";
 import adminRoutes from "./routes/adminRoutes.js";
 import liveSessionRoutes from "./routes/liveSessionRoutes.js";
 import googleAuthRoutes from "./routes/googleAuthRoutes.js";
+import chatRoutes from "./routes/chatRoutes.js";
 
 import { initialiseLiveSessionTable } from "./controllers/liveSessionController.js";
 
@@ -52,6 +53,7 @@ app.use("/api/leads", leadRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/live-sessions", liveSessionRoutes);
 app.use("/api", googleAuthRoutes);
+app.use("/api/chat", chatRoutes);
 
 // Homepage
 app.get("/", (req, res) => {

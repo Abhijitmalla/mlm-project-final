@@ -1,51 +1,137 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> MLM Database</title>
-    <meta name="description" content="Access the latest MLM database to help you connect with quality prospects for your business.">
-    <meta property="og:type" content="website"><meta property="og:site_name" content="VK Services Enterprise">
-    <meta property="og:title" content="Latest MLM Database"><meta property="og:description" content="Access the latest MLM database to help you connect with quality prospects for your business.">
-    <meta property="og:url" content="https://vkservicesenterprise.in/mlm-database.html"><meta property="og:image" content="https://vkservicesenterprise.in/assets/image/05_Latest_MLM_Database_og.jpg"><meta property="og:image:secure_url" content="https://vkservicesenterprise.in/assets/image/05_Latest_MLM_Database_og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
-    <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Latest MLM Database | VK Services Enterprise"><meta name="twitter:description" content="Access the latest MLM database to help you connect with quality prospects for your business."><meta name="twitter:image" content="https://vkservicesenterprise.in/assets/image/05_Latest_MLM_Database_og.jpg">
-        <link rel="icon" type="image/png" href="./assets/image/VK-Enterprise-Logo.webp">
+    <meta name="description"
+        content="Access the latest MLM database to help you connect with quality prospects for your business.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="VK Services Enterprise">
+    <meta property="og:title" content="Latest MLM Database">
+    <meta property="og:description"
+        content="Access the latest MLM database to help you connect with quality prospects for your business.">
+    <meta property="og:url" content="https://vkservicesenterprise.in/mlm-database.html">
+    <meta property="og:image" content="https://vkservicesenterprise.in/assets/image/05_Latest_MLM_Database_og.jpg">
+    <meta property="og:image:secure_url"
+        content="https://vkservicesenterprise.in/assets/image/05_Latest_MLM_Database_og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Latest MLM Database | VK Services Enterprise">
+    <meta name="twitter:description"
+        content="Access the latest MLM database to help you connect with quality prospects for your business.">
+    <meta name="twitter:image" content="https://vkservicesenterprise.in/assets/image/05_Latest_MLM_Database_og.jpg">
+    <link rel="icon" type="image/png" href="./assets/image/VK-Enterprise-Logo.webp">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
-<link rel="stylesheet" href="./dist/output.css">
+    <link rel="stylesheet" href="./dist/output.css">
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <style>
-            .hero-bg {
-                background-image: url('./assets/image/banner2.jpg');
-                background-size: cover;
-                background-position: center;
-                background-attachment: fixed;
+        .hero-bg {
+            background-image: url('./assets/image/banner2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f8fafc;
+            border-radius: 8px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 8px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        .live-session-launch {
+            position: fixed;
+            overflow: hidden;
+            isolation: isolate;
+            background: linear-gradient(135deg, #F1521E 0%, #FF7A45 55%, #F1521E 100%);
+            background-size: 180% 100%;
+            border: 1px solid rgba(255, 255, 255, .38);
+            box-shadow: 0 12px 28px rgba(241, 82, 30, .36), 0 0 0 7px rgba(241, 82, 30, .10);
+            animation: liveSessionGlow 2.5s ease-in-out infinite, liveSessionGradient 4s linear infinite;
+        }
+
+        .live-session-launch::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transform: translateX(-100%);
+            animation: liveSessionShine 3s infinite;
+        }
+
+        @keyframes liveSessionGlow {
+
+            0%,
+            100% {
+                box-shadow: 0 12px 28px rgba(241, 82, 30, .36), 0 0 0 7px rgba(241, 82, 30, .10);
             }
-            .scrollbar-hide::-webkit-scrollbar {
-                display: none;
+
+            50% {
+                box-shadow: 0 12px 28px rgba(241, 82, 30, .5), 0 0 0 10px rgba(241, 82, 30, .15);
             }
-            .scrollbar-hide {
-                -ms-overflow-style: none;
-                scrollbar-width: none;
+        }
+
+        @keyframes liveSessionGradient {
+            0% {
+                background-position: 0% 50%;
             }
-            .custom-scrollbar::-webkit-scrollbar {
-                width: 6px;
+
+            100% {
+                background-position: 180% 50%;
             }
-            .custom-scrollbar::-webkit-scrollbar-track {
-                background: #f8fafc;
-                border-radius: 8px;
+        }
+
+        @keyframes liveSessionShine {
+
+            0%,
+            58% {
+                transform: translateX(-130%);
             }
-            .custom-scrollbar::-webkit-scrollbar-thumb {
-                background: #cbd5e1;
-                border-radius: 8px;
+
+            82%,
+            100% {
+                transform: translateX(130%);
             }
-            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-                background: #94a3b8;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .live-session-launch,
+            .live-session-launch::before {
+                animation: none;
             }
+        }
     </style>
 </head>
 
@@ -60,32 +146,40 @@
         <div class="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-6 pt-4 pb-8 md:py-20">
             <!-- Top: full-width rotating headline -->
             <div class="max-w-5xl mx-auto text-center mb-6 md:mb-14">
-                <div class="inline-flex items-center gap-3 text-sm font-semibold tracking-wide uppercase text-white mb-4">
+                <div
+                    class="inline-flex items-center gap-3 text-sm font-semibold tracking-wide uppercase text-white mb-4">
                     <span class="w-8 h-[2px] bg-white"></span> MLM Software Company
                 </div>
                 <div class="flex items-center justify-center gap-3 md:gap-5">
                     <button id="rotatePrevBtn" aria-label="Previous"
                         class="shrink-0 w-9 h-9 md:w-10 md:h-10 rounded-full border border-white/20 bg-white/5 text-white flex items-center justify-center hover:bg-accent hover:border-accent transition-colors">
-                        <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
                             <path d="M15 18l-6-6 6-6" />
                         </svg>
                     </button>
                     <div class="flex-1 min-w-0">
-                        <div class="overflow-hidden flex items-center justify-center min-h-[120px] md:min-h-[88px] lg:min-h-[96px]">
-                            <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-white font-display w-full">
-                                <span id="rotateText" class="inline-block transition-all duration-500 ease-out">Scale Your Network Marketing Team Instantly with 5 lakhs Genuine MLM Leads</span>
+                        <div
+                            class="overflow-hidden flex items-center justify-center min-h-[120px] md:min-h-[88px] lg:min-h-[96px]">
+                            <h1
+                                class="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-white font-display w-full">
+                                <span id="rotateText" class="inline-block transition-all duration-500 ease-out">Scale
+                                    Your Network Marketing Team Instantly with 5 lakhs Genuine MLM Leads</span>
                             </h1>
                         </div>
                         <div class="hidden md:flex overflow-hidden items-center justify-center md:min-h-[48px] mt-2">
                             <p class="text-sm md:text-base font-medium text-gray-300 w-full">
-                                <span id="rotateSubText" class="inline-block transition-all duration-500 ease-out">100% Active & Updated Profiles | Fresh Directory from the Last 3 Months | 70%–80% Verified Contact Accuracy</span>
+                                <span id="rotateSubText" class="inline-block transition-all duration-500 ease-out">100%
+                                    Active & Updated Profiles | Fresh Directory from the Last 3 Months | 70%–80%
+                                    Verified Contact Accuracy</span>
                             </p>
                         </div>
                     </div>
 
                     <button id="rotateNextBtn" aria-label="Next"
                         class="shrink-0 w-9 h-9 md:w-10 md:h-10 rounded-full border border-white/20 bg-white/5 text-white flex items-center justify-center hover:bg-accent hover:border-accent transition-colors">
-                        <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
                             <path d="M9 18l6-6-6-6" />
                         </svg>
                     </button>
@@ -101,80 +195,112 @@
                     </div>
                     <style>
                         @keyframes shimmerBarHero {
-                            0% { background-position: 0% 0 }
-                            100% { background-position: 200% 0 }
+                            0% {
+                                background-position: 0% 0
+                            }
+
+                            100% {
+                                background-position: 200% 0
+                            }
                         }
                     </style>
 
                     <div class="relative bg-black/90 w-full aspect-video">
                         <iframe class="absolute inset-0 w-full h-full"
-    src="https://www.youtube.com/embed/zaGKCWnr6lw?autoplay=1&mute=1&playsinline=1&rel=0"
-    title="MLM service provider video"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen>
-</iframe>
-                        <div class="absolute left-3.5 bottom-3.5 font-display font-bold text-[13px] tracking-wide text-white/85 pointer-events-none">VK SERVICES ENTERPRISE</div>
+                            src="https://www.youtube.com/embed/zaGKCWnr6lw?autoplay=1&mute=1&playsinline=1&rel=0"
+                            title="MLM service provider video" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                        <div
+                            class="absolute left-3.5 bottom-3.5 font-display font-bold text-[13px] tracking-wide text-white/85 pointer-events-none">
+                            VK SERVICES ENTERPRISE</div>
                     </div>
                     <div class="flex items-center justify-between gap-2.5 px-4 py-3 bg-black/80 backdrop-blur">
                         <div class="flex items-center gap-2 text-sm font-semibold text-white">
-                            <span class="w-[26px] h-5 rounded flex items-center justify-center text-[10px]" style="background-color:#F1521E;">▤</span> Watch Free Demo
+                            <span class="w-[26px] h-5 rounded flex items-center justify-center text-[10px]"
+                                style="background-color:#F1521E;">▤</span> Watch Free Demo
                         </div>
                         <a href="tel:+918927656368" class="flex items-center gap-2 text-sm font-bold text-white">
-                            <span class="w-[22px] h-[22px] rounded-full flex items-center justify-center text-xs" style="background-color:#F1521E;">✆</span> Call Now
+                            <span class="w-[22px] h-[22px] rounded-full flex items-center justify-center text-xs"
+                                style="background-color:#F1521E;">✆</span> Call Now
                         </a>
                     </div>
                     <div class="flex-1 bg-primary border-t border-white/10 flex flex-col justify-center">
                         <p class="px-5 py-4 text-base leading-relaxed text-gray-200">
-                            <span class="text-accentLight font-bold italic">Don't just buy. Test it yourself before spending a single rupee!</span> Watch the complete presentation video above to see our live proof, and explore our full suite of premium MLM services below.
+                            <span class="text-accentLight font-bold italic">Don't just buy. Test it yourself before
+                                spending a single rupee!</span> Watch the complete presentation video above to see our
+                            live proof, and explore our full suite of premium MLM services below.
                         </p>
                     </div>
                 </div>
 
                 <!-- Form card -->
-                <div class="bg-white rounded-2xl p-8 shadow-2xl relative border-t-4 border-accent transform transition-all duration-500 hover:scale-[1.01]">
-                    <div class="text-xs font-bold tracking-widest text-accent uppercase mb-2 font-mono">Get in touch</div>
+                <div
+                    class="bg-white rounded-2xl p-8 shadow-2xl relative border-t-4 border-accent transform transition-all duration-500 hover:scale-[1.01]">
+                    <div class="text-xs font-bold tracking-widest text-accent uppercase mb-2 font-mono">Get in touch
+                    </div>
                     <h2 class="text-2xl font-bold text-primary mb-2 font-display">Talk to our team</h2>
                     <p class="text-sm text-gray-500 mb-6">Fill in your details and we'll call you back soon.</p>
-                    
+
                     <form id="heroPageForm" class="space-y-4" novalidate>
                         <div class="field" id="heroNameField">
-                            <label class="block text-xs font-semibold text-gray-600 mb-1" for="heroName">Full Name</label>
-                            <input type="text" id="heroName" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all" placeholder="Your name">
+                            <label class="block text-xs font-semibold text-gray-600 mb-1" for="heroName">Full
+                                Name</label>
+                            <input type="text" id="heroName"
+                                class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                                placeholder="Your name">
                             <div class="err hidden text-red-500 text-xs mt-1">Please enter your name.</div>
                         </div>
                         <div class="field" id="heroMobileField">
-                            <label class="block text-xs font-semibold text-gray-600 mb-1" for="heroMobile">Mobile Number</label>
-                            <input type="tel" id="heroMobile" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all" placeholder="10-digit mobile number">
+                            <label class="block text-xs font-semibold text-gray-600 mb-1" for="heroMobile">Mobile
+                                Number</label>
+                            <input type="tel" id="heroMobile"
+                                class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                                placeholder="10-digit mobile number">
                             <div class="err hidden text-red-500 text-xs mt-1">Please enter a valid mobile number.</div>
                         </div>
                         <div class="field" id="heroEmailField">
-                            <label class="block text-xs font-semibold text-gray-600 mb-1" for="heroEmail">Email Address</label>
-                            <input type="email" id="heroEmail" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all" placeholder="you@example.com">
+                            <label class="block text-xs font-semibold text-gray-600 mb-1" for="heroEmail">Email
+                                Address</label>
+                            <input type="email" id="heroEmail"
+                                class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                                placeholder="you@example.com">
                             <div class="err hidden text-red-500 text-xs mt-1">Please enter a valid email address.</div>
                         </div>
                         <button type="submit"
                             class="w-full text-white font-semibold py-3.5 rounded-lg transition-colors mt-2 shadow-md"
                             style="background-image:linear-gradient(135deg,#FF7A45,#F1521E);">Submit</button>
                     </form>
-                    
+
                     <div id="heroSuccessView" class="hidden text-center mt-6">
-                        <div class="w-16 h-16 mx-auto bg-green-50 rounded-full flex items-center justify-center mb-4 text-green-500">
+                        <div
+                            class="w-16 h-16 mx-auto bg-green-50 rounded-full flex items-center justify-center mb-4 text-green-500">
                             <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
                             </svg>
                         </div>
                         <h2 class="text-xl font-bold text-primary mb-1 font-display">Submitted successfully</h2>
                         <p class="text-sm text-gray-500 mb-4">We will call you back soon. You can reach us at:</p>
                         <div class="flex flex-col items-center justify-center gap-2 text-sm font-semibold text-primary">
-                          <a href="tel:892765638" class="hover:text-accent transition-colors flex items-center gap-2">
-                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
-                            Call: 892765638
-                          </a>
-                          <a href="https://wa.me/919237377196" class="hover:text-green-500 transition-colors flex items-center gap-2 text-green-600">
-                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" /></svg>
-                            WhatsApp: 9237377196
-                          </a>
+                            <a href="tel:892765638" class="hover:text-accent transition-colors flex items-center gap-2">
+                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                                </svg>
+                                Call: 892765638
+                            </a>
+                            <a href="https://wa.me/919237377196"
+                                class="hover:text-green-500 transition-colors flex items-center gap-2 text-green-600">
+                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                                </svg>
+                                WhatsApp: 9237377196
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -183,9 +309,24 @@
     </section>
 
     <!-- Side Tab -->
-    <button
-        class="fixed right-0 top-1/2 -translate-y-1/2 rotate-180 bg-accent text-primary font-bold text-sm tracking-wide py-4 px-2 z-40 rounded-l-lg hover:pr-4 hover:bg-yellow-400 transition-all duration-300 shadow-xl"
-        style="writing-mode: vertical-rl;" id="sideTab">Get In Touch</button>
+    <button id="sideTab"
+        class="fixed right-0 top-1/2 -translate-y-1/2 rotate-180 text-white font-bold text-sm tracking-wide py-4 px-2 z-40 rounded-l-lg shadow-xl cursor-pointer transition-all duration-300 hover:pr-4">
+        Get In Touch
+    </button>
+
+    <style>
+        #sideTab {
+            writing-mode: vertical-rl;
+            background: linear-gradient(135deg, #FF7A45, #F1521E);
+        }
+
+        #sideTab:hover {
+            background: #facc15;
+            /* Tailwind yellow-400 */
+            color: #111827;
+            /* Optional: dark text */
+        }
+    </style>
 
     <!-- MODAL -->
     <div class="fixed inset-0 z-50 bg-primary/80 flex items-center justify-center opacity-0 invisible transition-all duration-300 p-4"
@@ -223,9 +364,9 @@
                             placeholder="you@example.com">
                         <div class="err hidden text-red-500 text-xs mt-1">Please enter a valid email address.</div>
                     </div>
-                   <button type="submit"
-                            class="w-full text-white font-semibold py-3.5 rounded-lg transition-colors mt-2 shadow-md"
-                            style="background-image:linear-gradient(135deg,#FF7A45,#F1521E);">Submit</button>
+                    <button type="submit"
+                        class="w-full text-white font-semibold py-3.5 rounded-lg transition-colors mt-2 shadow-md"
+                        style="background-image:linear-gradient(135deg,#FF7A45,#F1521E);">Submit</button>
                 </form>
             </div>
 
@@ -273,7 +414,8 @@
                     <h2 class="text-3xl md:text-4xl font-bold text-primary font-display mb-5 leading-tight">Latest MLM
                         Database Pack<br class="hidden sm:block">Price:-₹4999/- +GST(Limited Time Promotional Offer)
                     </h2>
-                    <p class="text-gray-500 text-base leading-relaxed max-w-2xl mx-auto">Because you pay for outcomes, not
+                    <p class="text-gray-500 text-base leading-relaxed max-w-2xl mx-auto">Because you pay for outcomes,
+                        not
                         impressions. Every rupee is tied to a verified, answered lead &mdash; so your marketing budget
                         only ever works as hard as the results it brings back.</p>
                 </div>
@@ -363,192 +505,49 @@
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <!-- Data & Results -->
-                <div
-                    class="bg-gray-50 rounded-3xl p-8 md:p-10 border border-gray-100 shadow-sm relative overflow-hidden group hover:shadow-lg transition-all duration-300">
-                    <div
-                        class="absolute top-0 right-0 w-40 h-40 bg-accent/10 rounded-bl-full -z-10 transition-transform duration-500 group-hover:scale-110">
-                    </div>
-                    <h3 class="text-2xl font-bold text-primary font-display mb-8 flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent">
-                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                            </svg>
-                        </div>
-                        Last 30 Days Results
-                    </h3>
-                    <div class="space-y-8">
-                        <div>
-                            <div class="flex justify-between text-sm font-bold mb-3">
-                                <span class="text-gray-700">Database Deliveries</span>
-                                <span class="text-primary">482+</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                                <div class="bg-primary h-3 rounded-full relative" style="width: 85%">
-                                    <div class="absolute inset-0 bg-white/20 animate-pulse"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between text-sm font-bold mb-3">
-                                <span class="text-gray-700">Positive Client ROI</span>
-                                <span class="text-primary">94%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                                <div class="bg-green-500 h-3 rounded-full relative" style="width: 94%">
-                                    <div class="absolute inset-0 bg-white/20 animate-pulse"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between text-sm font-bold mb-3">
-                                <span class="text-gray-700">Active Campaigns</span>
-                                <span class="text-primary">1,250+</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                                <div class="bg-accent h-3 rounded-full relative" style="width: 78%">
-                                    <div class="absolute inset-0 bg-white/20 animate-pulse"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
 
                 <!-- Purchase Proof List -->
-                <div
-                    class="bg-white border border-gray-100 shadow-2xl shadow-gray-200/50 rounded-3xl overflow-hidden relative">
-                    <!-- Live indicator -->
-                    <div
-                        class="absolute top-0 left-0 w-full bg-green-50 text-green-700 text-xs font-bold px-6 py-3 flex items-center gap-3 border-b border-green-100 z-10 shadow-sm">
-                        <span class="relative flex h-2.5 w-2.5">
-                            <span
-                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
-                        </span>
-                        LIVE PURCHASE FEED
-                    </div>
 
-                    <div class="p-6 pt-16 space-y-4 max-h-[420px] overflow-y-auto custom-scrollbar">
-                        <!-- Item 1 -->
-                        <div
-                            class="flex items-start gap-4 p-5 rounded-2xl bg-gray-50 border border-gray-100 hover:border-accent hover:shadow-md hover:bg-white transition-all duration-300">
-                            <div
-                                class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-lg shrink-0">
-                                S
-                            </div>
-                            <div class="flex-1">
-                                <div class="flex justify-between items-start mb-1.5">
-                                    <h4 class="font-bold text-base text-primary">Srinivas M.</h4>
-                                    <span
-                                        class="text-[11px] font-semibold text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">12
-                                        mins ago</span>
-                                </div>
-                                <p class="text-sm text-gray-500 mb-2">Purchased <span
-                                        class="font-semibold text-primary">Latest MLM Database Pack</span></p>
-                                <div
-                                    class="inline-flex items-center gap-1.5 text-[11px] font-bold text-green-600 bg-green-100/80 px-2.5 py-1 rounded-md">
-                                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>
-                                    Verified Payment: ₹4999
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Item 2 -->
-                        <div
-                            class="flex items-start gap-4 p-5 rounded-2xl bg-gray-50 border border-gray-100 hover:border-accent hover:shadow-md hover:bg-white transition-all duration-300">
-                            <div
-                                class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 font-bold text-lg shrink-0">
-                                R
-                            </div>
-                            <div class="flex-1">
-                                <div class="flex justify-between items-start mb-1.5">
-                                    <h4 class="font-bold text-base text-primary">Rajesh Kumar</h4>
-                                    <span
-                                        class="text-[11px] font-semibold text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">38
-                                        mins ago</span>
-                                </div>
-                                <p class="text-sm text-gray-500 mb-2">Purchased <span
-                                        class="font-semibold text-primary">Result Based Promotion</span></p>
-                                <div
-                                    class="inline-flex items-center gap-1.5 text-[11px] font-bold text-green-600 bg-green-100/80 px-2.5 py-1 rounded-md">
-                                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>
-                                    Verified Payment
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Item 3 -->
-                        <div
-                            class="flex items-start gap-4 p-5 rounded-2xl bg-gray-50 border border-gray-100 hover:border-accent hover:shadow-md hover:bg-white transition-all duration-300">
-                            <div
-                                class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-bold text-lg shrink-0">
-                                A
-                            </div>
-                            <div class="flex-1">
-                                <div class="flex justify-between items-start mb-1.5">
-                                    <h4 class="font-bold text-base text-primary">Amit Patel</h4>
-                                    <span
-                                        class="text-[11px] font-semibold text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">1
-                                        hr ago</span>
-                                </div>
-                                <p class="text-sm text-gray-500 mb-2">Purchased <span
-                                        class="font-semibold text-primary">Latest MLM Database Pack</span></p>
-                                <div
-                                    class="inline-flex items-center gap-1.5 text-[11px] font-bold text-green-600 bg-green-100/80 px-2.5 py-1 rounded-md">
-                                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>
-                                    Verified Payment: ₹4999
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Item 4 -->
-                        <div
-                            class="flex items-start gap-4 p-5 rounded-2xl bg-gray-50 border border-gray-100 hover:border-accent hover:shadow-md hover:bg-white transition-all duration-300">
-                            <div
-                                class="w-12 h-12 rounded-full bg-pink-100 flex items-center justify-center text-pink-600 font-bold text-lg shrink-0">
-                                V
-                            </div>
-                            <div class="flex-1">
-                                <div class="flex justify-between items-start mb-1.5">
-                                    <h4 class="font-bold text-base text-primary">Vikram Singh</h4>
-                                    <span
-                                        class="text-[11px] font-semibold text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">2
-                                        hrs ago</span>
-                                </div>
-                                <p class="text-sm text-gray-500 mb-2">Purchased <span
-                                        class="font-semibold text-primary">Custom MLM Software</span></p>
-                                <div
-                                    class="inline-flex items-center gap-1.5 text-[11px] font-bold text-green-600 bg-green-100/80 px-2.5 py-1 rounded-md">
-                                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                                    </svg>
-                                    Verified Contract
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Blur fade at bottom -->
-                    <div
-                        class="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-white to-transparent pointer-events-none">
-                    </div>
-                </div>
             </div>
         </div>
+
+        <!-- Image Proofs Grid -->
+        <div class="mt-16">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <img src="./assets/image/database1.png" alt="Database Proof 1"
+                    class="w-full h-auto rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                <img src="./assets/image/database2.png" alt="Database Proof 2"
+                    class="w-full h-auto rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                <img src="./assets/image/database3.png" alt="Database Proof 3"
+                    class="w-full h-auto rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                <img src="./assets/image/database4.png" alt="Database Proof 4"
+                    class="w-full h-auto rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                <img src="./assets/image/database5.png" alt="Database Proof 5"
+                    class="w-full h-auto rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                <img src="./assets/image/database6.png" alt="Database Proof 6"
+                    class="w-full h-auto rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                <img src="./assets/image/database7.png" alt="Database Proof 7"
+                    class="w-full h-auto rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                <img src="./assets/image/database8.png" alt="Database Proof 8"
+                    class="w-full h-auto rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                <img src="./assets/image/proof2.png" alt="Purchase Proof 2"
+                    class="w-full h-auto rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                <img src="./assets/image/proof6.png" alt="Purchase Proof 6"
+                    class="w-full h-auto rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                <img src="./assets/image/proof7.png" alt="Purchase Proof 7"
+                    class="w-full h-auto rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                <img src="./assets/image/proof8.png" alt="Purchase Proof 8"
+                    class="w-full h-auto rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+            </div>
+        </div>
+        </div>
     </section>
-     <section class="py-10 md:py-24 px-4 md:px-6 bg-white" id="testimonials">
-<div class="max-w-3xl mx-auto text-center mb-8 md:mb-16">
-                <div class="inline-flex items-center gap-3 text-sm font-semibold uppercase text-accent mb-4">
+
+    <!-- testimonial -->
+    <section class="py-10 md:py-24 px-4 md:px-6 bg-white" id="testimonials">
+        <div class="max-w-3xl mx-auto text-center mb-8 md:mb-16">
+            <div class="inline-flex items-center gap-3 text-sm font-semibold uppercase text-accent mb-4">
                 <span class="w-6 h-[1px] bg-accent"></span> Testimonials <span class="w-6 h-[1px] bg-accent"></span>
             </div>
             <h2 class="text-3xl md:text-4xl font-bold text-primary font-display mb-4">What our happy clients say</h2>
@@ -559,12 +558,9 @@
             <!-- Card 1 -->
             <div
                 class="relative rounded-2xl overflow-hidden aspect-[9/16] bg-dark group shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer">
-               <video
-    class="absolute inset-0 w-full h-full object-cover"
-    controls
-    preload="metadata">
-    <source src="./assets/videos/Review-1.mp4" type="video/mp4">
-</video>
+                <video class="absolute inset-0 w-full h-full object-cover" controls preload="metadata">
+                    <source src="./assets/videos/Review-1.mp4" type="video/mp4">
+                </video>
                 <div
                     class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent pointer-events-none">
                 </div>
@@ -584,12 +580,9 @@
             <!-- Card 2 -->
             <div
                 class="relative rounded-2xl overflow-hidden aspect-[9/16] bg-dark group shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer">
-               <video
-    class="absolute inset-0 w-full h-full object-cover"
-    controls
-    preload="metadata">
-    <source src="./assets/videos/Review 2.mp4" type="video/mp4">
-</video>
+                <video class="absolute inset-0 w-full h-full object-cover" controls preload="metadata">
+                    <source src="./assets/videos/Review 2.mp4" type="video/mp4">
+                </video>
                 <div
                     class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent pointer-events-none">
                 </div>
@@ -609,12 +602,9 @@
             <!-- Card 3 -->
             <div
                 class="relative rounded-2xl overflow-hidden aspect-[9/16] bg-dark group shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer">
-               <video
-    class="absolute inset-0 w-full h-full object-cover"
-    controls
-    preload="metadata">
-    <source src="./assets/videos/Review 3.mp4" type="video/mp4">
-</video>
+                <video class="absolute inset-0 w-full h-full object-cover" controls preload="metadata">
+                    <source src="./assets/videos/Review 3.mp4" type="video/mp4">
+                </video>
                 <div
                     class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent pointer-events-none">
                 </div>
@@ -634,12 +624,9 @@
             <!-- Card 4 -->
             <div
                 class="relative rounded-2xl overflow-hidden aspect-[9/16] bg-dark group shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer">
-               <video
-    class="absolute inset-0 w-full h-full object-cover"
-    controls
-    preload="metadata">
-    <source src="./assets/videos/Review-4.mp4" type="video/mp4">
-</video>
+                <video class="absolute inset-0 w-full h-full object-cover" controls preload="metadata">
+                    <source src="./assets/videos/Review-4.mp4" type="video/mp4">
+                </video>
                 <div
                     class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent pointer-events-none">
                 </div>
@@ -675,108 +662,63 @@
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
                 <div
                     class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-                    <img
-    src="./assets/image/partner.webp"
-    alt="MyGoldenWay"
-    class="h-20 w-auto object-contain">
+                    <img src="./assets/image/partner.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
                 </div>
                 <div
                     class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-                  <img
-    src="./assets/image/partner2.webp"
-    alt="MyGoldenWay"
-    class="h-20 w-auto object-contain">
+                    <img src="./assets/image/partner2.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
                 </div>
                 <div
                     class="bg-white border border-gray-200 rounded-xl p-4 flex flex-col items-center justify-center hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-                     <img
-    src="./assets/image/partner3.webp"
-    alt="MyGoldenWay"
-    class="h-10 w-auto object-contain">
+                    <img src="./assets/image/partner3.webp" alt="MyGoldenWay" class="h-10 w-auto object-contain">
                 </div>
                 <div
                     class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-                    <img
-    src="./assets/image/partner4.webp"
-    alt="MyGoldenWay"
-    class="h-20 w-auto object-contain">
+                    <img src="./assets/image/partner4.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
                 </div>
                 <div
                     class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-                   <img
-    src="./assets/image/partner5.webp"
-    alt="MyGoldenWay"
-    class="h-20 w-auto object-contain">
+                    <img src="./assets/image/partner5.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
                 </div>
-                 <div
+                <div
                     class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-                   <img
-    src="./assets/image/partner6.webp"
-    alt="MyGoldenWay"
-    class="h-20 w-auto object-contain">
+                    <img src="./assets/image/partner6.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
                 </div>
-                 <div
+                <div
                     class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-                   <img
-    src="./assets/image/partner7.webp"
-    alt="MyGoldenWay"
-    class="h-20 w-auto object-contain">
+                    <img src="./assets/image/partner7.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
                 </div>
-                 <div
+                <div
                     class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-                   <img
-    src="./assets/image/partner8.webp"
-    alt="MyGoldenWay"
-    class="h-20 w-auto object-contain">
+                    <img src="./assets/image/partner8.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
                 </div>
-                 <div
+                <div
                     class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-                   <img
-    src="./assets/image/partner9.webp"
-    alt="MyGoldenWay"
-    class="h-20 w-auto object-contain">
+                    <img src="./assets/image/partner9.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
                 </div>
-                 <div
+                <div
                     class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-                   <img
-    src="./assets/image/partner10.webp"
-    alt="MyGoldenWay"
-    class="h-20 w-auto object-contain">
+                    <img src="./assets/image/partner10.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
                 </div>
-                 <div
+                <div
                     class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-                   <img
-    src="./assets/image/partner11.webp"
-    alt="MyGoldenWay"
-    class="h-20 w-auto object-contain">
+                    <img src="./assets/image/partner11.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
                 </div>
-                 <div
+                <div
                     class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-                   <img
-    src="./assets/image/partner12.webp"
-    alt="MyGoldenWay"
-    class="h-20 w-auto object-contain">
+                    <img src="./assets/image/partner12.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
                 </div>
-                 <div
+                <div
                     class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-                   <img
-    src="./assets/image/partner13.webp"
-    alt="MyGoldenWay"
-    class="h-20 w-auto object-contain">
+                    <img src="./assets/image/partner13.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
                 </div>
-                 <div
+                <div
                     class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-                   <img
-    src="./assets/image/partner14.webp"
-    alt="MyGoldenWay"
-    class="h-20 w-auto object-contain">
+                    <img src="./assets/image/partner14.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
                 </div>
-                  <div
+                <div
                     class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-                   <img
-    src="./assets/image/partner15.jpeg"
-    alt="MyGoldenWay"
-    class="h-20 w-auto object-contain">
+                    <img src="./assets/image/partner15.jpeg" alt="MyGoldenWay" class="h-20 w-auto object-contain">
                 </div>
             </div>
         </div>
@@ -840,310 +782,232 @@
                 </div>
             </div>
 
-<a href="https://wa.me/918927656368" target="_blank" rel="noopener" class="block border-2 border-dashed border-white/20 rounded-2xl p-10 text-center bg-white/5 hover:bg-white/10 hover:border-accent/60 transition-all duration-200 cursor-pointer group">
-    <div class="inline-block bg-accent rounded-xl px-8 py-4 mb-6 shadow-xl group-hover:scale-105 transition-transform duration-200">
-        <div class="font-bold text-primary font-display mb-1 text-lg">
-            READY TO START YOUR MLM BUSINESS TODAY?
-        </div>
-        <div class="text-primary/80 text-base font-medium">
-            Get 100% expert assistance &amp; 24/7 dedicated support from India's best team.
-        </div>
-    </div>
+            <a href="https://wa.me/918927656368" target="_blank" rel="noopener"
+                class="block border-2 border-dashed border-white/20 rounded-2xl p-10 text-center bg-white/5 hover:bg-white/10 hover:border-accent/60 transition-all duration-200 cursor-pointer group">
+                <div
+                    class="inline-block bg-accent rounded-xl px-8 py-4 mb-6 shadow-xl group-hover:scale-105 transition-transform duration-200">
+                    <div class="font-bold text-primary font-display mb-1 text-lg">
+                        READY TO START YOUR MLM BUSINESS TODAY?
+                    </div>
+                    <div class="text-primary/80 text-base font-medium">
+                        Get 100% expert assistance &amp; 24/7 dedicated support from India's best team.
+                    </div>
+                </div>
 
-    <div class="text-2xl md:text-3xl font-bold font-display mb-3 text-white">
-        CALL / WHATSAPP:
-        <span class="text-accent group-hover:text-yellow-400 transition-colors">
-            +91 8927656368
-        </span>
-    </div>
+                <div class="text-2xl md:text-3xl font-bold font-display mb-3 text-white">
+                    CALL / WHATSAPP:
+                    <span class="text-accent group-hover:text-yellow-400 transition-colors">
+                        +91 8927656368
+                    </span>
+                </div>
 
-    <div class="text-gray-400 text-base">
-        (Available anytime for free consultation after you check our live demos)
-    </div>
-</a>
+                <div class="text-gray-400 text-base">
+                    (Available anytime for free consultation after you check our live demos)
+                </div>
+            </a>
 
             <!-- PROVEN EXPERTISE TIMELINE -->
             <div class="mt-24 mb-10">
                 <div class="text-center mb-12">
                     <h3 class="text-2xl md:text-4xl font-bold font-display text-white mb-4 uppercase tracking-wide">
-                        Proven industry expertise backed by MLM success tips</h3>
+                        Proven Industry Expertise Backed by MLM Success Tips
+                    </h3>
                     <div class="w-24 h-1 bg-accent mx-auto rounded-full mt-6"></div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- 2019 -->
-                    <div
-                        class="bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-accent hover:bg-white/10 transition-all duration-300 shadow-lg">
-                        <div
-                            class="inline-block bg-accent text-primary font-bold font-mono px-5 py-2 rounded-lg mb-4 text-sm shadow-md">
-                            2019</div>
-                        <div
-                            class="aspect-video bg-black/50 rounded-xl overflow-hidden relative group border border-white/10">
-                            <video
-                                class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-                                muted loop playsinline
-                                poster="https://assets.mixkit.co/videos/1266/1266-thumb-720-0.jpg">
-                                <source src="https://assets.mixkit.co/videos/1266/1266-720.mp4" type="video/mp4">
-                            </video>
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <div
-                                    class="w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-accent transition-all duration-300 cursor-pointer">
-                                    <svg class="w-6 h-6 text-white ml-1 group-hover:text-primary transition-colors"
-                                        viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M8 5v14l11-7z" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                    <!-- Video 1 -->
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-2">
+                        <iframe class="w-full h-64 rounded-xl" src="https://www.youtube.com/embed/Z4PdFnm4I5Y"
+                            title="YouTube video" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
                     </div>
 
-                    <!-- 2020 -->
-                    <div
-                        class="bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-accent hover:bg-white/10 transition-all duration-300 shadow-lg">
-                        <div
-                            class="inline-block bg-accent text-primary font-bold font-mono px-5 py-2 rounded-lg mb-4 text-sm shadow-md">
-                            2020</div>
-                        <div
-                            class="aspect-video bg-black/50 rounded-xl overflow-hidden relative group border border-white/10">
-                            <video
-                                class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-                                muted loop playsinline poster="https://assets.mixkit.co/videos/261/261-thumb-720-0.jpg">
-                                <source src="https://assets.mixkit.co/videos/261/261-720.mp4" type="video/mp4">
-                            </video>
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <div
-                                    class="w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-accent transition-all duration-300 cursor-pointer">
-                                    <svg class="w-6 h-6 text-white ml-1 group-hover:text-primary transition-colors"
-                                        viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M8 5v14l11-7z" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
+                    <!-- Video 2 -->
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-2">
+                        <iframe class="w-full h-64 rounded-xl" src="https://www.youtube.com/embed/toPqszq47ts"
+                            title="YouTube video" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
                     </div>
 
-                    <!-- 2021 -->
-                    <div
-                        class="bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-accent hover:bg-white/10 transition-all duration-300 shadow-lg">
-                        <div
-                            class="inline-block bg-accent text-primary font-bold font-mono px-5 py-2 rounded-lg mb-4 text-sm shadow-md">
-                            2021</div>
-                        <div
-                            class="aspect-video bg-black/50 rounded-xl overflow-hidden relative group border border-white/10">
-                            <video
-                                class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-                                muted loop playsinline poster="https://assets.mixkit.co/videos/328/328-thumb-720-0.jpg">
-                                <source src="https://assets.mixkit.co/videos/328/328-720.mp4" type="video/mp4">
-                            </video>
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <div
-                                    class="w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-accent transition-all duration-300 cursor-pointer">
-                                    <svg class="w-6 h-6 text-white ml-1 group-hover:text-primary transition-colors"
-                                        viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M8 5v14l11-7z" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
+                    <!-- Video 3 -->
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-2">
+                        <iframe class="w-full h-64 rounded-xl" src="https://www.youtube.com/embed/zBsdcKZKPLw?start=2"
+                            title="YouTube video" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
                     </div>
 
-                    <!-- 2022 -->
-                    <div
-                        class="bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-accent hover:bg-white/10 transition-all duration-300 shadow-lg">
-                        <div
-                            class="inline-block bg-accent text-primary font-bold font-mono px-5 py-2 rounded-lg mb-4 text-sm shadow-md">
-                            2022</div>
-                        <div
-                            class="aspect-video bg-black/50 rounded-xl overflow-hidden relative group border border-white/10">
-                            <video
-                                class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-                                muted loop playsinline poster="https://assets.mixkit.co/videos/428/428-thumb-720-0.jpg">
-                                <source src="https://assets.mixkit.co/videos/428/428-720.mp4" type="video/mp4">
-                            </video>
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <div
-                                    class="w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-accent transition-all duration-300 cursor-pointer">
-                                    <svg class="w-6 h-6 text-white ml-1 group-hover:text-primary transition-colors"
-                                        viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M8 5v14l11-7z" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
+                    <!-- Video 4 -->
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-2">
+                        <iframe class="w-full h-64 rounded-xl" src="https://www.youtube.com/embed/QjJuCHTPUI8"
+                            title="YouTube video" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
                     </div>
 
-                    <!-- 2023 -->
-                    <div
-                        class="bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-accent hover:bg-white/10 transition-all duration-300 shadow-lg">
-                        <div
-                            class="inline-block bg-accent text-primary font-bold font-mono px-5 py-2 rounded-lg mb-4 text-sm shadow-md">
-                            2023</div>
-                        <div
-                            class="aspect-video bg-black/50 rounded-xl overflow-hidden relative group border border-white/10">
-                            <video
-                                class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-                                muted loop playsinline
-                                poster="https://assets.mixkit.co/videos/1266/1266-thumb-720-0.jpg">
-                                <source src="https://assets.mixkit.co/videos/1266/1266-720.mp4" type="video/mp4">
-                            </video>
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <div
-                                    class="w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-accent transition-all duration-300 cursor-pointer">
-                                    <svg class="w-6 h-6 text-white ml-1 group-hover:text-primary transition-colors"
-                                        viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M8 5v14l11-7z" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
+                    <!-- Video 5 -->
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-2">
+                        <iframe class="w-full h-64 rounded-xl" src="https://www.youtube.com/embed/DSQnjtWtN2s"
+                            title="YouTube video" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
                     </div>
 
-                    <!-- 2024 -->
-                    <div
-                        class="bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-accent hover:bg-white/10 transition-all duration-300 shadow-lg">
-                        <div
-                            class="inline-block bg-accent text-primary font-bold font-mono px-5 py-2 rounded-lg mb-4 text-sm shadow-md">
-                            2024</div>
-                        <div
-                            class="aspect-video bg-black/50 rounded-xl overflow-hidden relative group border border-white/10">
-                            <video
-                                class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-                                muted loop playsinline poster="https://assets.mixkit.co/videos/261/261-thumb-720-0.jpg">
-                                <source src="https://assets.mixkit.co/videos/261/261-720.mp4" type="video/mp4">
-                            </video>
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <div
-                                    class="w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-accent transition-all duration-300 cursor-pointer">
-                                    <svg class="w-6 h-6 text-white ml-1 group-hover:text-primary transition-colors"
-                                        viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M8 5v14l11-7z" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
+                    <!-- Video 6 -->
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-2">
+                        <iframe class="w-full h-64 rounded-xl" src="https://www.youtube.com/embed/ebKW5-1N9fw"
+                            title="YouTube video" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
                     </div>
+
+                    <!-- Video 7 -->
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-2">
+                        <iframe class="w-full h-64 rounded-xl" src="https://www.youtube.com/embed/YVzDLQIbIm8"
+                            title="YouTube video" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+
+                    <!-- Video 8 -->
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-2">
+                        <iframe class="w-full h-64 rounded-xl" src="https://www.youtube.com/embed/IbQur-070Hw"
+                            title="YouTube video" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+
                 </div>
             </div>
 
             <!-- OUR SERVICES CAROUSEL -->
             <div class="mt-16">
-              <div class="mb-8">
-    <div class="inline-flex items-center gap-3 text-sm font-semibold uppercase text-accent mb-3">
-        <span class="w-6 h-[1px] bg-accent"></span> Our Services
-    </div>
-    <h3 class="text-2xl md:text-3xl font-bold font-display text-white">Explore what we offer</h3>
-</div>
+                <div class="mb-8">
+                    <div class="inline-flex items-center gap-3 text-sm font-semibold uppercase text-accent mb-3">
+                        <span class="w-6 h-[1px] bg-accent"></span> Our Services
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold font-display text-white">Explore what we offer</h3>
+                </div>
 
-              <div id="svcTrack"
-    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-    <!-- Card: Latest MLM Database -->
-    <a href="mlm-database.html"
-        class="group flex flex-col h-full bg-white/[0.08] backdrop-blur-sm border border-white/15 shadow-lg rounded-2xl p-6 hover:border-accent hover:bg-white/[0.14] hover:-translate-y-1 transition-all duration-300">
-        <div
-            class="w-12 h-12 rounded-full bg-orange-500/15 flex items-center justify-center text-accentLight mb-5 group-hover:bg-accent group-hover:text-white transition-colors">
-            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <ellipse cx="12" cy="5" rx="8" ry="3" />
-                <path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3" />
-            </svg>
-        </div>
-        <h4 class="font-bold text-white mb-2 font-display">Latest MLM Database</h4>
-        <p class="text-base text-gray-200 leading-relaxed mb-4 flex-1">Fresh verified databases with high
-            quality genuine contacts.</p>
-        <span
-            class="text-xs font-bold text-accent group-hover:text-white transition-colors flex items-center gap-1 mt-auto">Learn
-            more &rarr;</span>
-    </a>
+                <div id="svcTrack" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <!-- Card: Latest MLM Database -->
+                    <a href="mlm-database.html"
+                        class="group flex flex-col h-full bg-white/[0.08] backdrop-blur-sm border border-white/15 shadow-lg rounded-2xl p-6 hover:border-accent hover:bg-white/[0.14] hover:-translate-y-1 transition-all duration-300">
+                        <div
+                            class="w-12 h-12 rounded-full bg-orange-500/15 flex items-center justify-center text-accentLight mb-5 group-hover:bg-accent group-hover:text-white transition-colors">
+                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <ellipse cx="12" cy="5" rx="8" ry="3" />
+                                <path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3" />
+                            </svg>
+                        </div>
+                        <h4 class="font-bold text-white mb-2 font-display">Latest MLM Database</h4>
+                        <p class="text-base text-gray-200 leading-relaxed mb-4 flex-1">Fresh verified databases with
+                            high
+                            quality genuine contacts.</p>
+                        <span
+                            class="text-xs font-bold text-accent group-hover:text-white transition-colors flex items-center gap-1 mt-auto">Learn
+                            more &rarr;</span>
+                    </a>
 
-    <!-- Card: MLM Leader Website -->
-    <a href="mlm-leader-website.html" 
-        class="group flex flex-col h-full bg-white/[0.08] backdrop-blur-sm border border-white/15 shadow-lg rounded-2xl p-6 hover:border-accent hover:bg-white/[0.14] hover:-translate-y-1 transition-all duration-300">
-        <div
-            class="w-12 h-12 rounded-full bg-orange-500/15 flex items-center justify-center text-accentLight mb-5 group-hover:bg-accent group-hover:text-white transition-colors">
-            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="8" r="4" />
-                <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" />
-            </svg>
-        </div>
-        <h4 class="font-bold text-white mb-2 font-display">MLM Leader Website</h4>
-        <p class="text-base text-gray-200 leading-relaxed mb-4 flex-1">Modern responsive website for personal
-            branding and business.</p>
-        <span
-            class="text-xs font-bold text-accent group-hover:text-white transition-colors flex items-center gap-1 mt-auto">Learn
-            more &rarr;</span>
-    </a>
+                    <!-- Card: MLM Leader Website -->
+                    <a href="mlm-leader-website.html"
+                        class="group flex flex-col h-full bg-white/[0.08] backdrop-blur-sm border border-white/15 shadow-lg rounded-2xl p-6 hover:border-accent hover:bg-white/[0.14] hover:-translate-y-1 transition-all duration-300">
+                        <div
+                            class="w-12 h-12 rounded-full bg-orange-500/15 flex items-center justify-center text-accentLight mb-5 group-hover:bg-accent group-hover:text-white transition-colors">
+                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="8" r="4" />
+                                <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" />
+                            </svg>
+                        </div>
+                        <h4 class="font-bold text-white mb-2 font-display">MLM Leader Website</h4>
+                        <p class="text-base text-gray-200 leading-relaxed mb-4 flex-1">Modern responsive website for
+                            personal
+                            branding and business.</p>
+                        <span
+                            class="text-xs font-bold text-accent group-hover:text-white transition-colors flex items-center gap-1 mt-auto">Learn
+                            more &rarr;</span>
+                    </a>
 
-    <!-- Card: Customized MLM Software Development -->
-    <a href="custom-mlm.html"
-        class="group flex flex-col h-full bg-white/[0.08] backdrop-blur-sm border border-white/15 shadow-lg rounded-2xl p-6 hover:border-accent hover:bg-white/[0.14] hover:-translate-y-1 transition-all duration-300">
-        <div
-            class="w-12 h-12 rounded-full bg-orange-500/15 flex items-center justify-center text-accentLight mb-5 group-hover:bg-accent group-hover:text-white transition-colors">
-            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="3" y="4" width="18" height="14" rx="2" />
-                <path d="M8 22h8M12 18v4" />
-            </svg>
-        </div>
-        <h4 class="font-bold text-white mb-2 font-display">Customized MLM Software Development</h4>
-        <p class="text-base text-gray-200 leading-relaxed mb-4 flex-1">Powerful backend dashboards tailored to
-            your business with smart automation.</p>
-        <span
-            class="text-xs font-bold text-accent group-hover:text-white transition-colors flex items-center gap-1 mt-auto">Learn
-            more &rarr;</span>
-    </a>
+                    <!-- Card: Customized MLM Software Development -->
+                    <a href="custom-mlm.html"
+                        class="group flex flex-col h-full bg-white/[0.08] backdrop-blur-sm border border-white/15 shadow-lg rounded-2xl p-6 hover:border-accent hover:bg-white/[0.14] hover:-translate-y-1 transition-all duration-300">
+                        <div
+                            class="w-12 h-12 rounded-full bg-orange-500/15 flex items-center justify-center text-accentLight mb-5 group-hover:bg-accent group-hover:text-white transition-colors">
+                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="14" rx="2" />
+                                <path d="M8 22h8M12 18v4" />
+                            </svg>
+                        </div>
+                        <h4 class="font-bold text-white mb-2 font-display">Customized MLM Software Development</h4>
+                        <p class="text-base text-gray-200 leading-relaxed mb-4 flex-1">Powerful backend dashboards
+                            tailored to
+                            your business with smart automation.</p>
+                        <span
+                            class="text-xs font-bold text-accent group-hover:text-white transition-colors flex items-center gap-1 mt-auto">Learn
+                            more &rarr;</span>
+                    </a>
 
-    <!-- Card: MLM Plan PDF Making -->
-    <a href="plan-pdf.html"
-        class="group flex flex-col h-full bg-white/[0.08] backdrop-blur-sm border border-white/15 shadow-lg rounded-2xl p-6 hover:border-accent hover:bg-white/[0.14] hover:-translate-y-1 transition-all duration-300">
-        <div
-            class="w-12 h-12 rounded-full bg-orange-500/15 flex items-center justify-center text-accentLight mb-5 group-hover:bg-accent group-hover:text-white transition-colors">
-            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                <path d="M14 2v6h6M9 15h6M9 11h2" />
-            </svg>
-        </div>
-        <h4 class="font-bold text-white mb-2 font-display">MLM Plan PDF Making</h4>
-        <p class="text-base text-gray-200 leading-relaxed mb-4 flex-1">Professional compensation plan PDF
-            design with premium presentation.</p>
-        <span
-            class="text-xs font-bold text-accent group-hover:text-white transition-colors flex items-center gap-1 mt-auto">Learn
-            more &rarr;</span>
-    </a>
+                    <!-- Card: MLM Plan PDF Making -->
+                    <a href="plan-pdf.html"
+                        class="group flex flex-col h-full bg-white/[0.08] backdrop-blur-sm border border-white/15 shadow-lg rounded-2xl p-6 hover:border-accent hover:bg-white/[0.14] hover:-translate-y-1 transition-all duration-300">
+                        <div
+                            class="w-12 h-12 rounded-full bg-orange-500/15 flex items-center justify-center text-accentLight mb-5 group-hover:bg-accent group-hover:text-white transition-colors">
+                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                <path d="M14 2v6h6M9 15h6M9 11h2" />
+                            </svg>
+                        </div>
+                        <h4 class="font-bold text-white mb-2 font-display">MLM Plan PDF Making</h4>
+                        <p class="text-base text-gray-200 leading-relaxed mb-4 flex-1">Professional compensation plan
+                            PDF
+                            design with premium presentation.</p>
+                        <span
+                            class="text-xs font-bold text-accent group-hover:text-white transition-colors flex items-center gap-1 mt-auto">Learn
+                            more &rarr;</span>
+                    </a>
 
-    <!-- Card: MLM Plan Video Making -->
-    <a href="mlm-videomaking.html"
-        class="group flex flex-col h-full bg-white/[0.08] backdrop-blur-sm border border-white/15 shadow-lg rounded-2xl p-6 hover:border-accent hover:bg-white/[0.14] hover:-translate-y-1 transition-all duration-300">
-        <div
-            class="w-12 h-12 rounded-full bg-orange-500/15 flex items-center justify-center text-accentLight mb-5 group-hover:bg-accent group-hover:text-white transition-colors">
-            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="5" width="20" height="14" rx="2" />
-                <path d="M10 9.5v5l4-2.5z" />
-            </svg>
-        </div>
-        <h4 class="font-bold text-white mb-2 font-display">MLM Plan Video Making</h4>
-        <p class="text-base text-gray-200 leading-relaxed mb-4 flex-1">HD animated presentation videos with
-            voice-over and effects.</p>
-        <span
-            class="text-xs font-bold text-accent group-hover:text-white transition-colors flex items-center gap-1 mt-auto">Learn
-            more &rarr;</span>
-    </a>
+                    <!-- Card: MLM Plan Video Making -->
+                    <a href="mlm-videomaking.html"
+                        class="group flex flex-col h-full bg-white/[0.08] backdrop-blur-sm border border-white/15 shadow-lg rounded-2xl p-6 hover:border-accent hover:bg-white/[0.14] hover:-translate-y-1 transition-all duration-300">
+                        <div
+                            class="w-12 h-12 rounded-full bg-orange-500/15 flex items-center justify-center text-accentLight mb-5 group-hover:bg-accent group-hover:text-white transition-colors">
+                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="5" width="20" height="14" rx="2" />
+                                <path d="M10 9.5v5l4-2.5z" />
+                            </svg>
+                        </div>
+                        <h4 class="font-bold text-white mb-2 font-display">MLM Plan Video Making</h4>
+                        <p class="text-base text-gray-200 leading-relaxed mb-4 flex-1">HD animated presentation videos
+                            with
+                            voice-over and effects.</p>
+                        <span
+                            class="text-xs font-bold text-accent group-hover:text-white transition-colors flex items-center gap-1 mt-auto">Learn
+                            more &rarr;</span>
+                    </a>
 
-    <!-- Card: Result Based Promotion -->
-    <a href="result-based-promotion.html"
-        class="group flex flex-col h-full bg-white/[0.08] backdrop-blur-sm border border-white/15 shadow-lg rounded-2xl p-6 hover:border-accent hover:bg-white/[0.14] hover:-translate-y-1 transition-all duration-300">
-        <div
-            class="w-12 h-12 rounded-full bg-orange-500/15 flex items-center justify-center text-accentLight mb-5 group-hover:bg-accent group-hover:text-white transition-colors">
-            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M3 3v18h18" />
-                <path d="M7 15l4-5 3 3 5-7" />
-            </svg>
-        </div>
-        <h4 class="font-bold text-white mb-2 font-display">Result Based Promotion</h4>
-        <p class="text-base text-gray-200 leading-relaxed mb-4 flex-1">Reach targeted audiences using automated
-            marketing campaigns.</p>
-        <span
-            class="text-xs font-bold text-accent group-hover:text-white transition-colors flex items-center gap-1 mt-auto">Learn
-            more &rarr;</span>
-    </a>
-</div>
+                    <!-- Card: Result Based Promotion -->
+                    <a href="result-based-promotion.html"
+                        class="group flex flex-col h-full bg-white/[0.08] backdrop-blur-sm border border-white/15 shadow-lg rounded-2xl p-6 hover:border-accent hover:bg-white/[0.14] hover:-translate-y-1 transition-all duration-300">
+                        <div
+                            class="w-12 h-12 rounded-full bg-orange-500/15 flex items-center justify-center text-accentLight mb-5 group-hover:bg-accent group-hover:text-white transition-colors">
+                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 3v18h18" />
+                                <path d="M7 15l4-5 3 3 5-7" />
+                            </svg>
+                        </div>
+                        <h4 class="font-bold text-white mb-2 font-display">Result Based Promotion</h4>
+                        <p class="text-base text-gray-200 leading-relaxed mb-4 flex-1">Reach targeted audiences using
+                            automated
+                            marketing campaigns.</p>
+                        <span
+                            class="text-xs font-bold text-accent group-hover:text-white transition-colors flex items-center gap-1 mt-auto">Learn
+                            more &rarr;</span>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -1398,10 +1262,8 @@
         <div class="max-w-7xl mx-auto flex flex-col gap-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                     <img
-    src="./assets/image/VK Enterprise wht Logo.png"
-    alt="VK Services Enterprise"
-    class="h-14 w-auto mb-4">
+                    <img src="./assets/image/VK Enterprise wht Logo.png" alt="VK Services Enterprise"
+                        class="h-14 w-auto mb-4">
                     <p class="mb-2">Copyright © 2025 | By Vishwajit Kumar</p>
                     <p class="mb-1"><span class="text-white font-semibold">Corporate Office:</span> Plot No: 1632/15509,
                         Khata No: 1330/10531, Satya vihar, Rasulgarh, Bhubaneswar, Odisha, 751017</p>
@@ -1668,36 +1530,55 @@
         if (aiFab) aiFab.addEventListener('click', toggleAiPanel);
         if (aiClose) aiClose.addEventListener('click', toggleAiPanel);
 
-        const canned = [
-            "Thanks for reaching out! Our team will get back to you shortly.",
-            "You can also tap the Get In Touch tab to share your details directly.",
-            "We offer custom software, plan PDFs, videos, promotion, database, and leader websites.",
-            "Feel free to call us at 832765638 or WhatsApp 9237377196."
-        ];
-        let replyIndex = 0;
-
+        const chatHistory = [];
+        function appendMessage(text, role) {
+            const msg = document.createElement('div');
+            msg.className = role === 'user'
+                ? 'bg-primary text-white p-3 rounded-2xl rounded-tr-sm self-end shadow-sm max-w-[85%] mt-2 text-sm leading-relaxed'
+                : 'bg-white border border-gray-200 p-3 rounded-2xl rounded-tl-sm text-gray-700 self-start shadow-sm max-w-[85%] mt-2 text-sm leading-relaxed';
+            msg.textContent = text;
+            aiBody.appendChild(msg);
+            aiBody.scrollTop = aiBody.scrollHeight;
+            return msg;
+        }
+        function appendTypingIndicator() {
+            const t = document.createElement('div');
+            t.className = 'bg-white border border-gray-200 p-3 rounded-2xl rounded-tl-sm text-gray-400 self-start shadow-sm max-w-[85%] mt-2 text-sm flex items-center gap-1';
+            t.id = 'aiTyping';
+            t.innerHTML = '<span class="inline-block w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce" style="animation-delay:0s"></span><span class="inline-block w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce" style="animation-delay:0.15s"></span><span class="inline-block w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce" style="animation-delay:0.3s"></span>';
+            aiBody.appendChild(t);
+            aiBody.scrollTop = aiBody.scrollHeight;
+            return t;
+        }
         if (aiForm) {
-            aiForm.addEventListener('submit', function (e) {
+            aiForm.addEventListener('submit', async function (e) {
                 e.preventDefault();
                 const text = aiInput.value.trim();
                 if (!text) return;
-
-                const userMsg = document.createElement('div');
-                userMsg.className = 'bg-primary text-white p-3 rounded-2xl rounded-tr-sm self-end shadow-sm max-w-[85%] mt-2';
-                userMsg.textContent = text;
-                aiBody.appendChild(userMsg);
-
+                appendMessage(text, 'user');
+                chatHistory.push({ role: 'user', text });
                 aiInput.value = '';
-                aiBody.scrollTop = aiBody.scrollHeight;
-
-                setTimeout(() => {
-                    const botMsg = document.createElement('div');
-                    botMsg.className = 'bg-white border border-gray-200 p-3 rounded-2xl rounded-tl-sm text-gray-700 self-start shadow-sm max-w-[85%] mt-2';
-                    botMsg.textContent = canned[replyIndex % canned.length];
-                    replyIndex++;
-                    aiBody.appendChild(botMsg);
-                    aiBody.scrollTop = aiBody.scrollHeight;
-                }, 500);
+                const submitBtn = aiForm.querySelector('button[type="submit"]');
+                if (submitBtn) submitBtn.disabled = true;
+                const typingEl = appendTypingIndicator();
+                try {
+                    const res = await fetch(`https://vkservicesenterprise.in/api/chat`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ message: text, history: chatHistory.slice(-10) })
+                    });
+                    const data = await res.json();
+                    typingEl.remove();
+                    const reply = data.reply || data.error || 'Sorry, could not get a response. Please try again.';
+                    appendMessage(reply, 'bot');
+                    chatHistory.push({ role: 'model', text: reply });
+                } catch (err) {
+                    typingEl.remove();
+                    appendMessage('Connection error. Please call us at 8927656368.', 'bot');
+                } finally {
+                    if (submitBtn) submitBtn.disabled = false;
+                    aiInput.focus();
+                }
             });
         }
 
@@ -1846,7 +1727,210 @@
             enquiryForm.addEventListener('submit', (e) => submitEnquiryForm(e, 'enquiryForm', 'Latest MLM Database', 'name', 'mobile', 'email', 'successView'));
         }
     </script>
+
+    <button id="liveSessionBtn"
+        class="live-session-launch left-4 bottom-6 z-40 rounded-full px-5 py-3 text-sm font-bold text-white shadow-xl flex items-center gap-2 hover:scale-105 transition-transform">
+        <svg class="w-5 h-5 animate-pulse text-yellow-200" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
+        Request Live Session
+    </button>
+
+    <!-- LIVE SESSION MODAL -->
+    <div class="fixed inset-0 z-50 bg-primary/80 hidden items-center justify-center p-4 transition-opacity"
+        id="liveSessionOverlay">
+        <div class="relative w-full max-w-md bg-white rounded-2xl p-8 shadow-2xl border-t-4 border-accent">
+            <button
+                class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-500 hover:bg-accent hover:text-white transition-colors"
+                id="liveSessionClose">&#10005;</button>
+            <div id="liveSessionFormView">
+                <div class="text-xs font-bold text-accent uppercase mb-2">Exclusive Access</div>
+                <h2 class="text-2xl font-bold text-primary mb-2">Request Live Session</h2>
+                <p class="text-sm text-gray-500 mb-6">Experience a live demonstration of our MLM software. <strong>Fee:
+                        &#8377;9</strong>.</p>
+                <form id="liveSessionForm" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-600 mb-1" for="liveSessionName">Full
+                            Name</label>
+                        <input type="text" id="liveSessionName" required
+                            class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-accent"
+                            placeholder="Your name">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-600 mb-1" for="liveSessionMobile">Mobile
+                            Number</label>
+                        <input type="tel" id="liveSessionMobile" required
+                            class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-accent"
+                            placeholder="10-digit number">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-600 mb-1" for="liveSessionEmail">Email
+                            Address</label>
+                        <input type="email" id="liveSessionEmail" required
+                            class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-accent"
+                            placeholder="you@example.com">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-600 mb-1" for="liveSessionMessage">Special
+                            Request (Optional)</label>
+                        <textarea id="liveSessionMessage" rows="2"
+                            class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-accent"
+                            placeholder="Any specific feature you want to see?"></textarea>
+                    </div>
+                    <div id="liveSessionError" class="hidden text-sm text-red-500"></div>
+                    <button type="submit"
+                        class="w-full text-white font-bold py-3.5 rounded-lg shadow-md hover:opacity-90 mt-2 flex items-center justify-center gap-2"
+                        style="background-image:linear-gradient(135deg,#F1521E,#FF7A45);">Pay &#8377;9 &amp; Request
+                        Session</button>
+                </form>
+            </div>
+            <div id="liveSessionSuccessView" class="hidden text-center">
+                <div
+                    class="w-16 h-16 mx-auto bg-green-50 rounded-full flex items-center justify-center mb-4 text-green-500">
+                    <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                </div>
+                <h2 class="text-xl font-bold text-primary mb-2">Payment Successful!</h2>
+                <p class="text-gray-500 text-sm">We have received your &#8377;9 and your live session request. Our team
+                    will contact you shortly with the time and joining link.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const liveSessionOverlay = document.getElementById('liveSessionOverlay');
+        const liveSessionForm = document.getElementById('liveSessionForm');
+        const liveSessionError = document.getElementById('liveSessionError');
+        const openLiveSession = () => { liveSessionOverlay.classList.remove('hidden'); liveSessionOverlay.classList.add('flex'); document.body.style.overflow = 'hidden'; };
+        const closeLiveSession = () => { liveSessionOverlay.classList.add('hidden'); liveSessionOverlay.classList.remove('flex'); document.body.style.overflow = ''; };
+        document.getElementById('liveSessionBtn')?.addEventListener('click', openLiveSession);
+        document.getElementById('liveSessionClose')?.addEventListener('click', closeLiveSession);
+        liveSessionOverlay?.addEventListener('click', (e) => { if (e.target === liveSessionOverlay) closeLiveSession(); });
+        liveSessionForm?.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const name = document.getElementById('liveSessionName').value.trim();
+            const mobile = document.getElementById('liveSessionMobile').value.trim();
+            const email = document.getElementById('liveSessionEmail').value.trim();
+            const message = document.getElementById('liveSessionMessage').value.trim();
+            if (name.length < 2 || !/^\d{10}$/.test(mobile) || !/^\S+@\S+\.\S+$/.test(email)) {
+                liveSessionError.textContent = 'Please enter your name, a 10-digit mobile number and a valid email.';
+                liveSessionError.classList.remove('hidden'); return;
+            }
+            const button = liveSessionForm.querySelector('button[type="submit"]');
+            button.disabled = true; button.textContent = 'Initializing Payment...';
+            liveSessionError.classList.add('hidden');
+            try {
+                const apiBase = typeof CONFIG !== 'undefined' && CONFIG.API_BASE_URL ? CONFIG.API_BASE_URL : 'https://vkservicesenterprise.in/api';
+                const orderRes = await fetch(`${apiBase}/live-sessions/create-order`, { method: 'POST', headers: { 'Content-Type': 'application/json' } });
+                const orderResult = await orderRes.json();
+                if (!orderRes.ok) throw new Error(orderResult.message || 'Could not initialize payment.');
+                const options = {
+                    key: orderResult.key, amount: orderResult.amount, currency: 'INR',
+                    name: 'VK Services Enterprise', description: 'Live Session Request Fee', order_id: orderResult.orderId,
+                    handler: async function (response) {
+                        button.textContent = 'Finalizing Registration...';
+                        try {
+                            const regRes = await fetch(`${apiBase}/live-sessions/register`, {
+                                method: 'POST', headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({
+                                    name, mobile, email, message, amount: orderResult.amount / 100,
+                                    razorpay_payment_id: response.razorpay_payment_id,
+                                    razorpay_order_id: response.razorpay_order_id,
+                                    razorpay_signature: response.razorpay_signature
+                                })
+                            });
+                            const regResult = await regRes.json();
+                            if (!regRes.ok) throw new Error(regResult.message || 'Payment received but registration failed.');
+                            document.getElementById('liveSessionFormView').classList.add('hidden');
+                            document.getElementById('liveSessionSuccessView').classList.remove('hidden');
+                        } catch (err) { liveSessionError.textContent = err.message; liveSessionError.classList.remove('hidden'); button.disabled = false; button.textContent = 'Pay &#8377;9 & Request Session'; }
+                    },
+                    prefill: { name, email, contact: mobile }, theme: { color: '#F1521E' },
+                    modal: { ondismiss: function () { liveSessionError.textContent = 'Payment was cancelled.'; liveSessionError.classList.remove('hidden'); button.disabled = false; button.textContent = 'Pay &#8377;9 & Request Session'; } }
+                };
+                const rzp = new window.Razorpay(options);
+                rzp.on('payment.failed', function (response) { liveSessionError.textContent = response.error.description || 'Payment failed.'; liveSessionError.classList.remove('hidden'); button.disabled = false; button.textContent = 'Pay &#8377;9 & Request Session'; });
+                rzp.open();
+            } catch (error) { liveSessionError.textContent = error.message; liveSessionError.classList.remove('hidden'); button.disabled = false; button.textContent = 'Pay &#8377;9 & Request Session'; }
+        });
+    </script>
+
+    <!-- Image Lightbox Modal -->
+    <div id="imageLightbox"
+        class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 p-4 transition-opacity cursor-zoom-out">
+        <button id="lightboxPrev"
+            class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white hover:text-accent bg-black/50 hover:bg-black/80 rounded-full p-3 z-50 transition-all">
+            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+            </svg>
+        </button>
+        <button id="lightboxNext"
+            class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-white hover:text-accent bg-black/50 hover:bg-black/80 rounded-full p-3 z-50 transition-all">
+            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+            </svg>
+        </button>
+        <img id="lightboxImg" src="" alt="Zoomed Proof"
+            class="max-w-[85vw] max-h-[90vh] rounded-lg shadow-2xl object-contain cursor-default"
+            onclick="event.stopPropagation()">
+    </div>
+
+    <script>
+        // Image Lightbox Logic
+        const imageLightbox = document.getElementById('imageLightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxPrev = document.getElementById('lightboxPrev');
+        const lightboxNext = document.getElementById('lightboxNext');
+
+        // Select all images inside the Image Proofs Grid
+        const proofImages = Array.from(document.querySelectorAll('.mt-16 .grid img'));
+        let currentImageIndex = 0;
+
+        proofImages.forEach((img, index) => {
+            img.classList.add('cursor-zoom-in');
+            img.addEventListener('click', () => {
+                currentImageIndex = index;
+                lightboxImg.src = img.src;
+                imageLightbox.classList.remove('hidden');
+                imageLightbox.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        const showPrevImage = (e) => {
+            if (e) e.stopPropagation();
+            currentImageIndex = (currentImageIndex - 1 + proofImages.length) % proofImages.length;
+            lightboxImg.src = proofImages[currentImageIndex].src;
+        };
+
+        const showNextImage = (e) => {
+            if (e) e.stopPropagation();
+            currentImageIndex = (currentImageIndex + 1) % proofImages.length;
+            lightboxImg.src = proofImages[currentImageIndex].src;
+        };
+
+        const closeLightbox = () => {
+            imageLightbox.classList.add('hidden');
+            imageLightbox.classList.remove('flex');
+            document.body.style.overflow = '';
+            setTimeout(() => { lightboxImg.src = ''; }, 300); // Clear image after hide
+        };
+
+        lightboxPrev?.addEventListener('click', showPrevImage);
+        lightboxNext?.addEventListener('click', showNextImage);
+        imageLightbox?.addEventListener('click', closeLightbox);
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!imageLightbox.classList.contains('hidden')) {
+                if (e.key === 'ArrowLeft') showPrevImage();
+                if (e.key === 'ArrowRight') showNextImage();
+                if (e.key === 'Escape') closeLightbox();
+            }
+        });
+    </script>
 </body>
 
 </html>
-

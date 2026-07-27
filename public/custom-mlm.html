@@ -1,15 +1,28 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Instant Live Demos — MLM Software Company</title>
-  <meta name="description" content="Explore customized MLM software solutions and live demos for your network marketing business.">
-  <meta property="og:type" content="website"><meta property="og:site_name" content="VK Services Enterprise">
-  <meta property="og:title" content="Customized MLM Software"><meta property="og:description" content="Explore customized MLM software solutions and live demos for your network marketing business.">
-  <meta property="og:url" content="https://vkservicesenterprise.in/custom-mlm.html"><meta property="og:image" content="https://vkservicesenterprise.in/assets/image/01_Customized_MLM_Software_og.jpg"><meta property="og:image:secure_url" content="https://vkservicesenterprise.in/assets/image/01_Customized_MLM_Software_og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
-  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Customized MLM Software | VK Services Enterprise"><meta name="twitter:description" content="Explore customized MLM software solutions and live demos for your network marketing business."><meta name="twitter:image" content="https://vkservicesenterprise.in/assets/image/01_Customized_MLM_Software_og.jpg">
+  <meta name="description"
+    content="Explore customized MLM software solutions and live demos for your network marketing business.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="VK Services Enterprise">
+  <meta property="og:title" content="Customized MLM Software">
+  <meta property="og:description"
+    content="Explore customized MLM software solutions and live demos for your network marketing business.">
+  <meta property="og:url" content="https://vkservicesenterprise.in/custom-mlm.html">
+  <meta property="og:image" content="https://vkservicesenterprise.in/assets/image/01_Customized_MLM_Software_og.jpg">
+  <meta property="og:image:secure_url"
+    content="https://vkservicesenterprise.in/assets/image/01_Customized_MLM_Software_og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Customized MLM Software | VK Services Enterprise">
+  <meta name="twitter:description"
+    content="Explore customized MLM software solutions and live demos for your network marketing business.">
+  <meta name="twitter:image" content="https://vkservicesenterprise.in/assets/image/01_Customized_MLM_Software_og.jpg">
   <link rel="icon" type="image/png" href="./assets/image/VK-Enterprise-Logo.webp">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,6 +30,7 @@
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="./dist/output.css">
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <link rel="stylesheet" href="./assets/index-hero.css">
   <style>
     /* Only what Tailwind's utility classes genuinely can't express: keyframes, the live-pulse ring, and the FAQ accordion max-height transition (driven by JS + inline style). */
@@ -273,6 +287,72 @@
         padding-bottom: 2rem !important;
       }
     }
+
+    .live-session-launch {
+      position: fixed;
+      overflow: hidden;
+      isolation: isolate;
+      background: linear-gradient(135deg, #F1521E 0%, #FF7A45 55%, #F1521E 100%);
+      background-size: 180% 100%;
+      border: 1px solid rgba(255, 255, 255, .38);
+      box-shadow: 0 12px 28px rgba(241, 82, 30, .36), 0 0 0 7px rgba(241, 82, 30, .10);
+      animation: liveSessionGlow 2.5s ease-in-out infinite, liveSessionGradient 4s linear infinite;
+    }
+
+    .live-session-launch::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      transform: translateX(-100%);
+      animation: liveSessionShine 3s infinite;
+    }
+
+    @keyframes liveSessionGlow {
+
+      0%,
+      100% {
+        box-shadow: 0 12px 28px rgba(241, 82, 30, .36), 0 0 0 7px rgba(241, 82, 30, .10);
+      }
+
+      50% {
+        box-shadow: 0 12px 28px rgba(241, 82, 30, .5), 0 0 0 10px rgba(241, 82, 30, .15);
+      }
+    }
+
+    @keyframes liveSessionGradient {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      100% {
+        background-position: 180% 50%;
+      }
+    }
+
+    @keyframes liveSessionShine {
+
+      0%,
+      58% {
+        transform: translateX(-130%);
+      }
+
+      82%,
+      100% {
+        transform: translateX(130%);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .live-session-launch,
+      .live-session-launch::before {
+        animation: none;
+      }
+    }
   </style>
 </head>
 
@@ -437,9 +517,24 @@
     })();
   </script>
 
-  <button
-    class="fixed right-0 top-1/2 -translate-y-1/2 rotate-180 bg-accent text-primary font-bold text-sm tracking-wide py-4 px-2 z-40 rounded-l-lg hover:pr-4 hover:bg-yellow-400 transition-all duration-300 shadow-xl"
-    style="writing-mode: vertical-rl;" id="sideTab">Get In Touch</button>
+  <button id="sideTab"
+    class="fixed right-0 top-1/2 -translate-y-1/2 rotate-180 text-white font-bold text-sm tracking-wide py-4 px-2 z-40 rounded-l-lg shadow-xl cursor-pointer transition-all duration-300 hover:pr-4">
+    Get In Touch
+  </button>
+
+  <style>
+    #sideTab {
+      writing-mode: vertical-rl;
+      background: linear-gradient(135deg, #FF7A45, #F1521E);
+    }
+
+    #sideTab:hover {
+      background: #facc15;
+      /* Tailwind yellow-400 */
+      color: #111827;
+      /* Optional: dark text */
+    }
+  </style>
 
   <div
     class="fixed inset-0 z-50 bg-primary/80 flex items-center justify-center opacity-0 invisible transition-all duration-300 p-4"
@@ -479,8 +574,8 @@
             <div class="err hidden text-red-500 text-xs mt-1">Please enter a valid email address.</div>
           </div>
           <button type="submit"
-                            class="w-full text-white font-semibold py-3.5 rounded-lg transition-colors mt-2 shadow-md"
-                            style="background-image:linear-gradient(135deg,#FF7A45,#F1521E);">Submit</button>
+            class="w-full text-white font-semibold py-3.5 rounded-lg transition-colors mt-2 shadow-md"
+            style="background-image:linear-gradient(135deg,#FF7A45,#F1521E);">Submit</button>
         </form>
       </div>
 
@@ -838,27 +933,29 @@
           </div>
         </div>
 
-<a href="https://wa.me/918927656368" target="_blank" rel="noopener" class="block border-2 border-dashed border-white/20 rounded-2xl p-10 text-center bg-white/5 hover:bg-white/10 hover:border-accent/60 transition-all duration-200 cursor-pointer group">
-    <div class="inline-block bg-accent rounded-xl px-8 py-4 mb-6 shadow-xl group-hover:scale-105 transition-transform duration-200">
-        <div class="font-bold text-primary font-display mb-1 text-lg">
-            READY TO START YOUR MLM BUSINESS TODAY?
-        </div>
-        <div class="text-primary/80 text-base font-medium">
-            Get 100% expert assistance &amp; 24/7 dedicated support from India's best team.
-        </div>
-    </div>
+        <a href="https://wa.me/918927656368" target="_blank" rel="noopener"
+          class="block border-2 border-dashed border-white/20 rounded-2xl p-10 text-center bg-white/5 hover:bg-white/10 hover:border-accent/60 transition-all duration-200 cursor-pointer group">
+          <div
+            class="inline-block bg-accent rounded-xl px-8 py-4 mb-6 shadow-xl group-hover:scale-105 transition-transform duration-200">
+            <div class="font-bold text-primary font-display mb-1 text-lg">
+              READY TO START YOUR MLM BUSINESS TODAY?
+            </div>
+            <div class="text-primary/80 text-base font-medium">
+              Get 100% expert assistance &amp; 24/7 dedicated support from India's best team.
+            </div>
+          </div>
 
-    <div class="text-2xl md:text-3xl font-bold font-display mb-3 text-white">
-        CALL / WHATSAPP:
-        <span class="text-accent group-hover:text-yellow-400 transition-colors">
-            +91 8927656368
-        </span>
-    </div>
+          <div class="text-2xl md:text-3xl font-bold font-display mb-3 text-white">
+            CALL / WHATSAPP:
+            <span class="text-accent group-hover:text-yellow-400 transition-colors">
+              +91 8927656368
+            </span>
+          </div>
 
-    <div class="text-gray-400 text-base">
-        (Available anytime for free consultation after you check our live demos)
-    </div>
-</a>
+          <div class="text-gray-400 text-base">
+            (Available anytime for free consultation after you check our live demos)
+          </div>
+        </a>
 
         <!-- OUR SERVICES CAROUSEL -->
         <div class="mt-16">
@@ -889,7 +986,7 @@
             </a>
 
             <!-- Card: MLM Leader Website -->
-            <a href="mlm-leader-website.html" 
+            <a href="mlm-leader-website.html"
               class="group flex flex-col h-full bg-white/[0.08] backdrop-blur-sm border border-white/15 shadow-lg rounded-2xl p-6 hover:border-accent hover:bg-white/[0.14] hover:-translate-y-1 transition-all duration-300">
               <div
                 class="w-12 h-12 rounded-full bg-orange-500/15 flex items-center justify-center text-accentLight mb-5 group-hover:bg-accent group-hover:text-white transition-colors">
@@ -1623,32 +1720,55 @@
     if (aiFab) aiFab.addEventListener('click', toggleAiPanel);
     if (aiClose) aiClose.addEventListener('click', toggleAiPanel);
 
-    const canned = [
-      'Thanks for reaching out! Our team will get back to you shortly.',
-      'You can also tap the Get In Touch tab to share your details directly.',
-      'We offer custom software, plan PDFs, videos, promotion, database, and leader websites.',
-      'Feel free to call us at 832765638 or WhatsApp 9237377196.'
-    ];
-    let replyIndex = 0;
+    const chatHistory = [];
+    function appendMessage(text, role) {
+      const msg = document.createElement('div');
+      msg.className = role === 'user'
+        ? 'bg-primary text-white p-3 rounded-2xl rounded-tr-sm self-end shadow-sm max-w-[85%] mt-2 text-sm leading-relaxed'
+        : 'bg-white border border-gray-200 p-3 rounded-2xl rounded-tl-sm text-gray-700 self-start shadow-sm max-w-[85%] mt-2 text-sm leading-relaxed';
+      msg.textContent = text;
+      aiBody.appendChild(msg);
+      aiBody.scrollTop = aiBody.scrollHeight;
+      return msg;
+    }
+    function appendTypingIndicator() {
+      const t = document.createElement('div');
+      t.className = 'bg-white border border-gray-200 p-3 rounded-2xl rounded-tl-sm text-gray-400 self-start shadow-sm max-w-[85%] mt-2 text-sm flex items-center gap-1';
+      t.id = 'aiTyping';
+      t.innerHTML = '<span class="inline-block w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce" style="animation-delay:0s"></span><span class="inline-block w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce" style="animation-delay:0.15s"></span><span class="inline-block w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce" style="animation-delay:0.3s"></span>';
+      aiBody.appendChild(t);
+      aiBody.scrollTop = aiBody.scrollHeight;
+      return t;
+    }
     if (aiForm) {
-      aiForm.addEventListener('submit', function (e) {
+      aiForm.addEventListener('submit', async function (e) {
         e.preventDefault();
         const text = aiInput.value.trim();
         if (!text) return;
-        const userMsg = document.createElement('div');
-        userMsg.className = 'bg-primary text-white p-3 rounded-2xl rounded-tr-sm self-end shadow-sm max-w-[85%] mt-2';
-        userMsg.textContent = text;
-        aiBody.appendChild(userMsg);
+        appendMessage(text, 'user');
+        chatHistory.push({ role: 'user', text });
         aiInput.value = '';
-        aiBody.scrollTop = aiBody.scrollHeight;
-        setTimeout(() => {
-          const botMsg = document.createElement('div');
-          botMsg.className = 'bg-white border border-gray-200 p-3 rounded-2xl rounded-tl-sm text-gray-700 self-start shadow-sm max-w-[85%] mt-2';
-          botMsg.textContent = canned[replyIndex % canned.length];
-          replyIndex++;
-          aiBody.appendChild(botMsg);
-          aiBody.scrollTop = aiBody.scrollHeight;
-        }, 500);
+        const submitBtn = aiForm.querySelector('button[type="submit"]');
+        if (submitBtn) submitBtn.disabled = true;
+        const typingEl = appendTypingIndicator();
+        try {
+          const res = await fetch(`${CONFIG.API_BASE_URL}/chat`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: text, history: chatHistory.slice(-10) })
+          });
+          const data = await res.json();
+          typingEl.remove();
+          const reply = data.reply || data.error || 'Sorry, could not get a response. Please try again.';
+          appendMessage(reply, 'bot');
+          chatHistory.push({ role: 'model', text: reply });
+        } catch (err) {
+          typingEl.remove();
+          appendMessage('Connection error. Please call us at 8927656368.', 'bot');
+        } finally {
+          if (submitBtn) submitBtn.disabled = false;
+          aiInput.focus();
+        }
       });
     }
 
@@ -1727,6 +1847,76 @@
       resize(); initParticles(); tick();
     }
   </script>
+
+  <button id="liveSessionBtn"
+    class="live-session-launch left-4 bottom-6 z-40 rounded-full px-5 py-3 text-sm font-bold text-white shadow-xl flex items-center gap-2 hover:scale-105 transition-transform">
+    <svg class="w-5 h-5 animate-pulse text-yellow-200" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2.5">
+      <polygon points="5 3 19 12 5 21 5 3"></polygon>
+    </svg>
+    Request Live Session
+  </button>
+
+  <!-- LIVE SESSION MODAL -->
+  <div class="fixed inset-0 z-50 bg-primary/80 hidden items-center justify-center p-4 transition-opacity"
+    id="liveSessionOverlay">
+    <div class="relative w-full max-w-md bg-white rounded-2xl p-8 shadow-2xl border-t-4 border-accent">
+      <button
+        class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-500 hover:bg-accent hover:text-white transition-colors"
+        id="liveSessionClose">&#10005;</button>
+      <div id="liveSessionFormView">
+        <div class="text-xs font-bold text-accent uppercase mb-2">Exclusive Access</div>
+        <h2 class="text-2xl font-bold text-primary mb-2">Request Live Session</h2>
+        <p class="text-sm text-gray-500 mb-6">Experience a live demonstration of our MLM software. <strong>Fee:
+            ₹9</strong>.</p>
+
+        <form id="liveSessionForm" class="space-y-4">
+          <div>
+            <label class="block text-sm font-semibold text-gray-600 mb-1" for="liveSessionName">Full Name</label>
+            <input type="text" id="liveSessionName" required
+              class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-accent"
+              placeholder="Your name">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-600 mb-1" for="liveSessionMobile">Mobile Number</label>
+            <input type="tel" id="liveSessionMobile" required
+              class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-accent"
+              placeholder="10-digit number">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-600 mb-1" for="liveSessionEmail">Email Address</label>
+            <input type="email" id="liveSessionEmail" required
+              class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-accent"
+              placeholder="you@example.com">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-600 mb-1" for="liveSessionMessage">Special Request
+              (Optional)</label>
+            <textarea id="liveSessionMessage" rows="2"
+              class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-accent"
+              placeholder="Any specific feature you want to see?"></textarea>
+          </div>
+          <div id="liveSessionError" class="hidden text-sm text-red-500"></div>
+          <button type="submit"
+            class="w-full text-white font-bold py-3.5 rounded-lg shadow-md hover:opacity-90 mt-2 flex items-center justify-center gap-2"
+            style="background-image:linear-gradient(135deg,#F1521E,#FF7A45);">
+            Pay ₹9 & Request Session
+          </button>
+        </form>
+      </div>
+
+      <div id="liveSessionSuccessView" class="hidden text-center">
+        <div class="w-16 h-16 mx-auto bg-green-50 rounded-full flex items-center justify-center mb-4 text-green-500">
+          <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+        </div>
+        <h2 class="text-xl font-bold text-primary mb-2">Payment Successful!</h2>
+        <p class="text-gray-500 text-sm">We have received your ₹9 and your live session request. Our team will contact
+          you shortly with the time and joining link.</p>
+      </div>
+    </div>
+  </div>
 
   <script src="api-config.js"></script>
   <script>
@@ -1827,7 +2017,102 @@
       enquiryForm.addEventListener('submit', (e) => submitEnquiryForm(e, 'enquiryForm', 'Customized MLM Software', 'name', 'mobile', 'email', 'successView'));
     }
   </script>
+  <script>
+    /* ---------- Live-session registration ---------- */
+    const liveSessionOverlay = document.getElementById('liveSessionOverlay');
+    const liveSessionForm = document.getElementById('liveSessionForm');
+    const liveSessionError = document.getElementById('liveSessionError');
+    const openLiveSession = () => {
+      liveSessionOverlay.classList.remove('hidden');
+      liveSessionOverlay.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    };
+    const closeLiveSession = () => {
+      liveSessionOverlay.classList.add('hidden');
+      liveSessionOverlay.classList.remove('flex');
+      document.body.style.overflow = '';
+    };
+    document.getElementById('liveSessionBtn')?.addEventListener('click', openLiveSession);
+    document.getElementById('liveSessionClose')?.addEventListener('click', closeLiveSession);
+    liveSessionOverlay?.addEventListener('click', (event) => { if (event.target === liveSessionOverlay) closeLiveSession(); });
+
+    liveSessionForm?.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const name = document.getElementById('liveSessionName').value.trim();
+      const mobile = document.getElementById('liveSessionMobile').value.trim();
+      const email = document.getElementById('liveSessionEmail').value.trim();
+      const message = document.getElementById('liveSessionMessage').value.trim();
+      if (name.length < 2 || !/^\d{10}$/.test(mobile) || !/^\S+@\S+\.\S+$/.test(email)) {
+        liveSessionError.textContent = 'Please enter your name, a 10-digit mobile number and a valid email.';
+        liveSessionError.classList.remove('hidden');
+        return;
+      }
+      const button = liveSessionForm.querySelector('button[type="submit"]');
+      button.disabled = true; button.textContent = 'Initializing Payment...';
+      liveSessionError.classList.add('hidden');
+      try {
+        const orderRes = await fetch(typeof CONFIG !== 'undefined' && CONFIG.API_BASE_URL ? `${CONFIG.API_BASE_URL}/live-sessions/create-order` : 'https://vkservicesenterprise.in/api/live-sessions/create-order', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' }
+        });
+        const orderResult = await orderRes.json();
+        if (!orderRes.ok) throw new Error(orderResult.message || 'Could not initialize payment.');
+
+        const options = {
+          key: orderResult.key,
+          amount: orderResult.amount,
+          currency: "INR",
+          name: "VK Services Enterprise",
+          description: "Live Session Request Fee",
+          order_id: orderResult.orderId,
+          handler: async function (response) {
+            button.textContent = 'Finalizing Registration...';
+            try {
+              const regRes = await fetch(typeof CONFIG !== 'undefined' && CONFIG.API_BASE_URL ? `${CONFIG.API_BASE_URL}/live-sessions/register` : 'https://vkservicesenterprise.in/api/live-sessions/register', {
+                method: 'POST', headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  name, mobile, email, message,
+                  amount: orderResult.amount / 100,
+                  razorpay_payment_id: response.razorpay_payment_id,
+                  razorpay_order_id: response.razorpay_order_id,
+                  razorpay_signature: response.razorpay_signature
+                })
+              });
+              const regResult = await regRes.json();
+              if (!regRes.ok) throw new Error(regResult.message || 'Payment received but registration failed.');
+              document.getElementById('liveSessionFormView').classList.add('hidden');
+              document.getElementById('liveSessionSuccessView').classList.remove('hidden');
+            } catch (err) {
+              liveSessionError.textContent = err.message;
+              liveSessionError.classList.remove('hidden');
+              button.disabled = false; button.textContent = 'Pay ₹9 & Request Session';
+            }
+          },
+          prefill: { name, email, contact: mobile },
+          theme: { color: "#F1521E" },
+          modal: {
+            ondismiss: function () {
+              liveSessionError.textContent = "Payment was cancelled.";
+              liveSessionError.classList.remove('hidden');
+              button.disabled = false; button.textContent = 'Pay ₹9 & Request Session';
+            }
+          }
+        };
+
+        const rzp = new window.Razorpay(options);
+        rzp.on('payment.failed', function (response) {
+          liveSessionError.textContent = response.error.description || "Payment failed.";
+          liveSessionError.classList.remove('hidden');
+          button.disabled = false; button.textContent = 'Pay ₹9 & Request Session';
+        });
+        rzp.open();
+
+      } catch (error) {
+        liveSessionError.textContent = error.message;
+        liveSessionError.classList.remove('hidden');
+        button.disabled = false; button.textContent = 'Pay ₹9 & Request Session';
+      }
+    });
+  </script>
 </body>
 
 </html>
-
