@@ -1,10 +1,22 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Result based Promotion</title>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RW3CPQCZ1X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RW3CPQCZ1X');
+</script>
+
+
+
     <meta name="description"
         content="Result-based MLM promotion services to generate quality leads and grow your network marketing business.">
     <meta property="og:type" content="website">
@@ -105,6 +117,53 @@
             100% {
                 transform: translateX(130%);
             }
+        }
+        @media (prefers-reduced-motion: reduce) {
+
+            .live-session-launch,
+            .live-session-launch::before {
+                animation: none;
+            }
+        }
+
+        @keyframes whatsappFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        @keyframes whatsappPulse {
+            0%, 100% { box-shadow: 0 12px 28px rgba(22,163,74,.38), 0 0 0 0 rgba(34,197,94,.42); }
+            50% { box-shadow: 0 16px 32px rgba(22,163,74,.46), 0 0 0 10px rgba(34,197,94,0); }
+        }
+        .whatsapp-float {
+            animation: whatsappFloat 3s ease-in-out infinite, whatsappPulse 2.4s ease-in-out infinite;
+            background: linear-gradient(145deg, #2be463, #128c46);
+        }
+        .whatsapp-float .wa-label {
+            max-width: 0; opacity: 0; overflow: hidden; white-space: nowrap;
+            transition: max-width .35s ease, opacity .25s ease, margin .35s ease;
+        }
+        .whatsapp-float:hover .wa-label, .whatsapp-float:focus-visible .wa-label {
+            max-width: 140px; opacity: 1; margin-left: .5rem;
+        }
+        @media (prefers-reduced-motion: reduce) { .whatsapp-float { animation: none; } }
+
+        .social-rail a { position: relative; box-shadow: 0 8px 20px rgba(17,24,39,.16); }
+        .social-rail .social-tooltip {
+            position: absolute; right: calc(100% + 10px); top: 50%;
+            transform: translateY(-50%) translateX(6px);
+            background: #111827; color: #fff; font-size: 12px; font-weight: 600;
+            letter-spacing: .02em; padding: 5px 10px; border-radius: 8px;
+            white-space: nowrap; opacity: 0; pointer-events: none;
+            transition: opacity .2s ease, transform .2s ease;
+            box-shadow: 0 6px 16px rgba(0,0,0,.18);
+        }
+        .social-rail .social-tooltip::after {
+            content: ""; position: absolute; left: 100%; top: 50%;
+            transform: translateY(-50%);
+            border: 5px solid transparent; border-left-color: #111827;
+        }
+        .social-rail a:hover .social-tooltip, .social-rail a:focus-visible .social-tooltip {
+            opacity: 1; transform: translateY(-50%) translateX(0);
         }
     </style>
 </head>
@@ -266,7 +325,7 @@
                                 </svg>
                                 Call: 892765638
                             </a>
-                            <a href="https://wa.me/919237377196"
+                            <a href="https://wa.me/918927656368"
                                 class="hover:text-green-500 transition-colors flex items-center gap-2 text-green-600">
                                 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2">
@@ -282,25 +341,24 @@
         </div>
     </section>
 
-    <!-- Side Tab -->
-    <button id="sideTab"
-        class="fixed right-0 top-1/2 -translate-y-1/2 rotate-180 text-white font-bold text-sm tracking-wide py-4 px-2 z-40 rounded-l-lg shadow-xl cursor-pointer transition-all duration-300 hover:pr-4">
-        Get In Touch
-    </button>
-
-    <style>
-        #sideTab {
-            writing-mode: vertical-rl;
-            background: linear-gradient(135deg, #FF7A45, #F1521E);
-        }
-
-        #sideTab:hover {
-            background: #facc15;
-            /* Tailwind yellow-400 */
-            color: #111827;
-            /* Optional: dark text */
-        }
-    </style>
+    <aside aria-label="Follow VK Services Enterprise"
+        class="social-rail fixed right-4 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-4">
+        <a href="https://www.youtube.com/c/MLMSUCCESSTIPS/videos" target="_blank" rel="noopener" aria-label="YouTube"
+            class="w-12 h-12 rounded-full text-white ring-2 ring-white/70 flex items-center justify-center transition-all duration-300 hover:-translate-x-1.5 hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-red-200" style="background: linear-gradient(to bottom right, #ff4d4d, #cc0000);">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z" /></svg>
+            <span class="social-tooltip">YouTube</span>
+        </a>
+        <a href="https://www.instagram.com/vishwajit2307/" aria-label="Instagram" title="Add your Instagram profile link"
+            class="w-12 h-12 rounded-full text-white ring-2 ring-white/70 flex items-center justify-center transition-all duration-300 hover:-translate-x-1.5 hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-pink-200" style="background: linear-gradient(to bottom right, #833ab4, #fd1d1d, #fcb045);">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none" /></svg>
+            <span class="social-tooltip">Instagram</span>
+        </a>
+        <a href="https://www.facebook.com/vkservicesenterprise" aria-label="Facebook" title="Add your Facebook profile link"
+            class="w-12 h-12 rounded-full text-white ring-2 ring-white/70 flex items-center justify-center transition-all duration-300 hover:-translate-x-1.5 hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-blue-200" style="background: linear-gradient(to bottom right, #4a95ff, #1354c9);">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.3v3h2.8v8h3.4Z" /></svg>
+            <span class="social-tooltip">Facebook</span>
+        </a>
+    </aside>
 
     <!-- MODAL -->
     <div class="fixed inset-0 z-50 bg-primary/80 flex items-center justify-center opacity-0 invisible transition-all duration-300 p-4"
@@ -364,7 +422,7 @@
                         Call: 892765638
                     </a>
                     <a class="flex items-center gap-2 bg-green-50 border border-green-200 px-4 py-2 rounded-full text-sm font-semibold text-green-700 hover:border-green-400 transition-colors"
-                        href="https://wa.me/919237377196" target="_blank" rel="noopener">
+                        href="https://wa.me/918927656368" target="_blank" rel="noopener">
                         <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path
                                 d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
@@ -379,12 +437,12 @@
         </div>
     </div>
 
-    <section class="py-10 md:py-24 px-6 bg-gray-50" id="services">
-        <div class="max-w-5xl mx-auto">
+    <section class="py-10 md:py-24 px-6 bg-gray-300" id="services">
+        <div class="max-w-7xl mx-auto">
             <div class="mb-6 md:mb-10 max-w-2xl">
                 <h2 class="text-3xl md:text-4xl font-bold text-primary font-display mb-5 leading-tight">Why Result-Based
                     Promotion is<br class="hidden sm:block"> the Best Marketing Tool?</h2>
-                <p class="text-gray-500 text-base leading-relaxed">Because you pay for outcomes, not impressions. Every
+                <p class="text-black text-base leading-relaxed">Because you pay for outcomes, not impressions. Every
                     rupee is tied to a verified, answered lead &mdash; so your marketing budget only ever works as hard
                     as the results it brings back.</p>
             </div>
@@ -395,13 +453,13 @@
                     class="group block bg-white border border-gray-100 rounded-xl p-5 hover:border-accent hover:shadow-lg transition-all duration-300 relative">
                     <div
                         class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-500 mb-4 group-hover:bg-accent group-hover:text-primary transition-colors">
-                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <rect x="3" y="4" width="18" height="14" rx="2" />
                             <path d="M8 22h8M12 18v4" />
                         </svg>
                     </div>
-                    <h3 class="font-bold text-primary mb-2 font-display">01. High Volume Outreach</h3>
-                    <p class="text-xs text-gray-500 mb-4 leading-relaxed">Powerful backend dashboards tailored to your
+                    <h3 class="font-bold text-primary text-xl mb-2 font-display">High Volume Outreach</h3>
+                    <p class="text-s text-gray-500 mb-4 leading-relaxed">Powerful backend dashboards tailored to your
                         business with smart automation.</p>
                 </a>
 
@@ -410,13 +468,13 @@
                     class="group block bg-white border border-gray-100 rounded-xl p-5 hover:border-accent hover:shadow-lg transition-all duration-300 relative">
                     <div
                         class="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center text-orange-500 mb-4 group-hover:bg-accent group-hover:text-primary transition-colors">
-                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
                             <path d="M14 2v6h6M9 15h6M9 11h2" />
                         </svg>
                     </div>
-                    <h3 class="font-bold text-primary mb-2 font-display">02. Pay Only For Answered Call</h3>
-                    <p class="text-xs text-gray-500 mb-4 leading-relaxed">Professional compensation plan PDF design with
+                    <h3 class="font-bold text-primary text-xl mb-2 font-display">Pay Only For Answered Call</h3>
+                    <p class="text-s text-gray-500 mb-4 leading-relaxed">Professional compensation plan PDF design with
                         premium presentation.</p>
                 </a>
 
@@ -425,13 +483,13 @@
                     class="group block bg-white border border-gray-100 rounded-xl p-5 hover:border-accent hover:shadow-lg transition-all duration-300 relative">
                     <div
                         class="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center text-purple-500 mb-4 group-hover:bg-accent group-hover:text-primary transition-colors">
-                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <rect x="2" y="5" width="20" height="14" rx="2" />
                             <path d="M10 9.5v5l4-2.5z" />
                         </svg>
                     </div>
-                    <h3 class="font-bold text-primary mb-2 font-display">03. Automated Press 1 Lead Filter</h3>
-                    <p class="text-xs text-gray-500 mb-4 leading-relaxed">HD animated presentation videos with
+                    <h3 class="font-bold text-primary text-xl mb-2 font-display">Automated Press 1 Lead Filter</h3>
+                    <p class="text-s text-gray-500 mb-4 leading-relaxed">HD animated presentation videos with
                         voice-over and effects.</p>
                 </a>
 
@@ -440,13 +498,13 @@
                     class="group block bg-white border border-gray-100 rounded-xl p-5 hover:border-accent hover:shadow-lg transition-all duration-300 relative">
                     <div
                         class="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center text-green-500 mb-4 group-hover:bg-accent group-hover:text-primary transition-colors">
-                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M3 3v18h18" />
                             <path d="M7 15l4-5 3 3 5-7" />
                         </svg>
                     </div>
-                    <h3 class="font-bold text-primary mb-2 font-display">04. Dedicated Support Manager Assigned</h3>
-                    <p class="text-xs text-gray-500 mb-4 leading-relaxed">Reach targeted audiences using automated
+                    <h3 class="font-bold text-primary text-xl mb-2 font-display">Dedicated Support Manager Assigned</h3>
+                    <p class="text-s text-gray-500 mb-4 leading-relaxed">Reach targeted audiences using automated
                         marketing campaigns.</p>
                 </a>
             </div>
@@ -671,7 +729,7 @@
     </section>
 
     <!-- AUDIO SAMPLES -->
-    <section class="py-10 md:py-24 px-6 bg-gray-50" id="audio-samples">
+    <section class="py-10 md:py-24 px-6 bg-gray-300" id="audio-samples">
         <div class="max-w-7xl mx-auto">
             <div class="text-center max-w-2xl mx-auto mb-8 md:mb-14">
                 <div class="inline-flex items-center gap-3 text-sm font-semibold uppercase text-accent mb-4">
@@ -695,8 +753,8 @@
                             <circle cx="18" cy="16" r="3" />
                         </svg>
                     </div>
-                    <h4 class="font-bold text-primary font-display mb-1 text-sm">Compensation Plan Intro</h4>
-                    <p class="text-xs text-gray-500 mb-5 leading-relaxed">Hindi &middot; Male voice &middot; 0:32</p>
+                    <h4 class="font-bold text-primary text-xl font-display mb-1 text-sm">Compensation Plan Intro</h4>
+                    <p class="text-s text-gray-500 mb-5 leading-relaxed">Hindi &middot; Male voice &middot; 0:32</p>
                     <audio controls preload="none" class="w-full mt-auto accent-accent">
                         <source
                             src="https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/07/FINAL-WGSERVICES-AUDIO.mp3"
@@ -716,8 +774,8 @@
                             <circle cx="18" cy="16" r="3" />
                         </svg>
                     </div>
-                    <h4 class="font-bold text-primary font-display mb-1 text-sm">Product Launch Announcement</h4>
-                    <p class="text-xs text-gray-500 mb-5 leading-relaxed">Hindi &middot; Female voice &middot; 0:28</p>
+                    <h4 class="font-bold text-primary text-xl font-display mb-1 text-sm">Product Launch Announcement</h4>
+                    <p class="text-s text-gray-500 mb-5 leading-relaxed">Hindi &middot; Female voice &middot; 0:28</p>
                     <audio controls preload="none" class="w-full mt-auto accent-accent">
                         <source
                             src="https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/07/WG-ID-ACTIVATION.mp3.mp3"
@@ -737,8 +795,8 @@
                             <circle cx="18" cy="16" r="3" />
                         </svg>
                     </div>
-                    <h4 class="font-bold text-primary font-display mb-1 text-sm">Payment &amp; Reward Reminder</h4>
-                    <p class="text-xs text-gray-500 mb-5 leading-relaxed">Hindi &middot; Male voice &middot; 0:24</p>
+                    <h4 class="font-bold text-primary text-xl font-display mb-1 text-sm">Payment &amp; Reward Reminder</h4>
+                    <p class="text-s text-gray-500 mb-5 leading-relaxed">Hindi &middot; Male voice &middot; 0:24</p>
                     <audio controls preload="none" class="w-full mt-auto accent-accent">
                         <source
                             src="https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/07/Trading-audio.mp3.mp3"
@@ -758,8 +816,8 @@
                             <circle cx="18" cy="16" r="3" />
                         </svg>
                     </div>
-                    <h4 class="font-bold text-primary font-display mb-1 text-sm">Welcome &amp; Onboarding Message</h4>
-                    <p class="text-xs text-gray-500 mb-5 leading-relaxed">Hindi &middot; Female voice &middot; 0:35</p>
+                    <h4 class="font-bold text-primary text-xl font-display mb-1 text-sm">Welcome &amp; Onboarding Message</h4>
+                    <p class="text-s text-gray-500 mb-5 leading-relaxed">Hindi &middot; Female voice &middot; 0:35</p>
                     <audio controls preload="none" class="w-full mt-auto accent-accent">
                         <source
                             src="https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/07/WhatsApp-Audio-2026-07-26-at-5.16.07-PM.mp3"
@@ -909,7 +967,7 @@
             <p class="text-gray-500">Real video reviews from MLM leaders and business owners across India.</p>
         </div>
 
-        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="max-w-[1800px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             <!-- Card 1 -->
             <div
                 class="relative rounded-2xl overflow-hidden aspect-[9/16] bg-dark group shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer">
@@ -920,16 +978,16 @@
                     class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent pointer-events-none">
                 </div>
                 <div class="absolute bottom-0 left-0 right-0 p-5 z-10">
-                    <h4 class="text-white font-bold font-display mb-1">Mr. Srinivas</h4>
-                    <p class="text-gray-300 text-xs mb-3">Founder & CEO - Parivrat<br>(Andhra Pradesh)</p>
-                    <a href="https://wa.me/919237377196" target="_blank"
+                    <h4 class="text-white font-bold font-display mb-1">Mr. Amba Das</h4>
+                    <p class="text-gray-300 text-xs mb-3">Founder & CEO - Direct Seller<br>(Telangana)</p>
+                    <!-- <a href="https://wa.me/918927656368" target="_blank"
                         class="inline-flex items-center gap-2 bg-[#25D366] text-white text-xs font-bold px-3 py-1.5 rounded-full hover:bg-green-600 transition-colors">
                         <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
                             <path
                                 d="M12.004 0C5.374 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.824L.057 24l6.334-1.66A11.94 11.94 0 0 0 12.004 24C18.63 24 24 18.627 24 12S18.63 0 12.004 0zm0 21.818a9.818 9.818 0 0 1-5.003-1.37l-.36-.214-3.757.985 1.003-3.657-.233-.374A9.786 9.786 0 0 1 2.18 12c0-5.42 4.403-9.818 9.824-9.818 5.42 0 9.818 4.398 9.818 9.818 0 5.42-4.398 9.818-9.818 9.818z" />
                         </svg>
                         Contact us
-                    </a>
+                    </a> -->
                 </div>
             </div>
             <!-- Card 2 -->
@@ -944,14 +1002,14 @@
                 <div class="absolute bottom-0 left-0 right-0 p-5 z-10">
                     <h4 class="text-white font-bold font-display mb-1">Mr. Bhagbat Chohan</h4>
                     <p class="text-gray-300 text-xs mb-3">Founder & CEO - Ai Abacus<br>(Maharashtra)</p>
-                    <a href="https://wa.me/919237377196" target="_blank"
+                    <!-- <a href="https://wa.me/918927656368" target="_blank"
                         class="inline-flex items-center gap-2 bg-[#25D366] text-white text-xs font-bold px-3 py-1.5 rounded-full hover:bg-green-600 transition-colors">
                         <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
                             <path
                                 d="M12.004 0C5.374 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.824L.057 24l6.334-1.66A11.94 11.94 0 0 0 12.004 24C18.63 24 24 18.627 24 12S18.63 0 12.004 0zm0 21.818a9.818 9.818 0 0 1-5.003-1.37l-.36-.214-3.757.985 1.003-3.657-.233-.374A9.786 9.786 0 0 1 2.18 12c0-5.42 4.403-9.818 9.824-9.818 5.42 0 9.818 4.398 9.818 9.818 0 5.42-4.398 9.818-9.818 9.818z" />
                         </svg>
                         Contact us
-                    </a>
+                    </a> -->
                 </div>
             </div>
             <!-- Card 3 -->
@@ -964,16 +1022,16 @@
                     class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent pointer-events-none">
                 </div>
                 <div class="absolute bottom-0 left-0 right-0 p-5 z-10">
-                    <h4 class="text-white font-bold font-display mb-1">Mr. Ammba Das</h4>
-                    <p class="text-gray-300 text-xs mb-3">Founder & CEO - Direct Sellar<br>(Telangana)</p>
-                    <a href="https://wa.me/919237377196" target="_blank"
+                    <h4 class="text-white font-bold font-display mb-1">Mr. Srinivas</h4>
+                    <p class="text-gray-300 text-xs mb-3">Founder - Parivrat in-corporation<br>(Andrapradesh)</p>
+                    <!-- <a href="https://wa.me/918927656368" target="_blank"
                         class="inline-flex items-center gap-2 bg-[#25D366] text-white text-xs font-bold px-3 py-1.5 rounded-full hover:bg-green-600 transition-colors">
                         <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
                             <path
                                 d="M12.004 0C5.374 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.824L.057 24l6.334-1.66A11.94 11.94 0 0 0 12.004 24C18.63 24 24 18.627 24 12S18.63 0 12.004 0zm0 21.818a9.818 9.818 0 0 1-5.003-1.37l-.36-.214-3.757.985 1.003-3.657-.233-.374A9.786 9.786 0 0 1 2.18 12c0-5.42 4.403-9.818 9.824-9.818 5.42 0 9.818 4.398 9.818 9.818 0 5.42-4.398 9.818-9.818 9.818z" />
                         </svg>
                         Contact us
-                    </a>
+                    </a> -->
                 </div>
             </div>
             <!-- Card 4 -->
@@ -986,23 +1044,54 @@
                     class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent pointer-events-none">
                 </div>
                 <div class="absolute bottom-0 left-0 right-0 p-5 z-10">
-                    <h4 class="text-white font-bold font-display mb-1">Mr. Srinivas</h4>
-                    <p class="text-gray-300 text-xs mb-3">Founder & CEO - Parivrat<br>(Andhra Pradesh)</p>
-                    <a href="https://wa.me/919237377196" target="_blank"
+                    <h4 class="text-white font-bold font-display mb-1">Mr. Sourav</h4>
+                    <p class="text-gray-300 text-xs mb-3">Founder - Cosmos<br>(Maharashtra)</p>
+                    <!-- <a href="https://wa.me/918927656368" target="_blank"
                         class="inline-flex items-center gap-2 bg-[#25D366] text-white text-xs font-bold px-3 py-1.5 rounded-full hover:bg-green-600 transition-colors">
                         <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
                             <path
                                 d="M12.004 0C5.374 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.824L.057 24l6.334-1.66A11.94 11.94 0 0 0 12.004 24C18.63 24 24 18.627 24 12S18.63 0 12.004 0zm0 21.818a9.818 9.818 0 0 1-5.003-1.37l-.36-.214-3.757.985 1.003-3.657-.233-.374A9.786 9.786 0 0 1 2.18 12c0-5.42 4.403-9.818 9.824-9.818 5.42 0 9.818 4.398 9.818 9.818 0 5.42-4.398 9.818-9.818 9.818z" />
                         </svg>
                         Contact us
-                    </a>
+                    </a> -->
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div
+                class="relative rounded-2xl overflow-hidden aspect-[9/16] bg-dark group shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer">
+
+                <video class="absolute inset-0 w-full h-full object-cover" controls preload="metadata">
+                    <source src="./assets/videos/Review-5.mp4" type="video/mp4">
+                </video>
+
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent pointer-events-none">
+                </div>
+
+                <div class="absolute bottom-0 left-0 right-0 p-5 z-10">
+                    <h4 class="text-white font-bold font-display mb-1">Mr. Srinivas</h4>
+                    <p class="text-gray-300 text-xs mb-3">
+                        Founder - Parivrat in-corporation<br>(Andrapradesh)
+                    </p>
+
+                    <!-- <a href="https://wa.me/918927656368" target="_blank"
+                        class="inline-flex items-center gap-2 bg-[#25D366] text-white text-xs font-bold px-3 py-1.5 rounded-full hover:bg-green-600 transition-colors">
+
+                        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12.004 0C5.374 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.824L.057 24l6.334-1.66A11.94 11.94 0 0 0 12.004 24C18.63 24 24 18.627 24 12S18.63 0 12.004 0zm0 21.818a9.818 9.818 0 0 1-5.003-1.37l-.36-.214-3.757.985 1.003-3.657-.233-.374A9.786 9.786 0 0 1 2.18 12c0-5.42 4.403-9.818 9.824-9.818 5.42 0 9.818 4.398 9.818 9.818 0 5.42-4.398 9.818-9.818 9.818z" />
+                        </svg>
+
+                        Contact us
+                    </a> -->
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ================= OUR CLIENTS ================= -->
-    <section class="py-6 md:py-20 px-4 md:px-6 bg-gray-200 border-t border-gray-100" id="clients">
+     <section class="py-6 md:py-20 px-4 md:px-6 bg-gray-200 border-t border-gray-100" id="clients">
 
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-6 md:mb-12">
@@ -1015,66 +1104,97 @@
             </div>
 
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-                <div
-                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-                    <img src="./assets/image/partner.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
-                </div>
-                <div
-                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-                    <img src="./assets/image/partner2.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
-                </div>
-                <div
-                    class="bg-white border border-gray-200 rounded-xl p-4 flex flex-col items-center justify-center hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-                    <img src="./assets/image/partner3.webp" alt="MyGoldenWay" class="h-10 w-auto object-contain">
-                </div>
-                <div
-                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-                    <img src="./assets/image/partner4.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
-                </div>
-                <div
-                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-                    <img src="./assets/image/partner5.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
-                </div>
-                <div
-                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-                    <img src="./assets/image/partner6.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
-                </div>
-                <div
-                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-                    <img src="./assets/image/partner7.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
-                </div>
-                <div
-                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-                    <img src="./assets/image/partner8.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
-                </div>
-                <div
-                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-                    <img src="./assets/image/partner9.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
-                </div>
-                <div
-                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-                    <img src="./assets/image/partner10.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
-                </div>
-                <div
-                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-                    <img src="./assets/image/partner11.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
-                </div>
-                <div
-                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-                    <img src="./assets/image/partner12.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
-                </div>
-                <div
-                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-                    <img src="./assets/image/partner13.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
-                </div>
-                <div
-                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-                    <img src="./assets/image/partner14.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
-                </div>
-                <div
-                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-                    <img src="./assets/image/partner15.jpeg" alt="MyGoldenWa" class="h-20 w-auto object-contain">
-                </div>
+               <div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+    <img src="./assets/image/partner.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+    <img src="./assets/image/partner2.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-4 flex flex-col items-center justify-center hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+    <img src="./assets/image/partner3.webp" alt="MyGoldenWay" class="h-10 w-auto object-contain">
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+    <img src="./assets/image/partner4.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+    <img src="./assets/image/partner5.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+    <img src="./assets/image/partner6.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+    <img src="./assets/image/partner7.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+    <img src="./assets/image/partner8.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+    <img src="./assets/image/partner9.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+    <img src="./assets/image/partner10.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+    <img src="./assets/image/partner11.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+    <img src="./assets/image/partner12.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+    <img src="./assets/image/partner13.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+    <img src="./assets/image/partner14.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+    <img src="./assets/image/partner15.jpeg" alt="MyGoldenWay" class="h-20 w-auto object-contain">
+</div>
+<!-- Image size increased from partner16 onwards (h-20 changed to h-28) -->
+<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+    <img src="./assets/image/partner16.jpg" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+    <img src="./assets/image/partner17.png" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+    <img src="./assets/image/partner18.png" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+    <img src="./assets/image/partner19.png" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+    <img src="./assets/image/partner20.jpg" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+    <img src="./assets/image/partner21.jpg" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+    <img src="./assets/image/partner22.jpg" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+    <img src="./assets/image/partner23.png" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+    <img src="./assets/image/partner24.png" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+    <img src="./assets/image/partner25.jpeg" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+    <img src="./assets/image/partner26.png" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+    <img src="./assets/image/partner27.jpg" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+    <img src="./assets/image/partner28.jpg" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+    <img src="./assets/image/partner29.png" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+</div>
+<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+    <img src="./assets/image/partner30.jpg" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+</div>
             </div>
         </div>
     </section>
@@ -1152,8 +1272,8 @@
                     demos)</div>
             </a>
 
-            <!-- OUR SERVICES CAROUSEL -->
-            <div class="mt-8 md:mt-16">
+           <!-- OUR SERVICES CAROUSEL -->
+            <div class="mt-16">
                 <div class="mb-8">
                     <div class="inline-flex items-center gap-3 text-sm font-semibold uppercase text-accent mb-3">
                         <span class="w-6 h-[1px] bg-accent"></span> Our Services
@@ -1162,43 +1282,9 @@
                 </div>
 
                 <div id="svcTrack" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                    <!-- Card: Latest MLM Database -->
-                    <a href="mlm-database.html"
-                        class="group flex flex-col h-full bg-white/[0.08] backdrop-blur-sm border border-white/15 shadow-lg rounded-2xl p-6 hover:border-accent hover:bg-white/[0.14] hover:-translate-y-1 transition-all duration-300">
-                        <div
-                            class="w-12 h-12 rounded-full bg-orange-500/15 flex items-center justify-center text-accentLight mb-5 group-hover:bg-accent group-hover:text-white transition-colors">
-                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <ellipse cx="12" cy="5" rx="8" ry="3" />
-                                <path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3" />
-                            </svg>
-                        </div>
-                        <h4 class="font-bold text-white mb-2 font-display">Latest MLM Database</h4>
-                        <p class="text-base text-gray-200 leading-relaxed mb-4 flex-1">Fresh verified databases with
-                            high
-                            quality genuine contacts.</p>
-                        <span
-                            class="text-xs font-bold text-accent group-hover:text-white transition-colors flex items-center gap-1 mt-auto">Learn
-                            more &rarr;</span>
-                    </a>
+                   
 
-                    <!-- Card: MLM Leader Website -->
-                    <a href="mlm-leader-website.html"
-                        class="group flex flex-col h-full bg-white/[0.08] backdrop-blur-sm border border-white/15 shadow-lg rounded-2xl p-6 hover:border-accent hover:bg-white/[0.14] hover:-translate-y-1 transition-all duration-300">
-                        <div
-                            class="w-12 h-12 rounded-full bg-orange-500/15 flex items-center justify-center text-accentLight mb-5 group-hover:bg-accent group-hover:text-white transition-colors">
-                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="8" r="4" />
-                                <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" />
-                            </svg>
-                        </div>
-                        <h4 class="font-bold text-white mb-2 font-display">MLM Leader Website</h4>
-                        <p class="text-base text-gray-200 leading-relaxed mb-4 flex-1">Modern responsive website for
-                            personal
-                            branding and business.</p>
-                        <span
-                            class="text-xs font-bold text-accent group-hover:text-white transition-colors flex items-center gap-1 mt-auto">Learn
-                            more &rarr;</span>
-                    </a>
+                   
 
                     <!-- Card: Customized MLM Software Development -->
                     <a href="custom-mlm.html"
@@ -1275,13 +1361,49 @@
                             class="text-xs font-bold text-accent group-hover:text-white transition-colors flex items-center gap-1 mt-auto">Learn
                             more &rarr;</span>
                     </a>
+                     <!-- Card: Latest MLM Database -->
+                    <a href="mlm-database.html"
+                        class="group flex flex-col h-full bg-white/[0.08] backdrop-blur-sm border border-white/15 shadow-lg rounded-2xl p-6 hover:border-accent hover:bg-white/[0.14] hover:-translate-y-1 transition-all duration-300">
+                        <div
+                            class="w-12 h-12 rounded-full bg-orange-500/15 flex items-center justify-center text-accentLight mb-5 group-hover:bg-accent group-hover:text-white transition-colors">
+                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <ellipse cx="12" cy="5" rx="8" ry="3" />
+                                <path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3" />
+                            </svg>
+                        </div>
+                        <h4 class="font-bold text-white mb-2 font-display">Latest MLM Database</h4>
+                        <p class="text-base text-gray-200 leading-relaxed mb-4 flex-1">Fresh verified databases with
+                            high
+                            quality genuine contacts.</p>
+                        <span
+                            class="text-xs font-bold text-accent group-hover:text-white transition-colors flex items-center gap-1 mt-auto">Learn
+                            more &rarr;</span>
+                    </a>
+                     <!-- Card: MLM Leader Website -->
+                    <a href="mlm-leader-website.html"
+                        class="group flex flex-col h-full bg-white/[0.08] backdrop-blur-sm border border-white/15 shadow-lg rounded-2xl p-6 hover:border-accent hover:bg-white/[0.14] hover:-translate-y-1 transition-all duration-300">
+                        <div
+                            class="w-12 h-12 rounded-full bg-orange-500/15 flex items-center justify-center text-accentLight mb-5 group-hover:bg-accent group-hover:text-white transition-colors">
+                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="8" r="4" />
+                                <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" />
+                            </svg>
+                        </div>
+                        <h4 class="font-bold text-white mb-2 font-display">MLM Leader Website</h4>
+                        <p class="text-base text-gray-200 leading-relaxed mb-4 flex-1">Modern responsive website for
+                            personal
+                            branding and business.</p>
+                        <span
+                            class="text-xs font-bold text-accent group-hover:text-white transition-colors flex items-center gap-1 mt-auto">Learn
+                            more &rarr;</span>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- TRUST / GUARANTEE -->
-    <section class="py-10 md:py-20 px-6 bg-white border-b border-gray-100">
+    <!-- <section class="py-10 md:py-20 px-6 bg-white border-b border-gray-100">
         <div class="max-w-5xl mx-auto flex flex-col lg:flex-row gap-12 items-center">
             <div class="lg:w-3/5">
                 <h3 class="text-2xl font-bold font-display mb-4 text-primary"><span
@@ -1323,10 +1445,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- STAT HIGHLIGHTS -->
-    <section class="py-10 md:py-20 px-6 bg-primary">
+    <section class="py-10 md:py-20 px-6 bg-white">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Card 1 -->
@@ -1524,44 +1646,7 @@
         </div>
     </footer>
 
-    <!-- AI Assistant -->
-    <button
-        class="fixed bottom-6 right-6 w-14 h-14 bg-white rounded-full shadow-2xl flex items-center justify-center border border-gray-100 hover:scale-110 transition-transform z-40"
-        id="aiFab" aria-label="Open AI assistant">
-        <img src="./assets/image/ai-assistant.png" alt="AI" class="w-10 h-10"
-            onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRjU5RTBCIiBzdHJva2Utd2lkdGg9IjIiPjxwYXRoIGQ9Ik0yMSAxNWEyIDIgMCAwIDEtMiAySDdhMiAyIDAgMCAxLTItMnoiLz48L3N2Zz4='">
-    </button>
 
-    <div class="fixed bottom-24 right-6 w-80 bg-white border border-gray-200 rounded-2xl shadow-2xl z-50 flex flex-col overflow-hidden transition-all duration-300 transform scale-95 opacity-0 invisible"
-        id="aiPanel">
-        <div class="bg-primary text-white p-4 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <span class="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse"></span>
-                <div>
-                    <div class="font-bold text-sm">MLM Assistant</div>
-                    <div class="text-xs text-gray-400">Online now</div>
-                </div>
-            </div>
-            <button class="text-gray-400 hover:text-white" id="aiClose">&#10005;</button>
-        </div>
-        <div class="p-4 h-64 overflow-y-auto bg-gray-50 flex flex-col gap-3 text-sm" id="aiBody">
-            <div
-                class="bg-white border border-gray-200 p-3 rounded-2xl rounded-tl-sm text-gray-700 self-start shadow-sm max-w-[85%]">
-                Hi! I'm here to help. Ask me anything about our MLM software or services.</div>
-        </div>
-        <form class="flex border-t border-gray-200 bg-white p-2" id="aiForm">
-            <input type="text" id="aiInput" class="flex-1 px-3 py-2 outline-none text-sm bg-transparent"
-                placeholder="Type your message..." autocomplete="off">
-            <button type="submit"
-                class="w-10 h-10 flex items-center justify-center text-accent hover:bg-gray-50 rounded-full transition-colors"
-                aria-label="Send">
-                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M22 2 11 13" />
-                    <path d="M22 2 15 22l-4-9-9-4z" />
-                </svg>
-            </button>
-        </form>
-    </div>
 
     <script src="api-config.js"></script>
     <script>
@@ -1993,14 +2078,13 @@
         }
     </script>
 
-    <button id="liveSessionBtn"
-        class="live-session-launch left-4 bottom-6 z-40 rounded-full px-5 py-3 text-sm font-bold text-white shadow-xl flex items-center gap-2 hover:scale-105 transition-transform">
-        <svg class="w-5 h-5 animate-pulse text-yellow-200" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="2.5">
-            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+    <a href="https://wa.me/918927656368" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"
+        class="whatsapp-float fixed left-4 bottom-6 z-40 h-14 rounded-full text-white flex items-center px-4 transition-transform duration-300 hover:scale-110 focus:outline-none focus:ring-4 focus:ring-green-200">
+        <svg class="w-7 h-7 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12.004 0C5.374 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.824L.057 24l6.334-1.66A11.94 11.94 0 0 0 12.004 24C18.63 24 24 18.627 24 12S18.63 0 12.004 0zm6.998 16.977c-.297.836-1.47 1.53-2.41 1.73-.64.137-1.478.246-4.297-.923-3.607-1.494-5.927-5.156-6.108-5.395-.174-.24-1.463-1.948-1.463-3.715 0-1.767.93-2.635 1.257-2.996.328-.36.716-.45.955-.45.24 0 .478.002.687.013.221.011.517-.084.808.618.297.716.997 2.475 1.084 2.654.088.18.146.39.03.63-.117.24-.176.39-.35.598-.174.211-.365.469-.523.63-.174.176-.356.365-.153.716.204.351.905 1.494 1.943 2.42 1.335 1.19 2.462 1.559 2.813 1.734.35.176.554.15.758-.09.204-.24.876-1.02 1.11-1.37.234-.35.468-.29.79-.174.32.117 2.033.958 2.382 1.132.35.176.583.263.67.41.088.15.088.855-.21 1.68z"/>
         </svg>
-        Request Live Session
-    </button>
+        <span class="wa-label text-sm font-bold">Chat on WhatsApp</span>
+    </a>
 
     <!-- LIVE SESSION MODAL -->
     <div class="fixed inset-0 z-50 bg-primary/80 hidden items-center justify-center p-4 transition-opacity"

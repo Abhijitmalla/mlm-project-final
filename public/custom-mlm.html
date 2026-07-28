@@ -5,6 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Instant Live Demos — MLM Software Company</title>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RW3CPQCZ1X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RW3CPQCZ1X');
+</script>
+
   <meta name="description"
     content="Explore customized MLM software solutions and live demos for your network marketing business.">
   <meta property="og:type" content="website">
@@ -30,7 +41,6 @@
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="./dist/output.css">
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <link rel="stylesheet" href="./assets/index-hero.css">
   <style>
     /* Only what Tailwind's utility classes genuinely can't express: keyframes, the live-pulse ring, and the FAQ accordion max-height transition (driven by JS + inline style). */
@@ -288,70 +298,95 @@
       }
     }
 
-    .live-session-launch {
-      position: fixed;
-      overflow: hidden;
-      isolation: isolate;
-      background: linear-gradient(135deg, #F1521E 0%, #FF7A45 55%, #F1521E 100%);
-      background-size: 180% 100%;
-      border: 1px solid rgba(255, 255, 255, .38);
-      box-shadow: 0 12px 28px rgba(241, 82, 30, .36), 0 0 0 7px rgba(241, 82, 30, .10);
-      animation: liveSessionGlow 2.5s ease-in-out infinite, liveSessionGradient 4s linear infinite;
-    }
-
-    .live-session-launch::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-      transform: translateX(-100%);
-      animation: liveSessionShine 3s infinite;
-    }
-
-    @keyframes liveSessionGlow {
+    @keyframes whatsappFloat {
 
       0%,
       100% {
-        box-shadow: 0 12px 28px rgba(241, 82, 30, .36), 0 0 0 7px rgba(241, 82, 30, .10);
+        transform: translateY(0);
       }
 
       50% {
-        box-shadow: 0 12px 28px rgba(241, 82, 30, .5), 0 0 0 10px rgba(241, 82, 30, .15);
+        transform: translateY(-8px);
       }
     }
 
-    @keyframes liveSessionGradient {
-      0% {
-        background-position: 0% 50%;
-      }
-
-      100% {
-        background-position: 180% 50%;
-      }
-    }
-
-    @keyframes liveSessionShine {
+    @keyframes whatsappPulse {
 
       0%,
-      58% {
-        transform: translateX(-130%);
+      100% {
+        box-shadow: 0 12px 28px rgba(22, 163, 74, .38), 0 0 0 0 rgba(34, 197, 94, .42);
       }
 
-      82%,
-      100% {
-        transform: translateX(130%);
+      50% {
+        box-shadow: 0 16px 32px rgba(22, 163, 74, .46), 0 0 0 10px rgba(34, 197, 94, 0);
       }
+    }
+
+    .whatsapp-float {
+      animation: whatsappFloat 3s ease-in-out infinite, whatsappPulse 2.4s ease-in-out infinite;
+      background: linear-gradient(145deg, #2be463, #128c46);
+    }
+
+    .whatsapp-float .wa-label {
+      max-width: 0;
+      opacity: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      transition: max-width .35s ease, opacity .25s ease, margin .35s ease;
+    }
+
+    .whatsapp-float:hover .wa-label,
+    .whatsapp-float:focus-visible .wa-label {
+      max-width: 140px;
+      opacity: 1;
+      margin-left: .5rem;
     }
 
     @media (prefers-reduced-motion: reduce) {
-
-      .live-session-launch,
-      .live-session-launch::before {
+      .whatsapp-float {
         animation: none;
       }
+    }
+
+    /* ---- Social rail ---- */
+    .social-rail a {
+      position: relative;
+      box-shadow: 0 8px 20px rgba(17, 24, 39, .16);
+    }
+
+    .social-rail .social-tooltip {
+      position: absolute;
+      right: calc(100% + 10px);
+      top: 50%;
+      transform: translateY(-50%) translateX(6px);
+      background: #111827;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .02em;
+      padding: 5px 10px;
+      border-radius: 8px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s ease, transform .2s ease;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, .18);
+    }
+
+    .social-rail .social-tooltip::after {
+      content: "";
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 5px solid transparent;
+      border-left-color: #111827;
+    }
+
+    .social-rail a:hover .social-tooltip,
+    .social-rail a:focus-visible .social-tooltip {
+      opacity: 1;
+      transform: translateY(-50%) translateX(0);
     }
   </style>
 </head>
@@ -463,7 +498,7 @@
               </svg>
               Call: 892765638
             </a>
-            <a href="https://wa.me/919237377196"
+            <a href="https://wa.me/918927656368"
               class="hover:text-green-500 transition-colors flex items-center gap-2 text-green-600">
               <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path
@@ -517,24 +552,46 @@
     })();
   </script>
 
-  <button id="sideTab"
-    class="fixed right-0 top-1/2 -translate-y-1/2 rotate-180 text-white font-bold text-sm tracking-wide py-4 px-2 z-40 rounded-l-lg shadow-xl cursor-pointer transition-all duration-300 hover:pr-4">
-    Get In Touch
-  </button>
+  <aside aria-label="Follow VK Services Enterprise"
+    class="social-rail fixed right-4 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-4">
+    <a href="https://www.youtube.com/c/MLMSUCCESSTIPS/videos" target="_blank" rel="noopener" aria-label="YouTube"
+      class="w-12 h-12 rounded-full text-white ring-2 ring-white/70 flex items-center justify-center transition-all duration-300 hover:-translate-x-1.5 hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-red-200"
+      style="background: linear-gradient(to bottom right, #ff4d4d, #cc0000);">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path
+          d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z" />
+      </svg>
+      <span class="social-tooltip">YouTube</span>
+    </a>
+    <a href="https://www.instagram.com/vishwajit2307/" aria-label="Instagram" title="Add your Instagram profile link"
+      class="w-12 h-12 rounded-full text-white ring-2 ring-white/70 flex items-center justify-center transition-all duration-300 hover:-translate-x-1.5 hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-pink-200"
+      style="background: linear-gradient(to bottom right, #833ab4, #fd1d1d, #fcb045);">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <rect x="3" y="3" width="18" height="18" rx="5" />
+        <circle cx="12" cy="12" r="4" />
+        <circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none" />
+      </svg>
+      <span class="social-tooltip">Instagram</span>
+    </a>
+    <a href="https://www.facebook.com/vkservicesenterprise" aria-label="Facebook" title="Add your Facebook profile link"
+      class="w-12 h-12 rounded-full text-white ring-2 ring-white/70 flex items-center justify-center transition-all duration-300 hover:-translate-x-1.5 hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-blue-200"
+      style="background: linear-gradient(to bottom right, #4a95ff, #1354c9);">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path
+          d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.3v3h2.8v8h3.4Z" />
+      </svg>
+      <span class="social-tooltip">Facebook</span>
+    </a>
+  </aside>
 
-  <style>
-    #sideTab {
-      writing-mode: vertical-rl;
-      background: linear-gradient(135deg, #FF7A45, #F1521E);
-    }
-
-    #sideTab:hover {
-      background: #facc15;
-      /* Tailwind yellow-400 */
-      color: #111827;
-      /* Optional: dark text */
-    }
-  </style>
+  <a href="https://wa.me/918927656368" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"
+    class="whatsapp-float fixed left-4 bottom-6 z-40 h-14 rounded-full text-white flex items-center px-4 transition-transform duration-300 hover:scale-110 focus:outline-none focus:ring-4 focus:ring-green-200">
+    <svg class="w-7 h-7 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path
+        d="M12.004 0C5.374 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.824L.057 24l6.334-1.66A11.94 11.94 0 0 0 12.004 24C18.63 24 24 18.627 24 12S18.63 0 12.004 0zm6.998 16.977c-.297.836-1.47 1.53-2.41 1.73-.64.137-1.478.246-4.297-.923-3.607-1.494-5.927-5.156-6.108-5.395-.174-.24-1.463-1.948-1.463-3.715 0-1.767.93-2.635 1.257-2.996.328-.36.716-.45.955-.45.24 0 .478.002.687.013.221.011.517-.084.808.618.297.716.997 2.475 1.084 2.654.088.18.146.39.03.63-.117.24-.176.39-.35.598-.174.211-.365.469-.523.63-.174.176-.356.365-.153.716.204.351.905 1.494 1.943 2.42 1.335 1.19 2.462 1.559 2.813 1.734.35.176.554.15.758-.09.204-.24.876-1.02 1.11-1.37.234-.35.468-.29.79-.174.32.117 2.033.958 2.382 1.132.35.176.583.263.67.41.088.15.088.855-.21 1.68z" />
+    </svg>
+    <span class="wa-label text-sm font-bold">Chat on WhatsApp</span>
+  </a>
 
   <div
     class="fixed inset-0 z-50 bg-primary/80 flex items-center justify-center opacity-0 invisible transition-all duration-300 p-4"
@@ -597,7 +654,7 @@
             Call: 892765638
           </a>
           <a class="flex items-center gap-2 bg-green-50 border border-green-200 px-4 py-2 rounded-full text-sm font-semibold text-green-700 hover:border-green-400 transition-colors"
-            href="https://wa.me/919237377196" target="_blank" rel="noopener">
+            href="https://wa.me/918927656368" target="_blank" rel="noopener">
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path
                 d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
@@ -612,61 +669,87 @@
     </div>
   </div>
 
-  <button
-    class="fixed bottom-6 right-6 w-14 h-14 bg-white rounded-full shadow-2xl flex items-center justify-center border border-gray-100 hover:scale-110 transition-transform z-40"
-    id="aiFab" aria-label="Open AI assistant">
-    <img src="./assets/image/ai-assistant.png" alt="AI" class="w-10 h-10"
-      onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRjU5RTBCIiBzdHJva2Utd2lkdGg9IjIiPjxwYXRoIGQ9Ik0yMSAxNWEyIDIgMCAwIDEtMiAySDdhMiAyIDAgMCAxLTItMnoiLz48L3N2Zz4='">
-  </button>
-
-  <div
-    class="fixed bottom-24 right-6 w-80 bg-white border border-gray-200 rounded-2xl shadow-2xl z-50 flex flex-col overflow-hidden transition-all duration-300 transform scale-95 opacity-0 invisible"
-    id="aiPanel">
-    <div class="bg-primary text-white p-4 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <span class="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse"></span>
-        <div>
-          <div class="font-bold text-sm">MLM Assistant</div>
-          <div class="text-xs text-gray-400">Online now</div>
-        </div>
-      </div>
-      <button class="text-gray-400 hover:text-white" id="aiClose">&#10005;</button>
-    </div>
-    <div class="p-4 h-64 overflow-y-auto bg-gray-50 flex flex-col gap-3 text-sm" id="aiBody">
-      <div
-        class="bg-white border border-gray-200 p-3 rounded-2xl rounded-tl-sm text-gray-700 self-start shadow-sm max-w-[85%]">
-        Hi! I'm here to help. Ask me anything about our MLM software or services.</div>
-    </div>
-    <form class="flex border-t border-gray-200 bg-white p-2" id="aiForm">
-      <input type="text" id="aiInput" class="flex-1 px-3 py-2 outline-none text-sm bg-transparent"
-        placeholder="Type your message..." autocomplete="off">
-      <button type="submit"
-        class="w-10 h-10 flex items-center justify-center text-accent hover:bg-gray-50 rounded-full transition-colors"
-        aria-label="Send">
-        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M22 2 11 13" />
-          <path d="M22 2 15 22l-4-9-9-4z" />
-        </svg>
-      </button>
-    </form>
-  </div>
-
   <div class="relative z-10 w-full px-6 sm:px-8 pt-16 sm:pt-20">
 
     <!-- ================= HERO ================= -->
 
     <div class="w-full">
-      <h2 class="font-display font-bold text-[22px] sm:text-[26px] leading-snug mb-6 text-primary text-center">Why
-        leading MLM brands<br>trust <span class="text-accent">our services</span></h2>
+      <!-- Header Section -->
+      <h2 class="font-display font-bold text-[22px] sm:text-[26px] leading-snug mb-8 text-primary text-center">
+        Why leading MLM brands<br>trust <span class="text-accent">our services</span>
+      </h2>
 
-      <div id="featureList" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5"></div>
+      <!-- Cards Container -->
+      <!-- NOTE: To ensure borders show up, your JavaScript must inject cards with classes like: "bg-white border border-gray-200 rounded-xl" -->
+      <div id="featureList" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
 
-      <p class="mt-4 text-base leading-relaxed text-gray-500 text-center max-w-3xl mx-auto">
-        <span class="text-accent font-bold italic">Technical Disclaimer:</span> All usernames, passwords, and wallet
-        balances shown in this video and the links below are strictly for testing and training purposes on our public
-        servers. Your original customized software and backend coding engine will be securely deployed on your own clean
-        domain name for complete privacy.
-      </p>
+        <!-- EXAMPLE OF HOW YOUR INJECTED CARDS SHOULD BE STRUCTURED TO SHOW BORDERS -->
+        <!-- 
+        <div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm hover:shadow-md hover:border-accent transition-all">
+            Card Content Here
+        </div> 
+        -->
+
+      </div>
+
+      <!-- Notices Section: Technical Disclaimer & Note -->
+      <div class="max-w-4xl mx-auto space-y-4">
+
+        <!-- Warning: Technical Disclaimer -->
+        <div
+          class="bg-red-50/80 border-l-4 border-red-500 rounded-r-2xl p-5 shadow-sm flex flex-col sm:flex-row items-start gap-4 transform transition-all duration-300 hover:shadow-md hover:-translate-y-0.5">
+          <div class="flex-shrink-0 text-red-500 mt-1 bg-red-100 p-2 rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+          </div>
+          <div class="text-left flex-1">
+            <h4 class="text-red-800 font-extrabold text-lg mb-1 flex items-center gap-2">
+              Technical Disclaimer
+            </h4>
+            <p class="text-sm leading-relaxed text-red-700/90 font-medium">
+              All usernames, passwords, and wallet balances shown in this video and the links below are strictly for
+              testing and training purposes on our public servers. Your original customized software and backend coding
+              engine will be securely deployed on your own clean domain name for complete privacy.
+            </p>
+          </div>
+        </div>
+
+        <!-- Info Note: Demo Credentials -->
+        <div
+          class="bg-blue-50/80 border-l-4 border-blue-500 rounded-r-2xl p-5 shadow-sm flex flex-col sm:flex-row items-start gap-4 transform transition-all duration-300 hover:shadow-md hover:-translate-y-0.5">
+          <div class="flex-shrink-0 text-blue-500 mt-1 bg-blue-100 p-2 rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div class="text-left flex-1">
+            <h4 class="text-blue-800 font-extrabold text-lg mb-1 flex items-center gap-2">
+              Demo Credentials
+            </h4>
+            <p class="text-sm leading-relaxed text-blue-700/90 font-medium">
+              If a username or password is changed, please contact us to get the correct details. It's just a demo, so
+              any client can change it for testing purposes.
+              <br class="hidden sm:block">
+              <span class="inline-block mt-2 font-bold text-blue-800">
+                Our contact number:
+                <a href="tel:+918927656368"
+                  class="inline-flex items-center gap-1 hover:text-blue-900 underline decoration-2 underline-offset-4 transition-colors ml-1">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12.004 0C5.374 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.824L.057 24l6.334-1.66A11.94 11.94 0 0 0 12.004 24C18.63 24 24 18.627 24 12S18.63 0 12.004 0zm6.998 16.977c-.297.836-1.47 1.53-2.41 1.73-.64.137-1.478.246-4.297-.923-3.607-1.494-5.927-5.156-6.108-5.395-.174-.24-1.463-1.948-1.463-3.715 0-1.767.93-2.635 1.257-2.996.328-.36.716-.45.955-.45.24 0 .478.002.687.013.221.011.517-.084.808.618.297.716.997 2.475 1.084 2.654.088.18.146.39.03.63-.117.24-.176.39-.35.598-.174.211-.365.469-.523.63-.174.176-.356.365-.153.716.204.351.905 1.494 1.943 2.42 1.335 1.19 2.462 1.559 2.813 1.734.35.176.554.15.758-.09.204-.24.876-1.02 1.11-1.37.234-.35.468-.29.79-.174.32.117 2.033.958 2.382 1.132.35.176.583.263.67.41.088.15.088.855-.21 1.68z" />
+                  </svg>
+                  +91 8927656368
+                </a>
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- ================= LET'S START ================= -->
@@ -681,13 +764,7 @@
 
       <div id="planGrid" class="grid grid-cols-1 lg:grid-cols-3 gap-6"></div>
 
-      <div class="mt-9 bg-primary text-white rounded-2xl shadow-card px-8 py-5 text-center">
-        <p class="text-[13.5px] font-bold leading-relaxed tracking-wide">
-          Note: if username or password is changed, contact us to get correct details.<br>
-          It's just a demo, so any client can change it for testing purposes. Our contact number:
-          <a class="text-accent underline" href="tel:+918927656368">+91 8927656368</a>
-        </p>
-      </div>
+
 
       <hr class="border-t-2 border-dashed border-gray-300 mt-9">
     </div>
@@ -702,7 +779,7 @@
         <p class="text-gray-500">Real video reviews from MLM leaders and business owners across India.</p>
       </div>
 
-      <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="max-w-[1800px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
         <!-- Card 1 -->
         <div
           class="relative rounded-2xl overflow-hidden aspect-[9/16] bg-dark group shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer">
@@ -712,16 +789,16 @@
           <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent pointer-events-none">
           </div>
           <div class="absolute bottom-0 left-0 right-0 p-5 z-10">
-            <h4 class="text-white font-bold font-display mb-1">Mr. Srinivas</h4>
-            <p class="text-gray-300 text-xs mb-3">Founder & CEO - Parivrat<br>(Andhra Pradesh)</p>
-            <a href="https://wa.me/919237377196" target="_blank"
-              class="inline-flex items-center gap-2 bg-[#25D366] text-white text-xs font-bold px-3 py-1.5 rounded-full hover:bg-green-600 transition-colors">
-              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M12.004 0C5.374 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.824L.057 24l6.334-1.66A11.94 11.94 0 0 0 12.004 24C18.63 24 24 18.627 24 12S18.63 0 12.004 0zm0 21.818a9.818 9.818 0 0 1-5.003-1.37l-.36-.214-3.757.985 1.003-3.657-.233-.374A9.786 9.786 0 0 1 2.18 12c0-5.42 4.403-9.818 9.824-9.818 5.42 0 9.818 4.398 9.818 9.818 0 5.42-4.398 9.818-9.818 9.818z" />
-              </svg>
-              Contact us
-            </a>
+            <h4 class="text-white font-bold font-display mb-1">Mr. Amba Das</h4>
+            <p class="text-gray-300 text-xs mb-3">Founder & CEO - Direct Seller<br>(Telangana)</p>
+            <!-- <a href="https://wa.me/918927656368" target="_blank"
+                        class="inline-flex items-center gap-2 bg-[#25D366] text-white text-xs font-bold px-3 py-1.5 rounded-full hover:bg-green-600 transition-colors">
+                        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12.004 0C5.374 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.824L.057 24l6.334-1.66A11.94 11.94 0 0 0 12.004 24C18.63 24 24 18.627 24 12S18.63 0 12.004 0zm0 21.818a9.818 9.818 0 0 1-5.003-1.37l-.36-.214-3.757.985 1.003-3.657-.233-.374A9.786 9.786 0 0 1 2.18 12c0-5.42 4.403-9.818 9.824-9.818 5.42 0 9.818 4.398 9.818 9.818 0 5.42-4.398 9.818-9.818 9.818z" />
+                        </svg>
+                        Contact us
+                    </a> -->
           </div>
         </div>
         <!-- Card 2 -->
@@ -735,14 +812,14 @@
           <div class="absolute bottom-0 left-0 right-0 p-5 z-10">
             <h4 class="text-white font-bold font-display mb-1">Mr. Bhagbat Chohan</h4>
             <p class="text-gray-300 text-xs mb-3">Founder & CEO - Ai Abacus<br>(Maharashtra)</p>
-            <a href="https://wa.me/919237377196" target="_blank"
-              class="inline-flex items-center gap-2 bg-[#25D366] text-white text-xs font-bold px-3 py-1.5 rounded-full hover:bg-green-600 transition-colors">
-              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M12.004 0C5.374 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.824L.057 24l6.334-1.66A11.94 11.94 0 0 0 12.004 24C18.63 24 24 18.627 24 12S18.63 0 12.004 0zm0 21.818a9.818 9.818 0 0 1-5.003-1.37l-.36-.214-3.757.985 1.003-3.657-.233-.374A9.786 9.786 0 0 1 2.18 12c0-5.42 4.403-9.818 9.824-9.818 5.42 0 9.818 4.398 9.818 9.818 0 5.42-4.398 9.818-9.818 9.818z" />
-              </svg>
-              Contact us
-            </a>
+            <!-- <a href="https://wa.me/918927656368" target="_blank"
+                        class="inline-flex items-center gap-2 bg-[#25D366] text-white text-xs font-bold px-3 py-1.5 rounded-full hover:bg-green-600 transition-colors">
+                        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12.004 0C5.374 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.824L.057 24l6.334-1.66A11.94 11.94 0 0 0 12.004 24C18.63 24 24 18.627 24 12S18.63 0 12.004 0zm0 21.818a9.818 9.818 0 0 1-5.003-1.37l-.36-.214-3.757.985 1.003-3.657-.233-.374A9.786 9.786 0 0 1 2.18 12c0-5.42 4.403-9.818 9.824-9.818 5.42 0 9.818 4.398 9.818 9.818 0 5.42-4.398 9.818-9.818 9.818z" />
+                        </svg>
+                        Contact us
+                    </a> -->
           </div>
         </div>
         <!-- Card 3 -->
@@ -754,16 +831,16 @@
           <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent pointer-events-none">
           </div>
           <div class="absolute bottom-0 left-0 right-0 p-5 z-10">
-            <h4 class="text-white font-bold font-display mb-1">Mr. Ammba Das</h4>
-            <p class="text-gray-300 text-xs mb-3">Founder & CEO - Direct Sellar<br>(Telangana)</p>
-            <a href="https://wa.me/919237377196" target="_blank"
-              class="inline-flex items-center gap-2 bg-[#25D366] text-white text-xs font-bold px-3 py-1.5 rounded-full hover:bg-green-600 transition-colors">
-              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M12.004 0C5.374 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.824L.057 24l6.334-1.66A11.94 11.94 0 0 0 12.004 24C18.63 24 24 18.627 24 12S18.63 0 12.004 0zm0 21.818a9.818 9.818 0 0 1-5.003-1.37l-.36-.214-3.757.985 1.003-3.657-.233-.374A9.786 9.786 0 0 1 2.18 12c0-5.42 4.403-9.818 9.824-9.818 5.42 0 9.818 4.398 9.818 9.818 0 5.42-4.398 9.818-9.818 9.818z" />
-              </svg>
-              Contact us
-            </a>
+            <h4 class="text-white font-bold font-display mb-1">Mr. Srinivas</h4>
+            <p class="text-gray-300 text-xs mb-3">Founder - Parivrat in-corporation<br>(Andrapradesh)</p>
+            <!-- <a href="https://wa.me/918927656368" target="_blank"
+                        class="inline-flex items-center gap-2 bg-[#25D366] text-white text-xs font-bold px-3 py-1.5 rounded-full hover:bg-green-600 transition-colors">
+                        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12.004 0C5.374 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.824L.057 24l6.334-1.66A11.94 11.94 0 0 0 12.004 24C18.63 24 24 18.627 24 12S18.63 0 12.004 0zm0 21.818a9.818 9.818 0 0 1-5.003-1.37l-.36-.214-3.757.985 1.003-3.657-.233-.374A9.786 9.786 0 0 1 2.18 12c0-5.42 4.403-9.818 9.824-9.818 5.42 0 9.818 4.398 9.818 9.818 0 5.42-4.398 9.818-9.818 9.818z" />
+                        </svg>
+                        Contact us
+                    </a> -->
           </div>
         </div>
         <!-- Card 4 -->
@@ -775,16 +852,46 @@
           <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent pointer-events-none">
           </div>
           <div class="absolute bottom-0 left-0 right-0 p-5 z-10">
+            <h4 class="text-white font-bold font-display mb-1">Mr. Sourav</h4>
+            <p class="text-gray-300 text-xs mb-3">Founder - Cosmos<br>(Maharashtra)</p>
+            <!-- <a href="https://wa.me/918927656368" target="_blank"
+                        class="inline-flex items-center gap-2 bg-[#25D366] text-white text-xs font-bold px-3 py-1.5 rounded-full hover:bg-green-600 transition-colors">
+                        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12.004 0C5.374 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.824L.057 24l6.334-1.66A11.94 11.94 0 0 0 12.004 24C18.63 24 24 18.627 24 12S18.63 0 12.004 0zm0 21.818a9.818 9.818 0 0 1-5.003-1.37l-.36-.214-3.757.985 1.003-3.657-.233-.374A9.786 9.786 0 0 1 2.18 12c0-5.42 4.403-9.818 9.824-9.818 5.42 0 9.818 4.398 9.818 9.818 0 5.42-4.398 9.818-9.818 9.818z" />
+                        </svg>
+                        Contact us
+                    </a> -->
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div
+          class="relative rounded-2xl overflow-hidden aspect-[9/16] bg-dark group shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer">
+
+          <video class="absolute inset-0 w-full h-full object-cover" controls preload="metadata">
+            <source src="./assets/videos/Review-5.mp4" type="video/mp4">
+          </video>
+
+          <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent pointer-events-none">
+          </div>
+
+          <div class="absolute bottom-0 left-0 right-0 p-5 z-10">
             <h4 class="text-white font-bold font-display mb-1">Mr. Srinivas</h4>
-            <p class="text-gray-300 text-xs mb-3">Founder & CEO - Parivrat<br>(Andhra Pradesh)</p>
-            <a href="https://wa.me/919237377196" target="_blank"
-              class="inline-flex items-center gap-2 bg-[#25D366] text-white text-xs font-bold px-3 py-1.5 rounded-full hover:bg-green-600 transition-colors">
-              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M12.004 0C5.374 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.824L.057 24l6.334-1.66A11.94 11.94 0 0 0 12.004 24C18.63 24 24 18.627 24 12S18.63 0 12.004 0zm0 21.818a9.818 9.818 0 0 1-5.003-1.37l-.36-.214-3.757.985 1.003-3.657-.233-.374A9.786 9.786 0 0 1 2.18 12c0-5.42 4.403-9.818 9.824-9.818 5.42 0 9.818 4.398 9.818 9.818 0 5.42-4.398 9.818-9.818 9.818z" />
-              </svg>
-              Contact us
-            </a>
+            <p class="text-gray-300 text-xs mb-3">
+              Founder - Parivrat in-corporation<br>(Andrapradesh)
+            </p>
+
+            <!-- <a href="https://wa.me/918927656368" target="_blank"
+                        class="inline-flex items-center gap-2 bg-[#25D366] text-white text-xs font-bold px-3 py-1.5 rounded-full hover:bg-green-600 transition-colors">
+
+                        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12.004 0C5.374 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.824L.057 24l6.334-1.66A11.94 11.94 0 0 0 12.004 24C18.63 24 24 18.627 24 12S18.63 0 12.004 0zm0 21.818a9.818 9.818 0 0 1-5.003-1.37l-.36-.214-3.757.985 1.003-3.657-.233-.374A9.786 9.786 0 0 1 2.18 12c0-5.42 4.403-9.818 9.824-9.818 5.42 0 9.818 4.398 9.818 9.818 0 5.42-4.398 9.818-9.818 9.818z" />
+                        </svg>
+
+                        Contact us
+                    </a> -->
           </div>
         </div>
       </div>
@@ -863,6 +970,66 @@
           <div
             class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
             <img src="./assets/image/partner15.jpeg" alt="MyGoldenWay" class="h-20 w-auto object-contain">
+          </div>
+          <div
+            class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+            <img src="./assets/image/partner16.jpg" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+          </div>
+          <div
+            class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+            <img src="./assets/image/partner17.png" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+          </div>
+          <div
+            class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+            <img src="./assets/image/partner18.png" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+          </div>
+          <div
+            class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+            <img src="./assets/image/partner19.png" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+          </div>
+          <div
+            class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+            <img src="./assets/image/partner20.jpg" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+          </div>
+          <div
+            class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+            <img src="./assets/image/partner21.jpg" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+          </div>
+          <div
+            class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+            <img src="./assets/image/partner22.jpg" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+          </div>
+          <div
+            class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+            <img src="./assets/image/partner23.png" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+          </div>
+          <div
+            class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+            <img src="./assets/image/partner24.png" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+          </div>
+          <div
+            class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+            <img src="./assets/image/partner25.jpeg" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+          </div>
+          <div
+            class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+            <img src="./assets/image/partner26.png" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+          </div>
+          <div
+            class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+            <img src="./assets/image/partner27.jpg" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+          </div>
+          <div
+            class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+            <img src="./assets/image/partner28.jpg" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+          </div>
+          <div
+            class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+            <img src="./assets/image/partner29.png" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+          </div>
+          <div
+            class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+            <img src="./assets/image/partner30.jpg" alt="MyGoldenWay" class="h-28 w-auto object-contain">
           </div>
 
         </div>
@@ -967,41 +1134,9 @@
           </div>
 
           <div id="svcTrack" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            <!-- Card: Latest MLM Database -->
-            <a href="mlm-database.html"
-              class="group flex flex-col h-full bg-white/[0.08] backdrop-blur-sm border border-white/15 shadow-lg rounded-2xl p-6 hover:border-accent hover:bg-white/[0.14] hover:-translate-y-1 transition-all duration-300">
-              <div
-                class="w-12 h-12 rounded-full bg-orange-500/15 flex items-center justify-center text-accentLight mb-5 group-hover:bg-accent group-hover:text-white transition-colors">
-                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <ellipse cx="12" cy="5" rx="8" ry="3" />
-                  <path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3" />
-                </svg>
-              </div>
-              <h4 class="font-bold text-white mb-2 font-display">Latest MLM Database</h4>
-              <p class="text-base text-gray-200 leading-relaxed mb-4 flex-1">Fresh verified databases with high
-                quality genuine contacts.</p>
-              <span
-                class="text-xs font-bold text-accent group-hover:text-white transition-colors flex items-center gap-1 mt-auto">Learn
-                more &rarr;</span>
-            </a>
 
-            <!-- Card: MLM Leader Website -->
-            <a href="mlm-leader-website.html"
-              class="group flex flex-col h-full bg-white/[0.08] backdrop-blur-sm border border-white/15 shadow-lg rounded-2xl p-6 hover:border-accent hover:bg-white/[0.14] hover:-translate-y-1 transition-all duration-300">
-              <div
-                class="w-12 h-12 rounded-full bg-orange-500/15 flex items-center justify-center text-accentLight mb-5 group-hover:bg-accent group-hover:text-white transition-colors">
-                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="8" r="4" />
-                  <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" />
-                </svg>
-              </div>
-              <h4 class="font-bold text-white mb-2 font-display">MLM Leader Website</h4>
-              <p class="text-base text-gray-200 leading-relaxed mb-4 flex-1">Modern responsive website for personal
-                branding and business.</p>
-              <span
-                class="text-xs font-bold text-accent group-hover:text-white transition-colors flex items-center gap-1 mt-auto">Learn
-                more &rarr;</span>
-            </a>
+
+
 
             <!-- Card: Customized MLM Software Development -->
             <a href="custom-mlm.html"
@@ -1014,7 +1149,8 @@
                 </svg>
               </div>
               <h4 class="font-bold text-white mb-2 font-display">Customized MLM Software Development</h4>
-              <p class="text-base text-gray-200 leading-relaxed mb-4 flex-1">Powerful backend dashboards tailored to
+              <p class="text-base text-gray-200 leading-relaxed mb-4 flex-1">Powerful backend dashboards
+                tailored to
                 your business with smart automation.</p>
               <span
                 class="text-xs font-bold text-accent group-hover:text-white transition-colors flex items-center gap-1 mt-auto">Learn
@@ -1032,7 +1168,8 @@
                 </svg>
               </div>
               <h4 class="font-bold text-white mb-2 font-display">MLM Plan PDF Making</h4>
-              <p class="text-base text-gray-200 leading-relaxed mb-4 flex-1">Professional compensation plan PDF
+              <p class="text-base text-gray-200 leading-relaxed mb-4 flex-1">Professional compensation plan
+                PDF
                 design with premium presentation.</p>
               <span
                 class="text-xs font-bold text-accent group-hover:text-white transition-colors flex items-center gap-1 mt-auto">Learn
@@ -1050,7 +1187,8 @@
                 </svg>
               </div>
               <h4 class="font-bold text-white mb-2 font-display">MLM Plan Video Making</h4>
-              <p class="text-base text-gray-200 leading-relaxed mb-4 flex-1">HD animated presentation videos with
+              <p class="text-base text-gray-200 leading-relaxed mb-4 flex-1">HD animated presentation videos
+                with
                 voice-over and effects.</p>
               <span
                 class="text-xs font-bold text-accent group-hover:text-white transition-colors flex items-center gap-1 mt-auto">Learn
@@ -1068,8 +1206,45 @@
                 </svg>
               </div>
               <h4 class="font-bold text-white mb-2 font-display">Result Based Promotion</h4>
-              <p class="text-base text-gray-200 leading-relaxed mb-4 flex-1">Reach targeted audiences using automated
+              <p class="text-base text-gray-200 leading-relaxed mb-4 flex-1">Reach targeted audiences using
+                automated
                 marketing campaigns.</p>
+              <span
+                class="text-xs font-bold text-accent group-hover:text-white transition-colors flex items-center gap-1 mt-auto">Learn
+                more &rarr;</span>
+            </a>
+            <!-- Card: Latest MLM Database -->
+            <a href="mlm-database.html"
+              class="group flex flex-col h-full bg-white/[0.08] backdrop-blur-sm border border-white/15 shadow-lg rounded-2xl p-6 hover:border-accent hover:bg-white/[0.14] hover:-translate-y-1 transition-all duration-300">
+              <div
+                class="w-12 h-12 rounded-full bg-orange-500/15 flex items-center justify-center text-accentLight mb-5 group-hover:bg-accent group-hover:text-white transition-colors">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <ellipse cx="12" cy="5" rx="8" ry="3" />
+                  <path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3" />
+                </svg>
+              </div>
+              <h4 class="font-bold text-white mb-2 font-display">Latest MLM Database</h4>
+              <p class="text-base text-gray-200 leading-relaxed mb-4 flex-1">Fresh verified databases with
+                high
+                quality genuine contacts.</p>
+              <span
+                class="text-xs font-bold text-accent group-hover:text-white transition-colors flex items-center gap-1 mt-auto">Learn
+                more &rarr;</span>
+            </a>
+            <!-- Card: MLM Leader Website -->
+            <a href="mlm-leader-website.html"
+              class="group flex flex-col h-full bg-white/[0.08] backdrop-blur-sm border border-white/15 shadow-lg rounded-2xl p-6 hover:border-accent hover:bg-white/[0.14] hover:-translate-y-1 transition-all duration-300">
+              <div
+                class="w-12 h-12 rounded-full bg-orange-500/15 flex items-center justify-center text-accentLight mb-5 group-hover:bg-accent group-hover:text-white transition-colors">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="8" r="4" />
+                  <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" />
+                </svg>
+              </div>
+              <h4 class="font-bold text-white mb-2 font-display">MLM Leader Website</h4>
+              <p class="text-base text-gray-200 leading-relaxed mb-4 flex-1">Modern responsive website for
+                personal
+                branding and business.</p>
               <span
                 class="text-xs font-bold text-accent group-hover:text-white transition-colors flex items-center gap-1 mt-auto">Learn
                 more &rarr;</span>
@@ -1194,7 +1369,7 @@
           <p class="mb-1"><span class="text-white font-semibold">Corporate Office:</span> Plot No: 1632/15509,
             Khata No: 1330/10531, Satya vihar, Rasulgarh, Bhubaneswar, Odisha, 751017</p>
           <p><span class="text-white font-semibold">Official Address:</span> 4th Floor, New Annex Building
-            Arch Bishop’s House, Satya Nagar, Bhubaneswar, Odisha 751007</p>
+            Arch Bishop's House, Satya Nagar, Bhubaneswar, Odisha 751007</p>
         </div>
         <div class="flex flex-col md:items-end justify-center">
           <div class="flex flex-wrap gap-4 text-accentLight mb-4">
@@ -1250,18 +1425,19 @@
       }
     ];
 
+    // Changed border-gray-200 to border-gray-300 and added shadow-sm
     document.getElementById('featureList').innerHTML = features.map(f => `
-    <div class="flex flex-col items-start gap-3 bg-white border border-gray-200 rounded-2xl p-5 h-full transition hover:-translate-y-0.5 hover:border-accent hover:shadow-card">
-      <div class="w-[46px] h-[46px] flex-shrink-0 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#F59E0B" class="w-[22px] h-[22px]">${f.icon}</svg>
-      </div>
-      <div>
-        <span class="block font-mono text-[11px] text-accent tracking-wide mb-1">${f.num}</span>
-        <h3 class="text-[15.5px] font-semibold text-primary mb-1.5">${f.title}</h3>
-        <p class="text-base leading-relaxed text-gray-500">${f.desc}</p>
-      </div>
-    </div>
-  `).join('');
+<div class="flex flex-col items-start gap-3 bg-gray-200 border border-gray-400 shadow-sm rounded-2xl p-5 h-full transition hover:-translate-y-0.5 hover:border-accent hover:shadow-card">
+  <div class="w-[46px] h-[46px] flex-shrink-0 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#F59E0B" class="w-[22px] h-[22px]">${f.icon}</svg>
+  </div>
+  <div>
+    <span class="block font-mono text-[11px] text-accent tracking-wide mb-1">${f.num}</span>
+    <h3 class="text-[15.5px] font-semibold text-primary mb-1.5">${f.title}</h3>
+    <p class="text-base leading-relaxed text-primary">${f.desc}</p>
+  </div>
+</div>
+`).join('');
 
     /* ---------------- PLAN GRID ---------------- */
     const planTitles = [
@@ -1512,7 +1688,7 @@
         <div class="absolute bottom-0 left-0 right-0 px-5 py-6 z-10">
           <div class="font-display text-[17px] font-bold text-white mb-1.5 leading-tight">${t.name}</div>
           <div class="text-[13px] text-gray-300 leading-snug mb-4">${t.role}</div>
-          <a href="https://wa.me/919237377196" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-accent text-white px-3.5 py-2 rounded-lg text-[13px] font-semibold transition hover:-translate-y-0.5 hover:bg-amber-600">
+          <a href="https://wa.me/918927656368" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-accent text-white px-3.5 py-2 rounded-lg text-[13px] font-semibold transition hover:-translate-y-0.5 hover:bg-amber-600">
             ${waIcon} Contact us
           </a>
         </div>
@@ -1522,71 +1698,71 @@
 
 
 
-      /* ---------------- MLM TYPES ---------------- */
-      const mlmTypes = [
-  {
-    title: "BINARY MLM PLAN",
-    label: "BINARY PLAN",
-    image: "https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/07/ChatGPT-Image-Jul-15-2026-10_51_02-AM-1024x819.png"
-  },
-  {
-    title: "GENERATION MLM PLAN",
-    label: "GENERATION PLAN",
-    image: "https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/07/ChatGPT-Image-Jul-15-2026-10_26_51-AM-1024x819.png"
-  },
-  {
-    title: "ROI MLM PLAN",
-    label: "ROI PLAN",
-    image: "https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/07/ChatGPT-Image-Jul-15-2026-10_27_56-AM-1024x819.png"
-  },
-  {
-    title: "UNILEVEL MLM PLAN",
-    label: "UNILEVEL PLAN",
-    image: "https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/07/ChatGPT-Image-Jul-15-2026-10_30_45-AM-1024x819.png"
-  },
-  {
-    title: "AUTOPOOL MLM PLAN",
-    label: "AUTOPOOL PLAN",
-    image: "https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/07/ChatGPT-Image-Jul-15-2026-10_32_13-AM-1024x819.png"
-  },
-  {
-    title: "CRYPTO MLM PLAN",
-    label: "CRYPTO PLAN",
-    image: "https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/07/ChatGPT-Image-Jul-15-2026-10_35_00-AM-1024x819.png"
-  },
-  {
-    title: "STAIR MLM PLAN",
-    label: "STAIR PLAN",
-    image: "https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/07/ChatGPT-Image-Jul-15-2026-10_36_42-AM-1024x819.png"
-  },
-  {
-    title: "PARTY MLM PLAN",
-    label: "PARTY PLAN",
-    image: "https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/07/ChatGPT-Image-Jul-15-2026-10_38_06-AM-1024x839.png"
-  },
-  {
-    title: "BOARD MLM PLAN",
-    label: "BOARD PLAN",
-    image: "https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/07/ChatGPT-Image-Jul-15-2026-10_39_59-AM-1024x852.png"
-  },
-  {
-    title: "AUSTRALIAN BINARY PLAN",
-    label: "AUSTRALIAN BINARY",
-    image: "https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/07/ChatGPT-Image-Jul-15-2026-10_41_42-AM-1024x855.png"
-  },
-  {
-    title: "E COMMERCE MLM PLAN",
-    label: "E COMMERCE PLAN",
-    image: "https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/07/ChatGPT-Image-Jul-15-2026-10_43_16-AM-1024x819.png"
-  },
-  {
-    title: "CUSTOMIZED MLM PLAN",
-    label: "CUSTOMIZED PLAN",
-    image: "https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/07/ChatGPT-Image-Jul-15-2026-10_45_16-AM-1024x819.png"
-  }
-];
+    /* ---------------- MLM TYPES ---------------- */
+    const mlmTypes = [
+      {
+        title: "BINARY MLM PLAN",
+        label: "BINARY PLAN",
+        image: "https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/07/ChatGPT-Image-Jul-15-2026-10_51_02-AM-1024x819.png"
+      },
+      {
+        title: "GENERATION MLM PLAN",
+        label: "GENERATION PLAN",
+        image: "https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/07/ChatGPT-Image-Jul-15-2026-10_26_51-AM-1024x819.png"
+      },
+      {
+        title: "ROI MLM PLAN",
+        label: "ROI PLAN",
+        image: "https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/07/ChatGPT-Image-Jul-15-2026-10_27_56-AM-1024x819.png"
+      },
+      {
+        title: "UNILEVEL MLM PLAN",
+        label: "UNILEVEL PLAN",
+        image: "https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/07/ChatGPT-Image-Jul-15-2026-10_30_45-AM-1024x819.png"
+      },
+      {
+        title: "AUTOPOOL MLM PLAN",
+        label: "AUTOPOOL PLAN",
+        image: "https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/07/ChatGPT-Image-Jul-15-2026-10_32_13-AM-1024x819.png"
+      },
+      {
+        title: "CRYPTO MLM PLAN",
+        label: "CRYPTO PLAN",
+        image: "https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/07/ChatGPT-Image-Jul-15-2026-10_35_00-AM-1024x819.png"
+      },
+      {
+        title: "STAIR MLM PLAN",
+        label: "STAIR PLAN",
+        image: "https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/07/ChatGPT-Image-Jul-15-2026-10_36_42-AM-1024x819.png"
+      },
+      {
+        title: "PARTY MLM PLAN",
+        label: "PARTY PLAN",
+        image: "https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/07/ChatGPT-Image-Jul-15-2026-10_38_06-AM-1024x839.png"
+      },
+      {
+        title: "BOARD MLM PLAN",
+        label: "BOARD PLAN",
+        image: "https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/07/ChatGPT-Image-Jul-15-2026-10_39_59-AM-1024x852.png"
+      },
+      {
+        title: "AUSTRALIAN BINARY PLAN",
+        label: "AUSTRALIAN BINARY",
+        image: "https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/07/ChatGPT-Image-Jul-15-2026-10_41_42-AM-1024x855.png"
+      },
+      {
+        title: "E COMMERCE MLM PLAN",
+        label: "E COMMERCE PLAN",
+        image: "https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/07/ChatGPT-Image-Jul-15-2026-10_43_16-AM-1024x819.png"
+      },
+      {
+        title: "CUSTOMIZED MLM PLAN",
+        label: "CUSTOMIZED PLAN",
+        image: "https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/07/ChatGPT-Image-Jul-15-2026-10_45_16-AM-1024x819.png"
+      }
+    ];
 
-   document.getElementById('mlmTypesGrid').innerHTML = mlmTypes.map(m => `
+    document.getElementById('mlmTypesGrid').innerHTML = mlmTypes.map(m => `
   <div class="flex flex-col gap-4">
     <div class="relative bg-gray-50 border border-gray-200 rounded-xl p-3 h-80 flex items-center justify-center overflow-hidden transition hover:-translate-y-1 hover:border-accent">
   <img
@@ -1754,75 +1930,6 @@
         }
       });
     }
-
-    const aiFab = document.getElementById('aiFab');
-    const aiPanel = document.getElementById('aiPanel');
-    const aiClose = document.getElementById('aiClose');
-    const aiForm = document.getElementById('aiForm');
-    const aiInput = document.getElementById('aiInput');
-    const aiBody = document.getElementById('aiBody');
-    function toggleAiPanel() {
-      aiPanel.classList.toggle('opacity-0');
-      aiPanel.classList.toggle('invisible');
-      aiPanel.classList.toggle('scale-95');
-    }
-    if (aiFab) aiFab.addEventListener('click', toggleAiPanel);
-    if (aiClose) aiClose.addEventListener('click', toggleAiPanel);
-
-    const chatHistory = [];
-    function appendMessage(text, role) {
-      const msg = document.createElement('div');
-      msg.className = role === 'user'
-        ? 'bg-primary text-white p-3 rounded-2xl rounded-tr-sm self-end shadow-sm max-w-[85%] mt-2 text-sm leading-relaxed'
-        : 'bg-white border border-gray-200 p-3 rounded-2xl rounded-tl-sm text-gray-700 self-start shadow-sm max-w-[85%] mt-2 text-sm leading-relaxed';
-      msg.textContent = text;
-      aiBody.appendChild(msg);
-      aiBody.scrollTop = aiBody.scrollHeight;
-      return msg;
-    }
-    function appendTypingIndicator() {
-      const t = document.createElement('div');
-      t.className = 'bg-white border border-gray-200 p-3 rounded-2xl rounded-tl-sm text-gray-400 self-start shadow-sm max-w-[85%] mt-2 text-sm flex items-center gap-1';
-      t.id = 'aiTyping';
-      t.innerHTML = '<span class="inline-block w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce" style="animation-delay:0s"></span><span class="inline-block w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce" style="animation-delay:0.15s"></span><span class="inline-block w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce" style="animation-delay:0.3s"></span>';
-      aiBody.appendChild(t);
-      aiBody.scrollTop = aiBody.scrollHeight;
-      return t;
-    }
-    if (aiForm) {
-      aiForm.addEventListener('submit', async function (e) {
-        e.preventDefault();
-        const text = aiInput.value.trim();
-        if (!text) return;
-        appendMessage(text, 'user');
-        chatHistory.push({ role: 'user', text });
-        aiInput.value = '';
-        const submitBtn = aiForm.querySelector('button[type="submit"]');
-        if (submitBtn) submitBtn.disabled = true;
-        const typingEl = appendTypingIndicator();
-        try {
-          const res = await fetch(`${CONFIG.API_BASE_URL}/chat`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ message: text, history: chatHistory.slice(-10) })
-          });
-          const data = await res.json();
-          typingEl.remove();
-          const reply = data.reply || data.error || 'Sorry, could not get a response. Please try again.';
-          appendMessage(reply, 'bot');
-          chatHistory.push({ role: 'model', text: reply });
-        } catch (err) {
-          typingEl.remove();
-          appendMessage('Connection error. Please call us at 8927656368.', 'bot');
-        } finally {
-          if (submitBtn) submitBtn.disabled = false;
-          aiInput.focus();
-        }
-      });
-    }
-
-
-
 
     /* ---------- Services carousel scroll ---------- */
     const svcTrack = document.getElementById('svcTrack');
