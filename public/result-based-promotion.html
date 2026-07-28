@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -791,127 +791,111 @@
                     &mdash; not mockups, actual working panels you can test yourself.</p>
             </div>
 
+            <style>
+                .rbp-proof-card { position: relative; background: #111827; border-radius: 18px; overflow: hidden; cursor: pointer; box-shadow: 0 4px 24px rgba(0,0,0,0.14); transition: transform 0.28s cubic-bezier(.4,0,.2,1), box-shadow 0.28s ease; }
+                .rbp-proof-card:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 16px 40px rgba(0,0,0,0.22); }
+                .rbp-proof-card img { width: 100%; height: 100%; object-fit: contain; display: block; }
+                .rbp-proof-card .rbp-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.68) 0%, rgba(0,0,0,0.08) 60%, transparent 100%); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.28s ease; }
+                .rbp-proof-card:hover .rbp-overlay { opacity: 1; }
+                .rbp-overlay .rbp-btn { background: linear-gradient(135deg,#FF7A45,#F1521E); color: #fff; font-size: 13px; font-weight: 700; letter-spacing: .06em; padding: 10px 22px; border-radius: 50px; border: none; cursor: pointer; box-shadow: 0 4px 16px rgba(241,82,30,0.45); transform: translateY(8px); transition: transform 0.22s ease; pointer-events: none; }
+                .rbp-proof-card:hover .rbp-btn { transform: translateY(0); }
+            </style>
+
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-                <!-- Proof 1 -->
-                <a href="./assets/image/proof1.jpeg" target="_blank"
-                    class="group block rounded-2xl overflow-hidden border border-gray-100 shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300">
-                    <div class="relative aspect-[3/4] bg-gray-100 overflow-hidden">
-                        <img src="./assets/image/proof1.jpeg" alt="Campaign Proof"
-                            class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
-                        <div
-                            class="absolute inset-0 bg-primary/0 group-hover:bg-primary/40 transition-colors duration-300 flex items-center justify-center">
-                            <span
-                                class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-xs font-bold tracking-widest uppercase bg-accent text-primary px-4 py-2 rounded-full">View
-                                Proof</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Proof 2 -->
-                <a href="./assets/image/proof2.png" target="_blank"
-                    class="group block rounded-2xl overflow-hidden border border-gray-100 shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300">
-                    <div class="relative aspect-[3/4] bg-gray-100 overflow-hidden">
-                        <img src="./assets/image/proof2.png" alt="Campaign Proof"
-                            class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
-                        <div
-                            class="absolute inset-0 bg-primary/0 group-hover:bg-primary/40 transition-colors duration-300 flex items-center justify-center">
-                            <span
-                                class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-xs font-bold tracking-widest uppercase bg-accent text-primary px-4 py-2 rounded-full">View
-                                Proof</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Proof 3 -->
-                <a href="./assets/image/proof3.png" target="_blank"
-                    class="group block rounded-2xl overflow-hidden border border-gray-100 shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300">
-                    <div class="relative aspect-[3/4] bg-gray-100 overflow-hidden">
-                        <img src="./assets/image/proof3.png" alt="Campaign Proof"
-                            class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
-                        <div
-                            class="absolute inset-0 bg-primary/0 group-hover:bg-primary/40 transition-colors duration-300 flex items-center justify-center">
-                            <span
-                                class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-xs font-bold tracking-widest uppercase bg-accent text-primary px-4 py-2 rounded-full">View
-                                Proof</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Proof 4 -->
-                <a href="./assets/image/proof4.png" target="_blank"
-                    class="group block rounded-2xl overflow-hidden border border-gray-100 shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300">
-                    <div class="relative aspect-[3/4] bg-gray-100 overflow-hidden">
-                        <img src="./assets/image/proof4.png" alt="Campaign Proof"
-                            class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
-                        <div
-                            class="absolute inset-0 bg-primary/0 group-hover:bg-primary/40 transition-colors duration-300 flex items-center justify-center">
-                            <span
-                                class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-xs font-bold tracking-widest uppercase bg-accent text-primary px-4 py-2 rounded-full">View
-                                Proof</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Proof 5 -->
-                <a href="./assets/image/proof5.png" target="_blank"
-                    class="group block rounded-2xl overflow-hidden border border-gray-100 shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300">
-                    <div class="relative aspect-[3/4] bg-gray-100 overflow-hidden">
-                        <img src="./assets/image/proof5.png" alt="Campaign Proof"
-                            class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
-                        <div
-                            class="absolute inset-0 bg-primary/0 group-hover:bg-primary/40 transition-colors duration-300 flex items-center justify-center">
-                            <span
-                                class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-xs font-bold tracking-widest uppercase bg-accent text-primary px-4 py-2 rounded-full">View
-                                Proof</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Proof 6 -->
-                <a href="./assets/image/proof6.png" target="_blank"
-                    class="group block rounded-2xl overflow-hidden border border-gray-100 shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300">
-                    <div class="relative aspect-[3/4] bg-gray-100 overflow-hidden">
-                        <img src="./assets/image/proof6.png" alt="Campaign Proof"
-                            class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
-                        <div
-                            class="absolute inset-0 bg-primary/0 group-hover:bg-primary/40 transition-colors duration-300 flex items-center justify-center">
-                            <span
-                                class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-xs font-bold tracking-widest uppercase bg-accent text-primary px-4 py-2 rounded-full">View
-                                Proof</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Proof 7 -->
-                <a href="./assets/image/proof7.png" target="_blank"
-                    class="group block rounded-2xl overflow-hidden border border-gray-100 shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300">
-                    <div class="relative aspect-[3/4] bg-gray-100 overflow-hidden">
-                        <img src="./assets/image/proof7.png" alt="Campaign Proof"
-                            class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
-                        <div
-                            class="absolute inset-0 bg-primary/0 group-hover:bg-primary/40 transition-colors duration-300 flex items-center justify-center">
-                            <span
-                                class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-xs font-bold tracking-widest uppercase bg-accent text-primary px-4 py-2 rounded-full">View
-                                Proof</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Proof 8 -->
-                <a href="./assets/image/proof8.png" target="_blank"
-                    class="group block rounded-2xl overflow-hidden border border-gray-100 shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300">
-                    <div class="relative aspect-[3/4] bg-gray-100 overflow-hidden">
-                        <img src="./assets/image/proof8.png" alt="Campaign Proof"
-                            class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
-                        <div
-                            class="absolute inset-0 bg-primary/0 group-hover:bg-primary/40 transition-colors duration-300 flex items-center justify-center">
-                            <span
-                                class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-xs font-bold tracking-widest uppercase bg-accent text-primary px-4 py-2 rounded-full">View
-                                Proof</span>
-                        </div>
-                    </div>
-                </a>
+                <div class="rbp-proof-card" style="aspect-ratio:3/4;" data-src="./assets/image/proof1.jpeg">
+                    <img src="./assets/image/proof1.jpeg" alt="Campaign Proof 1" loading="lazy">
+                    <div class="rbp-overlay"><span class="rbp-btn">VIEW PROOF</span></div>
+                </div>
+                <div class="rbp-proof-card" style="aspect-ratio:3/4;" data-src="./assets/image/proof2.png">
+                    <img src="./assets/image/proof2.png" alt="Campaign Proof 2" loading="lazy">
+                    <div class="rbp-overlay"><span class="rbp-btn">VIEW PROOF</span></div>
+                </div>
+                <div class="rbp-proof-card" style="aspect-ratio:3/4;" data-src="./assets/image/proof3.png">
+                    <img src="./assets/image/proof3.png" alt="Campaign Proof 3" loading="lazy">
+                    <div class="rbp-overlay"><span class="rbp-btn">VIEW PROOF</span></div>
+                </div>
+                <div class="rbp-proof-card" style="aspect-ratio:3/4;" data-src="./assets/image/proof4.png">
+                    <img src="./assets/image/proof4.png" alt="Campaign Proof 4" loading="lazy">
+                    <div class="rbp-overlay"><span class="rbp-btn">VIEW PROOF</span></div>
+                </div>
+                <div class="rbp-proof-card" style="aspect-ratio:3/4;" data-src="./assets/image/proof5.png">
+                    <img src="./assets/image/proof5.png" alt="Campaign Proof 5" loading="lazy">
+                    <div class="rbp-overlay"><span class="rbp-btn">VIEW PROOF</span></div>
+                </div>
+                <div class="rbp-proof-card" style="aspect-ratio:3/4;" data-src="./assets/image/proof6.png">
+                    <img src="./assets/image/proof6.png" alt="Campaign Proof 6" loading="lazy">
+                    <div class="rbp-overlay"><span class="rbp-btn">VIEW PROOF</span></div>
+                </div>
+                <div class="rbp-proof-card" style="aspect-ratio:3/4;" data-src="./assets/image/proof7.png">
+                    <img src="./assets/image/proof7.png" alt="Campaign Proof 7" loading="lazy">
+                    <div class="rbp-overlay"><span class="rbp-btn">VIEW PROOF</span></div>
+                </div>
+                <div class="rbp-proof-card" style="aspect-ratio:3/4;" data-src="./assets/image/proof8.png">
+                    <img src="./assets/image/proof8.png" alt="Campaign Proof 8" loading="lazy">
+                    <div class="rbp-overlay"><span class="rbp-btn">VIEW PROOF</span></div>
+                </div>
             </div>
+
+            <!-- Lightbox -->
+            <div id="rbpLightbox" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.93);align-items:center;justify-content:center;padding:60px 16px 16px;backdrop-filter:blur(10px);" onclick="if(event.target===this)rbpLB.close()">
+
+                <!-- Close -->
+                <button onclick="rbpLB.close()" style="position:absolute;top:14px;right:18px;background:rgba(255,255,255,0.1);border:2px solid rgba(255,255,255,0.22);color:#fff;font-size:20px;width:42px;height:42px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s,border-color 0.2s;z-index:2;" onmouseover="this.style.background='rgba(241,82,30,0.85)';this.style.borderColor='#F1521E'" onmouseout="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(255,255,255,0.22)'">&times;</button>
+
+                <!-- Prev -->
+                <button onclick="rbpLB.prev()" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.1);border:2px solid rgba(255,255,255,0.22);color:#fff;width:48px;height:48px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s,border-color 0.2s;z-index:2;" onmouseover="this.style.background='rgba(241,82,30,0.85)';this.style.borderColor='#F1521E'" onmouseout="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(255,255,255,0.22)'">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+
+                <!-- Image -->
+                <img id="rbpLightboxImg" src="" alt="" style="max-width:min(400px,80vw);max-height:82vh;border-radius:16px;box-shadow:0 32px 80px rgba(0,0,0,0.7);object-fit:contain;transition:opacity 0.18s ease;" onclick="event.stopPropagation()">
+
+                <!-- Next -->
+                <button onclick="rbpLB.next()" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.1);border:2px solid rgba(255,255,255,0.22);color:#fff;width:48px;height:48px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s,border-color 0.2s;z-index:2;" onmouseover="this.style.background='rgba(241,82,30,0.85)';this.style.borderColor='#F1521E'" onmouseout="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(255,255,255,0.22)'">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+
+                <!-- Counter -->
+                <div id="rbpCounter" style="position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.65);font-size:13px;font-weight:600;letter-spacing:.05em;pointer-events:none;"></div>
+            </div>
+
+            <script>
+                var rbpLB = (function () {
+                    var images = [];
+                    var current = 0;
+                    var lb  = document.getElementById('rbpLightbox');
+                    var img = document.getElementById('rbpLightboxImg');
+                    var ctr = document.getElementById('rbpCounter');
+
+                    document.querySelectorAll('.rbp-proof-card').forEach(function (card, idx) {
+                        images.push({ src: card.dataset.src, alt: card.querySelector('img').alt });
+                        card.addEventListener('click', function () { open(idx); });
+                    });
+
+                    function open(idx) { current = idx; show(); lb.style.display = 'flex'; }
+                    function show() {
+                        img.style.opacity = '0';
+                        setTimeout(function () {
+                            img.src = images[current].src;
+                            img.alt = images[current].alt;
+                            ctr.textContent = (current + 1) + ' / ' + images.length;
+                            img.style.opacity = '1';
+                        }, 120);
+                    }
+                    function close() { lb.style.display = 'none'; }
+                    function prev()  { current = (current - 1 + images.length) % images.length; show(); }
+                    function next()  { current = (current + 1) % images.length; show(); }
+
+                    document.addEventListener('keydown', function (e) {
+                        if (lb.style.display === 'none') return;
+                        if (e.key === 'Escape')     close();
+                        if (e.key === 'ArrowLeft')  prev();
+                        if (e.key === 'ArrowRight') next();
+                    });
+
+                    return { open: open, close: close, prev: prev, next: next };
+                })();
+            </script>
         </div>
     </section>
 

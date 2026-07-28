@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -154,8 +154,8 @@
                     <button id="rotatePrevBtn" aria-label="Previous"
                         class="shrink-0 w-9 h-9 md:w-10 md:h-10 rounded-full border border-white/20 bg-white/5 text-white flex items-center justify-center hover:bg-accent hover:border-accent transition-colors">
                         <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M15 18l-6-6 6-6" />
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="15 18 9 12 15 6" />
                         </svg>
                     </button>
                     <div class="flex-1 min-w-0">
@@ -179,8 +179,8 @@
                     <button id="rotateNextBtn" aria-label="Next"
                         class="shrink-0 w-9 h-9 md:w-10 md:h-10 rounded-full border border-white/20 bg-white/5 text-white flex items-center justify-center hover:bg-accent hover:border-accent transition-colors">
                         <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M9 18l6-6-6-6" />
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6" />
                         </svg>
                     </button>
                 </div>
@@ -513,34 +513,143 @@
         </div>
 
         <!-- Image Proofs Grid -->
+        <style>
+            .proof-card { position: relative; background: #111827; border-radius: 18px; overflow: hidden; cursor: pointer; box-shadow: 0 4px 24px rgba(0,0,0,0.18); transition: transform 0.28s cubic-bezier(.4,0,.2,1), box-shadow 0.28s ease; }
+            .proof-card:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 16px 40px rgba(0,0,0,0.28); }
+            .proof-card img { width: 100%; height: 100%; object-fit: contain; display: block; }
+            .proof-card .proof-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.10) 60%, transparent 100%); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.28s ease; }
+            .proof-card:hover .proof-overlay { opacity: 1; }
+            .proof-overlay .view-btn { background: linear-gradient(135deg,#FF7A45,#F1521E); color: #fff; font-size: 13px; font-weight: 700; letter-spacing: .06em; padding: 10px 22px; border-radius: 50px; border: none; cursor: pointer; box-shadow: 0 4px 16px rgba(241,82,30,0.45); transform: translateY(8px); transition: transform 0.22s ease, box-shadow 0.22s ease; pointer-events: none; }
+            .proof-card:hover .view-btn { transform: translateY(0); }
+        </style>
+
         <div class="mt-16">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <img src="./assets/image/database1.png" alt="Database Proof 1"
-                    class="w-full h-auto rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                <img src="./assets/image/database2.png" alt="Database Proof 2"
-                    class="w-full h-auto rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                <img src="./assets/image/database3.png" alt="Database Proof 3"
-                    class="w-full h-auto rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                <img src="./assets/image/database4.png" alt="Database Proof 4"
-                    class="w-full h-auto rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                <img src="./assets/image/database5.png" alt="Database Proof 5"
-                    class="w-full h-auto rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                <img src="./assets/image/database6.png" alt="Database Proof 6"
-                    class="w-full h-auto rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                <img src="./assets/image/database7.png" alt="Database Proof 7"
-                    class="w-full h-auto rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                <img src="./assets/image/database8.png" alt="Database Proof 8"
-                    class="w-full h-auto rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                <img src="./assets/image/proof2.png" alt="Purchase Proof 2"
-                    class="w-full h-auto rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                <img src="./assets/image/proof6.png" alt="Purchase Proof 6"
-                    class="w-full h-auto rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                <img src="./assets/image/proof7.png" alt="Purchase Proof 7"
-                    class="w-full h-auto rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                <img src="./assets/image/proof8.png" alt="Purchase Proof 8"
-                    class="w-full h-auto rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+
+                <!-- Row 1 -->
+                <div class="proof-card" style="aspect-ratio:9/16;" data-src="./assets/image/database1.png">
+                    <img src="./assets/image/database1.png" alt="Database Proof 1" loading="lazy">
+                    <div class="proof-overlay"><span class="view-btn">VIEW PROOF</span></div>
+                </div>
+                <div class="proof-card" style="aspect-ratio:9/16;" data-src="./assets/image/database2.png">
+                    <img src="./assets/image/database2.png" alt="Database Proof 2" loading="lazy">
+                    <div class="proof-overlay"><span class="view-btn">VIEW PROOF</span></div>
+                </div>
+                <div class="proof-card" style="aspect-ratio:9/16;" data-src="./assets/image/database3.png">
+                    <img src="./assets/image/database3.png" alt="Database Proof 3" loading="lazy">
+                    <div class="proof-overlay"><span class="view-btn">VIEW PROOF</span></div>
+                </div>
+                <div class="proof-card" style="aspect-ratio:9/16;" data-src="./assets/image/database4.png">
+                    <img src="./assets/image/database4.png" alt="Database Proof 4" loading="lazy">
+                    <div class="proof-overlay"><span class="view-btn">VIEW PROOF</span></div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="proof-card" style="aspect-ratio:9/16;" data-src="./assets/image/database5.png">
+                    <img src="./assets/image/database5.png" alt="Database Proof 5" loading="lazy">
+                    <div class="proof-overlay"><span class="view-btn">VIEW PROOF</span></div>
+                </div>
+                <div class="proof-card" style="aspect-ratio:9/16;" data-src="./assets/image/database6.png">
+                    <img src="./assets/image/database6.png" alt="Database Proof 6" loading="lazy">
+                    <div class="proof-overlay"><span class="view-btn">VIEW PROOF</span></div>
+                </div>
+                <div class="proof-card" style="aspect-ratio:9/16;" data-src="./assets/image/database7.png">
+                    <img src="./assets/image/database7.png" alt="Database Proof 7" loading="lazy">
+                    <div class="proof-overlay"><span class="view-btn">VIEW PROOF</span></div>
+                </div>
+                <div class="proof-card" style="aspect-ratio:9/16;" data-src="./assets/image/database8.png">
+                    <img src="./assets/image/database8.png" alt="Database Proof 8" loading="lazy">
+                    <div class="proof-overlay"><span class="view-btn">VIEW PROOF</span></div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="proof-card" style="aspect-ratio:9/16;" data-src="./assets/image/proof2.png">
+                    <img src="./assets/image/proof2.png" alt="Purchase Proof 2" loading="lazy">
+                    <div class="proof-overlay"><span class="view-btn">VIEW PROOF</span></div>
+                </div>
+                <div class="proof-card" style="aspect-ratio:9/16;" data-src="./assets/image/proof6.png">
+                    <img src="./assets/image/proof6.png" alt="Purchase Proof 6" loading="lazy">
+                    <div class="proof-overlay"><span class="view-btn">VIEW PROOF</span></div>
+                </div>
+                <div class="proof-card" style="aspect-ratio:9/16;" data-src="./assets/image/proof7.png">
+                    <img src="./assets/image/proof7.png" alt="Purchase Proof 7" loading="lazy">
+                    <div class="proof-overlay"><span class="view-btn">VIEW PROOF</span></div>
+                </div>
+                <div class="proof-card" style="aspect-ratio:9/16;" data-src="./assets/image/proof8.png">
+                    <img src="./assets/image/proof8.png" alt="Purchase Proof 8" loading="lazy">
+                    <div class="proof-overlay"><span class="view-btn">VIEW PROOF</span></div>
+                </div>
+
             </div>
         </div>
+
+        <!-- Lightbox Modal -->
+        <div id="proofLightbox" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.93);align-items:center;justify-content:center;padding:60px 16px 16px;backdrop-filter:blur(10px);" onclick="if(event.target===this)proofLB.close()">
+
+            <!-- Close button -->
+            <button id="lbClose" onclick="proofLB.close()" style="position:absolute;top:14px;right:18px;background:rgba(255,255,255,0.1);border:2px solid rgba(255,255,255,0.22);color:#fff;font-size:20px;width:42px;height:42px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s,border-color 0.2s;z-index:2;" onmouseover="this.style.background='rgba(241,82,30,0.85)';this.style.borderColor='#F1521E'" onmouseout="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(255,255,255,0.22)'">&times;</button>
+
+            <!-- Prev arrow -->
+            <button id="lbPrev" onclick="proofLB.prev()" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.1);border:2px solid rgba(255,255,255,0.22);color:#fff;width:48px;height:48px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s,border-color 0.2s,transform 0.2s;z-index:2;" onmouseover="this.style.background='rgba(241,82,30,0.85)';this.style.borderColor='#F1521E'" onmouseout="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(255,255,255,0.22)'">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+
+            <!-- Image -->
+            <img id="proofLightboxImg" src="" alt="Full Proof" style="max-width:min(460px,80vw);max-height:82vh;border-radius:16px;box-shadow:0 32px 80px rgba(0,0,0,0.7);object-fit:contain;transition:opacity 0.18s ease;" onclick="event.stopPropagation()">
+
+            <!-- Next arrow -->
+            <button id="lbNext" onclick="proofLB.next()" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.1);border:2px solid rgba(255,255,255,0.22);color:#fff;width:48px;height:48px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s,border-color 0.2s,transform 0.2s;z-index:2;" onmouseover="this.style.background='rgba(241,82,30,0.85)';this.style.borderColor='#F1521E'" onmouseout="this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(255,255,255,0.22)'">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+
+            <!-- Counter -->
+            <div id="lbCounter" style="position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.65);font-size:13px;font-weight:600;letter-spacing:.05em;pointer-events:none;"></div>
+        </div>
+
+        <script>
+            var proofLB = (function () {
+                var images = [];
+                var current = 0;
+                var lb = document.getElementById('proofLightbox');
+                var img = document.getElementById('proofLightboxImg');
+                var counter = document.getElementById('lbCounter');
+
+                // Build image list from all proof cards
+                document.querySelectorAll('.proof-card').forEach(function (card, idx) {
+                    images.push({ src: card.dataset.src, alt: card.querySelector('img').alt });
+                    card.addEventListener('click', function () { open(idx); });
+                });
+
+                function open(idx) {
+                    current = idx;
+                    show();
+                    lb.style.display = 'flex';
+                }
+
+                function show() {
+                    img.style.opacity = '0';
+                    setTimeout(function () {
+                        img.src = images[current].src;
+                        img.alt = images[current].alt;
+                        counter.textContent = (current + 1) + ' / ' + images.length;
+                        img.style.opacity = '1';
+                    }, 120);
+                }
+
+                function close() { lb.style.display = 'none'; }
+                function prev() { current = (current - 1 + images.length) % images.length; show(); }
+                function next() { current = (current + 1) % images.length; show(); }
+
+                document.addEventListener('keydown', function (e) {
+                    if (lb.style.display === 'none') return;
+                    if (e.key === 'Escape') close();
+                    if (e.key === 'ArrowLeft') prev();
+                    if (e.key === 'ArrowRight') next();
+                });
+
+                return { open: open, close: close, prev: prev, next: next };
+            })();
+        </script>
         </div>
     </section>
 
