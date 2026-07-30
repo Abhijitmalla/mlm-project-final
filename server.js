@@ -34,14 +34,14 @@ app.use(
       "http://localhost:5501",
       "https://vkservicesenterprise.in",
       "http://127.0.0.1:5000",
-      "http://127.0.0.1:5500",  
+      "http://127.0.0.1:5500",
       "https://vkservicesenterprise.in",
       "https://www.vkservicesenterprise.in",
     ],
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
     credentials: true,
   })
-);app.use(express.json());
+); app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Frontend files serve karega

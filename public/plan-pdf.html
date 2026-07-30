@@ -7,14 +7,14 @@
     <title>MLM Plan PDF Making | VK Services Enterprise</title>
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RW3CPQCZ1X"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RW3CPQCZ1X"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'G-RW3CPQCZ1X');
-</script>
+        gtag('config', 'G-RW3CPQCZ1X');
+    </script>
 
 
     <meta name="description"
@@ -126,45 +126,95 @@
                 animation: none;
             }
         }
-        
+
         @keyframes whatsappFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
         }
+
         @keyframes whatsappPulse {
-            0%, 100% { box-shadow: 0 12px 28px rgba(22,163,74,.38), 0 0 0 0 rgba(34,197,94,.42); }
-            50% { box-shadow: 0 16px 32px rgba(22,163,74,.46), 0 0 0 10px rgba(34,197,94,0); }
+
+            0%,
+            100% {
+                box-shadow: 0 12px 28px rgba(22, 163, 74, .38), 0 0 0 0 rgba(34, 197, 94, .42);
+            }
+
+            50% {
+                box-shadow: 0 16px 32px rgba(22, 163, 74, .46), 0 0 0 10px rgba(34, 197, 94, 0);
+            }
         }
+
         .whatsapp-float {
             animation: whatsappFloat 3s ease-in-out infinite, whatsappPulse 2.4s ease-in-out infinite;
             background: linear-gradient(145deg, #2be463, #128c46);
         }
+
         .whatsapp-float .wa-label {
-            max-width: 0; opacity: 0; overflow: hidden; white-space: nowrap;
+            max-width: 0;
+            opacity: 0;
+            overflow: hidden;
+            white-space: nowrap;
             transition: max-width .35s ease, opacity .25s ease, margin .35s ease;
         }
-        .whatsapp-float:hover .wa-label, .whatsapp-float:focus-visible .wa-label {
-            max-width: 140px; opacity: 1; margin-left: .5rem;
-        }
-        @media (prefers-reduced-motion: reduce) { .whatsapp-float { animation: none; } }
 
-        .social-rail a { position: relative; box-shadow: 0 8px 20px rgba(17,24,39,.16); }
+        .whatsapp-float:hover .wa-label,
+        .whatsapp-float:focus-visible .wa-label {
+            max-width: 140px;
+            opacity: 1;
+            margin-left: .5rem;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .whatsapp-float {
+                animation: none;
+            }
+        }
+
+        .social-rail a {
+            position: relative;
+            box-shadow: 0 8px 20px rgba(17, 24, 39, .16);
+        }
+
         .social-rail .social-tooltip {
-            position: absolute; right: calc(100% + 10px); top: 50%;
+            position: absolute;
+            right: calc(100% + 10px);
+            top: 50%;
             transform: translateY(-50%) translateX(6px);
-            background: #111827; color: #fff; font-size: 12px; font-weight: 600;
-            letter-spacing: .02em; padding: 5px 10px; border-radius: 8px;
-            white-space: nowrap; opacity: 0; pointer-events: none;
+            background: #111827;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: .02em;
+            padding: 5px 10px;
+            border-radius: 8px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
             transition: opacity .2s ease, transform .2s ease;
-            box-shadow: 0 6px 16px rgba(0,0,0,.18);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, .18);
         }
+
         .social-rail .social-tooltip::after {
-            content: ""; position: absolute; left: 100%; top: 50%;
+            content: "";
+            position: absolute;
+            left: 100%;
+            top: 50%;
             transform: translateY(-50%);
-            border: 5px solid transparent; border-left-color: #111827;
+            border: 5px solid transparent;
+            border-left-color: #111827;
         }
-        .social-rail a:hover .social-tooltip, .social-rail a:focus-visible .social-tooltip {
-            opacity: 1; transform: translateY(-50%) translateX(0);
+
+        .social-rail a:hover .social-tooltip,
+        .social-rail a:focus-visible .social-tooltip {
+            opacity: 1;
+            transform: translateY(-50%) translateX(0);
         }
     </style>
 </head>
@@ -346,18 +396,34 @@
     <aside aria-label="Follow VK Services Enterprise"
         class="social-rail fixed right-4 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-4">
         <a href="https://www.youtube.com/c/MLMSUCCESSTIPS/videos" target="_blank" rel="noopener" aria-label="YouTube"
-            class="w-12 h-12 rounded-full text-white ring-2 ring-white/70 flex items-center justify-center transition-all duration-300 hover:-translate-x-1.5 hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-red-200" style="background: linear-gradient(to bottom right, #ff4d4d, #cc0000);">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z" /></svg>
+            class="w-12 h-12 rounded-full text-white ring-2 ring-white/70 flex items-center justify-center transition-all duration-300 hover:-translate-x-1.5 hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-red-200"
+            style="background: linear-gradient(to bottom right, #ff4d4d, #cc0000);">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                    d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z" />
+            </svg>
             <span class="social-tooltip">YouTube</span>
         </a>
-        <a href="https://www.instagram.com/vishwajit2307/" aria-label="Instagram" title="Add your Instagram profile link"
-            class="w-12 h-12 rounded-full text-white ring-2 ring-white/70 flex items-center justify-center transition-all duration-300 hover:-translate-x-1.5 hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-pink-200" style="background: linear-gradient(to bottom right, #833ab4, #fd1d1d, #fcb045);">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none" /></svg>
+        <a href="https://www.instagram.com/vishwajit2307/" aria-label="Instagram"
+            title="Add your Instagram profile link"
+            class="w-12 h-12 rounded-full text-white ring-2 ring-white/70 flex items-center justify-center transition-all duration-300 hover:-translate-x-1.5 hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-pink-200"
+            style="background: linear-gradient(to bottom right, #833ab4, #fd1d1d, #fcb045);">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none" />
+            </svg>
             <span class="social-tooltip">Instagram</span>
         </a>
-        <a href="https://www.facebook.com/vkservicesenterprise" aria-label="Facebook" title="Add your Facebook profile link"
-            class="w-12 h-12 rounded-full text-white ring-2 ring-white/70 flex items-center justify-center transition-all duration-300 hover:-translate-x-1.5 hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-blue-200" style="background: linear-gradient(to bottom right, #4a95ff, #1354c9);">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.3v3h2.8v8h3.4Z" /></svg>
+        <a href="https://www.facebook.com/vkservicesenterprise" aria-label="Facebook"
+            title="Add your Facebook profile link"
+            class="w-12 h-12 rounded-full text-white ring-2 ring-white/70 flex items-center justify-center transition-all duration-300 hover:-translate-x-1.5 hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-blue-200"
+            style="background: linear-gradient(to bottom right, #4a95ff, #1354c9);">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                    d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.3v3h2.8v8h3.4Z" />
+            </svg>
             <span class="social-tooltip">Facebook</span>
         </a>
     </aside>
@@ -439,8 +505,7 @@
         </div>
     </div>
 
-    <section class="py-12 md:py-24 px-6 bg-gray-300"
-        id="services">
+    <section class="py-12 md:py-24 px-6 bg-gray-300" id="services">
         <div class="max-w-7xl mx-auto">
             <div class="mb-10 md:mb-14 max-w-2xl">
                 <div class="inline-flex items-center gap-2 text-s font-bold uppercase tracking-widest mb-4"
@@ -450,8 +515,8 @@
                     <span class="w-6 h-[2px]" style="background:#F1521E;"></span>
                 </div>
                 <h2 class="text-3xl md:text-5xl font-bold text-primary font-display mb-4 leading-tight">
-    Premium Graphical Presentation & Corporate Designing
-</h2>
+                    Premium Graphical Presentation & Corporate Designing
+                </h2>
                 <p class="text-black text-base md:text-lg leading-relaxed">World-class design crafted to make your
                     MLM company look like a multi-million dollar brand from day one.</p>
             </div>
@@ -470,7 +535,7 @@
                                     d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                             </svg>
                         </div>
-                        
+
                         <h3 class="font-bold text-primary mb-2.5 font-display text-xl leading-snug">International HD
                             Quality Look</h3>
                         <p class="text-s text-gray-500 leading-relaxed">High-resolution graphics custom-designed in
@@ -493,7 +558,7 @@
                                 <line x1="8" y1="12" x2="16" y2="12" />
                             </svg>
                         </div>
-                        
+
                         <h3 class="font-bold text-primary mb-2.5 font-display text-xl leading-snug">Error-Free Crisp
                             Calculation Layouts</h3>
                         <p class="text-s text-gray-500 leading-relaxed">Specialized structure to represent complex
@@ -515,7 +580,7 @@
                                 <polyline points="12 6 12 12 16 14" />
                             </svg>
                         </div>
-                       
+
                         <h3 class="font-bold text-primary text-xl mb-2.5 font-display leading-snug">Guaranteed Fast
                             48–72 Hours Delivery</h3>
                         <p class="text-s text-gray-500 leading-relaxed">Your project is fully prioritized. Complete
@@ -539,7 +604,7 @@
                                 <rect x="3" y="14" width="7" height="7" />
                             </svg>
                         </div>
-                        
+
                         <h3 class="font-bold text-primary text-xl mb-2.5 font-display leading-snug">12+ Real Design
                             Samples Available</h3>
                         <p class="text-s text-gray-500 leading-relaxed">Transparency is our identity. Directly explore
@@ -712,8 +777,8 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10 lg:gap-y-12">
                 <!-- PDF Sample 01 -->
-                <a href="https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/05/waipa-pdf-2.pdf"
-                    target="_blank"
+                <a href="./assets/pdfs/CAHS PAY LIFE 4 pages.pdf"
+                    target="_blank" download
                     class="group relative flex items-center p-4 pl-0 rounded-2xl bg-[#c50101] shadow-[0_10px_20px_rgba(0,0,0,0.3)] hover:-translate-y-1.5 transition-transform duration-300 cursor-pointer border border-[#ff3333]/30">
                     <div class="relative shrink-0 flex items-center justify-center -ml-6 z-10"
                         style="width: 130px; height: 130px;">
@@ -756,8 +821,8 @@
                 </a>
 
                 <!-- PDF Sample 02 -->
-                <a href="https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/05/moneylinkpro-pdf-3-1.pdf"
-                    target="_blank"
+                <a href="./assets/pdfs/CAHS PAY LIFE pdf.pdf"
+                    target="_blank" download
                     class="group relative flex items-center p-4 pl-0 rounded-2xl bg-[#c50101] shadow-[0_10px_20px_rgba(0,0,0,0.3)] hover:-translate-y-1.5 transition-transform duration-300 cursor-pointer border border-[#ff3333]/30">
                     <div class="relative shrink-0 flex items-center justify-center -ml-6 z-10"
                         style="width: 130px; height: 130px;">
@@ -800,8 +865,8 @@
                 </a>
 
                 <!-- PDF Sample 03 -->
-                <a href="https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/05/Skytrades-pdf-1.pdf"
-                    target="_blank"
+                <a href="./assets/pdfs/RedStone.pdf"
+                    target="_blank" download
                     class="group relative flex items-center p-4 pl-0 rounded-2xl bg-[#c50101] shadow-[0_10px_20px_rgba(0,0,0,0.3)] hover:-translate-y-1.5 transition-transform duration-300 cursor-pointer border border-[#ff3333]/30">
                     <div class="relative shrink-0 flex items-center justify-center -ml-6 z-10"
                         style="width: 130px; height: 130px;">
@@ -844,8 +909,8 @@
                 </a>
 
                 <!-- PDF Sample 04 -->
-                <a href="https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/05/Viaan-Trading-Business-Plan-1.pdf"
-                    target="_blank"
+                <a href="./assets/pdfs/Royalmax.pdf"
+                    target="_blank" download
                     class="group relative flex items-center p-4 pl-0 rounded-2xl bg-[#c50101] shadow-[0_10px_20px_rgba(0,0,0,0.3)] hover:-translate-y-1.5 transition-transform duration-300 cursor-pointer border border-[#ff3333]/30">
                     <div class="relative shrink-0 flex items-center justify-center -ml-6 z-10"
                         style="width: 130px; height: 130px;">
@@ -888,8 +953,8 @@
                 </a>
 
                 <!-- PDF Sample 05 -->
-                <a href="https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/05/dubaifx3x-pdf-1.pdf"
-                    target="_blank"
+                <a href="./assets/pdfs/S Garments hindi.pdf"
+                    target="_blank" download
                     class="group relative flex items-center p-4 pl-0 rounded-2xl bg-[#c50101] shadow-[0_10px_20px_rgba(0,0,0,0.3)] hover:-translate-y-1.5 transition-transform duration-300 cursor-pointer border border-[#ff3333]/30">
                     <div class="relative shrink-0 flex items-center justify-center -ml-6 z-10"
                         style="width: 130px; height: 130px;">
@@ -932,8 +997,8 @@
                 </a>
 
                 <!-- PDF Sample 06 -->
-                <a href="https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/05/vivan-trading-pdf-1.pdf"
-                    target="_blank"
+                <a href="./assets/pdfs/S garments market plan.pdf"
+                    target="_blank" download
                     class="group relative flex items-center p-4 pl-0 rounded-2xl bg-[#c50101] shadow-[0_10px_20px_rgba(0,0,0,0.3)] hover:-translate-y-1.5 transition-transform duration-300 cursor-pointer border border-[#ff3333]/30">
                     <div class="relative shrink-0 flex items-center justify-center -ml-6 z-10"
                         style="width: 130px; height: 130px;">
@@ -976,8 +1041,8 @@
                 </a>
 
                 <!-- PDF Sample 07 -->
-                <a href="https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/05/5-IN-1-GROUP-1.pdf"
-                    target="_blank"
+                <a href="./assets/pdfs/Skytrades pdf.pdf"
+                    target="_blank" download
                     class="group relative flex items-center p-4 pl-0 rounded-2xl bg-[#c50101] shadow-[0_10px_20px_rgba(0,0,0,0.3)] hover:-translate-y-1.5 transition-transform duration-300 cursor-pointer border border-[#ff3333]/30">
                     <div class="relative shrink-0 flex items-center justify-center -ml-6 z-10"
                         style="width: 130px; height: 130px;">
@@ -1020,8 +1085,8 @@
                 </a>
 
                 <!-- PDF Sample 08 -->
-                <a href="https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/05/5-IN-1-INVESTMENT-1.pdf"
-                    target="_blank"
+                <a href="./assets/pdfs/Sweekyu global.pdf"
+                    target="_blank" download
                     class="group relative flex items-center p-4 pl-0 rounded-2xl bg-[#c50101] shadow-[0_10px_20px_rgba(0,0,0,0.3)] hover:-translate-y-1.5 transition-transform duration-300 cursor-pointer border border-[#ff3333]/30">
                     <div class="relative shrink-0 flex items-center justify-center -ml-6 z-10"
                         style="width: 130px; height: 130px;">
@@ -1064,8 +1129,8 @@
                 </a>
 
                 <!-- PDF Sample 09 -->
-                <a href="https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/05/CIRCLE_OF_TRUST_FINAL-2.pdf"
-                    target="_blank"
+                <a href="./assets/pdfs/Trendswave new.pdf"
+                    target="_blank" download
                     class="group relative flex items-center p-4 pl-0 rounded-2xl bg-[#c50101] shadow-[0_10px_20px_rgba(0,0,0,0.3)] hover:-translate-y-1.5 transition-transform duration-300 cursor-pointer border border-[#ff3333]/30">
                     <div class="relative shrink-0 flex items-center justify-center -ml-6 z-10"
                         style="width: 130px; height: 130px;">
@@ -1108,8 +1173,8 @@
                 </a>
 
                 <!-- PDF Sample 10 -->
-                <a href="https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/05/FINORICH_FINAL-2.pdf"
-                    target="_blank"
+                <a href="./assets/pdfs/Vertex Trade Bot.pdf"
+                    target="_blank" download
                     class="group relative flex items-center p-4 pl-0 rounded-2xl bg-[#c50101] shadow-[0_10px_20px_rgba(0,0,0,0.3)] hover:-translate-y-1.5 transition-transform duration-300 cursor-pointer border border-[#ff3333]/30">
                     <div class="relative shrink-0 flex items-center justify-center -ml-6 z-10"
                         style="width: 130px; height: 130px;">
@@ -1152,8 +1217,8 @@
                 </a>
 
                 <!-- PDF Sample 11 -->
-                <a href="https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/05/trendswave-fashion-2.pdf"
-                    target="_blank"
+                <a href="./assets/pdfs/Vian Finance.pdf"
+                    target="_blank" download
                     class="group relative flex items-center p-4 pl-0 rounded-2xl bg-[#c50101] shadow-[0_10px_20px_rgba(0,0,0,0.3)] hover:-translate-y-1.5 transition-transform duration-300 cursor-pointer border border-[#ff3333]/30">
                     <div class="relative shrink-0 flex items-center justify-center -ml-6 z-10"
                         style="width: 130px; height: 130px;">
@@ -1196,8 +1261,8 @@
                 </a>
 
                 <!-- PDF Sample 12 -->
-                <a href="https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/05/vks-pdf-1.pdf"
-                    target="_blank"
+                <a href="./assets/pdfs/Vian Mart.pdf"
+                    target="_blank" download
                     class="group relative flex items-center p-4 pl-0 rounded-2xl bg-[#c50101] shadow-[0_10px_20px_rgba(0,0,0,0.3)] hover:-translate-y-1.5 transition-transform duration-300 cursor-pointer border border-[#ff3333]/30">
                     <div class="relative shrink-0 flex items-center justify-center -ml-6 z-10"
                         style="width: 130px; height: 130px;">
@@ -1240,8 +1305,8 @@
                 </a>
 
                 <!-- PDF Sample 13 -->
-                <a href="https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/07/Ash-Funds.pdf"
-                    target="_blank"
+                <a href="./assets/pdfs/vivan trading pdf.pdf"
+                    target="_blank" download
                     class="group relative flex items-center p-4 pl-0 rounded-2xl bg-[#c50101] shadow-[0_10px_20px_rgba(0,0,0,0.3)] hover:-translate-y-1.5 transition-transform duration-300 cursor-pointer border border-[#ff3333]/30">
                     <div class="relative shrink-0 flex items-center justify-center -ml-6 z-10"
                         style="width: 130px; height: 130px;">
@@ -1284,8 +1349,8 @@
                 </a>
 
                 <!-- PDF Sample 14 -->
-                <a href="https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/07/BN-Investech-pvt-ltd.pdf"
-                    target="_blank"
+                <a href="./assets/pdfs/waipa pdf.pdf"
+                    target="_blank" download
                     class="group relative flex items-center p-4 pl-0 rounded-2xl bg-[#c50101] shadow-[0_10px_20px_rgba(0,0,0,0.3)] hover:-translate-y-1.5 transition-transform duration-300 cursor-pointer border border-[#ff3333]/30">
                     <div class="relative shrink-0 flex items-center justify-center -ml-6 z-10"
                         style="width: 130px; height: 130px;">
@@ -1328,8 +1393,8 @@
                 </a>
 
                 <!-- PDF Sample 15 -->
-                <a href="https://mlmservices.vkservicesenterprise.com/wp-content/uploads/2026/05/vks-pdf-1.pdf"
-                    target="_blank"
+                <a href="./assets/pdfs/WG Services PDF New.pdf"
+                    target="_blank" download
                     class="group relative flex items-center p-4 pl-0 rounded-2xl bg-[#c50101] shadow-[0_10px_20px_rgba(0,0,0,0.3)] hover:-translate-y-1.5 transition-transform duration-300 cursor-pointer border border-[#ff3333]/30">
                     <div class="relative shrink-0 flex items-center justify-center -ml-6 z-10"
                         style="width: 130px; height: 130px;">
@@ -1521,97 +1586,127 @@
             </div>
 
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-               <div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-    <img src="./assets/image/partner.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
-</div>
-<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-    <img src="./assets/image/partner2.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
-</div>
-<div class="bg-white border border-gray-200 rounded-xl p-4 flex flex-col items-center justify-center hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-    <img src="./assets/image/partner3.webp" alt="MyGoldenWay" class="h-10 w-auto object-contain">
-</div>
-<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-    <img src="./assets/image/partner4.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
-</div>
-<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-    <img src="./assets/image/partner5.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
-</div>
-<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-    <img src="./assets/image/partner6.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
-</div>
-<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-    <img src="./assets/image/partner7.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
-</div>
-<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-    <img src="./assets/image/partner8.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
-</div>
-<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-    <img src="./assets/image/partner9.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
-</div>
-<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-    <img src="./assets/image/partner10.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
-</div>
-<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-    <img src="./assets/image/partner11.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
-</div>
-<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-    <img src="./assets/image/partner12.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
-</div>
-<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-    <img src="./assets/image/partner13.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
-</div>
-<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-    <img src="./assets/image/partner14.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
-</div>
-<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-    <img src="./assets/image/partner15.jpeg" alt="MyGoldenWay" class="h-20 w-auto object-contain">
-</div>
-<!-- Image size increased from partner16 onwards (h-20 changed to h-28) -->
-<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-    <img src="./assets/image/partner16.jpg" alt="MyGoldenWay" class="h-28 w-auto object-contain">
-</div>
-<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-    <img src="./assets/image/partner17.png" alt="MyGoldenWay" class="h-28 w-auto object-contain">
-</div>
-<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-    <img src="./assets/image/partner18.png" alt="MyGoldenWay" class="h-28 w-auto object-contain">
-</div>
-<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-    <img src="./assets/image/partner19.png" alt="MyGoldenWay" class="h-28 w-auto object-contain">
-</div>
-<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-    <img src="./assets/image/partner20.jpg" alt="MyGoldenWay" class="h-28 w-auto object-contain">
-</div>
-<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-    <img src="./assets/image/partner21.jpg" alt="MyGoldenWay" class="h-28 w-auto object-contain">
-</div>
-<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-    <img src="./assets/image/partner22.jpg" alt="MyGoldenWay" class="h-28 w-auto object-contain">
-</div>
-<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-    <img src="./assets/image/partner23.png" alt="MyGoldenWay" class="h-28 w-auto object-contain">
-</div>
-<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-    <img src="./assets/image/partner24.png" alt="MyGoldenWay" class="h-28 w-auto object-contain">
-</div>
-<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-    <img src="./assets/image/partner25.jpeg" alt="MyGoldenWay" class="h-28 w-auto object-contain">
-</div>
-<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-    <img src="./assets/image/partner26.png" alt="MyGoldenWay" class="h-28 w-auto object-contain">
-</div>
-<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-    <img src="./assets/image/partner27.jpg" alt="MyGoldenWay" class="h-28 w-auto object-contain">
-</div>
-<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-    <img src="./assets/image/partner28.jpg" alt="MyGoldenWay" class="h-28 w-auto object-contain">
-</div>
-<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-    <img src="./assets/image/partner29.png" alt="MyGoldenWay" class="h-28 w-auto object-contain">
-</div>
-<div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
-    <img src="./assets/image/partner30.jpg" alt="MyGoldenWay" class="h-28 w-auto object-contain">
-</div>
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+                    <img src="./assets/image/partner.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
+                </div>
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+                    <img src="./assets/image/partner2.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
+                </div>
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-4 flex flex-col items-center justify-center hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+                    <img src="./assets/image/partner3.webp" alt="MyGoldenWay" class="h-10 w-auto object-contain">
+                </div>
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+                    <img src="./assets/image/partner4.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
+                </div>
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+                    <img src="./assets/image/partner5.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
+                </div>
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+                    <img src="./assets/image/partner6.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
+                </div>
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+                    <img src="./assets/image/partner7.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
+                </div>
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+                    <img src="./assets/image/partner8.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
+                </div>
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+                    <img src="./assets/image/partner9.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
+                </div>
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+                    <img src="./assets/image/partner10.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
+                </div>
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+                    <img src="./assets/image/partner11.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
+                </div>
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+                    <img src="./assets/image/partner12.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
+                </div>
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+                    <img src="./assets/image/partner13.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
+                </div>
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+                    <img src="./assets/image/partner14.webp" alt="MyGoldenWay" class="h-20 w-auto object-contain">
+                </div>
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+                    <img src="./assets/image/partner15.jpeg" alt="MyGoldenWay" class="h-20 w-auto object-contain">
+                </div>
+                <!-- Image size increased from partner16 onwards (h-20 changed to h-28) -->
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+                    <img src="./assets/image/partner16.jpg" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+                </div>
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+                    <img src="./assets/image/partner17.png" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+                </div>
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+                    <img src="./assets/image/partner18.png" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+                </div>
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+                    <img src="./assets/image/partner19.png" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+                </div>
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+                    <img src="./assets/image/partner20.jpg" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+                </div>
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+                    <img src="./assets/image/partner21.jpg" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+                </div>
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+                    <img src="./assets/image/partner22.jpg" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+                </div>
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+                    <img src="./assets/image/partner23.png" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+                </div>
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+                    <img src="./assets/image/partner24.png" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+                </div>
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+                    <img src="./assets/image/partner25.jpeg" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+                </div>
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+                    <img src="./assets/image/partner26.png" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+                </div>
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+                    <img src="./assets/image/partner27.jpg" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+                </div>
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+                    <img src="./assets/image/partner28.jpg" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+                </div>
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+                    <img src="./assets/image/partner29.png" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+                </div>
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-center gap-2 hover:border-accent hover:shadow-md transition-all cursor-default min-h-[72px]">
+                    <img src="./assets/image/partner30.jpg" alt="MyGoldenWay" class="h-28 w-auto object-contain">
+                </div>
             </div>
         </div>
     </section>
@@ -1623,7 +1718,8 @@
             style="background-image: radial-gradient(circle, #fff 1px, transparent 1px); background-size: 34px 34px;">
         </div>
 
-        <div class="max-w-6xl mx-auto relative z-10">
+       <div class="max-w-6xl mx-auto relative z-10">
+
             <div class="text-center mb-8 md:mb-16">
                 <h2 class="text-3xl md:text-5xl font-bold font-display mb-4">India's <span class="text-accent">#1
                         All-in-One</span> MLM Hub</h2>
@@ -1632,8 +1728,9 @@
             </div>
 
             <div
-                class="grid grid-cols-1 md:grid-cols-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl shadow-2xl mb-8 md:mb-16 divide-y md:divide-y-0 md:divide-x divide-white/10">
-                <div class="p-8 flex items-center justify-center gap-5">
+                class="grid grid-cols-1 md:grid-cols-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl shadow-2xl mb-16 divide-y md:divide-y-0 md:divide-x divide-white/10">
+                <div
+                    class="p-6 md:p-8 flex items-center justify-start md:justify-center gap-5 w-full max-w-[260px] md:max-w-none mx-auto">
                     <div class="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center shrink-0">
                         <svg class="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2">
@@ -1642,10 +1739,11 @@
                     </div>
                     <div>
                         <div class="font-bold text-3xl font-display text-white">9+</div>
-                        <div class="text-sm text-gray-400">Years of Excellence</div>
+                        <div class="text-base text-gray-400">Years of Excellence</div>
                     </div>
                 </div>
-                <div class="p-8 flex items-center justify-center gap-5">
+                <div
+                    class="p-6 md:p-8 flex items-center justify-start md:justify-center gap-5 w-full max-w-[260px] md:max-w-none mx-auto">
                     <div class="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center shrink-0">
                         <svg class="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2">
@@ -1656,10 +1754,11 @@
                     </div>
                     <div>
                         <div class="font-bold text-3xl font-display text-white">2800+</div>
-                        <div class="text-sm text-gray-400">Happy Clients</div>
+                        <div class="text-base text-gray-400">Happy Clients</div>
                     </div>
                 </div>
-                <div class="p-8 flex items-center justify-center gap-5">
+                <div
+                    class="p-6 md:p-8 flex items-center justify-start md:justify-center gap-5 w-full max-w-[260px] md:max-w-none mx-auto">
                     <div class="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center shrink-0">
                         <svg class="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2">
@@ -1727,8 +1826,14 @@
                             tailored to
                             your business with smart automation.</p>
                         <span
-                            class="text-xs font-bold text-accent group-hover:text-white transition-colors flex items-center gap-1 mt-auto">Learn
-                            more &rarr;</span>
+    class="inline-flex items-center gap-1.5 text-xs font-bold text-accentLight bg-accent/10 border border-accent/30 rounded-full px-4 py-2 mt-auto self-start
+           group-hover:bg-accent group-hover:text-white group-hover:border-accent group-hover:shadow-[0_0_20px_rgba(249,115,22,0.5)]
+           transition-all duration-300">
+    Learn more
+    <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M5 12h14M13 6l6 6-6 6" />
+    </svg>
+</span>
                     </a>
 
                     <!-- Card: MLM Plan PDF Making -->
@@ -1745,9 +1850,15 @@
                         <p class="text-base text-gray-200 leading-relaxed mb-4 flex-1">Professional compensation plan
                             PDF
                             design with premium presentation.</p>
-                        <span
-                            class="text-xs font-bold text-accent group-hover:text-white transition-colors flex items-center gap-1 mt-auto">Learn
-                            more &rarr;</span>
+                       <span
+    class="inline-flex items-center gap-1.5 text-xs font-bold text-accentLight bg-accent/10 border border-accent/30 rounded-full px-4 py-2 mt-auto self-start
+           group-hover:bg-accent group-hover:text-white group-hover:border-accent group-hover:shadow-[0_0_20px_rgba(249,115,22,0.5)]
+           transition-all duration-300">
+    Learn more
+    <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M5 12h14M13 6l6 6-6 6" />
+    </svg>
+</span>
                     </a>
 
                     <!-- Card: MLM Plan Video Making -->
@@ -1764,9 +1875,15 @@
                         <p class="text-base text-gray-200 leading-relaxed mb-4 flex-1">HD animated presentation videos
                             with
                             voice-over and effects.</p>
-                        <span
-                            class="text-xs font-bold text-accent group-hover:text-white transition-colors flex items-center gap-1 mt-auto">Learn
-                            more &rarr;</span>
+                      <span
+    class="inline-flex items-center gap-1.5 text-xs font-bold text-accentLight bg-accent/10 border border-accent/30 rounded-full px-4 py-2 mt-auto self-start
+           group-hover:bg-accent group-hover:text-white group-hover:border-accent group-hover:shadow-[0_0_20px_rgba(249,115,22,0.5)]
+           transition-all duration-300">
+    Learn more
+    <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M5 12h14M13 6l6 6-6 6" />
+    </svg>
+</span>
                     </a>
 
                     <!-- Card: Result Based Promotion -->
@@ -1784,8 +1901,14 @@
                             automated
                             marketing campaigns.</p>
                         <span
-                            class="text-xs font-bold text-accent group-hover:text-white transition-colors flex items-center gap-1 mt-auto">Learn
-                            more &rarr;</span>
+    class="inline-flex items-center gap-1.5 text-xs font-bold text-accentLight bg-accent/10 border border-accent/30 rounded-full px-4 py-2 mt-auto self-start
+           group-hover:bg-accent group-hover:text-white group-hover:border-accent group-hover:shadow-[0_0_20px_rgba(249,115,22,0.5)]
+           transition-all duration-300">
+    Learn more
+    <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M5 12h14M13 6l6 6-6 6" />
+    </svg>
+</span>
                     </a>
                      <!-- Card: Latest MLM Database -->
                     <a href="mlm-database.html"
@@ -1801,9 +1924,15 @@
                         <p class="text-base text-gray-200 leading-relaxed mb-4 flex-1">Fresh verified databases with
                             high
                             quality genuine contacts.</p>
-                        <span
-                            class="text-xs font-bold text-accent group-hover:text-white transition-colors flex items-center gap-1 mt-auto">Learn
-                            more &rarr;</span>
+                    <span
+    class="inline-flex items-center gap-1.5 text-xs font-bold text-accentLight bg-accent/10 border border-accent/30 rounded-full px-4 py-2 mt-auto self-start
+           group-hover:bg-accent group-hover:text-white group-hover:border-accent group-hover:shadow-[0_0_20px_rgba(249,115,22,0.5)]
+           transition-all duration-300">
+    Learn more
+    <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M5 12h14M13 6l6 6-6 6" />
+    </svg>
+</span>
                     </a>
                      <!-- Card: MLM Leader Website -->
                     <a href="mlm-leader-website.html"
@@ -1820,8 +1949,14 @@
                             personal
                             branding and business.</p>
                         <span
-                            class="text-xs font-bold text-accent group-hover:text-white transition-colors flex items-center gap-1 mt-auto">Learn
-                            more &rarr;</span>
+    class="inline-flex items-center gap-1.5 text-xs font-bold text-accentLight bg-accent/10 border border-accent/30 rounded-full px-4 py-2 mt-auto self-start
+           group-hover:bg-accent group-hover:text-white group-hover:border-accent group-hover:shadow-[0_0_20px_rgba(249,115,22,0.5)]
+           transition-all duration-300">
+    Learn more
+    <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M5 12h14M13 6l6 6-6 6" />
+    </svg>
+</span>
                     </a>
                 </div>
             </div>
@@ -2524,13 +2659,14 @@
         }
     </script>
 
-  <a href="https://wa.me/918927656368" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"
-    class="whatsapp-float fixed left-4 bottom-6 z-40 h-14 rounded-full text-white flex items-center px-4 transition-transform duration-300 hover:scale-110 focus:outline-none focus:ring-4 focus:ring-green-200">
-    <svg class="w-7 h-7 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M12.004 0C5.374 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.824L.057 24l6.334-1.66A11.94 11.94 0 0 0 12.004 24C18.63 24 24 18.627 24 12S18.63 0 12.004 0zm6.998 16.977c-.297.836-1.47 1.53-2.41 1.73-.64.137-1.478.246-4.297-.923-3.607-1.494-5.927-5.156-6.108-5.395-.174-.24-1.463-1.948-1.463-3.715 0-1.767.93-2.635 1.257-2.996.328-.36.716-.45.955-.45.24 0 .478.002.687.013.221.011.517-.084.808.618.297.716.997 2.475 1.084 2.654.088.18.146.39.03.63-.117.24-.176.39-.35.598-.174.211-.365.469-.523.63-.174.176-.356.365-.153.716.204.351.905 1.494 1.943 2.42 1.335 1.19 2.462 1.559 2.813 1.734.35.176.554.15.758-.09.204-.24.876-1.02 1.11-1.37.234-.35.468-.29.79-.174.32.117 2.033.958 2.382 1.132.35.176.583.263.67.41.088.15.088.855-.21 1.68z"/>
-    </svg>
-    <span class="wa-label text-sm font-bold">Chat on WhatsApp</span>
-  </a>
+    <a href="https://wa.me/918927656368" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"
+        class="whatsapp-float fixed left-4 bottom-6 z-40 h-14 rounded-full text-white flex items-center px-4 transition-transform duration-300 hover:scale-110 focus:outline-none focus:ring-4 focus:ring-green-200">
+        <svg class="w-7 h-7 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+                d="M12.004 0C5.374 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.824L.057 24l6.334-1.66A11.94 11.94 0 0 0 12.004 24C18.63 24 24 18.627 24 12S18.63 0 12.004 0zm6.998 16.977c-.297.836-1.47 1.53-2.41 1.73-.64.137-1.478.246-4.297-.923-3.607-1.494-5.927-5.156-6.108-5.395-.174-.24-1.463-1.948-1.463-3.715 0-1.767.93-2.635 1.257-2.996.328-.36.716-.45.955-.45.24 0 .478.002.687.013.221.011.517-.084.808.618.297.716.997 2.475 1.084 2.654.088.18.146.39.03.63-.117.24-.176.39-.35.598-.174.211-.365.469-.523.63-.174.176-.356.365-.153.716.204.351.905 1.494 1.943 2.42 1.335 1.19 2.462 1.559 2.813 1.734.35.176.554.15.758-.09.204-.24.876-1.02 1.11-1.37.234-.35.468-.29.79-.174.32.117 2.033.958 2.382 1.132.35.176.583.263.67.41.088.15.088.855-.21 1.68z" />
+        </svg>
+        <span class="wa-label text-sm font-bold">Chat on WhatsApp</span>
+    </a>
 
     <!-- LIVE SESSION MODAL -->
     <div class="fixed inset-0 z-50 bg-primary/80 hidden items-center justify-center p-4 transition-opacity"
