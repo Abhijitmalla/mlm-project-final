@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private MLM Technology Brief — Claim Your Live 30-Min Session</title>
+  <meta name="description"
+    content="Book a private 1-on-1 live session with a senior MLM backend developer. Test production controls, eliminate math logic errors. Only ₹9 — fully refunded.">
+
+  <!-- Tailwind CSS (same as index.html) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#12203D',
+            accent: '#F1521E',
+            accentLight: '#FF7A45',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          keyframes: {
+            shimmerBar: {
+              '0%': { backgroundPosition: '0% 0' },
+              '100%': { backgroundPosition: '200% 0' },
+            },
+            blink: {
+              '0%,100%': { opacity: '1' },
+              '50%': { opacity: '0.2' },
+            },
+            'pulse-dot': {
+              '0%,100%': { boxShadow: '0 0 0 0 rgba(241,82,30,0.45)' },
+              '70%': { boxShadow: '0 0 0 10px rgba(241,82,30,0)' },
+            },
+            shimmerSweep: {
+              '0%,58%': { transform: 'translateX(-130%)' },
+              '82%,100%': { transform: 'translateX(130%)' },
+            },
+            ticker: {
+              from: { transform: 'translateX(0)' },
+              to: { transform: 'translateX(-50%)' },
+            },
+            'fade-up': {
+              from: { opacity: '0', transform: 'translateY(18px)' },
+              to: { opacity: '1', transform: 'translateY(0)' },
+            },
+            'slide-in-fade': {
+              from: { opacity: '0', transform: 'translateX(30px)' },
+              to: { opacity: '1', transform: 'translateX(0)' },
+            },
+            blob: {
+              '0%': { transform: 'translate(0px, 0px) scale(1)' },
+              '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+              '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+              '100%': { transform: 'translate(0px, 0px) scale(1)' },
+            },
+          },
+          animation: {
+            'shimmer-bar': 'shimmerBar 3.5s linear infinite',
+            blink: 'blink 1.2s ease-in-out infinite',
+            'pulse-dot': 'pulse-dot 2s cubic-bezier(0.4,0,0.6,1) infinite',
+            'shimmer-sweep': 'shimmerSweep 3s infinite',
+            ticker: 'ticker 32s linear infinite',
+            'fade-up': 'fade-up 0.6s cubic-bezier(0.16,1,0.3,1) forwards',
+            'fade-up-d1': 'fade-up 0.6s 0.08s cubic-bezier(0.16,1,0.3,1) forwards',
+            'fade-up-d2': 'fade-up 0.6s 0.16s cubic-bezier(0.16,1,0.3,1) forwards',
+            'fade-up-d3': 'fade-up 0.6s 0.24s cubic-bezier(0.16,1,0.3,1) forwards',
+            'slide-in-fade': 'slide-in-fade 0.8s cubic-bezier(0.16,1,0.3,1) forwards',
+            blob: 'blob 7s infinite',
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Same fonts as index.html -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* ── HERO BACKGROUND — mirrors index.html hero-bg ── */
+    .hero-bg {
+      background-image: url('./assets/image/banner7.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    /* shimmer bar on video card — same pattern as index.html */
+    .shimmer-bar-el {
+      background-image: linear-gradient(90deg, #F1521E, #FF7A45, #F1521E);
+      background-size: 200% 100%;
+      animation: shimmerBar 3.5s linear infinite;
+    }
+
+    @keyframes shimmerBar {
+      0% {
+        background-position: 0% 0;
+      }
+
+      100% {
+        background-position: 200% 0;
+      }
+    }
+
+    /* CTA button shine sweep — same pattern as index.html */
+    .cta-btn {
+      position: relative;
+      overflow: hidden;
+      background-image: linear-gradient(135deg, #FF7A45, #F1521E);
+      background-size: 180% 100%;
+      animation: ctaGradient 4s linear infinite;
+    }
+
+    .cta-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transform: translateX(-100%);
+      animation: shimmerSweep 3s infinite;
+    }
+
+    @keyframes ctaGradient {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      100% {
+        background-position: 180% 50%;
+      }
+    }
+
+    @keyframes shimmerSweep {
+
+      0%,
+      58% {
+        transform: translateX(-130%);
+      }
+
+      82%,
+      100% {
+        transform: translateX(130%);
+      }
+    }
+
+    /* Slot fill shimmer */
+    .slot-fill::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.35) 50%, transparent 100%);
+      animation: slotShimmer 2.2s infinite;
+    }
+
+    @keyframes slotShimmer {
+      from {
+        transform: translateX(-100%);
+      }
+
+      to {
+        transform: translateX(200%);
+      }
+    }
+
+    /* Ticker fade edges */
+    .ticker-wrap::before,
+    .ticker-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .ticker-wrap::before {
+      left: 0;
+      background: linear-gradient(90deg, #fff, transparent);
+    }
+
+    .ticker-wrap::after {
+      right: 0;
+      background: linear-gradient(-90deg, #fff, transparent);
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #F9FAFB;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #D1D5DB;
+      border-radius: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #9CA3AF;
+    }
+
+    ::selection {
+      background: rgba(241, 82, 30, 0.18);
+      color: #12203D;
+    }
+
+    /* Animate-fill-mode:forwards helper */
+    .animate-fade-up,
+    .animate-fade-up-d1,
+    .animate-fade-up-d2,
+    .animate-fade-up-d3,
+    .animate-slide-in-fade {
+      opacity: 0;
+    }
+
+    /* Custom variable animation for Try, Test, and Verify */
+    .animate-fadeLeft {
+      animation-name: fadeLeft;
+      animation-duration: calc(var(--i) * 0.6s);
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
+      opacity: 0;
+    }
+
+    @keyframes fadeLeft {
+      10% {
+        transform: translateX(-200px);
+        opacity: 0;
+      }
+
+      60% {
+        opacity: 0;
+        transform: translateX(200px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* pulse dot for live indicator */
+    .pulse-dot {
+      animation: pulse-dot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    @keyframes pulse-dot {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(241, 82, 30, 0.45);
+      }
+
+      70% {
+        box-shadow: 0 0 0 8px rgba(241, 82, 30, 0);
+      }
+    }
+
+    /* ── NEW: trust badge strip under video ── */
+    .badge-strip {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 12px;
+      background:
+        radial-gradient(120% 160% at 0% 0%, rgba(241, 82, 30, 0.10), transparent 55%),
+        #0E1A30;
+    }
+
+    .badge-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 14px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 400ms ease;
+      cursor: pointer;
+    }
+
+    .badge-item:hover {
+      background: rgba(241, 82, 30, 0.08);
+      border-color: rgba(241, 82, 30, 0.35);
+      transform: scale(1.05, 1.05);
+      z-index: 10;
+    }
+
+    .badge-strip:hover>.badge-item:not(:hover) {
+      filter: blur(5px);
+      transform: scale(0.9, 0.9);
+    }
+
+    .badge-icon-wrap {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(145deg, rgba(241, 82, 30, 0.22), rgba(241, 82, 30, 0.08));
+      border: 1px solid rgba(241, 82, 30, 0.4);
+      color: #FF7A45;
+      box-shadow: 0 2px 8px rgba(241, 82, 30, 0.15);
+    }
+
+    .badge-icon-wrap.is-gold {
+      background: linear-gradient(145deg, rgba(250, 204, 21, 0.22), rgba(250, 204, 21, 0.08));
+      border-color: rgba(250, 204, 21, 0.4);
+      color: #FACC15;
+      box-shadow: 0 2px 8px rgba(250, 204, 21, 0.15);
+    }
+
+    .badge-icon-wrap.is-blue {
+      background: linear-gradient(145deg, rgba(56, 189, 248, 0.22), rgba(56, 189, 248, 0.08));
+      border-color: rgba(56, 189, 248, 0.4);
+      color: #38BDF8;
+      box-shadow: 0 2px 8px rgba(56, 189, 248, 0.15);
+    }
+
+    .badge-icon-wrap.is-rose {
+      background: linear-gradient(145deg, rgba(251, 113, 133, 0.22), rgba(251, 113, 133, 0.08));
+      border-color: rgba(251, 113, 133, 0.4);
+      color: #FB7185;
+      box-shadow: 0 2px 8px rgba(251, 113, 133, 0.15);
+    }
+
+    .badge-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+
+    .badge-label {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      color: #fff;
+      line-height: 1.25;
+    }
+
+    .badge-sub {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.25;
+    }
+
+    .typewriter {
+      display: inline-block;
+    }
+
+    .typing-text {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 0;
+      border-right: 3px solid #F1521E;
+      animation: typingLoop 6s steps(20, end) infinite,
+        blinkCursor .8s step-end infinite;
+    }
+
+    @keyframes typingLoop {
+
+      /* Start empty */
+      0% {
+        width: 0;
+      }
+
+      /* Type */
+      35% {
+        width: 20ch;
+      }
+
+      /* Keep text visible */
+      55% {
+        width: 20ch;
+      }
+
+      /* Delete */
+      85% {
+        width: 0;
+      }
+
+      /* Pause before typing again */
+      100% {
+        width: 0;
+      }
+    }
+
+    @keyframes blinkCursor {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    /* ── Uiverse Blob Card CSS ── */
+    .card {
+      position: relative;
+      width: 100%;
+      min-height: 250px;
+      border-radius: 14px;
+      z-index: 10;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+    }
+
+    .bg {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      right: 5px;
+      bottom: 5px;
+      z-index: 2;
+      background: rgba(255, 255, 255, .95);
+      backdrop-filter: blur(24px);
+      border-radius: 10px;
+      overflow: hidden;
+      outline: 2px solid white;
+    }
+
+    .blob {
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background-color: #ff0000;
+      opacity: 1;
+      filter: blur(12px);
+      animation: blob-bounce 5s infinite ease;
+    }
+
+    @keyframes blob-bounce {
+      0% {
+        transform: translate(-100%, -100%) translate3d(0, 0, 0);
+      }
+
+      25% {
+        transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+      }
+
+      50% {
+        transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+      }
+
+      75% {
+        transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+      }
+
+      100% {
+        transform: translate(-100%, -100%) translate3d(0, 0, 0);
+      }
+    }
+
+    /* ── Uiverse Step Card CSS ── */
+    .step-card {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      border-radius: 24px;
+      line-height: 1.6;
+      transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+      z-index: 10;
+    }
+
+    .step-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 28px;
+      border-radius: 22px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+      width: 100%;
+      height: 100%;
+    }
+
+    .step-content::before {
+      position: absolute;
+      content: "";
+      top: -4%;
+      left: 50%;
+      width: 90%;
+      height: 90%;
+      transform: translate(-50%);
+      background: var(--bg-1, #e0e7ff);
+      z-index: -1;
+      transform-origin: bottom;
+      border-radius: inherit;
+      transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .step-content::after {
+      position: absolute;
+      content: "";
+      top: -8%;
+      left: 50%;
+      width: 80%;
+      height: 80%;
+      transform: translate(-50%);
+      background: var(--bg-2, #c7d2fe);
+      z-index: -2;
+      transform-origin: bottom;
+      border-radius: inherit;
+      transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .step-card:hover {
+      transform: translate(0px, -16px);
+    }
+
+    .step-card:hover .step-content::before {
+      rotate: -8deg;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .step-card:hover .step-content::after {
+      rotate: 8deg;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900 font-sans overflow-x-hidden antialiased">
+
+  <!-- ══════════════════════════════════════════
+       HERO — banner7.jpg background, video + offer card inside
+       Mirrors index.html hero layout exactly
+  ══════════════════════════════════════════════ -->
+  <section class="hero-bg relative overflow-hidden">
+    <!-- Dark overlay — same as index.html (bg-primary/85) -->
+    <div class="absolute inset-0 bg-primary/85 z-0"></div>
+
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-6 pt-6 pb-8 md:py-16">
+
+      <!-- Top headline area -->
+      <div class="max-w-4xl mx-auto text-center mb-6 md:mb-12">
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold text-white font-display leading-tight animate-fade-up">
+          Claim Your Live
+          <span class="text-accentLight">30-Minute MLM</span>
+          <br>
+
+          <span class="typewriter mt-1 md:mt-0">
+            <span class="typing-text">Architecture Session</span>
+          </span>
+        </h1>
+        <p class="mt-3 text-gray-300 text-base max-w-2xl mx-auto animate-fade-up-d1">
+          Sit down with a senior core developer — test live production controls, audit your plan's math logic, and go
+          live without fear.
+        </p>
+      </div>
+
+      <!-- Bottom: video left, offer card right — EXACTLY like index.html -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-stretch">
+
+        <!-- ── LEFT: VIDEO CARD ── -->
+        <div
+          class="rounded-2xl border-2 border-accent overflow-hidden bg-primary shadow-2xl flex flex-col animate-fade-up-d1">
+          <!-- Shimmer bar (identical to index.html) -->
+          <div class="h-[3px] w-full shimmer-bar-el"></div>
+
+          <!-- iFrame -->
+          <div class="relative bg-black/90 w-full aspect-video">
+            <iframe id="briefVideo" class="absolute inset-0 w-full h-full border-0"
+              src="https://www.youtube.com/embed/MwocoFzMi_E?start=12&rel=0&autoplay=1&mute=1"
+              title="Urgent Video Briefing — Watch Before Booking"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+            <div
+              class="absolute left-3.5 bottom-3.5 font-display font-bold text-[13px] tracking-wide text-white/85 pointer-events-none">
+              VK SERVICES ENTERPRISE
+            </div>
+          </div>
+
+          <!-- Video action bar (same as index.html) -->
+          <div class="flex items-center justify-between gap-2.5 px-4 py-3 bg-black/80 backdrop-blur">
+            <div class="flex items-center gap-2 text-sm font-semibold text-white">
+              <span class="w-[26px] h-5 rounded flex items-center justify-center text-[10px]"
+                style="background-color:#F1521E;">▤</span>
+              Watch Free Briefing
+            </div>
+            <div class="flex items-center gap-2 font-mono text-[10px] text-white/60 tracking-wider">
+              <span class="w-[7px] h-[7px] rounded-full bg-[#fc5151] animate-blink"></span>
+              LIVE REC #041
+            </div>
+          </div>
+
+          <!-- ══ NEW: Trust badge strip under video ══ -->
+          <div class="badge-strip border-t border-white/10 border-solid">
+            <div class="badge-item">
+              <div class="badge-icon-wrap is-gold">
+                <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+              </div>
+              <div class="badge-text">
+                <div class="badge-label">4.9 / 5 Rating</div>
+                <div class="badge-sub">2,800+ Founders</div>
+              </div>
+            </div>
+            <div class="badge-item">
+              <div class="badge-icon-wrap is-blue">
+                <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                </svg>
+              </div>
+              <div class="badge-text">
+                <div class="badge-label">9+ Years Backend</div>
+                <div class="badge-sub">Bulletproof Excellence</div>
+              </div>
+            </div>
+            <div class="badge-item">
+              <div class="badge-icon-wrap is-rose">
+                <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 6L6 18M6 6l12 12" />
+                </svg>
+              </div>
+              <div class="badge-text">
+                <div class="badge-label">Zero Fake Promises</div>
+                <div class="badge-sub">No Investment Schemes</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── RIGHT: OFFER CARD ── -->
+        <div
+          class="bg-white rounded-2xl p-6 md:p-8 shadow-2xl relative border-t-4 border-accent transition-all duration-500 hover:scale-[1.005] animate-fade-up-d2">
+
+          <div class="text-sm font-bold tracking-widest text-accent uppercase mb-2 font-mono">Private 1-on-1 Technology
+            Brief</div>
+
+          <h2 class="text-2xl font-bold text-primary mb-2 font-display leading-snug">
+            Claim Your Live 30-Minute MLM Architecture Session
+          </h2>
+          <p class="text-base text-gray-500 mb-5 leading-relaxed">
+            Don't launch blind. Sit down with a senior core developer, test active production server controls, and
+            eliminate math logic calculation errors before you deploy.
+          </p>
+
+          <!-- WHY ₹9 -->
+          <div class="bg-orange-50 border border-orange-200 rounded-xl px-4 py-4 mb-5">
+            <div class="flex items-center gap-2 mb-1.5 font-bold text-sm text-accent font-display">💡 Why ₹9?</div>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              We only work with serious business founders. This tiny token fee blocks automated spam bots and casual
+              browsers from wasting developer time.
+              Your ₹9 is <span class="font-semibold text-primary">100% refunded to your account immediately</span> after
+              your session ends. It costs you zero.
+            </p>
+          </div>
+
+          <!-- CTA BUTTON -->
+          <button id="ctaBtn" class="cta-btn w-full text-white font-semibold py-4 rounded-lg transition-all duration-300 shadow-md
+                   hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99]
+                   flex items-center justify-center gap-3 cursor-pointer border-0"
+            style="border:1px solid rgba(255,255,255,.38);">
+            <span class="font-bold text-base tracking-tight">👉 VERIFY &amp; LOCK MY 30-MIN SLOT</span>
+            <span
+              class="bg-black/20 border border-white/25 rounded-lg px-2.5 py-0.5 font-mono text-sm font-semibold">₹9</span>
+          </button>
+
+          <!-- TRUST BADGES (pill chips) -->
+          <div class="mt-4 flex flex-wrap items-center justify-center gap-2.5">
+            <span
+              class="inline-flex items-center gap-2 bg-white border border-gray-200 shadow-sm rounded-full pl-2 pr-4 py-2 text-sm font-medium text-gray-600 whitespace-nowrap">
+              <span
+                class="w-7 h-7 shrink-0 rounded-full bg-orange-50 flex items-center justify-center text-accent text-[14px]">🔒</span>
+              Secured by <strong class="text-primary font-semibold">Razorpay</strong>
+            </span>
+            <span
+              class="inline-flex items-center gap-2 bg-white border border-gray-200 shadow-sm rounded-full pl-2 pr-4 py-2 text-sm font-medium text-gray-600 whitespace-nowrap">
+              <span
+                class="w-7 h-7 shrink-0 rounded-full bg-orange-50 flex items-center justify-center text-accent text-[14px]">🔄</span>
+              <strong class="text-primary font-semibold">Immediate Refund</strong> after Session
+            </span>
+            <span
+              class="inline-flex items-center gap-2 bg-white border border-gray-200 shadow-sm rounded-full pl-2 pr-4 py-2 text-sm font-medium text-gray-600 whitespace-nowrap">
+              <span
+                class="w-7 h-7 shrink-0 rounded-full bg-orange-50 flex items-center justify-center text-accent text-[14px]">🛡️</span>
+              100% <strong class="text-primary font-semibold">Data Privacy</strong>
+            </span>
+          </div>
+
+          <p class="mt-3 text-center font-mono text-[10px] text-gray-400 tracking-wider leading-relaxed">
+            NO SPAM · NO UPSELL CALLS · NO RECURRING CHARGES
+          </p>
+        </div>
+
+      </div><!-- /grid -->
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       WHY 85% OF MLM PLATFORMS FAIL — problem cards
+  ══════════════════════════════════════════════ -->
+  <section class="bg-white">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 py-14 md:py-20">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <div class="inline-flex items-center gap-3 text-sm font-semibold uppercase text-red-600 mb-3">
+          <span class="w-6 h-px bg-red-300"></span> The Hard Truth <span class="w-6 h-px bg-red-300"></span>
+        </div>
+        <h2 class="text-2xl md:text-3xl font-bold text-primary font-display leading-tight">
+          Why 85% of MLM Platforms Fail
+        </h2>
+        <p class="mt-3 text-gray-500 text-base leading-relaxed">
+          Most founders purchase software blindly using static images or edited videos, only to discover major
+          mathematical bugs, missing administrative tools, or broken user wallets after going live.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+
+        <div class="card bg-gray-50/50">
+          <div class="blob !bg-red-400"></div>
+          <div class="bg"></div>
+
+          <div
+            class="relative z-10 flex flex-col items-center text-center p-6 transition-transform hover:-translate-y-1">
+            <div
+              class="w-12 h-12 rounded-full bg-red-100/80 border border-red-200/50 flex items-center justify-center text-red-600 mb-4 shadow-sm">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-primary font-display text-lg mb-2">Hidden Plan Flaws</h3>
+            <p class="text-sm text-gray-700 leading-relaxed font-medium">Mistakes in compensation calculations that leak
+              your payout capital.</p>
+          </div>
+        </div>
+
+        <div class="card bg-gray-50/50">
+          <div class="blob !bg-amber-400" style="animation-delay: 2s;"></div>
+          <div class="bg"></div>
+
+          <div
+            class="relative z-10 flex flex-col items-center text-center p-6 transition-transform hover:-translate-y-1">
+            <div
+              class="w-12 h-12 rounded-full bg-amber-100/80 border border-amber-200/50 flex items-center justify-center text-amber-600 mb-4 shadow-sm">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 6h16M4 6a2 2 0 012-2h12a2 2 0 012 2M4 6v12a2 2 0 002 2h12a2 2 0 002-2V6M9 10h6M9 14h6" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-primary font-display text-lg mb-2">Clunky User Dashboards</h3>
+            <p class="text-sm text-gray-700 leading-relaxed font-medium">Complicated panels that frustrate network
+              leaders and halt recruitment.</p>
+          </div>
+        </div>
+
+        <div class="card bg-gray-50/50">
+          <div class="blob !bg-purple-400" style="animation-delay: 4s;"></div>
+          <div class="bg"></div>
+
+          <div
+            class="relative z-10 flex flex-col items-center text-center p-6 transition-transform hover:-translate-y-1">
+            <div
+              class="w-12 h-12 rounded-full bg-purple-100/80 border border-purple-200/50 flex items-center justify-center text-purple-600 mb-4 shadow-sm">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-primary font-display text-lg mb-2">Zero Privacy</h3>
+            <p class="text-sm text-gray-700 leading-relaxed font-medium">Cheap scripts running on shared public servers
+              vulnerable to data leaks.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       THE 3-STEP SESSION BLUEPRINT — high-contrast counter section
+  ══════════════════════════════════════════════ -->
+  <section class="bg-gray-100 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.4] pointer-events-none"
+      style="background-image: radial-gradient(circle at 1px 1px, #d1d5db 1px, transparent 0); background-size: 24px 24px;">
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 md:px-6 py-14 md:py-20">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <div class="inline-flex items-center gap-3 text-sm font-semibold uppercase text-accent mb-3">
+          <span class="w-6 h-px bg-accent"></span> How We Fix It On The Call <span class="w-6 h-px bg-accent"></span>
+        </div>
+        <h2 class="text-2xl md:text-3xl font-bold text-primary font-display leading-tight">
+          The 3-Step Session Blueprint
+        </h2>
+        <p class="mt-3 text-gray-500 text-base leading-relaxed">
+          Every private session follows the same battle-tested process — no guesswork, no fluff.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-8">
+
+        <div class="step-card" style="--bg-1: #dbeafe; --bg-2: #bfdbfe;">
+          <div class="step-content shadow-sm">
+            <div class="font-display font-bold text-5xl text-gray-100 leading-none mb-3">01</div>
+            <div class="flex items-center gap-2 mb-2">
+              <span
+                class="w-8 h-8 shrink-0 rounded-lg bg-blue-50 border border-blue-300 flex items-center justify-center text-blue-600">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 3v18M3 9h18M3 15h18" />
+                </svg>
+              </span>
+              <h3 class="font-bold text-primary font-display text-lg">Requirements Mapping</h3>
+            </div>
+            <p class="text-sm text-gray-600 leading-relaxed">We map out your custom business logic — Binary, Generation,
+              Matrix, or Hybrid — dynamically on screen in real time.</p>
+          </div>
+        </div>
+
+        <div class="step-card" style="--bg-1: #d1fae5; --bg-2: #a7f3d0;">
+          <div class="step-content shadow-sm">
+            <div class="font-display font-bold text-5xl text-gray-100 leading-none mb-3">02</div>
+            <div class="flex items-center gap-2 mb-2">
+              <span
+                class="w-8 h-8 shrink-0 rounded-lg bg-emerald-50 border border-emerald-300 flex items-center justify-center text-emerald-600">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                </svg>
+              </span>
+              <h3 class="font-bold text-primary font-display text-lg">Payout Logic Audit</h3>
+            </div>
+            <p class="text-sm text-gray-600 leading-relaxed">Bring your compensation sheet. We scan for calculation
+              loopholes and payout leaks to make your system foolproof.</p>
+          </div>
+        </div>
+
+        <div class="step-card" style="--bg-1: #ffedd5; --bg-2: #fed7aa;">
+          <div class="step-content shadow-sm">
+            <div class="font-display font-bold text-5xl text-gray-100 leading-none mb-3">03</div>
+            <div class="flex items-center gap-2 mb-2">
+              <span
+                class="w-8 h-8 shrink-0 rounded-lg bg-orange-50 border border-accent/30 flex items-center justify-center text-accent">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path
+                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+              </span>
+              <h3 class="font-bold text-primary font-display text-lg">Live Portfolio Proof</h3>
+            </div>
+            <p class="text-sm text-gray-600 leading-relaxed">We log in and show you real, live admin panels and wallets
+              we've successfully built for existing clients.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       THE SMART WAY TO LAUNCH — offer recap + feature list
+  ══════════════════════════════════════════════ -->
+  <section class="bg-gradient-to-b from-white to-gray-50">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 py-14 md:py-20">
+
+      <div class="max-w-3xl mx-auto text-center mb-10">
+        <div class="inline-flex items-center gap-3 text-sm font-semibold uppercase text-accent mb-3">
+          <span class="w-6 h-px bg-accent"></span> The Offer <span class="w-6 h-px bg-accent"></span>
+        </div>
+        <h2
+          class="text-2xl md:text-3xl font-bold text-primary font-display leading-tight flex flex-col md:flex-row items-center justify-center gap-2">
+          <span>The Smart Way to Launch:</span>
+          <span class="flex items-center gap-2 text-accent" id="fade-left-container">
+            <span style="--i:1;" class="inline-block opacity-0 fade-left-item">Try,</span>
+            <span style="--i:1.5;" class="inline-block opacity-0 fade-left-item">Test,</span>
+            <span style="--i:2;" class="inline-block opacity-0 fade-left-item">and</span>
+            <span style="--i:2.5;" class="inline-block opacity-0 fade-left-item">Verify.</span>
+          </span>
+        </h2>
+        <p class="mt-4 text-gray-500 text-base leading-relaxed">
+          At VK Services Enterprise, we eliminate guessing games. For a nominal, fully refundable slot-booking fee of
+          ₹9, you get direct backdoor access to explore over <strong class="text-primary font-semibold">15+ live
+            production MLM setups</strong> instantly.
+        </p>
+
+        <button onclick="document.getElementById('ctaBtn').scrollIntoView({behavior:'smooth', block:'center'})"
+          class="cta-btn mt-7 inline-flex items-center justify-center gap-2.5 text-white font-bold text-base px-8 py-4 rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] transition-all duration-300 cursor-pointer border-0"
+          style="border:1px solid rgba(255,255,255,.38);">
+          <span>🎯 Claim Your Private Live Slot Now</span>
+        </button>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-8">
+          <div class="w-10 h-px bg-gray-200 mx-auto mb-5"></div>
+          <h3 class="text-lg md:text-xl font-bold text-primary font-display">
+            What You Will Experience Inside the Live Session
+          </h3>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+
+          <div
+            class="flex items-start gap-4 bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:border-blue-300 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+            <span
+              class="w-11 h-11 shrink-0 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 17V7m6 10v-4M4 4h16a1 1 0 011 1v13a1 1 0 01-1 1H4a1 1 0 01-1-1V5a1 1 0 011-1z" />
+              </svg>
+            </span>
+            <div>
+              <h4 class="font-bold text-primary font-display text-base mb-1">Live Admin Panel Controls</h4>
+              <p class="text-sm text-gray-600 leading-relaxed">Test complete network overviews, wallet distribution, and
+                manual overrides firsthand.</p>
+            </div>
+          </div>
+
+          <div
+            class="flex items-start gap-4 bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:border-emerald-300 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+            <span
+              class="w-11 h-11 shrink-0 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 3v18h18M7 15l4-4 3 3 5-6" />
+              </svg>
+            </span>
+            <div>
+              <h4 class="font-bold text-primary font-display text-base mb-1">15+ Plan Architectures</h4>
+              <p class="text-sm text-gray-600 leading-relaxed">Explore ready-to-scale Binary, Matrix, Generation, and
+                custom hybrid models.</p>
+            </div>
+          </div>
+
+          <div
+            class="flex items-start gap-4 bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:border-purple-300 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+            <span
+              class="w-11 h-11 shrink-0 rounded-xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-600">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M17 8h2a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2v-9a2 2 0 012-2h2m10 0V6a5 5 0 00-10 0v2m10 0H7" />
+              </svg>
+            </span>
+            <div>
+              <h4 class="font-bold text-primary font-display text-base mb-1">Custom Requirement Discovery</h4>
+              <p class="text-sm text-gray-600 leading-relaxed">Co-create your custom technical brief directly with our
+                development team.</p>
+            </div>
+          </div>
+
+          <div
+            class="flex items-start gap-4 bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:border-accent/40 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+            <span
+              class="w-11 h-11 shrink-0 rounded-xl bg-orange-50 border border-accent/30 flex items-center justify-center text-accent">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 13l4 4L19 7" />
+              </svg>
+            </span>
+            <div>
+              <h4 class="font-bold text-primary font-display text-base mb-1">Deploy Ready</h4>
+              <p class="text-sm text-gray-600 leading-relaxed">See how we transfer your customized logic into a secure,
+                clean domain engine with 100% data privacy.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       FOOTER  (matches index.html footer style)
+  ══════════════════════════════════════════════ -->
+  <footer class="bg-primary border-t border-white/10 py-8">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 text-center">
+      <p class="font-mono text-[11px] text-white/40 tracking-wider leading-relaxed">
+        © <span id="year"></span> VK Services Enterprise · All rights reserved ·
+        <a href="#" class="text-accentLight hover:underline">Privacy Policy</a> ·
+        <a href="#" class="text-accentLight hover:underline">Terms &amp; Conditions</a><br>
+        This session is a technical consultation only. Not a financial or income offer. Results may vary.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════
+       SCRIPTS
+  ══════════════════════════════════════════════ -->
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // CTA click
+    const btn = document.getElementById('ctaBtn');
+    btn.addEventListener('click', () => { window.location.href = '#checkout'; });
+
+    // Scroll animation trigger for Try, Test, Verify
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const items = entry.target.querySelectorAll('.fade-left-item');
+          items.forEach(item => {
+            item.classList.add('animate-fadeLeft');
+            item.classList.remove('opacity-0');
+          });
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    const fadeContainer = document.getElementById('fade-left-container');
+    if (fadeContainer) {
+      fadeObserver.observe(fadeContainer);
+    }
+
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>
