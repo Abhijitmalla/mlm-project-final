@@ -1,168 +1,411 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Successful - Booking Confirmation</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts & FontAwesome for icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Confirmation - Range Time Slots</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-[#f0f7f4] text-slate-800 flex justify-center items-center min-h-screen p-2 sm:p-6">
+<body class="bg-gray-100 font-sans text-gray-800 m-0 p-0 w-full min-h-screen">
 
-    <!-- Container updated to be full-width with a larger max-w limit -->
-    <div class="w-full max-w-[640px] bg-white rounded-[24px] shadow-xl p-6 sm:p-8 relative overflow-hidden">
+  <!-- FULL EDGE-TO-EDGE CONTAINER -->
+  <div class="w-full min-h-screen flex flex-col justify-between space-y-6">
+
+    <!-- ================= HEADER BANNER ================= -->
+    <div class="bg-emerald-900 w-full px-6 md:px-12 py-10 text-white shadow-md">
+      <div class="w-full flex flex-col lg:flex-row items-center justify-between gap-8">
         
-        <!-- Header Section -->
-        <div class="text-center mb-6">
-            <div class="w-[60px] h-[60px] bg-emerald-500 text-white rounded-full flex items-center justify-center text-3xl mx-auto mb-4 shadow-md shadow-emerald-500/30">
-                <i class="fa-solid fa-check"></i>
-            </div>
-            <h2 class="text-[22px] sm:text-[26px] font-bold text-slate-900 flex items-center justify-center gap-2">
-                PAYMENT <span class="text-emerald-500">SUCCESSFUL</span>
-            </h2>
-            <p class="text-sm text-slate-400 italic mt-1">Thank You For Your Booking!</p>
+        <!-- Left Banner Content -->
+        <div class="flex items-start gap-6">
+          <div class="bg-white text-emerald-600 rounded-full p-5 flex items-center justify-center shadow-lg flex-shrink-0 mt-1">
+            <i class="fa-solid fa-check text-4xl"></i>
+          </div>
+          <div>
+            <span class="inline-block bg-emerald-800 text-emerald-100 text-xs font-semibold px-3 py-1 uppercase tracking-wider">
+              Payment Successful!
+            </span>
+            <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight mt-3">
+              Thank You For Your Booking!
+            </h1>
+            <p class="text-emerald-100 text-base sm:text-lg mt-4 leading-relaxed">
+              Your payment has been received and your booking is confirmed.<br class="hidden sm:inline">
+              You are just one step away from your Live Demo Session.
+            </p>
+          </div>
         </div>
 
-        <!-- Status Grid (Payment, Booking, Refund) -->
-        <div class="grid grid-cols-3 gap-3 bg-slate-50 p-4 sm:p-5 rounded-2xl mb-4 border border-slate-100 text-center">
-            <div class="flex flex-col items-center">
-                <i class="fa-solid fa-credit-card text-emerald-500 text-xl sm:text-2xl mb-1.5"></i>
-                <div class="text-[11px] sm:text-xs text-slate-600 font-medium">Payment</div>
-                <span class="text-xs sm:text-sm font-semibold text-emerald-500">Received</span>
-            </div>
-            <div class="flex flex-col items-center">
-                <i class="fa-solid fa-calendar-check text-emerald-500 text-xl sm:text-2xl mb-1.5"></i>
-                <div class="text-[11px] sm:text-xs text-slate-600 font-medium">Booking</div>
-                <span class="text-xs sm:text-sm font-semibold text-emerald-500">Confirmed</span>
-            </div>
-            <div class="flex flex-col items-center">
-                <i class="fa-solid fa-shield-halved text-emerald-500 text-xl sm:text-2xl mb-1.5"></i>
-                <div class="text-[11px] sm:text-xs text-slate-600 font-medium">Refund</div>
-                <span class="text-xs sm:text-sm font-semibold text-emerald-500">Eligible</span>
-            </div>
-        </div>
+        <!-- Right Badge: 100% Refund Guarantee -->
+    <div class="flex flex-col items-center justify-center flex-shrink-0">
+    <img
+        src="../assets/image/thankyoutopimage.png"
+        alt="100% Refund Guarantee"
+        class="w-44 lg:w-52 h-auto object-contain"
+    />
 
-        <!-- Payment Details (Amount & Transaction ID) -->
-        <div class="flex justify-between items-center bg-slate-50 px-6 py-4 rounded-2xl mb-4 border border-slate-100">
-            <div>
-                <div class="text-[11px] sm:text-xs text-slate-400 mb-0.5">Amount Paid</div>
-                <div class="text-[22px] sm:text-[24px] font-bold text-emerald-500">₹9</div>
-            </div>
-            <div>
-                <div class="text-[11px] sm:text-xs text-slate-400 mb-0.5">Transaction ID</div>
-                <div class="text-[16px] sm:text-[18px] font-bold text-slate-900">XXXXXXXX</div>
-            </div>
-            <div>
-                <i class="fa-solid fa-file-invoice text-emerald-500 text-[32px]"></i>
-            </div>
-        </div>
+    <p class="text-sm text-emerald-100 mt-4 font-medium text-center">
+        100% Refund After<br>Your Live Session
+    </p>
+</div>
 
-        <!-- What's Next Banner -->
-        <div class="bg-emerald-50/60 border border-emerald-100 rounded-2xl p-4 sm:p-5 mb-4 flex flex-col gap-3">
-            <div class="flex items-center gap-3">
-                <i class="fa-solid fa-bullseye text-red-500 text-xl"></i>
-                <div>
-                    <h4 class="text-sm sm:text-base font-semibold text-slate-900">What's Next?</h4>
-                    <p class="text-[11px] sm:text-xs text-slate-500">Book your preferred live session time.</p>
-                </div>
-            </div>
-            <button onclick="bookSlot()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold w-full py-3 sm:py-3.5 rounded-xl text-[13px] sm:text-sm flex items-center justify-center gap-2 transition">
-                <i class="fa-regular fa-calendar-days"></i> BOOK YOUR SLOT <i class="fa-solid fa-chevron-right text-[10px]"></i>
-            </button>
-        </div>
-
-        <!-- Session Includes -->
-        <div class="bg-slate-50 border border-slate-100 rounded-2xl p-4 sm:p-5 mb-4 text-center">
-            <div class="text-[13px] sm:text-sm font-semibold text-slate-900 mb-3 sm:mb-4 flex items-center justify-center gap-1.5">
-                <i class="fa-solid fa-star text-amber-400"></i> Session Includes
-            </div>
-            <div class="grid grid-cols-5 gap-2">
-                <div class="flex flex-col items-center gap-1.5">
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center shadow-sm text-emerald-500 text-sm sm:text-base">
-                        <i class="fa-solid fa-video"></i>
-                    </div>
-                    <span class="text-[10px] sm:text-xs text-slate-600 font-medium">Live Demo</span>
-                </div>
-                <div class="flex flex-col items-center gap-1.5">
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center shadow-sm text-emerald-500 text-sm sm:text-base">
-                        <i class="fa-solid fa-user-tie"></i>
-                    </div>
-                    <span class="text-[10px] sm:text-xs text-slate-600 font-medium">Admin Panel</span>
-                </div>
-                <div class="flex flex-col items-center gap-1.5">
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center shadow-sm text-emerald-500 text-sm sm:text-base">
-                        <i class="fa-solid fa-sitemap"></i>
-                    </div>
-                    <span class="text-[10px] sm:text-xs text-slate-600 font-medium">MLM Plans</span>
-                </div>
-                <div class="flex flex-col items-center gap-1.5">
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center shadow-sm text-emerald-500 text-sm sm:text-base">
-                        <i class="fa-solid fa-code"></i>
-                    </div>
-                    <span class="text-[10px] sm:text-xs text-slate-600 font-medium">Source Code</span>
-                </div>
-                <div class="flex flex-col items-center gap-1.5">
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center shadow-sm text-emerald-500 text-sm sm:text-base">
-                        <i class="fa-solid fa-comments"></i>
-                    </div>
-                    <span class="text-[10px] sm:text-xs text-slate-600 font-medium">Q&A</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- 100% Refund Guarantee Box -->
-        <div class="bg-amber-50/60 border border-amber-100 rounded-2xl p-4 sm:p-5 mb-4 flex items-center justify-between">
-            <div class="bg-gradient-to-br from-amber-600 to-amber-700 text-white p-3 rounded-xl text-center text-[10px] sm:text-xs font-bold leading-tight shadow-md shadow-amber-600/20">
-                100%<br>REFUND<br>GUARANTEE
-            </div>
-            <div class="px-3">
-                <h5 class="text-[13px] sm:text-sm font-bold text-amber-800 mb-0.5">100% Refund After Session</h5>
-                <p class="text-[11px] sm:text-xs text-amber-900/80 max-w-[260px]">Your satisfaction is our priority. Get 100% refund after attending the live session.</p>
-            </div>
-            <div class="text-2xl text-amber-600 bg-amber-100 p-3 rounded-full">
-                <i class="fa-solid fa-indian-rupee-sign"></i>
-            </div>
-        </div>
-
-        <!-- Communication Action Buttons -->
-        <div class="grid grid-cols-3 gap-3 mb-4">
-            <a href="https://whatsapp.com" target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white p-3 rounded-xl text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 transition">
-                <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp
-            </a>
-            <a href="tel:+1234567890" class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-xl text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 transition">
-                <i class="fa-solid fa-phone text-base"></i> Call
-            </a>
-            <a href="mailto:support@example.com" class="bg-purple-600 hover:bg-purple-700 text-white p-3 rounded-xl text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 transition">
-                <i class="fa-solid fa-envelope text-base"></i> Email
-            </a>
-        </div>
-
-        <!-- Back to Home -->
-        <div class="text-center">
-            <button onclick="goHome()" class="bg-transparent border border-slate-300 hover:bg-slate-50 text-slate-700 px-6 py-3 rounded-full text-xs sm:text-sm font-medium inline-flex items-center gap-2 transition">
-                <i class="fa-solid fa-house"></i> Back to Home
-            </button>
-        </div>
+      </div>
     </div>
 
-    <!-- JavaScript Interactivity -->
-    <script>
-        function bookSlot() {
-            alert("Redirecting to slot booking schedule...");
-        }
+    <!-- Inner Content Area -->
+    <div class="w-full px-6 md:px-12 space-y-6 flex-grow">
 
-        function goHome() {
-            window.location.href = "/";
-        }
-    </script>
+      <!-- ================= STATUS & TRANSACTION DETAILS ================= -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <!-- Top Status Cards -->
+        <div class="lg:col-span-2 bg-white shadow-sm border border-gray-200 p-8 flex flex-col md:flex-row items-center justify-between gap-8">
+          
+          <!-- Payment Received -->
+          <div class="flex items-center gap-5">
+            <div class="relative bg-emerald-50 text-emerald-600 p-5 border border-emerald-100">
+              <i class="fa-solid fa-wallet text-3xl"></i>
+              <span class="absolute -bottom-1.5 -right-1.5 bg-emerald-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shadow">
+                <i class="fa-solid fa-check"></i>
+              </span>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold text-emerald-900 uppercase tracking-wide">Payment Received</h3>
+              <p class="text-xs text-gray-500">Amount Paid</p>
+              <p class="text-3xl font-black text-gray-900">₹9</p>
+            </div>
+          </div>
+
+          <div class="hidden md:block h-20 w-px bg-gray-200"></div>
+
+          <!-- Booking Confirmed -->
+          <div class="flex items-center gap-5">
+            <div class="relative bg-emerald-50 text-emerald-600 p-5 border border-emerald-100">
+              <i class="fa-solid fa-calendar-check text-3xl"></i>
+              <span class="absolute -bottom-1.5 -right-1.5 bg-emerald-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shadow">
+                <i class="fa-solid fa-check"></i>
+              </span>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold text-emerald-900 uppercase tracking-wide">Booking Confirmed</h3>
+              <p class="text-xs text-gray-500 max-w-[180px]">Your live session booking is confirmed.</p>
+            </div>
+          </div>
+
+          <div class="hidden md:block h-20 w-px bg-gray-200"></div>
+
+          <!-- Refund Eligible -->
+          <div class="flex items-center gap-5">
+            <div class="relative bg-emerald-50 text-emerald-600 p-5 border border-emerald-100">
+              <i class="fa-solid fa-shield-halved text-3xl"></i>
+              <span class="absolute -bottom-1.5 -right-1.5 bg-emerald-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs shadow">
+                <i class="fa-solid fa-check"></i>
+              </span>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold text-emerald-900 uppercase tracking-wide">Refund Eligible</h3>
+              <p class="text-xs text-gray-500 max-w-[180px]">100% refund after completion of session.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Transaction Details Card -->
+        <div class="bg-white shadow-sm border border-gray-200 p-8 flex flex-col justify-center space-y-4">
+          <h3 class="text-lg font-extrabold text-emerald-900">Transaction Details</h3>
+          
+          <div class="text-xs space-y-3">
+            <div>
+              <span class="text-gray-500 text-[10px] uppercase tracking-widest block font-semibold mb-0.5">Transaction ID</span>
+              <span class="font-bold text-gray-800 text-sm">XXXXXXXXXX</span>
+            </div>
+            <div>
+              <span class="text-gray-500 text-[10px] uppercase tracking-widest block font-semibold mb-0.5">Payment Method</span>
+              <span class="font-semibold text-gray-700 text-sm">Online Payment</span>
+            </div>
+            <div>
+              <span class="text-gray-500 text-[10px] uppercase tracking-widest block font-semibold mb-0.5">Date & Time</span>
+              <span class="font-semibold text-gray-700 text-sm">01 Aug 2025, 12:30 PM</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ================= MAIN SECTION ================= -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <!-- LEFT COLUMN: What's Next & Session Includes -->
+        <div class="bg-white shadow-sm border border-gray-200 p-8 space-y-8 flex flex-col justify-between">
+          
+          <div class="space-y-6">
+            <!-- Heading -->
+            <div>
+              <div class="flex items-center gap-3 mb-2">
+                <i class="fa-solid fa-rocket text-emerald-600 text-xl"></i>
+                <h2 class="text-xl font-extrabold text-emerald-900">What's Next?</h2>
+              </div>
+              <p class="text-sm text-gray-600 leading-relaxed">
+                Please choose your preferred time for the live session.<br>
+                Our team will send you a calendar invitation with the meeting link.
+              </p>
+            </div>
+
+            <hr class="border-gray-100">
+
+            <!-- Session Includes Section -->
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <i class="fa-solid fa-star text-amber-400 text-lg"></i>
+                <h3 class="text-lg font-extrabold text-emerald-900">Session Includes</h3>
+              </div>
+              
+              <ul class="space-y-3.5 text-sm text-gray-700 font-medium">
+                <li class="flex items-center gap-3">
+                  <i class="fa-solid fa-circle-check text-emerald-600 text-lg"></i>
+                  <span>Live Demo</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i class="fa-solid fa-circle-check text-emerald-600 text-lg"></i>
+                  <span>Admin Panel</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i class="fa-solid fa-circle-check text-emerald-600 text-lg"></i>
+                  <span>MLM Plans</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i class="fa-solid fa-circle-check text-emerald-600 text-lg"></i>
+                  <span>Source Code</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i class="fa-solid fa-circle-check text-emerald-600 text-lg"></i>
+                  <span>Q&A</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Illustration Graphic -->
+         <div class="flex justify-center pt-4 flex-shrink-0">
+    <img
+        src="../assets/image/thankyoucalender.png"
+        alt="Calendar"
+        class="w-full max-w-[220px] h-auto object-contain"
+    >
+</div>
+
+        </div>
+
+        <!-- RIGHT COLUMN: Booking Slots Selection -->
+        <div class="lg:col-span-2 bg-white shadow-sm border border-gray-200 p-8 space-y-6 flex flex-col">
+          
+          <!-- Header -->
+          <div class="flex items-center gap-3 mb-1">
+            <i class="fa-solid fa-calendar-day text-emerald-600 text-xl"></i>
+            <h2 class="text-xl sm:text-2xl font-extrabold text-emerald-900">Book Your Preferred Time</h2>
+          </div>
+          <p class="text-sm text-gray-500 -mt-2">Select the time slot when you are available for the live session (IST)</p>
+
+          <!-- Availability Info Alert -->
+          <div class="bg-emerald-50 border border-emerald-100 text-emerald-900 p-4 text-xs flex items-center gap-3">
+            <i class="fa-solid fa-circle-info text-emerald-600 text-xl flex-shrink-0"></i>
+            <span><strong>Available Time:</strong> 10:00 AM to 06:00 PM (Session Duration: 30 Minutes)</span>
+          </div>
+
+          <!-- Time Slot Grid with Time Ranges -->
+          <div id="slot-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5 pt-2 flex-grow">
+            
+            <button class="slot-btn border border-gray-200 hover:border-emerald-500 p-3.5 text-xs text-center font-medium flex items-center justify-center gap-2.5 transition-all shadow-sm" data-time="10:00 AM - 10:30 AM">
+              <span class="w-3.5 h-3.5 rounded-full border border-gray-300 flex items-center justify-center slot-dot"></span>
+              10:00 AM - 10:30 AM
+            </button>
+
+            <button class="slot-btn border border-gray-200 hover:border-emerald-500 p-3.5 text-xs text-center font-medium flex items-center justify-center gap-2.5 transition-all shadow-sm" data-time="10:30 AM - 11:00 AM">
+              <span class="w-3.5 h-3.5 rounded-full border border-gray-300 flex items-center justify-center slot-dot"></span>
+              10:30 AM - 11:00 AM
+            </button>
+
+            <button class="slot-btn border border-gray-200 hover:border-emerald-500 p-3.5 text-xs text-center font-medium flex items-center justify-center gap-2.5 transition-all shadow-sm" data-time="11:00 AM - 11:30 AM">
+              <span class="w-3.5 h-3.5 rounded-full border border-gray-300 flex items-center justify-center slot-dot"></span>
+              11:00 AM - 11:30 AM
+            </button>
+
+            <button class="slot-btn border border-gray-200 hover:border-emerald-500 p-3.5 text-xs text-center font-medium flex items-center justify-center gap-2.5 transition-all shadow-sm" data-time="11:30 AM - 12:00 PM">
+              <span class="w-3.5 h-3.5 rounded-full border border-gray-300 flex items-center justify-center slot-dot"></span>
+              11:30 AM - 12:00 PM
+            </button>
+
+            <button class="slot-btn border border-gray-200 hover:border-emerald-500 p-3.5 text-xs text-center font-medium flex items-center justify-center gap-2.5 transition-all shadow-sm" data-time="12:00 PM - 12:30 PM">
+              <span class="w-3.5 h-3.5 rounded-full border border-gray-300 flex items-center justify-center slot-dot"></span>
+              12:00 PM - 12:30 PM
+            </button>
+
+            <button class="slot-btn border border-gray-200 hover:border-emerald-500 p-3.5 text-xs text-center font-medium flex items-center justify-center gap-2.5 transition-all shadow-sm" data-time="12:30 PM - 01:00 PM">
+              <span class="w-3.5 h-3.5 rounded-full border border-gray-300 flex items-center justify-center slot-dot"></span>
+              12:30 PM - 01:00 PM
+            </button>
+
+            <button class="slot-btn border border-gray-200 hover:border-emerald-500 p-3.5 text-xs text-center font-medium flex items-center justify-center gap-2.5 transition-all shadow-sm" data-time="01:00 PM - 01:30 PM">
+              <span class="w-3.5 h-3.5 rounded-full border border-gray-300 flex items-center justify-center slot-dot"></span>
+              01:00 PM - 01:30 PM
+            </button>
+
+            <button class="slot-btn border border-gray-200 hover:border-emerald-500 p-3.5 text-xs text-center font-medium flex items-center justify-center gap-2.5 transition-all shadow-sm" data-time="01:30 PM - 02:00 PM">
+              <span class="w-3.5 h-3.5 rounded-full border border-gray-300 flex items-center justify-center slot-dot"></span>
+              01:30 PM - 02:00 PM
+            </button>
+
+            <!-- Active Slot -->
+            <button class="slot-btn active border-2 border-emerald-600 bg-emerald-50 p-3.5 text-xs text-center font-bold text-emerald-950 flex items-center justify-center gap-2.5 transition-all shadow-sm" data-time="02:00 PM - 02:30 PM">
+              <span class="w-3.5 h-3.5 rounded-full bg-emerald-600 flex items-center justify-center text-white text-[10px] slot-dot">
+                <i class="fa-solid fa-circle"></i>
+              </span>
+              02:00 PM - 02:30 PM
+            </button>
+
+            <button class="slot-btn border border-gray-200 hover:border-emerald-500 p-3.5 text-xs text-center font-medium flex items-center justify-center gap-2.5 transition-all shadow-sm" data-time="02:30 PM - 03:00 PM">
+              <span class="w-3.5 h-3.5 rounded-full border border-gray-300 flex items-center justify-center slot-dot"></span>
+              02:30 PM - 03:00 PM
+            </button>
+
+            <button class="slot-btn border border-gray-200 hover:border-emerald-500 p-3.5 text-xs text-center font-medium flex items-center justify-center gap-2.5 transition-all shadow-sm" data-time="03:00 PM - 03:30 PM">
+              <span class="w-3.5 h-3.5 rounded-full border border-gray-300 flex items-center justify-center slot-dot"></span>
+              03:00 PM - 03:30 PM
+            </button>
+
+            <button class="slot-btn border border-gray-200 hover:border-emerald-500 p-3.5 text-xs text-center font-medium flex items-center justify-center gap-2.5 transition-all shadow-sm" data-time="03:30 PM - 04:00 PM">
+              <span class="w-3.5 h-3.5 rounded-full border border-gray-300 flex items-center justify-center slot-dot"></span>
+              03:30 PM - 04:00 PM
+            </button>
+
+            <button class="slot-btn border border-gray-200 hover:border-emerald-500 p-3.5 text-xs text-center font-medium flex items-center justify-center gap-2.5 transition-all shadow-sm" data-time="04:00 PM - 04:30 PM">
+              <span class="w-3.5 h-3.5 rounded-full border border-gray-300 flex items-center justify-center slot-dot"></span>
+              04:00 PM - 04:30 PM
+            </button>
+
+            <button class="slot-btn border border-gray-200 hover:border-emerald-500 p-3.5 text-xs text-center font-medium flex items-center justify-center gap-2.5 transition-all shadow-sm" data-time="04:30 PM - 05:00 PM">
+              <span class="w-3.5 h-3.5 rounded-full border border-gray-300 flex items-center justify-center slot-dot"></span>
+              04:30 PM - 05:00 PM
+            </button>
+
+            <button class="slot-btn border border-gray-200 hover:border-emerald-500 p-3.5 text-xs text-center font-medium flex items-center justify-center gap-2.5 transition-all shadow-sm" data-time="05:00 PM - 05:30 PM">
+              <span class="w-3.5 h-3.5 rounded-full border border-gray-300 flex items-center justify-center slot-dot"></span>
+              05:00 PM - 05:30 PM
+            </button>
+
+            <button class="slot-btn border border-gray-200 hover:border-emerald-500 p-3.5 text-xs text-center font-medium flex items-center justify-center gap-2.5 transition-all shadow-sm" data-time="05:30 PM - 06:00 PM">
+              <span class="w-3.5 h-3.5 rounded-full border border-gray-300 flex items-center justify-center slot-dot"></span>
+              05:30 PM - 06:00 PM
+            </button>
+
+          </div>
+
+          <!-- Submit Button & Reschedule Note -->
+          <div class="pt-6 flex flex-col items-center space-y-3 flex-shrink-0">
+            <button id="confirm-btn" class="w-full sm:w-auto min-w-[280px] bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-4 px-10 shadow-lg transition flex items-center justify-center gap-3 text-sm">
+              <i class="fa-solid fa-calendar-check text-base"></i>
+              Confirm My Slot
+            </button>
+
+            <p class="text-[11px] text-gray-500 flex items-center gap-1.5 pt-2">
+              <i class="fa-solid fa-lock text-emerald-600"></i>
+              You can reschedule the session anytime before the scheduled time.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ================= FOOTER / NEED HELP ================= -->
+    <div class="bg-white shadow-sm border-t border-gray-200 px-6 md:px-12 py-8 w-full flex-shrink-0">
+      <h3 class="text-center font-extrabold text-emerald-900 text-base mb-8">Need Help?</h3>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-center w-full">
+        
+        <!-- WhatsApp -->
+        <a href="#" class="flex items-center gap-4 p-3 hover:bg-gray-50 transition">
+          <div class="w-12 h-12 bg-emerald-700 text-white flex items-center justify-center text-2xl flex-shrink-0">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-gray-900">WhatsApp</h4>
+            <p class="text-[11px] text-gray-500">Chat with us on WhatsApp</p>
+          </div>
+        </a>
+
+        <!-- Call Us -->
+        <a href="tel:+911234567890" class="flex items-center gap-4 p-3 hover:bg-gray-50 transition">
+          <div class="w-12 h-12 bg-emerald-700 text-white flex items-center justify-center text-xl flex-shrink-0">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-gray-900">Call Us</h4>
+            <p class="text-[11px] text-gray-500">+91 12345 67890</p>
+          </div>
+        </a>
+
+        <!-- Email Us -->
+        <a href="mailto:support@vkservicesenterprise.in" class="flex items-center gap-4 p-3 hover:bg-gray-50 transition">
+          <div class="w-12 h-12 bg-emerald-700 text-white flex items-center justify-center text-xl flex-shrink-0">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-gray-900">Email Us</h4>
+            <p class="text-[11px] text-gray-500 truncate max-w-[180px]">support@vkservicesenterprise.in</p>
+          </div>
+        </a>
+
+        <!-- Back to Home Button -->
+        <div class="flex justify-start lg:justify-end">
+          <a href="#" class="w-full lg:w-auto border-2 border-emerald-700 text-emerald-800 hover:bg-emerald-50 px-6 py-3 text-xs font-bold flex items-center justify-center gap-2.5 transition">
+            <i class="fa-solid fa-house"></i>
+            Back to Home
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- JavaScript to Handle Selection Logic -->
+  <script>
+    const slotButtons = document.querySelectorAll('.slot-btn');
+    const confirmBtn = document.getElementById('confirm-btn');
+    let selectedSlot = "02:00 PM - 02:30 PM";
+
+    slotButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Reset all buttons
+        slotButtons.forEach(btn => {
+          btn.classList.remove('active', 'border-2', 'border-emerald-600', 'bg-emerald-50', 'font-bold', 'text-emerald-950');
+          btn.classList.add('border', 'border-gray-200', 'font-medium', 'text-gray-700');
+          
+          const dot = btn.querySelector('.slot-dot');
+          dot.className = 'w-3.5 h-3.5 rounded-full border border-gray-300 flex items-center justify-center slot-dot';
+          dot.innerHTML = '';
+        });
+
+        // Highlight selected button
+        button.classList.add('active', 'border-2', 'border-emerald-600', 'bg-emerald-50', 'font-bold', 'text-emerald-950');
+        button.classList.remove('border', 'border-gray-200', 'font-medium', 'text-gray-700');
+
+        const activeDot = button.querySelector('.slot-dot');
+        activeDot.className = 'w-3.5 h-3.5 rounded-full bg-emerald-600 flex items-center justify-center text-white text-[10px] slot-dot';
+        activeDot.innerHTML = '<i class="fa-solid fa-circle"></i>';
+
+        selectedSlot = button.getAttribute('data-time');
+      });
+    });
+
+    confirmBtn.addEventListener('click', () => {
+      alert(`Your slot for ${selectedSlot} has been confirmed!`);
+    });
+  </script>
+
 </body>
 </html>

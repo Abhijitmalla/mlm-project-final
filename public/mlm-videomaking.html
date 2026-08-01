@@ -1025,7 +1025,7 @@
       <!-- Card 1 -->
       <div
         class="relative rounded-2xl overflow-hidden aspect-[9/16] bg-dark group shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer">
-        <video class="absolute inset-0 w-full h-full object-cover" controls preload="metadata">
+        <video class="absolute inset-0 w-full h-full object-cover" controls autoplay muted loop playsinline preload="metadata" aria-label="Client testimonial video">
           <source src="./assets/videos/Review-1.mp4" type="video/mp4">
         </video>
         <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent pointer-events-none">
@@ -1046,7 +1046,7 @@
       <!-- Card 2 -->
       <div
         class="relative rounded-2xl overflow-hidden aspect-[9/16] bg-dark group shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer">
-        <video class="absolute inset-0 w-full h-full object-cover" controls preload="metadata">
+        <video class="absolute inset-0 w-full h-full object-cover" controls autoplay muted loop playsinline preload="metadata" aria-label="Client testimonial video">
           <source src="./assets/videos/Review 2.mp4" type="video/mp4">
         </video>
         <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent pointer-events-none">
@@ -1067,7 +1067,7 @@
       <!-- Card 3 -->
       <div
         class="relative rounded-2xl overflow-hidden aspect-[9/16] bg-dark group shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer">
-        <video class="absolute inset-0 w-full h-full object-cover" controls preload="metadata">
+        <video class="absolute inset-0 w-full h-full object-cover" controls autoplay muted loop playsinline preload="metadata" aria-label="Client testimonial video">
           <source src="./assets/videos/Review 3.mp4" type="video/mp4">
         </video>
         <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent pointer-events-none">
@@ -1088,7 +1088,7 @@
       <!-- Card 4 -->
       <div
         class="relative rounded-2xl overflow-hidden aspect-[9/16] bg-dark group shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer">
-        <video class="absolute inset-0 w-full h-full object-cover" controls preload="metadata">
+        <video class="absolute inset-0 w-full h-full object-cover" controls autoplay muted loop playsinline preload="metadata" aria-label="Client testimonial video">
           <source src="./assets/videos/Review-4.mp4" type="video/mp4">
         </video>
         <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent pointer-events-none">
@@ -1111,7 +1111,7 @@
       <div
         class="relative rounded-2xl overflow-hidden aspect-[9/16] bg-dark group shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer">
 
-        <video class="absolute inset-0 w-full h-full object-cover" controls preload="metadata">
+        <video class="absolute inset-0 w-full h-full object-cover" controls autoplay muted loop playsinline preload="metadata" aria-label="Client testimonial video">
           <source src="./assets/videos/Review-5.mp4" type="video/mp4">
         </video>
 
@@ -2103,7 +2103,7 @@
   </script>
 
   <a href="https://wa.me/918927656368" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"
-    class="whatsapp-float fixed left-4 bottom-6 z-40 h-14 rounded-full text-white flex items-center px-4 transition-transform duration-300 hover:scale-110 focus:outline-none focus:ring-4 focus:ring-green-200">
+    class="whatsapp-float fixed right-4 bottom-6 z-40 h-14 rounded-full text-white flex items-center px-4 transition-transform duration-300 hover:scale-110 focus:outline-none focus:ring-4 focus:ring-green-200">
     <svg class="w-7 h-7 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path
         d="M12.004 0C5.374 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.824L.057 24l6.334-1.66A11.94 11.94 0 0 0 12.004 24C18.63 24 24 18.627 24 12S18.63 0 12.004 0zm6.998 16.977c-.297.836-1.47 1.53-2.41 1.73-.64.137-1.478.246-4.297-.923-3.607-1.494-5.927-5.156-6.108-5.395-.174-.24-1.463-1.948-1.463-3.715 0-1.767.93-2.635 1.257-2.996.328-.36.716-.45.955-.45.24 0 .478.002.687.013.221.011.517-.084.808.618.297.716.997 2.475 1.084 2.654.088.18.146.39.03.63-.117.24-.176.39-.35.598-.174.211-.365.469-.523.63-.174.176-.356.365-.153.716.204.351.905 1.494 1.943 2.42 1.335 1.19 2.462 1.559 2.813 1.734.35.176.554.15.758-.09.204-.24.876-1.02 1.11-1.37.234-.35.468-.29.79-.174.32.117 2.033.958 2.382 1.132.35.176.583.263.67.41.088.15.088.855-.21 1.68z" />
@@ -2224,6 +2224,38 @@
         rzp.on('payment.failed', function (response) { liveSessionError.textContent = response.error.description || 'Payment failed.'; liveSessionError.classList.remove('hidden'); button.disabled = false; button.textContent = 'Pay &#8377;9 & Request Session'; });
         rzp.open();
       } catch (error) { liveSessionError.textContent = error.message; liveSessionError.classList.remove('hidden'); button.disabled = false; button.textContent = 'Pay &#8377;9 & Request Session'; }
+    });
+  </script>
+  <script>
+    const testimonialStyle = document.createElement('style');
+    testimonialStyle.textContent = `
+      .testimonial-card { aspect-ratio: auto !important; overflow: hidden !important; background: #fff !important; border: 2px solid #f1521e !important; border-radius: 16px !important; cursor: default !important; }
+      .testimonial-video { position: relative !important; inset: auto !important; display: block !important; width: 100% !important; height: auto !important; aspect-ratio: 9 / 16; object-fit: cover !important; background: #000 !important; }
+      .testimonial-gradient { display: none !important; }
+.testimonial-details { position: relative !important; inset: auto !important; z-index: 1 !important; padding: 1.15rem 1rem 1.25rem !important; background: #000 !important; pointer-events: auto !important; }
+      .testimonial-details > div { padding: 0 !important; background: transparent !important; border: 0 !important; box-shadow: none !important; backdrop-filter: none !important; }
+.testimonial-details h4 { margin: 0 0 .55rem !important; color: #fff !important; font-size: 1.35rem !important; line-height: 1.2 !important; }
+.testimonial-details p { margin: 0 !important; color: #ea580c !important; font-size: .84rem !important; line-height: 1.55 !important; }
+    `;
+    document.head.appendChild(testimonialStyle);
+
+    document.querySelectorAll('#testimonials video').forEach((video) => {
+      video.muted = true;
+      video.autoplay = true;
+      video.loop = true;
+      video.playsInline = true;
+      video.play().catch(() => {});
+
+      const card = video.parentElement;
+      const gradient = video.nextElementSibling;
+      const details = gradient?.nextElementSibling;
+
+      card.classList.add('testimonial-card');
+      card.classList.remove('aspect-[9/16]', 'cursor-pointer');
+      video.classList.add('testimonial-video');
+      video.classList.remove('absolute', 'inset-0', 'h-full');
+      gradient?.classList.add('testimonial-gradient');
+      details?.classList.add('testimonial-details');
     });
   </script>
 </body>
