@@ -433,7 +433,7 @@
       right: 5px;
       bottom: 5px;
       z-index: 2;
-      background: rgba(255, 255, 255, .95);
+      background: rgba(254, 226, 226, .85);
       backdrop-filter: blur(24px);
       border-radius: 10px;
       overflow: hidden;
@@ -645,6 +645,7 @@
       animation: whatsappFloat 3s ease-in-out infinite, whatsappPulse 2.4s ease-in-out infinite;
       background: linear-gradient(145deg, #2be463, #128c46);
     }
+
     .whatsapp-float .wa-label {
       max-width: 0;
       opacity: 0;
@@ -652,14 +653,18 @@
       white-space: nowrap;
       transition: max-width .35s ease, opacity .25s ease, margin .35s ease;
     }
+
     .whatsapp-float:hover .wa-label,
     .whatsapp-float:focus-visible .wa-label {
       max-width: 140px;
       opacity: 1;
       margin-left: .5rem;
     }
+
     @media (prefers-reduced-motion: reduce) {
-      .whatsapp-float { animation: none; }
+      .whatsapp-float {
+        animation: none;
+      }
     }
 
     /* ── Social rail ── */
@@ -667,6 +672,7 @@
       position: relative;
       box-shadow: 0 8px 20px rgba(17, 24, 39, .16);
     }
+
     .social-rail .social-tooltip {
       position: absolute;
       right: calc(100% + 10px);
@@ -683,8 +689,9 @@
       opacity: 0;
       pointer-events: none;
       transition: opacity .2s ease, transform .2s ease;
-      box-shadow: 0 6px 16px rgba(0,0,0,.18);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, .18);
     }
+
     .social-rail .social-tooltip::after {
       content: "";
       position: absolute;
@@ -694,6 +701,7 @@
       border: 5px solid transparent;
       border-left-color: #111827;
     }
+
     .social-rail a:hover .social-tooltip,
     .social-rail a:focus-visible .social-tooltip {
       opacity: 1;
@@ -759,7 +767,7 @@
             <div class="flex items-center gap-2 text-sm font-semibold text-white">
               <span class="w-[26px] h-5 rounded flex items-center justify-center text-[10px]"
                 style="background-color:#F1521E;">▤</span>
-              Watch Free Briefing
+              Urgent Video - Watch Now
             </div>
             <div class="flex items-center gap-2 font-mono text-[10px] text-white/60 tracking-wider">
               <span class="w-[7px] h-[7px] rounded-full bg-[#fc5151] animate-blink"></span>
@@ -811,36 +819,65 @@
           class="bg-white rounded-2xl p-6 md:p-8 shadow-2xl relative border-t-4 border-accent transition-all duration-500 hover:scale-[1.005] animate-fade-up-d2">
 
           <div id="stage" class="mb-2">
-            <h2 id="animatedText" class="text-2xl font-bold text-primary font-display leading-snug flex flex-wrap" style="color: #0F1115;">
+            <h2 id="animatedText" class="text-2xl font-bold text-primary font-display leading-snug flex flex-wrap"
+              style="color: #0F1115;">
               Private 1-on-1 Technology Brief
             </h2>
           </div>
-          
+
           <style>
             .animated-char {
               display: inline-block;
               white-space: pre;
-              animation: slideUpFade 0.6s cubic-bezier(0.2, 1, 0.3, 1) backwards;
+              opacity: 0;
             }
+
+            .in-view .animated-char {
+              animation: slideUpFade 0.9s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+            }
+
             @keyframes slideUpFade {
-              0% { opacity: 0; transform: translateY(20px); }
-              100% { opacity: 1; transform: translateY(0); }
+              0% {
+                opacity: 0;
+                transform: translateY(20px);
+              }
+
+              100% {
+                opacity: 1;
+                transform: translateY(0);
+              }
             }
           </style>
 
           <script>
             document.addEventListener("DOMContentLoaded", () => {
               const textEl = document.getElementById("animatedText");
-              const text = textEl.innerText;
+              const text = textEl.innerText.trim();
               textEl.innerHTML = "";
-              
+
+              const highlightIndex = text.indexOf("Technology Brief");
+
               text.split("").forEach((char, i) => {
                 const span = document.createElement("span");
                 span.className = "animated-char";
                 span.innerText = char;
-                span.style.animationDelay = `${i * 0.05}s`;
+                span.style.animationDelay = `${i * 0.07}s`;
+                if (highlightIndex !== -1 && i >= highlightIndex) {
+                  span.classList.add("text-orange-700");
+                }
                 textEl.appendChild(span);
               });
+
+              const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+                    entry.target.classList.add("in-view");
+                    observer.unobserve(entry.target);
+                  }
+                });
+              }, { threshold: 0.1 });
+
+              observer.observe(textEl);
             });
           </script>
 
@@ -924,7 +961,7 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
 
-        <div class="card bg-gray-50/50">
+        <div class="card bg-red-100">
           <div class="blob !bg-red-400"></div>
           <div class="bg"></div>
 
@@ -943,14 +980,14 @@
           </div>
         </div>
 
-        <div class="card bg-gray-50/50">
-          <div class="blob !bg-amber-400" style="animation-delay: 2s;"></div>
+        <div class="card bg-red-100">
+          <div class="blob !bg-red-700" style="animation-delay: 2s;"></div>
           <div class="bg"></div>
 
           <div
             class="relative z-10 flex flex-col items-center text-center p-6 transition-transform hover:-translate-y-1">
             <div
-              class="w-12 h-12 rounded-full bg-amber-100/80 border border-amber-200/50 flex items-center justify-center text-amber-600 mb-4 shadow-sm">
+              class="w-12 h-12 rounded-full bg-red-100/80 border border-red-200/50 flex items-center justify-center text-red-600 mb-4 shadow-sm">
               <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M4 6h16M4 6a2 2 0 012-2h12a2 2 0 012 2M4 6v12a2 2 0 002 2h12a2 2 0 002-2V6M9 10h6M9 14h6" />
               </svg>
@@ -961,14 +998,14 @@
           </div>
         </div>
 
-        <div class="card bg-gray-50/50">
-          <div class="blob !bg-purple-400" style="animation-delay: 4s;"></div>
+        <div class="card bg-red-100">
+          <div class="blob !bg-red-500" style="animation-delay: 4s;"></div>
           <div class="bg"></div>
 
           <div
             class="relative z-10 flex flex-col items-center text-center p-6 transition-transform hover:-translate-y-1">
             <div
-              class="w-12 h-12 rounded-full bg-purple-100/80 border border-purple-200/50 flex items-center justify-center text-purple-600 mb-4 shadow-sm">
+              class="w-12 h-12 rounded-full bg-red-100/80 border border-red-200/50 flex items-center justify-center text-red-600 mb-4 shadow-sm">
               <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path
                   d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
@@ -1125,8 +1162,62 @@
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-8">
           <div class="w-10 h-px bg-gray-300 mx-auto mb-5"></div>
-          <h3 class="text-lg md:text-xl font-bold text-primary font-display">
-            What You Will Experience Inside the Live Session
+          <style>
+            .animated-experience li {
+              opacity: 0;
+            }
+
+            .animated-experience.in-view li {
+              animation-name: fadeLeftExp;
+              animation-duration: calc(var(--i) * 0.4s);
+              animation-fill-mode: forwards;
+              animation-timing-function: ease-in-out;
+            }
+
+            @keyframes fadeLeftExp {
+              10% {
+                transform: translateX(-200px);
+                opacity: 0;
+              }
+
+              60% {
+                opacity: 0;
+                transform: translateX(200px);
+              }
+
+              100% {
+                opacity: 1;
+                transform: translateX(0);
+              }
+            }
+          </style>
+          <script>
+            document.addEventListener('DOMContentLoaded', () => {
+              const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    observer.unobserve(entry.target);
+                  }
+                });
+              }, { threshold: 0.1 });
+
+              const target = document.querySelector('.animated-experience');
+              if (target) {
+                observer.observe(target);
+              }
+            });
+          </script>
+          <h3
+            class="text-2xl md:text-3xl font-bold text-primary font-display leading-tight flex flex-wrap justify-center gap-x-[0.25em] gap-y-2">
+            <span>What You Will Experience</span>
+            <ul
+              class="inline-flex flex-wrap justify-center gap-[0.25em] list-none m-0 p-0 text-orange-700 animated-experience">
+              <li style="--i: 1">Inside</li>
+              <li style="--i: 2">the</li>
+              <li style="--i: 3">Live</li>
+              <li style="--i: 4">Session</li>
+            </ul>
           </h3>
         </div>
 
@@ -1505,8 +1596,60 @@
           <div class="inline-flex items-center gap-3 text-sm font-semibold uppercase text-accent mb-3">
             <span class="w-6 h-px bg-accent"></span> Full Transparency
           </div>
+          <style>
+            .animated-founders li {
+              opacity: 0;
+            }
+
+            .animated-founders.in-view li {
+              animation-name: fadeLeft;
+              animation-duration: calc(var(--i) * 0.4s);
+              animation-fill-mode: forwards;
+              animation-timing-function: ease-in-out;
+            }
+
+            @keyframes fadeLeft {
+              10% {
+                transform: translateX(-200px);
+                opacity: 0;
+              }
+
+              60% {
+                opacity: 0;
+                transform: translateX(200px);
+              }
+
+              100% {
+                opacity: 1;
+                transform: translateX(0);
+              }
+            }
+          </style>
+          <script>
+            document.addEventListener('DOMContentLoaded', () => {
+              const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    observer.unobserve(entry.target);
+                  }
+                });
+              }, { threshold: 0.1 });
+
+              const target = document.querySelector('.animated-founders');
+              if (target) {
+                observer.observe(target);
+              }
+            });
+          </script>
           <h2 class="text-2xl md:text-3xl font-bold text-primary font-display leading-tight">
-            The Truth About The ₹9 Fee: We Only Work With Serious Founders
+            The Truth About The ₹9 Fee: We Only
+            <ul class="inline-flex flex-wrap gap-[0.25em] list-none m-0 p-0 text-orange-700 animated-founders">
+              <li style="--i: 1">Work</li>
+              <li style="--i: 2">With</li>
+              <li style="--i: 3">Serious</li>
+              <li style="--i: 4">Founders</li>
+            </ul>
           </h2>
           <p class="mt-3 text-gray-500 text-base leading-relaxed">
             Our engineering calendars fill up incredibly fast every single day. In the past, casual browsers,
@@ -1576,8 +1719,59 @@
         <div class="inline-flex items-center gap-3 text-sm font-semibold uppercase text-accent mb-3">
           <span class="w-6 h-px bg-accent"></span> No Catch <span class="w-6 h-px bg-accent"></span>
         </div>
+        <style>
+          .animated-strategy li {
+            opacity: 0;
+          }
+
+          .animated-strategy.in-view li {
+            animation-name: falling;
+            animation-duration: calc(var(--i) * 0.4s);
+            animation-fill-mode: forwards;
+            animation-timing-function: ease-in-out;
+          }
+
+          @keyframes falling {
+            0% {
+              opacity: 0;
+              transform: translateY(-100px);
+            }
+
+            70% {
+              opacity: 1;
+            }
+
+            100% {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        </style>
+        <script>
+          document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add('in-view');
+                  observer.unobserve(entry.target);
+                }
+              });
+            }, { threshold: 0.1 });
+
+            const target = document.querySelector('.animated-strategy');
+            if (target) {
+              observer.observe(target);
+            }
+          });
+        </script>
         <h2 class="text-2xl md:text-3xl font-bold text-primary font-display leading-tight">
-          No Subscriptions. No Commitments.<br class="hidden md:block"> Just Pure Strategy.
+          No Subscriptions. No Commitments.<br class="hidden md:block">
+          <ul
+            class="inline-flex flex-wrap justify-center gap-[0.25em] list-none m-0 p-0 text-orange-700 animated-strategy">
+            <li style="--i: 1">Just</li>
+            <li style="--i: 2">Pure</li>
+            <li style="--i: 3">Strategy.</li>
+          </ul>
         </h2>
       </div>
 
@@ -1796,7 +1990,7 @@
     <div class="max-w-7xl mx-auto flex flex-col gap-8">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
-          <img src="./assets/image/VK Enterprise wht Logo.png" alt="VK Services Enterprise" class="h-14 w-auto mb-4">
+          <img src="../assets/image/VK Enterprise wht Logo.png" alt="VK Services Enterprise" class="h-14 w-auto mb-4">
           <p class="mb-2">Copyright © 2025 | By Vishwajit Kumar</p>
           <p class="mb-1"><span class="text-white font-semibold">Corporate Office:</span> Plot No: 1632/15509,
             Khata No: 1330/10531, Satya vihar, Rasulgarh, Bhubaneswar, Odisha, 751017</p>

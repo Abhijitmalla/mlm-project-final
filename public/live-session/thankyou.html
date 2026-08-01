@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful - Booking Confirmation</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts & FontAwesome for icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-[#f0f7f4] text-slate-800 flex justify-center items-center min-h-screen p-2 sm:p-6">
+
+    <!-- Container updated to be full-width with a larger max-w limit -->
+    <div class="w-full max-w-[640px] bg-white rounded-[24px] shadow-xl p-6 sm:p-8 relative overflow-hidden">
+        
+        <!-- Header Section -->
+        <div class="text-center mb-6">
+            <div class="w-[60px] h-[60px] bg-emerald-500 text-white rounded-full flex items-center justify-center text-3xl mx-auto mb-4 shadow-md shadow-emerald-500/30">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h2 class="text-[22px] sm:text-[26px] font-bold text-slate-900 flex items-center justify-center gap-2">
+                PAYMENT <span class="text-emerald-500">SUCCESSFUL</span>
+            </h2>
+            <p class="text-sm text-slate-400 italic mt-1">Thank You For Your Booking!</p>
+        </div>
+
+        <!-- Status Grid (Payment, Booking, Refund) -->
+        <div class="grid grid-cols-3 gap-3 bg-slate-50 p-4 sm:p-5 rounded-2xl mb-4 border border-slate-100 text-center">
+            <div class="flex flex-col items-center">
+                <i class="fa-solid fa-credit-card text-emerald-500 text-xl sm:text-2xl mb-1.5"></i>
+                <div class="text-[11px] sm:text-xs text-slate-600 font-medium">Payment</div>
+                <span class="text-xs sm:text-sm font-semibold text-emerald-500">Received</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <i class="fa-solid fa-calendar-check text-emerald-500 text-xl sm:text-2xl mb-1.5"></i>
+                <div class="text-[11px] sm:text-xs text-slate-600 font-medium">Booking</div>
+                <span class="text-xs sm:text-sm font-semibold text-emerald-500">Confirmed</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <i class="fa-solid fa-shield-halved text-emerald-500 text-xl sm:text-2xl mb-1.5"></i>
+                <div class="text-[11px] sm:text-xs text-slate-600 font-medium">Refund</div>
+                <span class="text-xs sm:text-sm font-semibold text-emerald-500">Eligible</span>
+            </div>
+        </div>
+
+        <!-- Payment Details (Amount & Transaction ID) -->
+        <div class="flex justify-between items-center bg-slate-50 px-6 py-4 rounded-2xl mb-4 border border-slate-100">
+            <div>
+                <div class="text-[11px] sm:text-xs text-slate-400 mb-0.5">Amount Paid</div>
+                <div class="text-[22px] sm:text-[24px] font-bold text-emerald-500">₹9</div>
+            </div>
+            <div>
+                <div class="text-[11px] sm:text-xs text-slate-400 mb-0.5">Transaction ID</div>
+                <div class="text-[16px] sm:text-[18px] font-bold text-slate-900">XXXXXXXX</div>
+            </div>
+            <div>
+                <i class="fa-solid fa-file-invoice text-emerald-500 text-[32px]"></i>
+            </div>
+        </div>
+
+        <!-- What's Next Banner -->
+        <div class="bg-emerald-50/60 border border-emerald-100 rounded-2xl p-4 sm:p-5 mb-4 flex flex-col gap-3">
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-bullseye text-red-500 text-xl"></i>
+                <div>
+                    <h4 class="text-sm sm:text-base font-semibold text-slate-900">What's Next?</h4>
+                    <p class="text-[11px] sm:text-xs text-slate-500">Book your preferred live session time.</p>
+                </div>
+            </div>
+            <button onclick="bookSlot()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold w-full py-3 sm:py-3.5 rounded-xl text-[13px] sm:text-sm flex items-center justify-center gap-2 transition">
+                <i class="fa-regular fa-calendar-days"></i> BOOK YOUR SLOT <i class="fa-solid fa-chevron-right text-[10px]"></i>
+            </button>
+        </div>
+
+        <!-- Session Includes -->
+        <div class="bg-slate-50 border border-slate-100 rounded-2xl p-4 sm:p-5 mb-4 text-center">
+            <div class="text-[13px] sm:text-sm font-semibold text-slate-900 mb-3 sm:mb-4 flex items-center justify-center gap-1.5">
+                <i class="fa-solid fa-star text-amber-400"></i> Session Includes
+            </div>
+            <div class="grid grid-cols-5 gap-2">
+                <div class="flex flex-col items-center gap-1.5">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center shadow-sm text-emerald-500 text-sm sm:text-base">
+                        <i class="fa-solid fa-video"></i>
+                    </div>
+                    <span class="text-[10px] sm:text-xs text-slate-600 font-medium">Live Demo</span>
+                </div>
+                <div class="flex flex-col items-center gap-1.5">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center shadow-sm text-emerald-500 text-sm sm:text-base">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <span class="text-[10px] sm:text-xs text-slate-600 font-medium">Admin Panel</span>
+                </div>
+                <div class="flex flex-col items-center gap-1.5">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center shadow-sm text-emerald-500 text-sm sm:text-base">
+                        <i class="fa-solid fa-sitemap"></i>
+                    </div>
+                    <span class="text-[10px] sm:text-xs text-slate-600 font-medium">MLM Plans</span>
+                </div>
+                <div class="flex flex-col items-center gap-1.5">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center shadow-sm text-emerald-500 text-sm sm:text-base">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <span class="text-[10px] sm:text-xs text-slate-600 font-medium">Source Code</span>
+                </div>
+                <div class="flex flex-col items-center gap-1.5">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center shadow-sm text-emerald-500 text-sm sm:text-base">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <span class="text-[10px] sm:text-xs text-slate-600 font-medium">Q&A</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 100% Refund Guarantee Box -->
+        <div class="bg-amber-50/60 border border-amber-100 rounded-2xl p-4 sm:p-5 mb-4 flex items-center justify-between">
+            <div class="bg-gradient-to-br from-amber-600 to-amber-700 text-white p-3 rounded-xl text-center text-[10px] sm:text-xs font-bold leading-tight shadow-md shadow-amber-600/20">
+                100%<br>REFUND<br>GUARANTEE
+            </div>
+            <div class="px-3">
+                <h5 class="text-[13px] sm:text-sm font-bold text-amber-800 mb-0.5">100% Refund After Session</h5>
+                <p class="text-[11px] sm:text-xs text-amber-900/80 max-w-[260px]">Your satisfaction is our priority. Get 100% refund after attending the live session.</p>
+            </div>
+            <div class="text-2xl text-amber-600 bg-amber-100 p-3 rounded-full">
+                <i class="fa-solid fa-indian-rupee-sign"></i>
+            </div>
+        </div>
+
+        <!-- Communication Action Buttons -->
+        <div class="grid grid-cols-3 gap-3 mb-4">
+            <a href="https://whatsapp.com" target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white p-3 rounded-xl text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 transition">
+                <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp
+            </a>
+            <a href="tel:+1234567890" class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-xl text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 transition">
+                <i class="fa-solid fa-phone text-base"></i> Call
+            </a>
+            <a href="mailto:support@example.com" class="bg-purple-600 hover:bg-purple-700 text-white p-3 rounded-xl text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 transition">
+                <i class="fa-solid fa-envelope text-base"></i> Email
+            </a>
+        </div>
+
+        <!-- Back to Home -->
+        <div class="text-center">
+            <button onclick="goHome()" class="bg-transparent border border-slate-300 hover:bg-slate-50 text-slate-700 px-6 py-3 rounded-full text-xs sm:text-sm font-medium inline-flex items-center gap-2 transition">
+                <i class="fa-solid fa-house"></i> Back to Home
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript Interactivity -->
+    <script>
+        function bookSlot() {
+            alert("Redirecting to slot booking schedule...");
+        }
+
+        function goHome() {
+            window.location.href = "/";
+        }
+    </script>
+</body>
+</html>
