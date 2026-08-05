@@ -53,6 +53,20 @@
               from: { opacity: '0', transform: 'translateX(30px)' },
               to: { opacity: '1', transform: 'translateX(0)' },
             },
+            slideUpFade: {
+              from: { opacity: '0', transform: 'translateY(20px)' },
+              to: { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeLeft: {
+              '10%': { opacity: '0', transform: 'translateX(-200px)' },
+              '60%': { opacity: '0', transform: 'translateX(200px)' },
+              '100%': { opacity: '1', transform: 'translateX(0)' },
+            },
+            falling: {
+              from: { opacity: '0', transform: 'translateY(-100px)' },
+              '70%': { opacity: '1' },
+              to: { opacity: '1', transform: 'translateY(0)' },
+            },
             blob: {
               '0%': { transform: 'translate(0px, 0px) scale(1)' },
               '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
@@ -71,6 +85,9 @@
             'fade-up-d2': 'fade-up 0.6s 0.16s cubic-bezier(0.16,1,0.3,1) forwards',
             'fade-up-d3': 'fade-up 0.6s 0.24s cubic-bezier(0.16,1,0.3,1) forwards',
             'slide-in-fade': 'slide-in-fade 0.8s cubic-bezier(0.16,1,0.3,1) forwards',
+            'slide-up-fade': 'slideUpFade 0.9s cubic-bezier(0.2,1,0.3,1) forwards',
+            'fade-left-variable': 'fadeLeft calc(var(--i) * 0.4s) ease-in-out forwards',
+            'falling-variable': 'falling calc(var(--i) * 0.4s) ease-in-out forwards',
             blob: 'blob 7s infinite',
           },
         }
@@ -87,7 +104,7 @@
 
   <style type='text/tailwindcss'>
     @layer components {
-    /* ── HERO BACKGROUND — mirrors index.html hero-bg ── */
+    /* â”€â”€ HERO BACKGROUND — mirrors index.html hero-bg â”€â”€ */
     .hero-bg {
       background-image: url('../assets/image/banner7.jpg');
       background-size: cover;
@@ -272,7 +289,7 @@
       }
     }
 
-    /* ── NEW: trust badge strip under video ── */
+    /* â”€â”€ NEW: trust badge strip under video â”€â”€ */
     .badge-strip { @apply flex flex-col gap-2 p-3 bg-[#0E1A30]; background-image: radial-gradient(120% 160% at 0% 0%, rgba(241, 82, 30, 0.10), transparent 55%); }
 
     .badge-item { @apply relative flex items-center gap-3 py-3 px-[14px] rounded-[10px] bg-white/5 border border-white/10 transition-all duration-[400ms] ease-out cursor-pointer; }
@@ -373,7 +390,7 @@
       }
     }
 
-    /* ── Uiverse Blob Card CSS ── */
+    /* â”€â”€ Uiverse Blob Card CSS â”€â”€ */
     .card {
       position: relative;
       width: 100%;
@@ -438,7 +455,7 @@
       }
     }
 
-    /* ── Uiverse Step Card CSS ── */
+    /* â”€â”€ Uiverse Step Card CSS â”€â”€ */
     .step-card {
       position: relative;
       display: flex;
@@ -501,7 +518,7 @@
       height: 100%;
     }
 
-    /* ── NEW: Marquee Animation ── */
+    /* â”€â”€ NEW: Marquee Animation â”€â”€ */
     @keyframes marqueeLeft {
       0% {
         transform: translateX(0);
@@ -551,7 +568,7 @@
       background: linear-gradient(-90deg, #F3F4F6, transparent);
     }
 
-    /* ── FAQ accordion ── */
+    /* â”€â”€ FAQ accordion â”€â”€ */
     .faq-item {
       border: 1px solid #e5e7eb;
       border-radius: 14px;
@@ -591,7 +608,7 @@
       overflow: hidden;
     }
 
-    /* ── WhatsApp float ── */
+    /* â”€â”€ WhatsApp float â”€â”€ */
     .whatsapp-float {
       animation: whatsappFloat 3s ease-in-out infinite, whatsappPulse 2.4s ease-in-out infinite;
       background: linear-gradient(145deg, #2be463, #128c46);
@@ -618,7 +635,7 @@
       }
     }
 
-    /* ── Social rail ── */
+    /* â”€â”€ Social rail â”€â”€ */
     .social-rail a {
       position: relative;
       box-shadow: 0 8px 20px rgba(17, 24, 39, .16);
@@ -664,10 +681,10 @@
 
 <body class="bg-white text-gray-900 font-sans overflow-x-hidden antialiased">
 
-  <!-- ══════════════════════════════════════════
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
        HERO — banner7.jpg background, video + offer card inside
        Mirrors index.html hero layout exactly
-  ══════════════════════════════════════════════ -->
+  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
   <section class="hero-bg relative overflow-hidden">
     <!-- Dark overlay — same as index.html (bg-primary/85) -->
     <div class="absolute inset-0 bg-primary/85 z-0"></div>
@@ -694,7 +711,7 @@
       <!-- Bottom: video left, offer card right — EXACTLY like index.html -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-stretch">
 
-        <!-- ── LEFT: VIDEO CARD ── -->
+        <!-- â”€â”€ LEFT: VIDEO CARD â”€â”€ -->
         <div
           class="rounded-2xl border-2 border-accent overflow-hidden bg-primary shadow-2xl flex flex-col animate-fade-up-d1">
           <!-- Shimmer bar (identical to index.html) -->
@@ -718,7 +735,7 @@
           <div class="flex items-center justify-between gap-2.5 px-4 py-3 bg-black/80 backdrop-blur">
             <div class="flex items-center gap-2 text-sm font-semibold text-white">
               <span class="w-[26px] h-5 rounded flex items-center justify-center text-[10px]"
-                style="background-color:#F1521E;">▤</span>
+                style="background-color:#F1521E;">â–¤</span>
               Urgent Video - Watch Now
             </div>
             <div class="flex items-center gap-2 font-mono text-[10px] text-white/60 tracking-wider">
@@ -727,7 +744,7 @@
             </div>
           </div>
 
-          <!-- ══ NEW: Trust badge strip under video ══ -->
+          <!-- â•â• NEW: Trust badge strip under video â•â• -->
           <div class="badge-strip border-t border-white/10 border-solid">
             <div class="badge-item">
               <div class="badge-icon-wrap is-gold">
@@ -766,7 +783,7 @@
           </div>
         </div>
 
-        <!-- ── RIGHT: OFFER CARD ── -->
+        <!-- â”€â”€ RIGHT: OFFER CARD â”€â”€ -->
         <div
           class="bg-white rounded-2xl p-6 md:p-8 shadow-2xl relative border-t-4 border-accent transition-all duration-500 hover:scale-[1.005] animate-fade-up-d2">
 
@@ -776,30 +793,6 @@
               Private 1-on-1 Technology Brief
             </h2>
           </div>
-
-          <style>
-            .animated-char {
-              display: inline-block;
-              white-space: pre;
-              opacity: 0;
-            }
-
-            .in-view .animated-char {
-              animation: slideUpFade 0.9s cubic-bezier(0.2, 1, 0.3, 1) forwards;
-            }
-
-            @keyframes slideUpFade {
-              0% {
-                opacity: 0;
-                transform: translateY(20px);
-              }
-
-              100% {
-                opacity: 1;
-                transform: translateY(0);
-              }
-            }
-          </style>
 
           <script>
             document.addEventListener("DOMContentLoaded", () => {
@@ -811,7 +804,7 @@
 
               text.split("").forEach((char, i) => {
                 const span = document.createElement("span");
-                span.className = "animated-char";
+                span.className = "inline-block whitespace-pre opacity-0";
                 span.innerText = char;
                 span.style.animationDelay = `${i * 0.07}s`;
                 if (highlightIndex !== -1 && i >= highlightIndex) {
@@ -823,7 +816,9 @@
               const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                   if (entry.isIntersecting) {
-                    entry.target.classList.add("in-view");
+                    entry.target.querySelectorAll('span').forEach((span) => {
+                      span.classList.add('animate-[slideUpFade_0.9s_cubic-bezier(0.2,1,0.3,1)_forwards]');
+                    });
                     observer.unobserve(entry.target);
                   }
                 });
@@ -857,7 +852,7 @@
                    hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99]
                    flex items-center justify-center gap-3 cursor-pointer border-0"
             style="border:1px solid rgba(255,255,255,.38);">
-            <span class="font-normal text-base tracking-tight">👉 VERIFY &amp; LOCK MY 30-MIN SLOT</span>
+            <span class="font-normal text-base tracking-tight"> VERIFY &amp; LOCK MY 30-MIN SLOT</span>
             <span
               class="bg-black/20 border border-white/25 rounded-lg px-2.5 py-0.5 font-mono text-base font-normal">₹9</span>
           </a>
@@ -872,14 +867,12 @@
             </span>
             <span
               class="inline-flex items-center gap-2 bg-white border border-gray-200 shadow-sm rounded-full pl-2 pr-4 py-2 text-sm font-medium text-gray-600 whitespace-nowrap">
-              <span
-                class="w-7 h-7 shrink-0 rounded-full bg-orange-50 flex items-center justify-center text-accent text-[14px]">🔄</span>
+              
               <strong class="text-primary font-semibold">Immediate Refund</strong> after Session
             </span>
             <span
               class="inline-flex items-center gap-2 bg-white border border-gray-200 shadow-sm rounded-full pl-2 pr-4 py-2 text-sm font-medium text-gray-600 whitespace-nowrap">
-              <span
-                class="w-7 h-7 shrink-0 rounded-full bg-orange-50 flex items-center justify-center text-accent text-[14px]">🛡️</span>
+              
               100% <strong class="text-primary font-semibold">Data Privacy</strong>
             </span>
           </div>
@@ -893,9 +886,9 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
        WHY 85% OF MLM PLATFORMS FAIL — problem cards
-  ══════════════════════════════════════════════ -->
+  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
   <section class="bg-white">
     <div class="max-w-7xl mx-auto px-4 md:px-6 py-14 md:py-20">
       <div class="text-center max-w-2xl mx-auto mb-10">
@@ -973,9 +966,9 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
        THE 3-STEP SESSION BLUEPRINT — high-contrast counter section
-  ══════════════════════════════════════════════ -->
+  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
   <section class="bg-gray-100 relative overflow-hidden">
     <div class="absolute inset-0 opacity-[0.4] pointer-events-none"
       style="background-image: radial-gradient(circle at 1px 1px, #d1d5db 1px, transparent 0); background-size: 24px 24px;">
@@ -1054,21 +1047,21 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
        THE SMART WAY TO LAUNCH — offer recap + feature list
-  ══════════════════════════════════════════════ -->
+  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
   <section class="bg-gradient-to-b from-white to-gray-50">
     <div class="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-12">
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-center mb-10">
 
-        <!-- ── LEFT: IMAGE ── -->
+        <!-- â”€â”€ LEFT: IMAGE â”€â”€ -->
         <div class="order-2 md:order-1">
           <img src="../assets/image/live-session-image.jpg" alt="Live MLM architecture session"
             class="w-full h-auto object-cover">
         </div>
 
-        <!-- ── RIGHT: HEADLINE + CTA ── -->
+        <!-- â”€â”€ RIGHT: HEADLINE + CTA â”€â”€ -->
         <div class="order-1 md:order-2 text-center md:text-left">
           <div class="inline-flex items-center gap-3 text-sm font-semibold uppercase text-accent mb-3">
             <span class="w-6 h-px bg-accent"></span> The Offer
@@ -1093,7 +1086,7 @@
           <a href="https://rzp.io/rzp/2AM4XmrY" target="_blank" rel="noopener"
             class="cta-btn mt-7 inline-flex items-center justify-center gap-2.5 text-white font-normal text-base px-8 py-4 rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] transition-all duration-300 cursor-pointer border-0"
             style="border:1px solid rgba(255,255,255,.38);">
-            <span>🎯 Claim Your Private Live Slot Now</span>
+            <span>Claim Your Private Live Slot Now</span>
           </a>
         </div>
 
@@ -1102,9 +1095,7 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════
-       WHAT YOU WILL EXPERIENCE — full-width gray section
-  ══════════════════════════════════════════════ -->
+ 
   <section class="bg-gray-100 relative overflow-hidden">
     <div class="absolute inset-0 opacity-[0.4] pointer-events-none"
       style="background-image: radial-gradient(circle at 1px 1px, #d1d5db 1px, transparent 0); background-size: 24px 24px;">
@@ -1114,35 +1105,6 @@
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-8">
           <div class="w-10 h-px bg-gray-300 mx-auto mb-5"></div>
-          <style>
-            .animated-experience li {
-              opacity: 0;
-            }
-
-            .animated-experience.in-view li {
-              animation-name: fadeLeftExp;
-              animation-duration: calc(var(--i) * 0.4s);
-              animation-fill-mode: forwards;
-              animation-timing-function: ease-in-out;
-            }
-
-            @keyframes fadeLeftExp {
-              10% {
-                transform: translateX(-200px);
-                opacity: 0;
-              }
-
-              60% {
-                opacity: 0;
-                transform: translateX(200px);
-              }
-
-              100% {
-                opacity: 1;
-                transform: translateX(0);
-              }
-            }
-          </style>
           <script>
             document.addEventListener('DOMContentLoaded', () => {
               const observer = new IntersectionObserver((entries) => {
@@ -1164,7 +1126,7 @@
             class="text-2xl md:text-3xl font-bold text-primary font-display leading-tight flex flex-wrap justify-center gap-x-[0.25em] gap-y-2">
             <span>What You Will Experience</span>
             <ul
-              class="inline-flex flex-wrap justify-center gap-[0.25em] list-none m-0 p-0 text-orange-700 animated-experience">
+              class="inline-flex flex-wrap justify-center gap-[0.25em] list-none m-0 p-0 text-orange-700 animated-experience [&>li]:opacity-0 [&.in-view>li]:animate-fade-left-variable">
               <li style="--i: 1">Inside</li>
               <li style="--i: 2">the</li>
               <li style="--i: 3">Live</li>
@@ -1241,9 +1203,23 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
        TESTIMONIALS (Video)
-  ══════════════════════════════════════════════ -->
+  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+  <section class="bg-slate-50 px-4 py-12 md:px-6 md:py-20" id="mlm-software-demos">
+    <div class="mx-auto max-w-[1800px]">
+      <div class="mx-auto mb-9 max-w-3xl text-center md:mb-12">
+        <div class="mb-4 inline-flex items-center gap-3 text-sm font-semibold uppercase text-accent">
+          <span class="h-px w-6 bg-accent"></span> Live product walkthroughs <span class="h-px w-6 bg-accent"></span>
+        </div>
+        <h2 class="font-display text-3xl font-bold text-primary md:text-4xl">Customized MLM Software Demo</h2>
+        <p class="mt-4 text-base leading-relaxed text-gray-600">Explore four working MLM plan demos and see the real product experience before your private session.</p>
+      </div>
+
+      <div id="mlmDemoGrid" class="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4"></div>
+    </div>
+  </section>
+
   <section class="py-10 md:py-24 px-4 md:px-6 bg-white" id="testimonials">
     <div class="max-w-3xl mx-auto text-center mb-8 md:mb-16">
       <div class="inline-flex items-center gap-3 text-sm font-semibold uppercase text-accent mb-4">
@@ -1376,9 +1352,9 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
        OUR CLIENTS
-  ══════════════════════════════════════════════ -->
+  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
   <section class="py-12 md:py-20 px-4 md:px-6 bg-gray-100 border-t border-gray-100 overflow-hidden" id="clients">
     <div class="max-w-3xl mx-auto text-center mb-10 md:mb-16">
       <div class="inline-flex items-center gap-3 text-sm font-semibold uppercase text-accent mb-4">
@@ -1535,53 +1511,24 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
        THE TRUTH ABOUT THE ₹9 FEE
-  ══════════════════════════════════════════════ -->
+  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
   <section class="bg-white border-t border-gray-100">
     <div class="max-w-7xl mx-auto px-4 md:px-6 py-14 md:py-20">
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-center mb-10">
 
-        <!-- ── LEFT: IMAGE ── -->
+        <!-- â”€â”€ LEFT: IMAGE â”€â”€ -->
         <div class="order-2 md:order-1">
           <img src="../assets/image/9-rupees.png" alt="₹9 commitment fee" class="w-full h-auto object-contain">
         </div>
 
-        <!-- ── RIGHT: HEADLINE + COPY ── -->
+        <!-- â”€â”€ RIGHT: HEADLINE + COPY â”€â”€ -->
         <div class="order-1 md:order-2 text-center md:text-left">
           <div class="inline-flex items-center gap-3 text-sm font-semibold uppercase text-accent mb-3">
             <span class="w-6 h-px bg-accent"></span> Full Transparency
           </div>
-          <style>
-            .animated-founders li {
-              opacity: 0;
-            }
-
-            .animated-founders.in-view li {
-              animation-name: fadeLeft;
-              animation-duration: calc(var(--i) * 0.4s);
-              animation-fill-mode: forwards;
-              animation-timing-function: ease-in-out;
-            }
-
-            @keyframes fadeLeft {
-              10% {
-                transform: translateX(-200px);
-                opacity: 0;
-              }
-
-              60% {
-                opacity: 0;
-                transform: translateX(200px);
-              }
-
-              100% {
-                opacity: 1;
-                transform: translateX(0);
-              }
-            }
-          </style>
           <script>
             document.addEventListener('DOMContentLoaded', () => {
               const observer = new IntersectionObserver((entries) => {
@@ -1601,7 +1548,7 @@
           </script>
           <h2 class="text-2xl md:text-3xl font-bold text-primary font-display leading-tight">
             The Truth About The ₹9 Fee: We Only
-            <ul class="inline-flex flex-wrap gap-[0.25em] list-none m-0 p-0 text-orange-700 animated-founders">
+            <ul class="inline-flex flex-wrap gap-[0.25em] list-none m-0 p-0 text-orange-700 animated-founders [&>li]:opacity-0 [&.in-view>li]:animate-fade-left-variable">
               <li style="--i: 1">Work</li>
               <li style="--i: 2">With</li>
               <li style="--i: 3">Serious</li>
@@ -1663,9 +1610,9 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
        PRICE BOX — Secure Your Consultation
-  ══════════════════════════════════════════════ -->
+  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
   <section class="bg-gray-100 relative overflow-hidden">
     <div class="absolute inset-0 opacity-[0.4] pointer-events-none"
       style="background-image: radial-gradient(circle at 1px 1px, #d1d5db 1px, transparent 0); background-size: 24px 24px;">
@@ -1676,34 +1623,6 @@
         <div class="inline-flex items-center gap-3 text-sm font-semibold uppercase text-accent mb-3">
           <span class="w-6 h-px bg-accent"></span> No Catch <span class="w-6 h-px bg-accent"></span>
         </div>
-        <style>
-          .animated-strategy li {
-            opacity: 0;
-          }
-
-          .animated-strategy.in-view li {
-            animation-name: falling;
-            animation-duration: calc(var(--i) * 0.4s);
-            animation-fill-mode: forwards;
-            animation-timing-function: ease-in-out;
-          }
-
-          @keyframes falling {
-            0% {
-              opacity: 0;
-              transform: translateY(-100px);
-            }
-
-            70% {
-              opacity: 1;
-            }
-
-            100% {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-        </style>
         <script>
           document.addEventListener('DOMContentLoaded', () => {
             const observer = new IntersectionObserver((entries) => {
@@ -1724,7 +1643,7 @@
         <h2 class="text-2xl md:text-3xl font-bold text-primary font-display leading-tight">
           No Subscriptions. No Commitments.<br class="hidden md:block">
           <ul
-            class="inline-flex flex-wrap justify-center gap-[0.25em] list-none m-0 p-0 text-orange-700 animated-strategy">
+            class="inline-flex flex-wrap justify-center gap-[0.25em] list-none m-0 p-0 text-orange-700 animated-strategy [&>li]:opacity-0 [&.in-view>li]:animate-falling-variable">
             <li style="--i: 1">Just</li>
             <li style="--i: 2">Pure</li>
             <li style="--i: 3">Strategy.</li>
@@ -1732,7 +1651,7 @@
         </h2>
       </div>
 
-      <!-- ── Ticket-style price card ── -->
+      <!-- â”€â”€ Ticket-style price card â”€â”€ -->
       <div
         class="relative grid grid-cols-1 md:grid-cols-[1fr_400px] gap-8 md:gap-12 items-center transition-all duration-500">
 
@@ -1784,7 +1703,7 @@
                      hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99]
                      flex items-center justify-center gap-3 cursor-pointer border-0 relative z-10"
             style="border:1px solid rgba(255,255,255,.38);">
-            <span class="font-normal text-base tracking-tight">💳 Secure Your Consultation for ₹9</span>
+            <span class="font-normal text-base tracking-tight">Secure Your Consultation for ₹9</span>
           </a>
 
           <div class="mt-4 flex flex-wrap items-center justify-center md:justify-start gap-2 relative z-10">
@@ -1796,8 +1715,10 @@
             </span>
             <span
               class="inline-flex items-center gap-1.5 bg-gray-50 border border-gray-200 rounded-full pl-1.5 pr-3 py-1 text-[11px] font-medium text-gray-500">
+
               <span
-                class="w-5 h-5 rounded-full bg-white flex items-center justify-center text-accent text-[11px] shadow-sm">🔄</span>
+                class="w-5 h-5 rounded-full bg-white flex items-center justify-center text-accent text-[11px] shadow-sm">
+              </span>
               Instant Refund
             </span>
             <span
@@ -1820,9 +1741,9 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
        FAQ — Strategic FAQ Section
-  ══════════════════════════════════════════════ -->
+  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
   <section class="bg-white border-t border-gray-100" id="faq">
     <div class="max-w-4xl mx-auto px-4 md:px-6 py-14 md:py-20">
       <div class="text-center max-w-2xl mx-auto mb-10 md:mb-12">
@@ -1939,19 +1860,19 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
        FOOTER  (matches index.html footer style)
-  ══════════════════════════════════════════════ -->
+  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
   <footer class="bg-primary text-gray-400 py-12 px-4 md:px-6 border-t border-white/10 text-base">
     <div class="max-w-7xl mx-auto flex flex-col gap-8">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <img src="../assets/image/VK Enterprise wht Logo.png" alt="VK Services Enterprise" class="h-14 w-auto mb-4">
-          <p class="mb-2">Copyright © 2025 | By Vishwajit Kumar</p>
+          <p class="mb-2">Copyright Â© 2025 | By Vishwajit Kumar</p>
           <p class="mb-1"><span class="text-white font-semibold">Corporate Office:</span> Plot No: 1632/15509,
             Khata No: 1330/10531, Satya vihar, Rasulgarh, Bhubaneswar, Odisha, 751017</p>
           <p><span class="text-white font-semibold">Official Address:</span> 4th Floor, New Annex Building
-            Arch Bishop’s House, Satya Nagar, Bhubaneswar, Odisha 751007</p>
+            Arch Bishop's House, Satya Nagar, Bhubaneswar, Odisha 751007</p>
         </div>
         <div class="flex flex-col md:items-end justify-center">
           <div class="flex flex-wrap gap-4 text-accentLight mb-4">
@@ -1965,9 +1886,9 @@
         </div>
       </div>
       <div class="border-t border-white/10 pt-8 text-base leading-relaxed text-white">
-        <p class="mb-4">This site is not a part of the Facebook™ website or Facebook™ Inc or Google.
-          Additionally, This site is NOT endorsed by Facebook™ / Google in any way. FACEBOOK™ is a trademark
-          of FACEBOOK™, Inc. As stipulated by law, we can not and do not make any guarantees about your
+        <p class="mb-4">This site is not a part of the Facebookâ„¢ website or Facebookâ„¢ Inc or Google.
+          Additionally, This site is NOT endorsed by Facebookâ„¢ / Google in any way. FACEBOOKâ„¢ is a trademark
+          of FACEBOOKâ„¢, Inc. As stipulated by law, we can not and do not make any guarantees about your
           ability to get results or earn any money with my ideas/software, information, tools or strategies. I
           just want to help you by giving great content, direction and strategies that worked well for me and
           my clients and that I believe can help you move forward.</p>
@@ -1979,13 +1900,56 @@
     </div>
   </footer>
 
-  <!-- ══════════════════════════════════════════
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
        SCRIPTS
-  ══════════════════════════════════════════════ -->
+  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
   <script>
     // Year
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    // Customized MLM software demos — sourced from public/custom-mlm.html.
+    const mlmDemoPlans = [
+      ['Ecommerce Product Base, Sub-Admin Panel, Auto Rebirth, Autopool & Repurchase (Admin Manageable CRM)', 'https://www.youtube.com/embed/OEPak8gDkVI?start=4&rel=0', [['Admin Details','https://vkservicesenterprise.biz/boon/admin@25boonplusi','admin','password'],['User Details','https://vkservicesenterprise.biz/boon/login','VK2025','12345'],['E-commerce Admin Details','https://vkservicesenterprise.biz/boon/controller','Admin','password']]],
+      ['ECOMMERCE + AD + ROI + SALARY + SOCIAL MEDIA STATUS MLM PLAN', 'https://www.youtube.com/embed/g4T04Pwa3_s?start=3&rel=0', [['Admin Details','https://vkservicesenterprise.biz/kgtask/admin/index','admin','password'],['User Details','https://vkservicesenterprise.biz/kgtask/login','KGF5001','12345'],['Ecommerce Admin Details','https://vkservicesenterprise.biz/kgtask/controller/','admin','password']]],
+      ['Ecommerce Product Base, REPURCHASE, Admin Direct Billing Inventory (ADMIN Manageable CRM)', 'https://www.youtube.com/embed/OEPak8gDkVI?start=1&rel=0', [['Admin Details','https://vkservicesenterprise.biz/sriram/admin@25sriram','admin','password'],['User Details','https://vkservicesenterprise.biz/sriram/login.php','VK2025','12345'],['E-commerce Admin Details','https://vkservicesenterprise.biz/sriram/controller/','Admin','password']]],
+       ['Ecommerce + REPURCHASE + AUTOPOOL + INCENTIVE PLAN', 'https://www.youtube.com/embed/OEPak8gDkVI?rel=0', [['Admin Details','https://vkservicesenterprise.biz/autopool/admin170','admin','password'],['User Details','https://vkservicesenterprise.biz/autopool/login','MDL1001','1234567'],['E-commerce Admin Details','https://vkservicesenterprise.biz/autopool/admin/login.php','admin','password']]],
+ ['TRADING BROKERAGE ACCOUNT MANAGE, UNILEVEL + ROYALTY, RETURN MANAGE, ADMIN MANAGABLE CRM PLAN', 'https://www.youtube.com/embed/OEPak8gDkVI?rel=0', [['Admin Details','https://vkservicesenterprise.biz/bbfx/admin@24bbfx/','admin','password'],['User Details','https://vkservicesenterprise.biz/bbfx/login.php','BBF2024','12345']]],
+ ['ADVANCE MEMBER MATCHING, LINK MATCHING & EPIN MANAGEMENT HELPING PLAN', 'https://www.youtube.com/embed/OEPak8gDkVI?rel=0', [['Admin Details','https://vkservicesenterprise.biz/winhlp/admin.help','admin','password'],['User Details','https://vkservicesenterprise.biz/winhlp/login','WIN5001','123456']]],
+ ['PRODUCT BASE TREE VIEW SEND & RECIEVE HELPING PLAN', 'https://www.youtube.com/embed/OEPak8gDkVI?rel=0', [['Admin Details','https://vkservicesenterprise.biz/upnup/admin@999/index.php','admin','password'],['User Details','https://vkservicesenterprise.biz/upnup/index.php','UPN5001','123456']]],
+     ['BINARY + GENERATION PRODUCT BASE, NORMAL PRODUCT BILLING INVENTORY, EPIN & FUND MANAGEMENT PLAN', 'https://www.youtube.com/embed/OEPak8gDkVI?rel=0', [['Admin Details','https://vkservicesenterprise.biz/binaryrepurchase/admin','admin','password12'],['User Details','https://vkservicesenterprise.biz/binaryrepurchase/login','1001','123456']]],
+
+        ];
+
+    const mlmDemoGrid = document.getElementById('mlmDemoGrid');
+    if (mlmDemoGrid) {
+      mlmDemoGrid.innerHTML = mlmDemoPlans.map(([title, video, details]) => `
+        <article class="flex flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-md transition duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl">
+          <div class="min-h-[104px] border-b border-white/10 bg-primary px-4 py-3"><h3 class="font-display text-sm font-bold leading-snug text-white">${title}</h3></div>
+          <div class="aspect-video bg-black"><iframe class="h-full w-full border-0" src="${video}" title="MLM software demo: ${title}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div class="space-y-3 p-4">${details.map(([label, link, username, password]) => `
+            <div class="rounded-xl border border-gray-100 bg-gray-50 p-3 text-xs leading-relaxed">
+              <p class="font-display font-bold text-primary">${label}</p>
+              <a class="mt-1 block break-all text-accent hover:underline" href="${link}" target="_blank" rel="noopener">${link}</a>
+              <div class="mt-1.5 flex flex-wrap items-center gap-2 text-gray-600"><strong class="text-primary">${label === 'User Details' ? 'User ID' : 'Username'}:</strong><span>${username}</span><button type="button" class="copy-btn inline-flex items-center gap-1 rounded-md bg-primary px-2.5 py-1 text-[11px] font-semibold text-white shadow transition hover:-translate-y-0.5" data-copy="${username}">Copy</button></div>
+              <div class="mt-1 flex flex-wrap items-center gap-2 text-gray-600"><strong class="text-primary">Password:</strong><span>${password}</span><button type="button" class="copy-btn inline-flex items-center gap-1 rounded-md bg-primary px-2.5 py-1 text-[11px] font-semibold text-white shadow transition hover:-translate-y-0.5" data-copy="${password}">Copy</button></div>
+            </div>`).join('')}</div>
+        </article>`).join('');
+
+      mlmDemoGrid.querySelectorAll('.copy-btn').forEach((button) => {
+        button.addEventListener('click', async () => {
+          const value = button.getAttribute('data-copy');
+          try { await navigator.clipboard.writeText(value); } catch (error) { /* Clipboard access can be unavailable. */ }
+          const original = button.textContent;
+          button.textContent = 'Copied!';
+          button.classList.replace('bg-primary', 'bg-accent');
+          window.setTimeout(() => {
+            button.textContent = original;
+            button.classList.replace('bg-accent', 'bg-primary');
+          }, 1500);
+        });
+      });
+    }
 
     // Scroll animation trigger for Try, Test, Verify
     const fadeObserver = new IntersectionObserver((entries) => {
@@ -2006,7 +1970,7 @@
       fadeObserver.observe(fadeContainer);
     }
 
-    // ── Smooth FAQ accordion (animates <details> height on open/close) ──
+    // â”€â”€ Smooth FAQ accordion (animates <details> height on open/close) â”€â”€
     class SmoothAccordion {
       constructor(el) {
         this.el = el;
@@ -2089,18 +2053,6 @@
   </a>
 
   <script>
-    const testimonialStyle = document.createElement('style');
-    testimonialStyle.textContent = `
-      .testimonial-card { aspect-ratio: auto !important; overflow: hidden !important; background: #fff !important; border: 2px solid #f1521e !important; border-radius: 16px !important; cursor: default !important; }
-      .testimonial-video { position: relative !important; inset: auto !important; display: block !important; width: 100% !important; height: auto !important; aspect-ratio: 9 / 16; object-fit: cover !important; background: #000 !important; }
-      .testimonial-gradient { display: none !important; }
-.testimonial-details { position: relative !important; inset: auto !important; z-index: 1 !important; padding: 1.15rem 1rem 1.25rem !important; background: #000 !important; pointer-events: auto !important; }
-      .testimonial-details > div { padding: 0 !important; background: transparent !important; border: 0 !important; box-shadow: none !important; backdrop-filter: none !important; }
-.testimonial-details h4 { margin: 0 0 .55rem !important; color: #fff !important; font-size: 1.35rem !important; line-height: 1.2 !important; }
-.testimonial-details p { margin: 0 !important; color: #ea580c !important; font-size: .84rem !important; line-height: 1.55 !important; }
-    `;
-    document.head.appendChild(testimonialStyle);
-
     document.querySelectorAll('#testimonials video').forEach((video) => {
       video.muted = true;
       video.autoplay = true;
@@ -2112,12 +2064,12 @@
       const gradient = video.nextElementSibling;
       const details = gradient?.nextElementSibling;
 
-      card.classList.add('testimonial-card');
+      card.classList.add('!aspect-auto', '!overflow-hidden', '!bg-white', '!border-2', '!border-accent', '!rounded-2xl', '!cursor-default');
       card.classList.remove('aspect-[9/16]', 'cursor-pointer');
-      video.classList.add('testimonial-video');
+      video.classList.add('!relative', '!inset-auto', '!block', '!w-full', '!h-auto', 'aspect-[9/16]', '!object-cover', '!bg-black');
       video.classList.remove('absolute', 'inset-0', 'h-full');
-      gradient?.classList.add('testimonial-gradient');
-      details?.classList.add('testimonial-details');
+      gradient?.classList.add('!hidden');
+      details?.classList.add('!relative', '!inset-auto', '!z-[1]', '!px-4', '!pt-[1.15rem]', '!pb-5', '!bg-black', '!pointer-events-auto', '[&>div]:!p-0', '[&>div]:!bg-transparent', '[&>div]:!border-0', '[&>div]:!shadow-none', '[&>div]:!backdrop-blur-none', '[&_h4]:!mb-[.55rem]', '[&_h4]:!text-[1.35rem]', '[&_h4]:!leading-[1.2]', '[&_p]:!m-0', '[&_p]:!text-[.84rem]', '[&_p]:!leading-[1.55]');
     });
   </script>
 </body>
