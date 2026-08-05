@@ -1,6 +1,6 @@
 import express from "express";
 import { authenticateAdmin } from "../middleware/authMiddleware.js";
-import { getLiveSessionRegistrations, registerForLiveSession, scheduleLiveSession, createOrder, createGoogleMeetLink, rescheduleLiveSession, deleteRegistration } from "../controllers/liveSessionController.js";
+import { getLiveSessionRegistrations, registerForLiveSession, scheduleLiveSession, createOrder, createGoogleMeetLink, rescheduleLiveSession, deleteRegistration, sendMeetLinkEmail } from "../controllers/liveSessionController.js";
 
 const router = express.Router();
 router.post("/create-order", createOrder);
@@ -9,6 +9,7 @@ router.get("/registrations", authenticateAdmin, getLiveSessionRegistrations);
 router.post("/registrations/:id/schedule", authenticateAdmin, scheduleLiveSession);
 router.put("/registrations/:id/reschedule", authenticateAdmin, rescheduleLiveSession);
 router.delete("/registrations/:id", authenticateAdmin, deleteRegistration);
+router.post("/registrations/:id/send-meet-link", authenticateAdmin, sendMeetLinkEmail);
 router.post(
     "/registrations/:id/create-meet",
     authenticateAdmin,

@@ -305,13 +305,14 @@
                   <th class="px-5 py-4 font-bold text-sm uppercase tracking-wider text-white">Payment</th>
                   <th class="px-5 py-4 font-bold text-sm uppercase tracking-wider text-white">Request</th>
                   <th class="px-5 py-4 font-bold text-sm uppercase tracking-wider text-white">Status</th>
-                  <th class="px-5 py-4 font-bold text-sm uppercase tracking-wider text-white">Session time</th>
+                  <th class="px-5 py-4 font-bold text-sm uppercase tracking-wider text-white">Preferred Slot</th>
+                  <th class="px-5 py-4 font-bold text-sm uppercase tracking-wider text-white">Session Time</th>
                   <th class="px-5 py-4 font-bold text-sm uppercase tracking-wider text-white text-center">Action</th>
                 </tr>
               </thead>
               <tbody id="registrationsBody" class="divide-y divide-white/5">
                 <tr>
-                  <td colspan="7" class="p-8 text-center text-gray-400">Loading registrations...</td>
+                  <td colspan="8" class="p-8 text-center text-gray-400">Loading registrations...</td>
                 </tr>
               </tbody>
             </table>
@@ -610,6 +611,14 @@
             ${row.status}
           </span>
         </td>
+        <td class="px-5 py-4 align-middle">
+          ${row.preferred_slot
+            ? `<span class="inline-flex items-center gap-1.5 text-xs font-semibold text-violet-300 bg-violet-500/10 border border-violet-500/20 px-2.5 py-1 rounded-full">
+                <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                ${escapeHtml(row.preferred_slot)}
+               </span>`
+            : '<span class="text-gray-600 text-xs">—</span>'}
+        </td>
         <td class="px-5 py-4 align-middle text-sm text-gray-300">
           ${row.status === 'Scheduled' && row.meeting_link ? `
           <a href="${escapeHtml(row.meeting_link)}" target="_blank" rel="noopener"
@@ -622,13 +631,13 @@
           </a>` : ''}
           <div>${formatDate(row.scheduled_at)}</div>
         </td>
-        <td class="px-5 py-4 align-middle text-center">
-          <div class="flex items-center justify-center gap-2">
+        <td class="px-5 py-4 align-middle text-center whitespace-nowrap">
+          <div class="flex items-center justify-center gap-2 flex-nowrap">
             ${row.status === 'Scheduled'
-          ? `<a class="inline-flex items-center gap-1.5 text-[13px] font-semibold text-white bg-emerald-600 hover:bg-emerald-500 px-3 py-1.5 rounded-lg transition-all shadow-md shadow-emerald-900/40 group" href="${escapeHtml(row.meeting_link)}" target="_blank" rel="noopener" title="Open Meet">
-                   <svg class="w-4 h-4 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 10l4.553-2.069A1 1 0 0 1 21 8.87v6.26a1 1 0 0 1-1.447.899L15 14M3 8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8z"/></svg>
-                   Meet
-                 </a>
+          ? `<button class="sendLinkBtn inline-flex items-center gap-1.5 text-[13px] font-semibold text-white bg-emerald-600 hover:bg-emerald-500 px-3 py-1.5 rounded-lg transition-all shadow-md shadow-emerald-900/40 group" data-id="${row.id}" data-name="${escapeHtml(row.name)}" data-email="${escapeHtml(row.email)}" title="Send Meet Link Email">
+                   <svg class="w-4 h-4 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 19-7z"/></svg>
+                   Send Link
+                 </button>
                  <button class="scheduleBtn inline-flex items-center justify-center w-[34px] h-[34px] rounded-lg text-cyan-400 bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 transition-all shadow-sm group" data-id="${row.id}" data-name="${escapeHtml(row.name)}" data-mode="reschedule" title="Reschedule">
                    <svg class="w-4 h-4 group-hover:-rotate-90 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
                  </button>`
@@ -645,6 +654,7 @@
     `).join('');
 
       document.querySelectorAll('.scheduleBtn').forEach(button => button.addEventListener('click', () => openSchedule(button.dataset.id, button.dataset.name, button.dataset.mode || 'schedule')));
+      document.querySelectorAll('.sendLinkBtn').forEach(button => button.addEventListener('click', () => sendMeetLink(button.dataset.id, button.dataset.name, button.dataset.email)));
       document.querySelectorAll('.deleteBtn').forEach(button => button.addEventListener('click', () => deleteRegistration(button.dataset.id, button.dataset.name)));
     }
 
@@ -1048,12 +1058,58 @@
       loadRegistrations();
     });
 
+
+    /* ── Send Meet Link to user email ── */
+    async function sendMeetLink(id, name, email) {
+      const result = await Swal.fire({
+        title: 'Send Meet Link?',
+        html: `Send the Google Meet link to <strong>${name}</strong> at<br><span class="text-sm text-gray-400">${email}</span>`,
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#059669',
+        cancelButtonColor: '#4b5563',
+        confirmButtonText: '📧 Yes, Send Email',
+        cancelButtonText: 'Cancel',
+        background: '#0D1220',
+        color: '#fff'
+      });
+
+      if (!result.isConfirmed) return;
+
+      try {
+        const response = await fetch(`https://vkservicesenterprise.in/api/live-sessions/registrations/${id}/send-meet-link`, {
+          method: 'POST',
+          headers: { Authorization: `Bearer ${token}` }
+        });
+        const res = await response.json();
+        if (!response.ok) throw new Error(res.message || 'Could not send email.');
+
+        Swal.fire({
+          title: 'Email Sent!',
+          text: res.message || `Meet link emailed to ${email}`,
+          icon: 'success',
+          background: '#0D1220',
+          color: '#fff',
+          confirmButtonColor: '#059669'
+        });
+      } catch (error) {
+        Swal.fire({
+          title: 'Error!',
+          text: error.message,
+          icon: 'error',
+          background: '#0D1220',
+          color: '#fff',
+          confirmButtonColor: '#9333ea'
+        });
+      }
+    }
+
     /* ── Export Functionality ── */
     document.getElementById('exportCsvBtn').addEventListener('click', () => {
       const data = getFiltered();
       if (data.length === 0) return showMessage('No data to export.', true);
 
-      const headers = ['Name', 'Email', 'Mobile', 'Amount', 'Order ID', 'Payment ID', 'Status', 'Session Time', 'Message'];
+      const headers = ['Name', 'Email', 'Mobile', 'Amount', 'Order ID', 'Payment ID', 'Status', 'Preferred Slot', 'Session Time', 'Message'];
       const rows = data.map(r => [
         '"' + (r.name || '').replace(/"/g, '""') + '"',
         '"' + (r.email || '').replace(/"/g, '""') + '"',
@@ -1062,6 +1118,7 @@
         '"' + (r.order_id || '').replace(/"/g, '""') + '"',
         '"' + (r.payment_id || '').replace(/"/g, '""') + '"',
         '"' + (r.status || 'Pending') + '"',
+        '"' + (r.preferred_slot || '').replace(/"/g, '""') + '"',
         '"' + (r.scheduled_at ? new Date(r.scheduled_at).toLocaleString('en-IN') : '') + '"',
         '"' + (r.message || '').replace(/"/g, '""') + '"'
       ]);
@@ -1092,7 +1149,7 @@
       doc.setTextColor(120, 120, 140);
       doc.text('Generated: ' + new Date().toLocaleString('en-IN'), 14, 22);
 
-      const head = [['Name', 'Email', 'Mobile', 'Amount', 'Status', 'Session Time']];
+      const head = [['Name', 'Email', 'Mobile', 'Amount', 'Status', 'Preferred Slot', 'Session Time']];
       const tableBody = data.map(function(r) {
         return [
           r.name || '',
@@ -1100,6 +1157,7 @@
           r.mobile || '',
           r.amount ? 'Rs ' + r.amount : '0',
           r.status || 'Pending',
+          r.preferred_slot || '—',
           r.scheduled_at ? new Date(r.scheduled_at).toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short' }) : '—'
         ];
       });
@@ -1118,6 +1176,7 @@
     });
 
     loadRegistrations();
+
   </script>
 </body>
 

@@ -85,7 +85,8 @@
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet">
 
-  <style>
+  <style type='text/tailwindcss'>
+    @layer components {
     /* ── HERO BACKGROUND — mirrors index.html hero-bg ── */
     .hero-bg {
       background-image: url('../assets/image/banner7.jpg');
@@ -272,35 +273,11 @@
     }
 
     /* ── NEW: trust badge strip under video ── */
-    .badge-strip {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      padding: 12px;
-      background:
-        radial-gradient(120% 160% at 0% 0%, rgba(241, 82, 30, 0.10), transparent 55%),
-        #0E1A30;
-    }
+    .badge-strip { @apply flex flex-col gap-2 p-3 bg-[#0E1A30]; background-image: radial-gradient(120% 160% at 0% 0%, rgba(241, 82, 30, 0.10), transparent 55%); }
 
-    .badge-item {
-      position: relative;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 14px;
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      transition: all 400ms ease;
-      cursor: pointer;
-    }
+    .badge-item { @apply relative flex items-center gap-3 py-3 px-[14px] rounded-[10px] bg-white/5 border border-white/10 transition-all duration-[400ms] ease-out cursor-pointer; }
 
-    .badge-item:hover {
-      background: rgba(241, 82, 30, 0.08);
-      border-color: rgba(241, 82, 30, 0.35);
-      transform: scale(1.05, 1.05);
-      z-index: 10;
-    }
+    .badge-item:hover { @apply bg-[#f1521e]/10 border-[#f1521e]/35 scale-105 z-10; }
 
     .badge-strip:hover>.badge-item:not(:hover) {
       filter: blur(5px);
@@ -342,26 +319,11 @@
       box-shadow: 0 2px 8px rgba(251, 113, 133, 0.15);
     }
 
-    .badge-text {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      min-width: 0;
-    }
+    .badge-text { @apply flex flex-col gap-[2px] min-w-0; }
 
-    .badge-label {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 600;
-      font-size: 15px;
-      color: #fff;
-      line-height: 1.25;
-    }
+    .badge-label { @apply font-display font-semibold text-[15px] text-white leading-tight; }
 
-    .badge-sub {
-      font-size: 12px;
-      color: rgba(255, 255, 255, 0.5);
-      line-height: 1.25;
-    }
+    .badge-sub { @apply text-xs text-white/50 leading-tight; }
 
     .typewriter {
       display: inline-block;
@@ -489,18 +451,7 @@
       z-index: 10;
     }
 
-    .step-content {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 28px;
-      border-radius: 22px;
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
-      width: 100%;
-      height: 100%;
-    }
+    .step-content { @apply flex flex-col items-start p-7 rounded-[22px] bg-white border border-gray-200 w-full h-full; transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1); }
 
     .step-content::before {
       position: absolute;
@@ -707,6 +658,7 @@
       opacity: 1;
       transform: translateY(-50%) translateX(0);
     }
+      }
   </style>
 </head>
 
@@ -1305,7 +1257,8 @@
       <!-- Card 1 -->
       <div
         class="relative rounded-2xl overflow-hidden aspect-[9/16] bg-black group shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer">
-        <video class="absolute inset-0 w-full h-full object-cover" controls autoplay muted loop playsinline preload="metadata" aria-label="Client testimonial video">
+        <video class="absolute inset-0 w-full h-full object-cover" controls autoplay muted loop playsinline
+          preload="metadata" aria-label="Client testimonial video">
           <source src="../assets/videos/Review-1.mp4" type="video/mp4">
         </video>
         <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none">
@@ -1327,7 +1280,8 @@
       <!-- Card 2 -->
       <div
         class="relative rounded-2xl overflow-hidden aspect-[9/16] bg-black group shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer">
-        <video class="absolute inset-0 w-full h-full object-cover" controls autoplay muted loop playsinline preload="metadata" aria-label="Client testimonial video">
+        <video class="absolute inset-0 w-full h-full object-cover" controls autoplay muted loop playsinline
+          preload="metadata" aria-label="Client testimonial video">
           <source src="../assets/videos/Review 2.mp4" type="video/mp4">
         </video>
         <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none">
@@ -1349,7 +1303,8 @@
       <!-- Card 3 -->
       <div
         class="relative rounded-2xl overflow-hidden aspect-[9/16] bg-black group shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer">
-        <video class="absolute inset-0 w-full h-full object-cover" controls autoplay muted loop playsinline preload="metadata" aria-label="Client testimonial video">
+        <video class="absolute inset-0 w-full h-full object-cover" controls autoplay muted loop playsinline
+          preload="metadata" aria-label="Client testimonial video">
           <source src="../assets/videos/Review 3.mp4" type="video/mp4">
         </video>
         <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none">
@@ -1371,7 +1326,8 @@
       <!-- Card 4 -->
       <div
         class="relative rounded-2xl overflow-hidden aspect-[9/16] bg-black group shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer">
-        <video class="absolute inset-0 w-full h-full object-cover" controls autoplay muted loop playsinline preload="metadata" aria-label="Client testimonial video">
+        <video class="absolute inset-0 w-full h-full object-cover" controls autoplay muted loop playsinline
+          preload="metadata" aria-label="Client testimonial video">
           <source src="../assets/videos/Review-4.mp4" type="video/mp4">
         </video>
         <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none">
@@ -1395,7 +1351,8 @@
       <div
         class="relative rounded-2xl overflow-hidden aspect-[9/16] bg-black group shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer">
 
-        <video class="absolute inset-0 w-full h-full object-cover" controls autoplay muted loop playsinline preload="metadata" aria-label="Client testimonial video">
+        <video class="absolute inset-0 w-full h-full object-cover" controls autoplay muted loop playsinline
+          preload="metadata" aria-label="Client testimonial video">
           <source src="../assets/videos/Review-5.mp4" type="video/mp4">
         </video>
 
@@ -2149,7 +2106,7 @@
       video.autoplay = true;
       video.loop = true;
       video.playsInline = true;
-      video.play().catch(() => {});
+      video.play().catch(() => { });
 
       const card = video.parentElement;
       const gradient = video.nextElementSibling;
