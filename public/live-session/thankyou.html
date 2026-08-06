@@ -16,9 +16,9 @@
         extend: {
           colors: {
             teal: { DEFAULT: '#2bb7a5', d: '#1d8a7b' },
-            gold: { DEFAULT: '#f0c060', d: '#c8962a' },
-            ink: '#07111c',
-            surface: '#0b1a28'
+            gold: { DEFAULT: '#c8962a', d: '#a57820' },
+            ink: '#f0f7f6',
+            surface: '#e8f4f2'
           },
           fontFamily: {
             sans: ['Outfit', 'sans-serif'],
@@ -69,95 +69,92 @@
   </script>
 </head>
 
-<body class="min-h-screen overflow-x-hidden bg-ink font-sans text-[#dff2ef]">
-  <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-[radial-gradient(ellipse_120%_80%_at_-10%_-10%,#0e2535_0%,transparent_55%),radial-gradient(ellipse_100%_70%_at_110%_110%,#0c1e10_0%,transparent_50%),linear-gradient(180deg,#07111c_0%,#060e18_100%)]">
-    <div class="absolute inset-0 animate-grid bg-[linear-gradient(rgba(43,183,165,.04)_1px,transparent_1px),linear-gradient(90deg,rgba(43,183,165,.04)_1px,transparent_1px)] bg-[size:52px_52px]"></div>
-    <div class="absolute -left-36 -top-48 h-[600px] w-[600px] animate-blob rounded-full bg-[radial-gradient(circle,rgba(43,183,165,.14),transparent_70%)] blur-3xl"></div>
-    <div class="absolute -bottom-36 -right-28 h-[500px] w-[500px] animate-[blob_18s_ease-in-out_-4s_infinite_alternate] rounded-full bg-[radial-gradient(circle,rgba(240,192,96,.10),transparent_70%)] blur-3xl"></div>
+<body class="min-h-screen overflow-x-hidden bg-[#f0f7f6] font-sans text-[#0f2f2a]">
+  <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-[radial-gradient(ellipse_120%_80%_at_-10%_-10%,#d4eeea_0%,transparent_55%),radial-gradient(ellipse_100%_70%_at_110%_110%,#d9edd6_0%,transparent_50%),linear-gradient(180deg,#f0f7f6_0%,#e8f4f2_100%)]">
+    <div class="absolute inset-0 animate-grid bg-[linear-gradient(rgba(43,183,165,.07)_1px,transparent_1px),linear-gradient(90deg,rgba(43,183,165,.07)_1px,transparent_1px)] bg-[size:52px_52px]"></div>
+    <div class="absolute -left-36 -top-48 h-[600px] w-[600px] animate-blob rounded-full bg-[radial-gradient(circle,rgba(43,183,165,.18),transparent_70%)] blur-3xl"></div>
+    <div class="absolute -bottom-36 -right-28 h-[500px] w-[500px] animate-[blob_18s_ease-in-out_-4s_infinite_alternate] rounded-full bg-[radial-gradient(circle,rgba(200,150,42,.14),transparent_70%)] blur-3xl"></div>
   </div>
 
   <main class="mx-auto flex w-full max-w-[1440px] flex-col gap-5 px-4 py-4 pb-12 sm:px-7 sm:py-7">
     <header class="animate-rise-1 flex items-center justify-between px-1 text-sm sm:text-base">
     
     </header>
-    <section class="animate-rise-1 relative grid overflow-hidden rounded-[28px] border border-teal/25 bg-[linear-gradient(115deg,#0d2132,#0b1a28_58%,#102a35)] p-6 shadow-[0_22px_60px_rgba(0,0,0,.34)] lg:grid-cols-[1fr_auto] lg:items-center lg:gap-10 lg:p-9">
+    <section class="animate-rise-1 relative grid overflow-hidden rounded-[28px] border border-teal/30 bg-[linear-gradient(115deg,#d6f0ec,#e8f8f5_58%,#d0eceb)] p-6 shadow-[0_22px_60px_rgba(43,183,165,.14)] lg:grid-cols-[1fr_auto] lg:items-center lg:gap-10 lg:p-9">
       <div aria-hidden="true" class="absolute -right-28 -top-36 h-96 w-96 rounded-full bg-[radial-gradient(circle,rgba(43,183,165,.18),transparent_65%)]"></div>
       <div aria-hidden="true" class="absolute bottom-[-110px] left-[42%] h-64 w-64 rounded-full bg-[radial-gradient(circle,rgba(240,192,96,.12),transparent_65%)]"></div>
       <div class="relative">
         <div class="mb-4 grid h-14 w-14 place-items-center rounded-2xl border border-teal/35 bg-teal/10 text-3xl text-teal shadow-[0_0_28px_rgba(43,183,165,.22)]">
           <i class="fa-solid fa-circle-check"></i>
         </div>
-        <span class="inline-flex items-center gap-2 rounded-full border border-teal/35 bg-teal/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[.14em] text-teal">
+        <span class="inline-flex items-center gap-2 rounded-full border border-teal/25 bg-teal/5 px-3 py-1.5 text-xs font-bold uppercase tracking-[.14em] text-teal">
           <span class="h-1.5 w-1.5 rounded-full bg-teal"></span> Booking Confirmed
         </span>
-        <h1 class="mt-4 font-display text-5xl leading-[1.08] text-white sm:text-6xl">Your Live Session<br><span class="inline-block w-0 overflow-hidden whitespace-nowrap border-r-2 border-teal pr-1 animate-type-booked motion-reduce:w-auto motion-reduce:animate-none">is Booked!</span></h1>
-        <p class="mt-4 max-w-xl text-base leading-7 text-[#bee1da]/75 sm:text-lg">Your payment has been received and your booking is confirmed. Our team will personally contact you to lock in your live session time.</p>
-        <p class="mt-3 inline-flex items-center gap-2 rounded-lg border border-white/[.08] bg-black/10 px-3 py-2 text-sm text-[#bee1da]/60"><i class="fa-solid fa-bell text-gold"></i> Keep this page handy—your session details arrive within 24 hours.</p>
-        <div class="mt-6 flex flex-wrap gap-3">
-          <div class="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[.045] px-3 py-2.5">
+        <h1 class="mt-4 font-display text-5xl leading-[1.08] text-[#0f2f2a] sm:text-6xl">Your Live Session<br><span class="inline-block w-0 overflow-hidden whitespace-nowrap border-r-2 border-teal pr-1 animate-type-booked motion-reduce:w-auto motion-reduce:animate-none">is Confirmed!</span></h1>
+        <p class="mt-4 max-w-xl text-base leading-7 text-[#0f2f2a] sm:text-lg">Your payment has been received and your booking is confirmed. Our team will personally contact you to lock in your live session time.</p>
+        <p class="mt-3 inline-flex items-center gap-2 rounded-lg border border-teal/20 bg-teal/5 px-3 py-2 text-sm text-[#0f2f2a]"><i class="fa-solid fa-bell text-gold"></i> Keep this page handy—your session details arrive within 24 hours.</p>
+        <div class="mt-6 flex flex-wrap gap-3">          <div class="flex items-center gap-3 rounded-xl border border-teal/20 bg-white/70 px-3 py-2.5 shadow-sm">
             <span class="grid h-9 w-9 place-items-center rounded-lg border border-teal/25 bg-teal/10 text-teal"><i class="fa-solid fa-credit-card"></i></span>
-            <span><span class="block text-xs font-bold uppercase tracking-wider text-white/45">Amount Paid</span><span class="text-base font-bold text-white">₹9 — Received</span></span>
+            <span><span class="block text-xs font-bold uppercase tracking-wider text-[#0f2f2a]">Amount Paid</span><span class="text-base font-bold text-[#0f2f2a]">₹9 — Received</span></span>
           </div>
-          <div class="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[.045] px-3 py-2.5">
-            <span class="grid h-9 w-9 place-items-center rounded-lg border border-gold/25 bg-gold/10 text-gold"><i class="fa-regular fa-calendar-check"></i></span>
-            <span><span class="block text-xs font-bold uppercase tracking-wider text-white/45">Session Status</span><span class="text-base font-bold text-white">Confirmed & Active</span></span>
+          <div class="flex items-center gap-3 rounded-xl border border-teal/20 bg-white/70 px-3 py-2.5 shadow-sm">
+            <span class="grid h-9 w-9 place-items-center rounded-lg border border-gold/40 bg-gold/10 text-gold"><i class="fa-regular fa-calendar-check"></i></span>
+            <span><span class="block text-xs font-bold uppercase tracking-wider text-[#0f2f2a]">Session Status</span><span class="text-base font-bold text-[#0f2f2a]">Confirmed &amp; Active</span></span>
           </div>
-          <div class="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[.045] px-3 py-2.5">
-            <span class="grid h-9 w-9 place-items-center rounded-lg border border-green-400/25 bg-green-400/10 text-green-400"><i class="fa-solid fa-indian-rupee-sign"></i></span>
-            <span><span class="block text-xs font-bold uppercase tracking-wider text-white/45">Refund Policy</span><span class="text-base font-bold text-white">100% After Session</span></span>
-          </div>
+          <div class="flex items-center gap-3 rounded-xl border border-teal/20 bg-white/70 px-3 py-2.5 shadow-sm">
+            <span class="grid h-9 w-9 place-items-center rounded-lg border border-green-500/25 bg-green-500/10 text-green-600"><i class="fa-solid fa-indian-rupee-sign"></i></span>
+            <span><span class="block text-xs font-bold uppercase tracking-wider text-[#0f2f2a]">Refund Policy</span><span class="text-base font-bold text-[#0f2f2a]">100% After Session</span></span>
+          </div></div>
         </div>
       </div>
       <div class="relative mt-6 text-center lg:mt-0">
-        <img src="../assets/image/thankyoutopimage.png" alt="100% Refund Guarantee" class="mx-auto h-36 w-36 object-contain drop-shadow-[0_10px_22px_rgba(0,0,0,.5)] sm:h-44 sm:w-44">
-        <p class="mt-2 text-sm font-bold leading-5 text-gold">100% Refund<br>After Your Session</p>
+        <img src="../assets/image/thankyoutopimage.png" alt="100% Refund Guarantee" class="mx-auto h-36 w-36 object-contain drop-shadow-[0_10px_22px_rgba(0,0,0,.1)] sm:h-44 sm:w-44">
+        <p class="mt-2 text-sm font-bold leading-5 text-gold">100% Refund<br><span class="text-[#0f2f2a]">After Your Session</span></p>
       </div>
     </section>
 
     <section class="animate-rise-2 grid gap-5 xl:grid-cols-4">
       <div class="space-y-5 xl:col-span-3">
         <div class="grid gap-5 lg:grid-cols-3">
-          <article class="rounded-[20px] border border-white/[.09] bg-white/[.045] p-6 shadow-[0_12px_28px_rgba(0,0,0,.16)] backdrop-blur-sm lg:col-span-2">
-            <h2 class="flex items-center gap-3 font-display text-2xl text-white"><span class="grid h-9 w-9 place-items-center rounded-xl bg-teal/20 text-base text-teal"><i class="fa-solid fa-compass"></i></span> What Happens Next?</h2>
+          <article class="rounded-[20px] border border-teal/20 bg-white/80 p-6 shadow-[0_12px_28px_rgba(43,183,165,.06)] backdrop-blur-sm lg:col-span-2">
+            <h2 class="flex items-center gap-3 font-display text-2xl text-[#0f2f2a]"><span class="grid h-9 w-9 place-items-center rounded-xl bg-teal/10 text-base text-teal"><i class="fa-solid fa-compass"></i></span> What Happens Next?</h2>
             <div class="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-[1fr_auto_1fr_auto_1fr] sm:items-start">
-              <div class="text-center"><div class="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-gold/15 text-xl text-gold transition hover:-translate-y-1 hover:scale-105"><i class="fa-solid fa-book-open"></i></div><p class="mt-3 text-xs font-bold uppercase tracking-wider text-gold">Step 01</p><h3 class="mt-1 text-base font-bold text-white">Review & Prepare</h3><p class="mt-1 text-sm leading-5 text-[#bee1da]/65">Gather your questions and business details.</p></div>
-              <div class="hidden pt-6 text-gold/60 sm:block"><i class="fa-solid fa-chevron-right"></i></div>
-              <div class="text-center"><div class="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-teal/15 text-xl text-teal transition hover:-translate-y-1 hover:scale-105"><i class="fa-solid fa-people-group"></i></div><p class="mt-3 text-xs font-bold uppercase tracking-wider text-teal">Step 02</p><h3 class="mt-1 text-base font-bold text-white">Team Contacts You</h3><p class="mt-1 text-sm leading-5 text-[#bee1da]/65">A manager reaches you on WhatsApp.</p></div>
-              <div class="hidden pt-6 text-gold/60 sm:block"><i class="fa-solid fa-chevron-right"></i></div>
-              <div class="text-center"><div class="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-blue-400/15 text-xl text-blue-400 transition hover:-translate-y-1 hover:scale-105"><i class="fa-solid fa-video"></i></div><p class="mt-3 text-xs font-bold uppercase tracking-wider text-blue-300">Step 03</p><h3 class="mt-1 text-base font-bold text-white">Receive Meet Link</h3><p class="mt-1 text-sm leading-5 text-[#bee1da]/65">Join your private live session.</p></div>
+              <div class="text-center"><div class="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-gold/10 text-xl text-gold transition hover:-translate-y-1 hover:scale-105"><i class="fa-solid fa-book-open"></i></div><p class="mt-3 text-xs font-bold uppercase tracking-wider text-gold">Step 01</p><h3 class="mt-1 text-base font-bold text-[#0f2f2a]">Review &amp; Prepare</h3><p class="mt-1 text-sm leading-5 text-[#0f2f2a]">Gather your questions and business details.</p></div>
+              <div class="hidden pt-6 text-slate-500 sm:block"><i class="fa-solid fa-chevron-right"></i></div>
+              <div class="text-center"><div class="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-teal/10 text-xl text-teal transition hover:-translate-y-1 hover:scale-105"><i class="fa-solid fa-people-group"></i></div><p class="mt-3 text-xs font-bold uppercase tracking-wider text-teal">Step 02</p><h3 class="mt-1 text-base font-bold text-[#0f2f2a]">Team Contacts You</h3><p class="mt-1 text-sm leading-5 text-[#0f2f2a]">A manager reaches you on WhatsApp.</p></div>
+              <div class="hidden pt-6 text-slate-500 sm:block"><i class="fa-solid fa-chevron-right"></i></div>
+              <div class="text-center"><div class="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-blue-100 text-xl text-blue-500 transition hover:-translate-y-1 hover:scale-105"><i class="fa-solid fa-video"></i></div><p class="mt-3 text-xs font-bold uppercase tracking-wider text-blue-500">Step 03</p><h3 class="mt-1 text-base font-bold text-[#0f2f2a]">Receive Meet Link</h3><p class="mt-1 text-sm leading-5 text-[#0f2f2a]">Join your private live session.</p></div>
             </div>
           </article>
 
-          <article class="rounded-[20px] border border-white/[.09] bg-white/[.045] p-6 shadow-[0_12px_28px_rgba(0,0,0,.16)] backdrop-blur-sm">
-            <h2 class="flex items-center gap-3 font-display text-2xl text-white"><span class="grid h-9 w-9 place-items-center rounded-xl bg-gold/15 text-base text-gold"><i class="fa-solid fa-gem"></i></span> Session Includes</h2>
+          <article class="rounded-[20px] border border-teal/20 bg-white/80 p-6 shadow-[0_12px_28px_rgba(43,183,165,.06)] backdrop-blur-sm">
+            <h2 class="flex items-center gap-3 font-display text-2xl text-[#0f2f2a]"><span class="grid h-9 w-9 place-items-center rounded-xl bg-gold/10 text-base text-gold"><i class="fa-solid fa-gem"></i></span> Session Includes</h2>
             <div class="mt-5 grid grid-cols-2 gap-2.5">
-              <div class="rounded-xl border border-white/[.07] bg-teal/5 p-3 text-center transition hover:-translate-y-1 hover:border-teal/30"><i class="fa-solid fa-user-tie text-xl text-teal"></i><h3 class="mt-2 text-xs font-extrabold uppercase tracking-wide text-white">Expert Guidance</h3><p class="mt-1 text-xs leading-5 text-[#bee1da]/60">Senior advisor answers.</p></div>
-              <div class="rounded-xl border border-white/[.07] bg-teal/5 p-3 text-center transition hover:-translate-y-1 hover:border-teal/30"><i class="fa-solid fa-comments text-xl text-teal"></i><h3 class="mt-2 text-xs font-extrabold uppercase tracking-wide text-white">Q&A Session</h3><p class="mt-1 text-xs leading-5 text-[#bee1da]/60">Ask everything you need.</p></div>
-              <div class="rounded-xl border border-white/[.07] bg-teal/5 p-3 text-center transition hover:-translate-y-1 hover:border-teal/30"><i class="fa-solid fa-chart-line text-xl text-teal"></i><h3 class="mt-2 text-xs font-extrabold uppercase tracking-wide text-white">Insights</h3><p class="mt-1 text-xs leading-5 text-[#bee1da]/60">Advice for your goals.</p></div>
-              <div class="rounded-xl border border-white/[.07] bg-teal/5 p-3 text-center transition hover:-translate-y-1 hover:border-teal/30"><i class="fa-solid fa-circle-check text-xl text-teal"></i><h3 class="mt-2 text-xs font-extrabold uppercase tracking-wide text-white">Follow-Up</h3><p class="mt-1 text-xs leading-5 text-[#bee1da]/60">Clear next steps.</p></div>
+              <div class="rounded-xl border border-teal/20 bg-teal/5 p-3 text-center transition hover:-translate-y-1 hover:border-teal/40 hover:bg-teal/10"><i class="fa-solid fa-user-tie text-xl text-teal"></i><h3 class="mt-2 text-xs font-extrabold uppercase tracking-wide text-[#0f2f2a]">Expert Guidance</h3><p class="mt-1 text-xs leading-5 text-[#0f2f2a]">Senior advisor answers.</p></div>
+              <div class="rounded-xl border border-teal/20 bg-teal/5 p-3 text-center transition hover:-translate-y-1 hover:border-teal/40 hover:bg-teal/10"><i class="fa-solid fa-comments text-xl text-teal"></i><h3 class="mt-2 text-xs font-extrabold uppercase tracking-wide text-[#0f2f2a]">Q&amp;A Session</h3><p class="mt-1 text-xs leading-5 text-[#0f2f2a]">Ask everything you need.</p></div>
+              <div class="rounded-xl border border-teal/20 bg-teal/5 p-3 text-center transition hover:-translate-y-1 hover:border-teal/40 hover:bg-teal/10"><i class="fa-solid fa-chart-line text-xl text-teal"></i><h3 class="mt-2 text-xs font-extrabold uppercase tracking-wide text-[#0f2f2a]">Insights</h3><p class="mt-1 text-xs leading-5 text-[#0f2f2a]">Advice for your goals.</p></div>
+              <div class="rounded-xl border border-teal/20 bg-teal/5 p-3 text-center transition hover:-translate-y-1 hover:border-teal/40 hover:bg-teal/10"><i class="fa-solid fa-circle-check text-xl text-teal"></i><h3 class="mt-2 text-xs font-extrabold uppercase tracking-wide text-[#0f2f2a]">Follow-Up</h3><p class="mt-1 text-xs leading-5 text-[#0f2f2a]">Clear next steps.</p></div>
             </div>
           </article>
         </div>
 
         <div class="grid gap-5 lg:grid-cols-3">
-          <article class="flex items-center gap-4 rounded-[20px] border border-white/[.09] bg-white/[.045] p-5 shadow-[0_12px_28px_rgba(0,0,0,.16)] backdrop-blur-sm">
+          <article class="flex items-center gap-4 rounded-[20px] border border-teal/20 bg-white/80 p-5 shadow-[0_12px_28px_rgba(43,183,165,.06)] backdrop-blur-sm">
             <img src="../assets/image/thankyoucalender.png" alt="Calendar reminder" class="h-14 w-14 shrink-0 object-contain">
-            <p class="text-sm leading-6 text-[#bee1da]/70"><strong class="text-gold">Watch WhatsApp & email.</strong> Your manager will share the confirmed time and Meet link within 24 hours.</p>
+            <p class="text-sm leading-6 text-[#0f2f2a]"><strong class="text-gold">Watch WhatsApp &amp; email.</strong> Your manager will share the confirmed time and Meet link within 24 hours.</p>
           </article>
-          <article class="rounded-[20px] border border-white/[.09] bg-white/[.045] p-5 shadow-[0_12px_28px_rgba(0,0,0,.16)] backdrop-blur-sm lg:col-span-2">
-            <h2 class="flex items-center gap-2 text-base font-bold text-white"><span class="grid h-7 w-7 place-items-center rounded-lg bg-teal/15 text-sm text-teal"><i class="fa-solid fa-chart-bar"></i></span> Session Snapshot</h2>
+          <article class="rounded-[20px] border border-teal/20 bg-white/80 p-5 shadow-[0_12px_28px_rgba(43,183,165,.06)] backdrop-blur-sm lg:col-span-2">
+            <h2 class="flex items-center gap-2 text-base font-bold text-[#0f2f2a]"><span class="grid h-7 w-7 place-items-center rounded-lg bg-teal/10 text-sm text-teal"><i class="fa-solid fa-chart-bar"></i></span> Session Snapshot</h2>
             <div class="mt-4 grid grid-cols-2 sm:grid-cols-4">
-              <div class="border-r border-white/[.08] px-3 text-center"><p class="font-display text-3xl text-gold">₹ 9</p><p class="mt-1 text-xs font-bold uppercase tracking-wide text-[#bee1da]/55">Amount Paid</p></div>
-              <div class="border-r border-white/[.08] px-3 text-center"><p class="font-display text-3xl text-gold">100%</p><p class="mt-1 text-xs font-bold uppercase tracking-wide text-[#bee1da]/55">Refund Eligible</p></div>
-              <div class="border-r border-white/[.08] px-3 text-center"><p class="font-display text-3xl text-gold">24h</p><p class="mt-1 text-xs font-bold uppercase tracking-wide text-[#bee1da]/55">Team Response</p></div>
-              <div class="px-3 text-center"><p class="font-display text-3xl text-gold">1:1</p><p class="mt-1 text-xs font-bold uppercase tracking-wide text-[#bee1da]/55">Private Session</p></div>
+              <div class="border-r border-teal/[.15] px-3 text-center"><p class="font-display text-3xl text-gold">24h</p><p class="mt-1 text-xs font-bold uppercase tracking-wide text-[#0f2f2a]">Team Response</p></div>
+              <div class="px-3 text-center"><p class="font-display text-3xl text-gold">1:1</p><p class="mt-1 text-xs font-bold uppercase tracking-wide text-[#0f2f2a]">Private Session</p></div>
             </div>
           </article>
         </div>
       </div>
 
-      <article class="relative overflow-hidden rounded-[20px] border border-teal/25 bg-[radial-gradient(circle_at_50%_14%,rgba(43,183,165,.16),transparent_27%),linear-gradient(160deg,rgba(15,43,54,.95),rgba(9,27,38,.98))] p-7 text-center shadow-[0_16px_35px_rgba(0,0,0,.25)] xl:row-span-1">
-        <span class="absolute right-5 top-5 rounded-full border border-teal/30 bg-teal/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-teal">Team Hub</span>
+      <article class="relative overflow-hidden rounded-[20px] border border-teal/25 bg-[radial-gradient(circle_at_50%_14%,rgba(43,183,165,.18),transparent_27%),linear-gradient(160deg,rgba(215,240,236,.95),rgba(232,248,245,.98))] p-7 text-center shadow-[0_16px_35px_rgba(43,183,165,.12)] xl:row-span-1">
+        <span class="absolute right-5 top-5 rounded-full border border-teal/30 bg-teal/15 px-3 py-1 text-xs font-bold uppercase tracking-wider text-teal">Team Hub</span>
         <div class="relative mx-auto mt-6 h-44 w-44">
           <div class="absolute inset-1 animate-orbit rounded-full border border-teal/30"></div>
           <div class="absolute inset-5 animate-glow rounded-full border-2 border-teal/35"></div>
@@ -167,18 +164,18 @@
           <span class="absolute bottom-0 left-1/2 grid h-9 w-9 -translate-x-1/2 place-items-center rounded-full border-2 border-white/80 bg-[#375f7a] text-xs font-bold text-white animate-[float_3.8s_ease-in-out_1.5s_infinite]">VK</span>
           <span class="absolute bottom-9 left-0 grid h-9 w-9 place-items-center rounded-full border-2 border-white/80 bg-[#c97868] text-xs font-bold text-white animate-[float_3.8s_ease-in-out_2s_infinite]">TM</span>
           <span class="absolute left-0 top-9 grid h-9 w-9 place-items-center rounded-full border-2 border-white/80 bg-[#6b9a70] text-xs font-bold text-white animate-[float_3.8s_ease-in-out_2.5s_infinite]">SM</span>
-          <div class="absolute left-1/2 top-1/2 grid h-20 w-20 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-[#164957] text-3xl text-gold shadow-[0_0_0_9px_rgba(43,183,165,.09)]"><i class="fa-solid fa-headset"></i></div>
+          <div class="absolute left-1/2 top-1/2 grid h-20 w-20 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-[#1d6e7a] text-3xl text-gold shadow-[0_0_0_9px_rgba(43,183,165,.14)]"><i class="fa-solid fa-headset"></i></div>
         </div>
         <p class="mx-auto mt-3 inline-flex rounded-full bg-teal/10 px-3 py-1 text-xs font-bold uppercase tracking-[.14em] text-teal">Connection Interface</p>
-        <h2 class="mt-4 font-display text-3xl leading-tight text-white">Team Connects<br>With You</h2>
-        <p class="mx-auto mt-3 max-w-sm text-base leading-7 text-[#bee1da]/70">A dedicated session manager reaches out to understand your requirements and schedule your private live session.</p>
-        <div class="mx-auto mt-5 max-w-xs border-y border-teal/20 py-3"><p class="text-xs font-bold uppercase tracking-widest text-[#bee1da]/55">Expected contact within</p><p class="mt-1 font-display text-3xl text-gold">24 Hours</p></div>
+        <h2 class="mt-4 font-display text-3xl leading-tight text-[#0f2f2a]">Team Connects<br>With You</h2>
+        <p class="mx-auto mt-3 max-w-sm text-base leading-7 text-[#0f2f2a]">A dedicated session manager reaches out to understand your requirements and schedule your private live session.</p>
+        <div class="mx-auto mt-5 max-w-xs border-y border-teal/20 py-3"><p class="text-xs font-bold uppercase tracking-widest text-[#0f2f2a]">Expected contact within</p><p class="mt-1 font-display text-3xl text-gold">24 Hours</p></div>
         <a href="https://wa.me/918927656368?text=Hi%20VK%20Services%20Enterprise%2C%20I%20have%20completed%20my%20live-session%20payment.%20Please%20help%20me%20confirm%20my%20session%20time." target="_blank" rel="noopener" class="mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-br from-[#25d366] to-[#128c7e] px-5 py-3 text-base font-extrabold text-white shadow-[0_10px_24px_rgba(7,94,84,.45)] transition hover:-translate-y-1 hover:shadow-[0_18px_34px_rgba(7,94,84,.58)]"><i class="fa-brands fa-whatsapp text-lg"></i> Contact Us on WhatsApp</a>
-        <a href="index.html" class="mt-4 block text-sm font-bold text-[#bee1da]/65 transition hover:text-teal"><i class="fa-solid fa-arrow-left mr-1 text-xs"></i> Back to Live Session</a>
+        <a href="index.html" class="mt-4 block text-sm font-bold text-[#0f2f2a] transition hover:text-teal"><i class="fa-solid fa-arrow-left mr-1 text-xs"></i> Back to Live Session</a>
       </article>
     </section>
 
-    <section class="animate-rise-3 overflow-hidden rounded-[20px] border border-white/[.09] bg-white/[.045] shadow-[0_12px_28px_rgba(0,0,0,.16)] backdrop-blur-sm">
+    <section class="animate-rise-3 overflow-hidden rounded-[20px] border border-teal/20 bg-white/80 shadow-[0_12px_28px_rgba(43,183,165,.10)] backdrop-blur-sm">
 
 
     </section>

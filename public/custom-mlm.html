@@ -232,6 +232,105 @@
       border-color: #F1521E !important
     }
 
+    /* Demo heading treatment */
+    .mlm-demo-heading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .8rem;
+      margin: 0 0 .65rem;
+      color: #F1521E;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.45rem, 2.5vw, 1.85rem);
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .mlm-demo-heading::before,
+    .mlm-demo-heading::after {
+      content: '';
+      width: clamp(4rem, 11vw, 6.65rem);
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #F1521E);
+    }
+
+    .mlm-demo-heading::after {
+      background: linear-gradient(90deg, #F1521E, transparent);
+    }
+
+    .mlm-demo-heading span {
+      display: inline-flex;
+      align-items: center;
+      gap: .8rem;
+    }
+
+    .mlm-demo-heading span::before,
+    .mlm-demo-heading span::after {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #F1521E;
+    }
+
+    .mlm-demo-card {
+      position: relative;
+      isolation: isolate;
+      min-height: 7.75rem;
+      display: grid;
+      place-content: center;
+      overflow: hidden;
+      margin-bottom: 2.25rem;
+      padding: 1.5rem;
+      border: 1px solid #edf0f5;
+      border-radius: .95rem;
+      background: #fbfbfc;
+      box-shadow: 0 8px 14px rgba(17, 24, 39, .18);
+      text-align: center;
+    }
+
+    .mlm-demo-card::before,
+    .mlm-demo-card::after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      width: 9.25rem;
+      height: 9.25rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff9b00 0%, #ff6d00 52%, #F1521E 100%);
+    }
+
+    .mlm-demo-card::before {
+      top: -5.8rem;
+      left: -5.2rem;
+    }
+
+    .mlm-demo-card::after {
+      right: -5.7rem;
+      bottom: -5.9rem;
+      transform: rotate(180deg);
+    }
+
+    .mlm-demo-title {
+      color: #050a2c;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+      font-weight: 700;
+      letter-spacing: -.025em;
+      line-height: 1.15;
+    }
+
+    .mlm-demo-underline {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 8.2rem;
+      height: 3px;
+      margin: .9rem auto 0;
+      border-radius: 999px;
+      background: linear-gradient(90deg, transparent 0 30%, #F1521E 30% 70%, transparent 70%);
+    }
+
     @media (max-width:767px) {
       .index-hero-layout {
         padding: 1rem 1rem 2rem !important
@@ -283,6 +382,21 @@
 
       .lets-start-block {
         margin-top: 2.25rem !important;
+      }
+
+      .mlm-demo-heading {
+        gap: .55rem;
+        margin-bottom: .8rem;
+      }
+
+      .mlm-demo-heading span {
+        gap: .55rem;
+      }
+
+      .mlm-demo-card {
+        min-height: 6.5rem;
+        margin-bottom: 1.75rem;
+        padding: 1.2rem .9rem;
       }
 
       #testimonials,
@@ -535,7 +649,7 @@
       <div class="index-demo-shimmer"></div>
       <div class="index-demo-frame">
        <iframe
-    src="https://www.youtube.com/embed/_Ecm7cnID_w?start=2&autoplay=1&mute=1&playsinline=1&rel=0"
+    src="https://www.youtube.com/embed/_Ecm7cnID_w?start=2&autoplay=1&playsinline=1&rel=0"
     title="MLM service provider video"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen>
@@ -653,12 +767,7 @@
       <!-- NOTE: To ensure borders show up, your JavaScript must inject cards with classes like: "bg-white border border-gray-200 rounded-xl" -->
       <div id="featureList" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
 
-        <!-- EXAMPLE OF HOW YOUR INJECTED CARDS SHOULD BE STRUCTURED TO SHOW BORDERS -->
-        <!-- 
-        <div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm hover:shadow-md hover:border-accent transition-all">
-            Card Content Here
-        </div> 
-        -->
+    
 
       </div>
 
@@ -723,14 +832,13 @@
     </div>
 
     <!-- ================= LET'S START ================= -->
-    <div class="mt-24 lets-start-block">
-      <h2 class="text-center font-display font-bold text-2xl sm:text-3xl tracking-wide text-accent mb-6">Let's Start
-      </h2>
+      <div class="mt-24 lets-start-block">
+        <h2 class="mlm-demo-heading"><span>Let's Start</span></h2>
 
-      <div class="bg-primary text-white rounded-2xl shadow-card px-6 py-5 text-center mb-9">
-        <h3 class="font-display font-bold text-lg sm:text-2xl tracking-wide">Customized MLM Software Demo</h3>
-        <div class="w-[52px] h-[3px] rounded-full bg-accent mx-auto mt-2.5"></div>
-      </div>
+        <div class="mlm-demo-card">
+          <h3 class="mlm-demo-title">Customized MLM Software Demo</h3>
+          <div class="mlm-demo-underline" aria-hidden="true"></div>
+        </div>
 
       <div id="planGrid" class="grid grid-cols-1 lg:grid-cols-3 gap-6"></div>
 
@@ -1027,48 +1135,50 @@
             years of industry excellence.</p>
         </div>
 
-        <div
-          class="grid grid-cols-1 md:grid-cols-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl shadow-2xl mb-16 divide-y md:divide-y-0 md:divide-x divide-white/10">
-          <div
-            class="p-6 md:p-8 flex items-center justify-start md:justify-center gap-5 w-full max-w-[260px] md:max-w-none mx-auto">
-            <div class="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-              <svg class="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5z" />
-              </svg>
+      <div class="relative z-20 mb-16 min-h-[285px] overflow-hidden rounded-[20px] bg-white px-5 py-7 shadow-[0_18px_45px_rgba(0,0,0,0.18)] isolate md:px-7 md:py-7">
+                <div class="absolute left-[17px] top-5 z-0 h-[57px] w-[43px] opacity-[.58] [background-image:radial-gradient(#ff8b64_1.5px,transparent_1.6px)] [background-size:14px_14px]" aria-hidden="true"></div>
+                <div class="absolute right-[17px] top-5 z-0 h-[57px] w-[43px] opacity-[.58] [background-image:radial-gradient(#ff8b64_1.5px,transparent_1.6px)] [background-size:14px_14px]" aria-hidden="true"></div>
+                <div class="absolute -bottom-[34px] -left-[34px] z-0 h-[138px] w-[205px] bg-[linear-gradient(32deg,#ff5720_0%,#ff7244_48%,rgba(255,160,128,.28)_77%,transparent_78%)] [clip-path:polygon(0_18%,23%_25%,40%_47%,61%_76%,100%_100%,0_100%)]" aria-hidden="true"></div>
+                <div class="absolute -bottom-[43px] -right-[56px] z-0 h-[130px] w-[145px] rotate-[28deg] rounded-[75%_40%_0_0] border-2 border-b-0 border-r-2 border-[#ff744b4d]" aria-hidden="true"></div>
+
+                <div class="relative z-10 grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-0">
+                    <div class="relative flex min-w-0 flex-col items-center px-0 text-center md:px-[26px]">
+                        <div class="relative mb-[11px] flex h-[104px] w-[104px] items-center justify-center rounded-full border-2 border-[#ff6f4333] text-[#ff4f12] shadow-[0_6px_16px_rgba(242,82,30,.18),inset_0_0_0_9px_rgba(255,122,71,.05)] [background:radial-gradient(circle_at_center,#fff_54%,rgba(255,119,76,.06)_55%,rgba(255,119,76,.12)_67%,transparent_68%)]">
+                            <span class="absolute -right-1 top-[49px] h-[9px] w-[9px] rounded-full bg-[#ff4f12] shadow-[0_0_0_3px_#fff]"></span>
+                            <svg class="h-[46px] w-[46px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="m12 8 1.15 2.35 2.6.38-1.88 1.83.44 2.59L12 13.94l-2.31 1.21.44-2.59-1.88-1.83 2.6-.38L12 8z"/>
+                            </svg>
+                        </div>
+                        <div class="font-display text-[1.85rem] font-semibold leading-none tracking-[-.06em] text-[#f56b3b] md:text-[2.75rem]">9+</div>
+                        <div class="mt-2 font-display text-[.9rem] font-semibold leading-[1.15] tracking-[.005em] text-[#303030] md:text-[1.28rem]">YEARS OF EXCELLENCE</div>
+                        <span class="mt-[15px] h-0.5 w-12 bg-[#ff4f12]"></span>
+                    </div>
+                    <div class="relative flex min-w-0 flex-col items-center px-0 text-center before:absolute before:left-[12%] before:right-[12%] before:top-[-16px] before:h-px before:bg-[#e7e7e7] after:absolute after:left-1/2 after:top-[-20px] after:h-2 after:w-2 after:-translate-x-1/2 after:rounded-full after:bg-[#ff4f12] after:shadow-[0_0_0_4px_#fff] md:px-[26px] md:before:bottom-0 md:before:left-0 md:before:right-auto md:before:top-[42px] md:before:h-auto md:before:w-px md:after:left-[-4px] md:after:top-[164px] md:after:translate-x-0">
+                        <div class="relative mb-[11px] flex h-[104px] w-[104px] items-center justify-center rounded-full border-2 border-[#ff6f4333] text-[#ff4f12] shadow-[0_6px_16px_rgba(242,82,30,.18),inset_0_0_0_9px_rgba(255,122,71,.05)] [background:radial-gradient(circle_at_center,#fff_54%,rgba(255,119,76,.06)_55%,rgba(255,119,76,.12)_67%,transparent_68%)]">
+                            <span class="absolute -right-1 top-[49px] h-[9px] w-[9px] rounded-full bg-[#ff4f12] shadow-[0_0_0_3px_#fff]"></span>
+                            <svg class="h-[46px] w-[46px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M16 20v-1.5a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4V20"/><circle cx="9" cy="6.5" r="3.5"/>
+                                <path d="M17 4a3.5 3.5 0 0 1 0 6.8M22 20v-1.5a4 4 0 0 0-2.7-3.8"/>
+                            </svg>
+                        </div>
+                        <div class="font-display text-[1.85rem] font-semibold leading-none tracking-[-.06em] text-[#f56b3b] md:text-[2.75rem]">2800+</div>
+                        <div class="mt-2 font-display text-[.9rem] font-semibold leading-[1.15] tracking-[.005em] text-[#303030] md:text-[1.28rem]">HAPPY CLIENTS</div>
+                        <span class="mt-[15px] h-0.5 w-12 bg-[#ff4f12]"></span>
+                    </div>
+                    <div class="relative flex min-w-0 flex-col items-center px-0 text-center before:absolute before:left-[12%] before:right-[12%] before:top-[-16px] before:h-px before:bg-[#e7e7e7] after:absolute after:left-1/2 after:top-[-20px] after:h-2 after:w-2 after:-translate-x-1/2 after:rounded-full after:bg-[#ff4f12] after:shadow-[0_0_0_4px_#fff] md:px-[26px] md:before:bottom-0 md:before:left-0 md:before:right-auto md:before:top-[42px] md:before:h-auto md:before:w-px md:after:left-[-4px] md:after:top-[164px] md:after:translate-x-0">
+                        <div class="relative mb-[11px] flex h-[104px] w-[104px] items-center justify-center rounded-full border-2 border-[#ff6f4333] text-[#ff4f12] shadow-[0_6px_16px_rgba(242,82,30,.18),inset_0_0_0_9px_rgba(255,122,71,.05)] [background:radial-gradient(circle_at_center,#fff_54%,rgba(255,119,76,.06)_55%,rgba(255,119,76,.12)_67%,transparent_68%)]">
+                            <span class="absolute -right-1 top-[49px] h-[9px] w-[9px] rounded-full bg-[#ff4f12] shadow-[0_0_0_3px_#fff]"></span>
+                            <svg class="h-[46px] w-[46px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3V9z"/>
+                            </svg>
+                        </div>
+                        <div class="font-display text-[1.85rem] font-semibold leading-none tracking-[-.06em] text-[#f56b3b] md:text-[2.75rem]">1.71L+</div>
+                        <div class="mt-2 font-display text-[.9rem] font-semibold leading-[1.15] tracking-[.005em] text-[#303030] md:text-[1.28rem]">MLMSUCCESSTIPS</div>
+                        <span class="mt-[15px] h-0.5 w-12 bg-[#ff4f12]"></span>
+                    </div>
+                </div>
             </div>
-            <div>
-              <div class="font-bold text-3xl font-display text-white">9+</div>
-              <div class="text-base text-gray-400">Years of Excellence</div>
-            </div>
-          </div>
-          <div
-            class="p-6 md:p-8 flex items-center justify-start md:justify-center gap-5 w-full max-w-[260px] md:max-w-none mx-auto">
-            <div class="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-              <svg class="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                <circle cx="9" cy="7" r="4" />
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
-              </svg>
-            </div>
-            <div>
-              <div class="font-bold text-3xl font-display text-white">2800+</div>
-              <div class="text-base text-gray-400">Happy Clients</div>
-            </div>
-          </div>
-          <div
-            class="p-6 md:p-8 flex items-center justify-start md:justify-center gap-5 w-full max-w-[260px] md:max-w-none mx-auto">
-            <div class="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-              <svg class="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="5" width="20" height="14" rx="2" />
-                <path d="M10 9.5v5l4-2.5z" />
-              </svg>
-            </div>
-            <div>
-              <div class="font-bold text-3xl font-display text-white">1.71L+</div>
-              <div class="text-sm text-gray-400">MLMSUCCESSTIPS</div>
-            </div>
-          </div>
-        </div>
 
         <a href="https://wa.me/918927656368" target="_blank" rel="noopener"
           class="block border-2 border-dashed border-white/20 rounded-2xl p-10 text-center bg-white/5 hover:bg-white/10 hover:border-accent/60 transition-all duration-200 cursor-pointer group">
@@ -1433,7 +1543,7 @@
 
     // Changed border-gray-200 to border-gray-300 and added shadow-sm
     document.getElementById('featureList').innerHTML = features.map(f => `
-<div class="flex flex-col items-start gap-3 bg-gray-200 border border-gray-400 shadow-sm rounded-2xl p-5 h-full transition hover:-translate-y-0.5 hover:border-accent hover:shadow-card">
+<div class="flex flex-col items-start gap-3 bg-white border border-gray-400 shadow-sm rounded-2xl p-5 h-full transition hover:-translate-y-0.5 hover:border-accent hover:shadow-card">
   <div class="w-[46px] h-[46px] flex-shrink-0 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center">
     <svg viewBox="0 0 24 24" fill="none" stroke="#F59E0B" class="w-[22px] h-[22px]">${f.icon}</svg>
   </div>
